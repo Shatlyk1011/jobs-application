@@ -36,7 +36,7 @@ const VacancyFilters: FC<Props> = () => {
 
   return (
     <div className="w-full">
-      <div className="flex items-center gap-10 w-full max-h-max">
+      <div className="flex test items-center gap-10 w-full max-h-max">
         <h2 className="self-center text-nowrap text-2xl -tracking-two font-semibold">
           Вакансии: <span className="opacity-75">662</span>
         </h2>
