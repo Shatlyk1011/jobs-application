@@ -14,7 +14,7 @@ const Header:FC<Props> = () => {
       <nav className='flex-1 flex justify-end'>
         <ul className='flex items-center text-base font-medium tracking-tight gap-6'>
           <li>
-            <Link href={'/vacancy'}>
+            <Link href={'/jobs'}>
             Вакансии
             </Link>
           </li>

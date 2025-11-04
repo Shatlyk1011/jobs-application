@@ -1,4 +1,4 @@
-import VacancyFilters from "@/components/VacancyFilters";
+import VacancyFilters from "@/components/JobFilters";
 
 export default function VacancyPage() {
   return (
