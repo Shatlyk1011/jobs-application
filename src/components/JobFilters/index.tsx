@@ -25,12 +25,13 @@ const VacancyFilters:FC<Props> = () => {
   const selectedOptions = [...selectedProfessions, ...selectedLevels, ...selectedLocation, ...selectedFormat] 
 
   return (
-    <div className="w-full max-h-max">
-      <div className='flex items-center gap-10 w-full'>
+    <div className="w-full">
+      <div className='flex items-center gap-10 w-full max-h-max'>
         <h2 className="self-center text-nowrap text-2xl -tracking-two font-semibold">Вакансии: <span className='opacity-75'>662</span></h2>
         <div className="grid grid-cols-4 w-full gap-3">
           <MultiSelect
             singleLine={true}
+            className='bg-card hover:bg-secondary'
             maxCount={0}
             placeholder='Профессия'
             animation={0}
@@ -40,6 +41,7 @@ const VacancyFilters:FC<Props> = () => {
           />
           <MultiSelect
             singleLine={true}
+            className='bg-card hover:bg-secondary'
             maxCount={0}
             placeholder='Уровень'
             animation={0}
@@ -49,6 +51,7 @@ const VacancyFilters:FC<Props> = () => {
           />
           <MultiSelect
             singleLine={true}
+            className='bg-card hover:bg-secondary'
             maxCount={0}
             placeholder='Локация'
             animation={0}
@@ -58,6 +61,7 @@ const VacancyFilters:FC<Props> = () => {
           />
           <MultiSelect
             singleLine={true}
+            className='bg-card hover:bg-secondary'
             maxCount={0}
             placeholder='Формат'
             animation={0}
