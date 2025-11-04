@@ -2,7 +2,6 @@ import type { CollectionConfig } from "payload";
 import path from "path";
 
 const Media: CollectionConfig = {
-
   admin: {
     defaultColumns: ["title", "createdBy", "createdAt"],
   },
@@ -14,7 +13,6 @@ const Media: CollectionConfig = {
       required: true,
       type: "text",
     },
-  
   ],
   labels: { plural: "Images", singular: "Image" },
   slug: "media",

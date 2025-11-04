@@ -1,36 +1,27 @@
-import Link from 'next/link';
-import { FC } from 'react';
+import Link from "next/link";
+import { FC } from "react";
 
-interface Props {};
+interface Props {}
 
-const Header:FC<Props> = () => {
+const Header: FC<Props> = () => {
   return (
     <header className=" flex justify-between items-center gap-5 h-16">
+      <Link href="/">Logo</Link>
 
-      <Link href="/">
-        Logo
-      </Link>
-
-      <nav className='flex-1 flex justify-end'>
-        <ul className='flex items-center text-base font-medium tracking-tight gap-6'>
+      <nav className="flex-1 flex justify-end">
+        <ul className="flex items-center text-base font-medium tracking-tight gap-6">
           <li>
-            <Link href={'/jobs'}>
-            Вакансии
-            </Link>
+            <Link href={"/jobs"}>Вакансии</Link>
           </li>
           <li>
-            <Link href={'/cv'}>
-              Резюме
-            </Link>
+            <Link href={"/cv"}>Резюме</Link>
           </li>
           <li>
-            <Link href={'/mentors'}>
-              Менторы
-            </Link>
+            <Link href={"/mentors"}>Менторы</Link>
           </li>
         </ul>
       </nav>
     </header>
-  )
+  );
 };
-export default Header
+export default Header;

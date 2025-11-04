@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <div className="max-w-5xl mx-auto box-border px-12">
-      <Header/>
+      <Header />
       {children}
     </div>
   );

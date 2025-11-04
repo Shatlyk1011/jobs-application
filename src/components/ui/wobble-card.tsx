@@ -38,7 +38,7 @@ export const WobbleCard = ({
       }}
       className={cn(
         "mx-auto w-full bg-white  relative rounded-2xl overflow-hidden",
-        containerClassName
+        containerClassName,
       )}
     >
       <div

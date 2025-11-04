@@ -6,8 +6,7 @@ import { WobbleCard } from "../ui/wobble-card";
 export default function Hero() {
   return (
     <div className="grid grid-cols-2 h-max gap-4.5 max-w-5xl mx-auto w-full">
-      <Link href={'/jobs'}>
-        
+      <Link href={"/jobs"}>
         <WobbleCard
           containerClassName=" h-full bg-card text-card-foreground min-h-[220px]"
           className=""
@@ -20,11 +19,9 @@ export default function Hero() {
               Найдите лучшие предложения работы в Туркменистане
             </p>
           </div>
-
         </WobbleCard>
       </Link>
-      <Link href={'/'}>
-            
+      <Link href={"/"}>
         <WobbleCard containerClassName=" min-h-[220px] h-full bg-card text-card-foreground">
           <h2 className="max-w-80  text-left text-balance text-3xl font-semibold tracking-[-0.015em]">
             Резюме
@@ -34,17 +31,17 @@ export default function Hero() {
           </p>
         </WobbleCard>
       </Link>
-      <Link href={'/'} className="col-span-2 h-full  min-h-[220px]">
-      <WobbleCard containerClassName="col-span-2 bg-card-foreground text-card h-full">
-        <div className="max-w-sm">
-          <h2 className="w-full text-left text-3xl font-semibold tracking-[-0.015em]">
-            Менторы
-          </h2>
-          <p className="mt-4 max-w-104 text-left  text-base/6">
-            Получите поддержку и советы от опытных профессионалов
-          </p>
-        </div>
-      </WobbleCard>
+      <Link href={"/"} className="col-span-2 h-full  min-h-[220px]">
+        <WobbleCard containerClassName="col-span-2 bg-card-foreground text-card h-full">
+          <div className="max-w-sm">
+            <h2 className="w-full text-left text-3xl font-semibold tracking-[-0.015em]">
+              Менторы
+            </h2>
+            <p className="mt-4 max-w-104 text-left  text-base/6">
+              Получите поддержку и советы от опытных профессионалов
+            </p>
+          </div>
+        </WobbleCard>
       </Link>
     </div>
   );
