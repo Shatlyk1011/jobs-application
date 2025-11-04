@@ -6,7 +6,7 @@ import { WobbleCard } from "../ui/wobble-card";
 export default function Hero() {
   return (
     <div className="grid grid-cols-2 h-max gap-4.5 max-w-5xl mx-auto w-full">
-      <Link href={'/'}>
+      <Link href={'/vacancy'}>
         
         <WobbleCard
           containerClassName=" h-full bg-card text-card-foreground min-h-[220px]"

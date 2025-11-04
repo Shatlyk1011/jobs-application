@@ -110,6 +110,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --tracking-one: 0.01em;
+  --tracking-two: 0.02em;
+  --tracking-three: 0.03em;
+  --tracking-four: 0.04em;
+}
+
+*::selection {
+  @apply bg-primary text-white;
 }
 
 body {
