@@ -1,103 +1,103 @@
 export const PROFESSION = [
   {
-    title: 'Разработка',
-    value: 'development'
+    label: "Разработка",
+    value: "development",
   },
   {
-    title: 'Тестирование',
-    value: 'testing'
+    label: "Тестирование",
+    value: "testing",
   },
   {
-    title: 'Аналитика',
-    value: 'analytics'
+    label: "Аналитика",
+    value: "analytics",
   },
   {
-    title: 'HR',
-    value: 'hr'
+    label: "HR",
+    value: "hr",
   },
   {
-    title: 'Дизайн',
-    value: 'design'
+    label: "Дизайн",
+    value: "design",
   },
   {
-    title: 'Менеджмент',
-    value: 'management'
+    label: "Менеджмент",
+    value: "management",
   },
   {
-    title: 'Маркетинг',
-    value: 'marketing'
+    label: "Маркетинг",
+    value: "marketing",
   },
   {
-    title: 'PR',
-    value: 'pr'
+    label: "PR",
+    value: "pr",
   },
   {
-    title: 'Контент',
-    value: 'content'
+    label: "Контент",
+    value: "content",
   },
   {
-    title: 'Продажи',
-    value: 'sales'
+    label: "Продажи",
+    value: "sales",
   },
   {
-    title: 'Другое',
-    value: 'other'
-  }
+    label: "Другое",
+    value: "other",
+  },
 ];
 
 export const LEVEL = [
   {
-    title: 'Intern',
-    value: 'intern'
+    label: "Intern",
+    value: "intern",
   },
   {
-    title: 'Junior',
-    value: 'junior'
+    label: "Junior",
+    value: "junior",
   },
   {
-    title: 'Middle',
-    value: 'middle'
+    label: "Middle",
+    value: "middle",
   },
   {
-    title: 'Senior',
-    value: 'senior'
+    label: "Senior",
+    value: "senior",
   },
   {
-    title: 'Lead',
-    value: 'lead'
+    label: "Lead",
+    value: "lead",
   },
-]
+];
 
 export const LOCATION = [
   {
-    title: 'Ашхабад',
-    value: 'ashgabat',
+    label: "Ашхабад",
+    value: "ashgabat",
   },
   {
-    title: 'Туркменабад',
-    value: 'turkmenabat',
+    label: "Туркменабад",
+    value: "turkmenabat",
   },
   {
-    title: 'Другое',
-    value: 'other',
+    label: "Другое",
+    value: "other",
   },
   {
-    title: 'За рубежом',
-    value: 'remote',
+    label: "За рубежом",
+    value: "remote",
   },
-]
+];
 
 export const FORMAT = [
   {
-    title: 'Офис',
-    value: 'onsite'
+    label: "Офис",
+    value: "onsite",
   },
   {
-    title: 'Удаленно',
-    value: 'remote'
+    label: "Удаленно",
+    value: "remote",
   },
   {
-    title: 'Релокация',
-    value: 'relocation'
+    label: "Релокация",
+    value: "relocation",
   },
-]
+];
