@@ -5,11 +5,11 @@ interface Props {}
 
 const Header: FC<Props> = () => {
   return (
-    <header className=" flex justify-between items-center gap-5 h-16">
+    <header className="flex h-16 items-center justify-between gap-5">
       <Link href="/">Logo</Link>
 
-      <nav className="flex-1 flex justify-end">
-        <ul className="flex items-center text-base font-medium tracking-tight gap-6">
+      <nav className="flex flex-1 justify-end">
+        <ul className="flex items-center gap-6 text-base font-medium tracking-tight">
           <li>
             <Link href={"/jobs"}>Вакансии</Link>
           </li>

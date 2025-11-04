@@ -6,12 +6,7 @@ import { XIcon } from "lucide-react";
 
 interface Props {}
 
-const allFilters: Record<string, string> = [
-  ...FORMAT,
-  ...LEVEL,
-  ...LOCATION,
-  ...PROFESSION,
-].reduce(
+const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ...PROFESSION].reduce(
   (acc, { value, label }) => {
     acc[value] = label;
     return acc;
@@ -27,20 +22,15 @@ const VacancyFilters: FC<Props> = () => {
   const [selectedLocation, setSelectedLocation] = useState<string[]>([]);
   const [selectedFormat, setSelectedFormat] = useState<string[]>([]);
 
-  const selectedOptions = [
-    ...selectedProfessions,
-    ...selectedLevels,
-    ...selectedLocation,
-    ...selectedFormat,
-  ];
+  const selectedOptions = [...selectedProfessions, ...selectedLevels, ...selectedLocation, ...selectedFormat];
 
   return (
     <div className="w-full">
-      <div className="flex test items-center gap-10 w-full max-h-max">
-        <h2 className="self-center text-nowrap text-2xl -tracking-two font-semibold">
+      <div className="test flex max-h-max w-full items-center gap-10">
+        <h2 className="-tracking-two self-center text-2xl font-semibold text-nowrap">
           Вакансии: <span className="opacity-75">662</span>
         </h2>
-        <div className="grid grid-cols-4 w-full gap-3">
+        <div className="grid w-full grid-cols-4 gap-3">
           <MultiSelect
             singleLine={true}
             className="bg-popover hover:bg-secondary"
@@ -85,17 +75,15 @@ const VacancyFilters: FC<Props> = () => {
       </div>
       {/* all selected filters */}
       {!!selectedOptions.length && (
-        <ul className="flex flex-wrap gap-3 mt-5">
+        <ul className="mt-5 flex flex-wrap gap-3">
           {selectedOptions.map((o) => (
             <li
-              className="text-sm font-medium px-3 pt-2 pb-1.5 flex items-center gap-1 bg-secondary-foreground text-secondary rounded-full "
+              className="bg-secondary-foreground text-secondary flex items-center gap-1 rounded-full px-3 pt-2 pb-1.5 text-sm font-medium"
               key={o}
             >
-              <span className="leading-[100%] mb-0.5 text-nowrap">
-                {allFilters[o]}
-              </span>
+              <span className="mb-0.5 leading-[100%] text-nowrap">{allFilters[o]}</span>
               <button className="leading-0">
-                <XIcon className="text-inherit opacity-80 hover:opacity-100 w-3 h-3" />
+                <XIcon className="h-3 w-3 text-inherit opacity-80 hover:opacity-100" />
               </button>
             </li>
           ))}

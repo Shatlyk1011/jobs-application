@@ -2,8 +2,8 @@ import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <main className="h-svh w-screen bg-primary">
-      <section className="w-full h-full px-5 pt-25 flex justify-center">
+    <main className="bg-primary h-svh w-screen">
+      <section className="flex h-full w-full justify-center px-5 pt-25">
         <Hero />
       </section>
     </main>

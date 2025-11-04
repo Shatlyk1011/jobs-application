@@ -1,11 +1,6 @@
 import type { CollectionConfig } from "payload";
 
-import {
-  FORMAT,
-  LEVEL,
-  LOCATION,
-  PROFESSION,
-} from "../../../../../data/filters";
+import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../data/filters";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
 const Jobs: CollectionConfig = {
