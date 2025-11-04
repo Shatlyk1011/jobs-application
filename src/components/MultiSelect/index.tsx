@@ -673,7 +673,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
 		}, [defaultValue, selectedValues, arraysEqual, resetOnDefaultValueChange]);
 
 		const getWidthConstraints = () => {
-			const defaultMinWidth = screenSize === "mobile" ? "0px" : "200px";
+			const defaultMinWidth = screenSize === "mobile" ? "0px" : "180px";
 			const effectiveMinWidth = minWidth || defaultMinWidth;
 			const effectiveMaxWidth = maxWidth || "100%";
 			return {
@@ -991,7 +991,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
 						aria-multiselectable="true"
 						aria-label="Available options"
 						className={cn(
-							"w-auto p-0",
+							"w-auto  p-0",
 							getPopoverAnimationClass(),
 							screenSize === "mobile" && "w-[85vw] max-w-[280px]",
 							screenSize === "tablet" && "w-[70vw] max-w-md",
