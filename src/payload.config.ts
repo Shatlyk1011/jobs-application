@@ -1,42 +1,5 @@
-// // storage-adapter-import-placeholder
-// import { mongooseAdapter } from "@payloadcms/db-mongodb";
-// import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
-// import { lexicalEditor } from "@payloadcms/richtext-lexical";
-// import path from "path";
-// import { buildConfig } from "payload";
-// import { fileURLToPath } from "url";
-// import sharp from "sharp";
-
-
-// const filename = fileURLToPath(import.meta.url);
-// const dirname = path.dirname(filename);
-
-// export default buildConfig({
-//   // admin: {
-//   //   user: Customers.slug,
-//   //   importMap: {
-//   //     baseDir: path.resolve(dirname),
-//   //   },
-//   // },
-//   cookiePrefix: "ashpez",
-//   collections: [Restaurants, Orders, Dishes, Cities, Users, Customers, Media, Categories, FeedbackAndCooperations],
-//   editor: lexicalEditor(),
-//   secret: process.env.PAYLOAD_SECRET || "",
-//   typescript: {
-//     outputFile: path.resolve(dirname, "payload-types.ts"),
-//   },
-//   db: mongooseAdapter({
-//     url: process.env.DATABASE_URI || "",
-//   }),
-//   sharp,
-//   plugins: [
-//     payloadCloudPlugin(),
-//     // storage-adapter-placeholder
-//   ],
-// });
-
-import sharp from 'sharp'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import sharp from "sharp";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
@@ -50,8 +13,6 @@ import { fileURLToPath } from "node:url";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-
-console.log("dirname", dirname);
 
 export default buildConfig({
   editor: lexicalEditor({}),
@@ -79,3 +40,39 @@ export default buildConfig({
   // you don't need it!
   sharp,
 });
+
+// // storage-adapter-import-placeholder
+// import { mongooseAdapter } from "@payloadcms/db-mongodb";
+// import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
+// import { lexicalEditor } from "@payloadcms/richtext-lexical";
+// import path from "path";
+// import { buildConfig } from "payload";
+// import { fileURLToPath } from "url";
+// import sharp from "sharp";
+
+// const filename = fileURLToPath(import.meta.url);
+// const dirname = path.dirname(filename);
+
+// export default buildConfig({
+//   // admin: {
+//   //   user: Customers.slug,
+//   //   importMap: {
+//   //     baseDir: path.resolve(dirname),
+//   //   },
+//   // },
+//   cookiePrefix: "ashpez",
+//   collections: [Restaurants, Orders, Dishes, Cities, Users, Customers, Media, Categories, FeedbackAndCooperations],
+//   editor: lexicalEditor(),
+//   secret: process.env.PAYLOAD_SECRET || "",
+//   typescript: {
+//     outputFile: path.resolve(dirname, "payload-types.ts"),
+//   },
+//   db: mongooseAdapter({
+//     url: process.env.DATABASE_URI || "",
+//   }),
+//   sharp,
+//   plugins: [
+//     payloadCloudPlugin(),
+//     // storage-adapter-placeholder
+//   ],
+// });

@@ -62,13 +62,12 @@ const multiSelectVariants = cva("m-1 transition-all duration-300 ease-in-out", {
 			pulse: "hover:animate-pulse",
 			wiggle: "hover:animate-wiggle",
 			fade: "hover:opacity-80",
-			slide: "hover:translate-x-1",
 			none: "",
 		},
 	},
 	defaultVariants: {
 		variant: "default",
-		badgeAnimation: "slide",
+		badgeAnimation: "none",
 	},
 });
 
@@ -673,7 +672,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
 		}, [defaultValue, selectedValues, arraysEqual, resetOnDefaultValueChange]);
 
 		const getWidthConstraints = () => {
-			const defaultMinWidth = screenSize === "mobile" ? "0px" : "180px";
+			const defaultMinWidth = screenSize === "mobile" ? "0px" : "160";
 			const effectiveMinWidth = minWidth || defaultMinWidth;
 			const effectiveMaxWidth = maxWidth || "100%";
 			return {
@@ -816,7 +815,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
 										className={cn(
 											"flex items-center gap-1",
 											singleLine
-												? "overflow-x-auto multiselect-singleline-scroll"
+												? "overflow-x-hidden multiselect-singleline-scroll"
 												: "flex-wrap",
 											responsiveSettings.compactMode && "gap-0.5"
 										)}>

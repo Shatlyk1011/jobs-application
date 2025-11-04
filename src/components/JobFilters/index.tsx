@@ -31,7 +31,7 @@ const VacancyFilters:FC<Props> = () => {
         <div className="grid grid-cols-4 w-full gap-3">
           <MultiSelect
             singleLine={true}
-            className='bg-card hover:bg-secondary'
+            className='bg-popover hover:bg-secondary'
             maxCount={0}
             placeholder='Профессия'
             animation={0}
@@ -41,7 +41,7 @@ const VacancyFilters:FC<Props> = () => {
           />
           <MultiSelect
             singleLine={true}
-            className='bg-card hover:bg-secondary'
+            className='bg-popover hover:bg-secondary'
             maxCount={0}
             placeholder='Уровень'
             animation={0}
@@ -51,7 +51,7 @@ const VacancyFilters:FC<Props> = () => {
           />
           <MultiSelect
             singleLine={true}
-            className='bg-card hover:bg-secondary'
+            className='bg-popover hover:bg-secondary'
             maxCount={0}
             placeholder='Локация'
             animation={0}
@@ -61,7 +61,7 @@ const VacancyFilters:FC<Props> = () => {
           />
           <MultiSelect
             singleLine={true}
-            className='bg-card hover:bg-secondary'
+            className='bg-popover hover:bg-secondary'
             maxCount={0}
             placeholder='Формат'
             animation={0}
@@ -72,14 +72,16 @@ const VacancyFilters:FC<Props> = () => {
         </div>
       </div>
       {/* all selected filters */}
-      <ul className='flex flex-wrap gap-3 mt-5'>
-        {selectedOptions.map((o) => (
-          <li className='text-sm font-medium px-3 pt-2 pb-1.5 flex items-center gap-1 bg-secondary-foreground text-secondary rounded-full ' key={o}>
-            <span className='leading-[100%] mb-0.5 text-nowrap'>{allFilters[o]}</span>
-            <button className='leading-0'><XIcon className='text-inherit opacity-80 hover:opacity-100 w-3 h-3' /></button>
-          </li>
-        ))}
-      </ul>
+      {!!selectedOptions.length && (
+        <ul className='flex flex-wrap gap-3 mt-5'>
+          {selectedOptions.map((o) => (
+            <li className='text-sm font-medium px-3 pt-2 pb-1.5 flex items-center gap-1 bg-secondary-foreground text-secondary rounded-full ' key={o}>
+              <span className='leading-[100%] mb-0.5 text-nowrap'>{allFilters[o]}</span>
+              <button className='leading-0'><XIcon className='text-inherit opacity-80 hover:opacity-100 w-3 h-3' /></button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 };

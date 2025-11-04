@@ -121,10 +121,14 @@
   @apply bg-primary text-white;
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Inter" sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 @layer base {
