@@ -1,32 +1,49 @@
 import type { CollectionConfig } from "payload";
 
 import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../data/filters";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
 const Jobs: CollectionConfig = {
+  access: {
+    read: () => true
+  },
   slug: "jobs",
   fields: [
     {
       name: "companyName",
+      label: "Название компании",
       type: "text",
       required: true,
     },
 
     {
       name: "companyDescription",
+      label: "Описание компании",
       type: "textarea",
     },
     {
       name: "companyWebsite",
+      label: "Ссылка на компанию (если есть)",
       type: "text",
+      // @ts-ignore 
+      validate: (url: string) => {
+        if (!url) return true; // Optional field
+        try {
+          new URL(url);
+          return true;
+        } catch (e) {
+          return 'Пожалуйста укажите валидный url';
+        }
+      }
     },
     {
       name: "title",
+      label: "Загаловок",
       type: "text",
       required: true,
     },
     {
       name: "jobContactUrl",
+      label: "Ссылка на вакансию",
       type: "text",
       required: true,
     },
@@ -38,37 +55,49 @@ const Jobs: CollectionConfig = {
     },
     {
       name: "companyLogo",
+      label: "Логотип компании",
       type: "upload",
       relationTo: "media",
     },
     {
       name: "profession",
+      label: "Профессия",
       type: "select",
       options: PROFESSION,
       required: true,
     },
     {
       name: "format",
+      label: "Формат",
       type: "select",
       options: FORMAT,
       required: true,
     },
     {
       name: "level",
+      label: "Уровень",
       type: "select",
       options: LEVEL,
       required: true,
     },
     {
       name: "location",
+      label: "Местонахождение",
       type: "select",
       options: LOCATION,
       required: true,
     },
     {
       name: "salary",
+      label: "Зарплата",
       type: "group",
       fields: [
+        {
+          label: "Валюта",
+          name: "currency",
+          type: "select",
+          options: ['TMT', 'USD', 'RUB']
+        },
         {
           label: "От",
           name: "from",
@@ -79,6 +108,7 @@ const Jobs: CollectionConfig = {
           name: "to",
           type: "text",
         },
+        
       ],
     },
   ],
