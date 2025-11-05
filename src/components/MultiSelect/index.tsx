@@ -875,7 +875,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                         }
                       }}
                       aria-label={`Clear all ${selectedValues.length} selected options`}
-                      className="text-muted-foreground hover:text-foreground focus:ring-ring mx-2 flex h-4 w-4 cursor-pointer items-center justify-center rounded-sm focus:ring-2 focus:ring-offset-1 focus:outline-none"
+                      className="text-muted- hover:text-foreground focus:ring-ring mx-2 flex h-4 w-4 cursor-pointer items-center justify-center rounded-sm focus:ring-2 focus:ring-offset-1 focus:outline-none"
                     >
                       <XIcon className="h-4 w-4" />
                     </div>
@@ -884,9 +884,9 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                   </div>
                 </div>
               ) : (
-                <div className="mx-auto flex w-full items-center justify-between">
-                  <span className="text-muted-foreground mx-3 text-sm">{placeholder}</span>
-                  <ChevronDown className="text-muted-foreground mx-2 h-4 cursor-pointer" />
+                  <div className="mx-auto text-popover-foreground flex w-full items-center justify-between">
+                    <span className=" mx-3 text-sm">{placeholder}</span>
+                    <ChevronDown className="text-current mx-2 h-4 cursor-pointer" />
                 </div>
               )}
             </Button>
@@ -937,7 +937,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                   "overscroll-behavior-y-contain",
                 )}
               >
-                <CommandEmpty>{emptyIndicator || "No results found."}</CommandEmpty>{" "}
+                <CommandEmpty>{emptyIndicator || "Ничего не найдено."}</CommandEmpty>{" "}
                 {isGroupedOptions(filteredOptions) ? (
                   filteredOptions.map((group) => (
                     <CommandGroup key={group.heading} heading={group.heading}>

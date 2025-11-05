@@ -14,8 +14,6 @@ const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ..
   {} as Record<string, string>,
 );
 
-console.log("allFilters", allFilters);
-
 const VacancyFilters: FC<Props> = () => {
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
@@ -25,7 +23,7 @@ const VacancyFilters: FC<Props> = () => {
   const selectedOptions = [...selectedProfessions, ...selectedLevels, ...selectedLocation, ...selectedFormat];
 
   return (
-    <div className="w-full">
+    <section className="w-full">
       <div className="test flex max-h-max w-full items-center gap-10">
         <h2 className="-tracking-two self-center text-2xl font-semibold text-nowrap">
           Вакансии: <span className="opacity-75">662</span>
@@ -83,13 +81,13 @@ const VacancyFilters: FC<Props> = () => {
             >
               <span className="mb-0.5 leading-[100%] text-nowrap">{allFilters[o]}</span>
               <button className="leading-0">
-                <XIcon className="h-3 w-3 text-inherit opacity-80 hover:opacity-100" />
+                <XIcon className="h-4 w-4 text-inherit opacity-80 hover:opacity-100" />
               </button>
             </li>
           ))}
         </ul>
       )}
-    </div>
+    </section>
   );
 };
 export default VacancyFilters;
