@@ -14,7 +14,7 @@ const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ..
   {} as Record<string, string>,
 );
 
-const VacancyFilters: FC<Props> = () => {
+const JobFilters: FC<Props> = () => {
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<string[]>([]);
@@ -90,4 +90,4 @@ const VacancyFilters: FC<Props> = () => {
     </section>
   );
 };
-export default VacancyFilters;
+export default JobFilters;

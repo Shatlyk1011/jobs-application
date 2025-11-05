@@ -1,0 +1,34 @@
+export interface IBaseFields {
+  hasNextPage: boolean,
+  hasPrevPage: boolean,
+  limit: number,
+  nextPage: number | null,
+  page: number,
+  pagingCounter: number,
+  prevPage: number | null,
+  totalDocs: number,
+  totalPages: number
+}
+
+export interface IJob {
+  createdAt: string;
+  updatedAt: string;
+  companyName: string;
+  companyDescription: string;
+  title: string;
+  jobContactUrl: string;
+  profession: string;
+  format: string;
+  level: string;
+  location: string;
+  salary: {
+    currency: string;
+    from: string;
+    to: string;
+  };
+  id: string;
+}
+
+export interface IJobs extends IBaseFields {
+  docs: IJob[]
+}
