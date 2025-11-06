@@ -1,3 +1,5 @@
+'use client'
+
 import dateConvert from "@/composables/dateConvert";
 import { getCurrencyIcon, salaryConvert } from "@/composables/salaryConvert";
 import { IJobs } from "@/types/job";
@@ -15,8 +17,6 @@ const curr = (currency: TCurrency, isAvailable: boolean) => {
 
   const Icon = getCurrencyIcon(currency);
 
-  console.log("Icon", Icon);
-
   if (typeof Icon === "string") {
     return <span>{Icon}</span>; // Wrap string in a span for rendering
   }
@@ -24,11 +24,10 @@ const curr = (currency: TCurrency, isAvailable: boolean) => {
 };
 
 const JobCards: FC<Props> = ({ jobs }) => {
-  const { docs } = jobs;
 
   return (
     <section className="grid grid-cols-3 gap-5 pt-6 pb-20">
-      {docs.map((job) => (
+      {jobs.docs.map((job) => (
         <div key={job.id} className="bg-popover text-popover-foreground h-full min-h-[360px] rounded-md">
           <Link href={"/"} className="inline-flex h-full w-full p-5">
             <div className="flex h-full w-full flex-col">
@@ -43,17 +42,17 @@ const JobCards: FC<Props> = ({ jobs }) => {
 
               <h3 className="my-10 text-xl font-semibold text-balance">{job.title}</h3>
               <div className="flex flex-1 items-end">
-                <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm font-medium">
+                <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
                   <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-                    <StarIcon className="h-4 w-4" />
+                    <StarIcon className="h-4 w-4 opacity-60" />
                     <span>{job.level}</span>
                   </li>
                   <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-                    <MapPin className="h-4 w-4" />
+                    <MapPin className="h-4 w-4 opacity-60" />
                     <span>{job.location}</span>
                   </li>
                   <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-                    <Coins className="h-4 w-4" />
+                    <Coins className="h-4 w-4 opacity-60" />
                     <span className="flex items-center">
                       {salaryConvert(job.salary.from, job.salary.to)}
                       {curr(job.salary.currency, !!job.salary.from && !!job.salary.to)}

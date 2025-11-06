@@ -1,10 +1,12 @@
-"use client";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { MultiSelect } from "../MultiSelect";
 import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../data/filters";
 import { XIcon } from "lucide-react";
+import { Where } from "payload";
 
-interface Props {}
+interface Props {
+  handleFilterRequest: (query: Where) => void
+}
 
 const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ...PROFESSION].reduce(
   (acc, { value, label }) => {
@@ -14,14 +16,48 @@ const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ..
   {} as Record<string, string>,
 );
 
-const JobFilters: FC<Props> = () => {
+const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<string[]>([]);
   const [selectedFormat, setSelectedFormat] = useState<string[]>([]);
 
   const selectedOptions = [...selectedProfessions, ...selectedLevels, ...selectedLocation, ...selectedFormat];
+  console.log('selectedOptions', selectedProfessions, selectedLevels);
 
+  useEffect(() => {
+    const query: Where = {
+      and: [
+        {
+          // search
+          title: {
+            contains: ''
+          }
+        },
+        {
+          level: {
+            in: selectedLevels
+          },
+        },
+        {
+          location: {
+            in: selectedLocation,
+          },
+        },
+        {
+          format: {
+            in: selectedFormat
+          }
+        },
+        {
+          profession: {
+            in: selectedProfessions
+          }
+        }
+      ],
+    }
+    handleFilterRequest(query)
+  }, [selectedProfessions, selectedLevels, selectedLocation, selectedFormat])
   return (
     <section className="w-full">
       <div className="test flex max-h-max w-full items-center gap-10">

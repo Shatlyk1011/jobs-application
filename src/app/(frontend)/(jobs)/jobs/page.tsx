@@ -1,67 +1,21 @@
-import axios from "@/lib/axios";
-import { stringify } from "qs-esm";
+import axios from '@/lib/axios'
 
-//components
-import JobCards from "@/components/JobCards";
-import JobFilters from "@/components/JobFilters";
-import SearchBar from "@/components/SearchBar";
+import JobSection from '@/components/JobSection';
 
-import { Where } from "payload";
-import { IJobs } from "@/types/job";
-import { AxiosResponse } from "axios";
-
-const query: Where = {
-  and: [
-    {
-      title: {
-        contains: "",
-      },
-    },
-    {
-      format: {
-        equals: "onsite",
-      },
-      level: {
-        in: ["middle"],
-      },
-    },
-    {
-      location: {
-        in: ["turkmenabat"],
-      },
-    },
-    {
-      format: {
-        in: [],
-      },
-    },
-    {
-      profession: {
-        in: ["development"],
-      },
-    },
-  ],
-};
-
-const stringifiedQuery = stringify(
-  {
-    where: query, // ensure that `qs-esm` adds the `where` property, too!
-  },
-  { addQueryPrefix: true },
-);
+import { IJobs } from '@/types/job';
+import { AxiosResponse } from 'axios';
 
 export default async function JobsPage() {
-  const res: AxiosResponse<IJobs> = await axios(`/jobs`);
-  console.log("res", res.data);
+
+  const response: AxiosResponse<IJobs> = await axios(`/jobs?limit=15`);
+  const { data } = response
+
+  console.log('jobs', data);
 
   return (
     <main className="h-svh w-full">
       <section className="h-full w-full pt-10">
-        <JobFilters />
-
-        <SearchBar />
-
-        <JobCards jobs={res.data} />
+        <JobSection initialData={data} />
       </section>
     </main>
   );
