@@ -101,3 +101,7 @@ export const FORMAT = [
     value: "relocation",
   },
 ];
+
+export const CURRENCY: TCurrency[] = ['TMT', 'USD', 'RUB', 'EURO'];
+
+export type TCurrency = 'TMT' | 'USD' | 'RUB' | 'EURO'
