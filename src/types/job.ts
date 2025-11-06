@@ -18,6 +18,7 @@ export interface IJob {
   companyName: string;
   companyDescription: string;
   title: string;
+  mdx: any
   jobContactUrl: string;
   profession: string;
   format: string;
