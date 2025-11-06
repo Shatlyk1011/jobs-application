@@ -55,7 +55,7 @@ const stringifiedQuery = stringify(
 
 export default async function JobsPage() {
 
-  const res: AxiosResponse<IJobs> = await axios(`/jobs${stringifiedQuery}`);
+  const res: AxiosResponse<IJobs> = await axios(`/jobs`);
   console.log('res', res.data);
 
   return (
@@ -65,7 +65,7 @@ export default async function JobsPage() {
 
         <SearchBar />
 
-        <JobCards />
+        <JobCards jobs={res.data} />
       </section>
     </main>
   );

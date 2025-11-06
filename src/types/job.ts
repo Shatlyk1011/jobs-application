@@ -1,3 +1,5 @@
+import { CURRENCY, TCurrency } from "../../data/filters";
+
 export interface IBaseFields {
   hasNextPage: boolean,
   hasPrevPage: boolean,
@@ -22,7 +24,7 @@ export interface IJob {
   level: string;
   location: string;
   salary: {
-    currency: string;
+    currency: TCurrency;
     from: string;
     to: string;
   };

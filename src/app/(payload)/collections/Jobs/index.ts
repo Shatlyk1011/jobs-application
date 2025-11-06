@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 
-import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../data/filters";
+import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../data/filters";
 
 const Jobs: CollectionConfig = {
   access: {
@@ -96,7 +96,7 @@ const Jobs: CollectionConfig = {
           label: "Валюта",
           name: "currency",
           type: "select",
-          options: ['TMT', 'USD', 'RUB']
+          options: CURRENCY
         },
         {
           label: "От",
