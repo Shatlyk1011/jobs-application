@@ -1,8 +1,10 @@
 import { FC, useEffect, useState } from "react";
-import { MultiSelect } from "../MultiSelect";
-import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../data/filters";
-import { XIcon } from "lucide-react";
 import { Where } from "payload";
+
+import { XIcon } from "lucide-react";
+
+import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../data/filters";
+import { MultiSelect } from "../MultiSelect";
 
 interface Props {
   handleFilterRequest: (query: Where) => void
@@ -23,7 +25,6 @@ const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
   const [selectedFormat, setSelectedFormat] = useState<string[]>([]);
 
   const selectedOptions = [...selectedProfessions, ...selectedLevels, ...selectedLocation, ...selectedFormat];
-  console.log('selectedOptions', selectedProfessions, selectedLevels);
 
   useEffect(() => {
     const query: Where = {

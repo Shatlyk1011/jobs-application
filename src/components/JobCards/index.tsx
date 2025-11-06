@@ -1,27 +1,18 @@
 'use client'
-
-import dateConvert from "@/composables/dateConvert";
-import { getCurrencyIcon, salaryConvert } from "@/composables/salaryConvert";
-import { IJobs } from "@/types/job";
-import { Coins, MapPin, StarIcon } from "lucide-react";
-import Link from "next/link";
 import { FC } from "react";
-import { TCurrency } from "../../../data/filters";
+import Link from "next/link";
+
+import { Coins, MapPin, StarIcon } from "lucide-react";
+
+import { IJobs } from "@/types/job";
+
+import { dateConvert } from "@/composables/dateConvert";
+import { salaryConvert } from "@/composables/salaryConvert";
+import CurrencyIcon from "../ui/currency-icon";
 
 interface Props {
   jobs: IJobs;
 }
-
-const curr = (currency: TCurrency, isAvailable: boolean) => {
-  if (!currency || !isAvailable) return null;
-
-  const Icon = getCurrencyIcon(currency);
-
-  if (typeof Icon === "string") {
-    return <span>{Icon}</span>; // Wrap string in a span for rendering
-  }
-  return <Icon className="h-4 w-4" />;
-};
 
 const JobCards: FC<Props> = ({ jobs }) => {
 
@@ -55,7 +46,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                     <Coins className="h-4 w-4 opacity-60" />
                     <span className="flex items-center">
                       {salaryConvert(job.salary.from, job.salary.to)}
-                      {curr(job.salary.currency, !!job.salary.from && !!job.salary.to)}
+                      <CurrencyIcon currency={job.salary.currency} isAvailable={!!job.salary.from && !!job.salary.to} />
                     </span>
                   </li>
                 </ul>

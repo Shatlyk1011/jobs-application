@@ -10,8 +10,6 @@ export default async function JobsPage() {
   const response: AxiosResponse<IJobs> = await axios(`/jobs?limit=15`);
   const { data } = response
 
-  console.log('jobs', data);
-
   return (
     <main className="h-svh w-full">
       <section className="h-full w-full pt-10">
