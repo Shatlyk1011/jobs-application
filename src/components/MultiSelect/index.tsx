@@ -884,9 +884,9 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                   </div>
                 </div>
               ) : (
-                  <div className="mx-auto text-popover-foreground flex w-full items-center justify-between">
-                    <span className=" mx-3 text-sm">{placeholder}</span>
-                    <ChevronDown className="text-current mx-2 h-4 cursor-pointer" />
+                <div className="text-popover-foreground mx-auto flex w-full items-center justify-between">
+                  <span className="mx-3 text-sm">{placeholder}</span>
+                  <ChevronDown className="mx-2 h-4 cursor-pointer text-current" />
                 </div>
               )}
             </Button>

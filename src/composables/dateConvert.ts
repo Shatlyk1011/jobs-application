@@ -1,5 +1,4 @@
 const dateConvert = (date: string): string => {
-  
   const dt: Date = new Date(date);
   const now: Date = new Date();
   const diff: number = now.getTime() - dt.getTime();
@@ -7,6 +6,6 @@ const dateConvert = (date: string): string => {
     return "сегодня";
   }
   return "недавно";
-}
+};
 
 export default dateConvert;

@@ -102,6 +102,6 @@ export const FORMAT = [
   },
 ];
 
-export const CURRENCY: TCurrency[] = ['TMT', 'USD', 'RUB', 'EURO'];
+export const CURRENCY: TCurrency[] = ["TMT", "USD", "RUB", "EURO"];
 
-export type TCurrency = 'TMT' | 'USD' | 'RUB' | 'EURO'
+export type TCurrency = "TMT" | "USD" | "RUB" | "EURO";

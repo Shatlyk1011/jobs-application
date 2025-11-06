@@ -4,7 +4,7 @@ import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../da
 
 const Jobs: CollectionConfig = {
   access: {
-    read: () => true
+    read: () => true,
   },
   slug: "jobs",
   fields: [
@@ -24,16 +24,16 @@ const Jobs: CollectionConfig = {
       name: "companyWebsite",
       label: "Ссылка на компанию (если есть)",
       type: "text",
-      // @ts-ignore 
+      // @ts-ignore
       validate: (url: string) => {
         if (!url) return true; // Optional field
         try {
           new URL(url);
           return true;
         } catch (e) {
-          return 'Пожалуйста укажите валидный url';
+          return "Пожалуйста укажите валидный url";
         }
-      }
+      },
     },
     {
       name: "title",
@@ -96,7 +96,7 @@ const Jobs: CollectionConfig = {
           label: "Валюта",
           name: "currency",
           type: "select",
-          options: CURRENCY
+          options: CURRENCY,
         },
         {
           label: "От",
@@ -108,7 +108,6 @@ const Jobs: CollectionConfig = {
           name: "to",
           type: "text",
         },
-        
       ],
     },
   ],

@@ -1,15 +1,15 @@
 import { CURRENCY, TCurrency } from "../../data/filters";
 
 export interface IBaseFields {
-  hasNextPage: boolean,
-  hasPrevPage: boolean,
-  limit: number,
-  nextPage: number | null,
-  page: number,
-  pagingCounter: number,
-  prevPage: number | null,
-  totalDocs: number,
-  totalPages: number
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
+  limit: number;
+  nextPage: number | null;
+  page: number;
+  pagingCounter: number;
+  prevPage: number | null;
+  totalDocs: number;
+  totalPages: number;
 }
 
 export interface IJob {
@@ -32,5 +32,5 @@ export interface IJob {
 }
 
 export interface IJobs extends IBaseFields {
-  docs: IJob[]
+  docs: IJob[];
 }
