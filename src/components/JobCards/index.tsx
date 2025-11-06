@@ -29,7 +29,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
     <section className="grid grid-cols-3 gap-5 pt-6 pb-20">
       {jobs.docs.map((job) => (
         <div key={job.id} className="bg-popover text-popover-foreground h-full min-h-[360px] rounded-md">
-          <Link href={"/"} className="inline-flex h-full w-full p-5">
+          <Link href={`/job/${job.id}`} className="inline-flex h-full w-full p-5">
             <div className="flex h-full w-full flex-col">
               <div className="flex w-full flex-wrap justify-between gap-x-6 gap-y-2">
                 <figure className="flex items-center gap-2">

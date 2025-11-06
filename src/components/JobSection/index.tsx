@@ -46,7 +46,7 @@ const JobSection:FC<Props> = ({initialData}) => {
     setData(jobs.data)
   }
 
-  const handleFilterRequest = debounce(fetchJobs, 700)
+  const handleFilterRequest = debounce(fetchJobs, 800)
 
   return (
     <div>

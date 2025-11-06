@@ -1,0 +1,1 @@
+- apply only filters with values
