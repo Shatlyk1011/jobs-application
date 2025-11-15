@@ -1,5 +1,4 @@
 import { getJobs } from "@/services/getJobs";
-import { convertLexicalToMarkdown } from '@payloadcms/richtext-lexical'
 
 import { isoToDate } from "@/composables/dateConvert";
 import { salaryConvert } from "@/composables/salaryConvert"
@@ -22,15 +21,13 @@ export default async function JobPage({ params }: Props) {
 
   const job = await getJobs(id)
 
-  console.log('job', job);
-
   return (
     <main className="min-h-svh w-full flex gap-5 mt-12">
       <article className="h-full  w-full bg-popover pt-10 px-[30px] py-12 rounded-3xl flex-5">
         <header>
           <time className="" dateTime={isoToDate(job.createdAt)}>Вакансия опубликована {isoToDate(job.createdAt)}</time>
 
-          <h1 className="mt-3 text-3xl font-medium">{"HR-People-Partner" || job.title}</h1>
+          <h1 className="mt-3 text-3xl font-medium">{job.title}</h1>
         </header>
 
         <ul className="text-sidebar-primary flex mt-4 flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
@@ -52,14 +49,15 @@ export default async function JobPage({ params }: Props) {
         </ul>
 
         <div className="mt-10 py-10 pl-[30px] pr-[110px] bg-secondary rounded-2xl ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem itaque saepe blanditiis laborum cum sed explicabo repellendus voluptate nisi dolor quis, praesentium excepturi omnis doloribus assumenda provident soluta illum, magnam quo, autem voluptates pariatur. Accusantium iusto porro rem ipsum modi itaque voluptates laborum, odit sint aperiam vitae suscipit incidunt nam.
+          <RichText content={job.mdx} />
         </div>
+
       </article>
 
       {/* right */}
 
       <div className="flex-2 w-full bg-red-900">
-        <RichText content={job.mdx}/>
+        123
       </div>
     </main>
   );
