@@ -32,7 +32,6 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
     <Fragment>
       {nodes?.map((_node, index): JSX.Element | null => {
 
-        console.log('NODE', _node.type);
         if (_node.type === 'text') {
           const node = _node as SerializedTextNode
           let text = <React.Fragment key={index}>{node.text}</React.Fragment>

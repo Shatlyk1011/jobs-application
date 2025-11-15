@@ -22,8 +22,8 @@ export default async function JobPage({ params }: Props) {
   const job = await getJobs(id)
 
   return (
-    <main className="min-h-svh w-full flex gap-5 mt-12">
-      <article className="h-full  w-full bg-popover pt-10 px-[30px] py-12 rounded-3xl flex-5">
+    <main className="min-h-svh w-full flex gap-5 mt-12 relative">
+      <article className="h-full w-full bg-popover pt-10 px-[30px] py-12 rounded-3xl flex-5">
         <header>
           <time className="" dateTime={isoToDate(job.createdAt)}>Вакансия опубликована {isoToDate(job.createdAt)}</time>
 
@@ -31,16 +31,16 @@ export default async function JobPage({ params }: Props) {
         </header>
 
         <ul className="text-sidebar-primary flex mt-4 flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
-          <li className="bg-sidebar-primary/15 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-            <StarIcon className="h-4 w-4 opacity-30" />
+          <li className="bg-primary/20 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
+            {/* <StarIcon className="h-4 w-4 opacity-30" /> */}
             <span>{job.level}</span>
           </li>
-          <li className="bg-sidebar-primary/15 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-            <MapPin className="h-4 w-4 opacity-60" />
+          <li className="bg-primary/20 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
+            {/* <MapPin className="h-4 w-4 opacity-60" /> */}
             <span>{job.location}</span>
           </li>
-          <li className="bg-sidebar-primary/15 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-            <Coins className="h-4 w-4 opacity-60" />
+          <li className="bg-primary/20 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
+            {/* <Coins className="h-4 w-4 opacity-60" /> */}
             <span className="flex items-center">
               {salaryConvert(job.salary.from, job.salary.to)}
               <CurrencyIcon currency={job.salary.currency} isAvailable={!!job.salary.from && !!job.salary.to} />
@@ -55,10 +55,27 @@ export default async function JobPage({ params }: Props) {
       </article>
 
       {/* right */}
+      <aside className="flex-2">
+        <div className="bg-popover rounded-3xl w-full ">
+          <header className="flex items-center gap-2.5 mb-4">
+            <figure className="w-10 h-10 inline-block">
+              <img src="#" alt="" className="w-full h-full rounded-full bg-red-500" />
+            </figure>
 
-      <div className="flex-2 w-full bg-red-900">
-        123
-      </div>
+            <span>{job.companyName}</span>
+          </header>
+
+          {job?.companyDescription && (
+            <p className="text-base mb-2.5">{job.companyDescription}</p>
+          )}
+
+          {/* <div className="my-4"></div> */}
+
+          {/* {job?.companyWebsite && ( */}
+          <a className="border-b border-current mt-2 font-medium -tracking-one inline-block" href={job.companyWebsite || '#'} target="_blank" rel="noopener">Подробнее о компании</a>
+          {/* )} */}
+        </div>
+      </aside>
     </main>
   );
 }
