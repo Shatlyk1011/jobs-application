@@ -6,6 +6,7 @@ import { salaryConvert } from "@/composables/salaryConvert"
 import { Coins, MapPin, StarIcon } from "lucide-react";
 import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
+import { Button } from "@/components/ui/button";
 
 export async function generateStaticParams() {
   const jobs = await getJobs()
@@ -22,8 +23,8 @@ export default async function JobPage({ params }: Props) {
   const job = await getJobs(id)
 
   return (
-    <main className="min-h-svh w-full flex gap-5 mt-12 relative">
-      <article className="h-full w-full bg-popover pt-10 px-[30px] py-12 rounded-3xl flex-5">
+    <main className="min-h-svh w-full flex gap-5 mt-12 relative box-content">
+      <article className="h-full w-full bg-popover pt-10 px-[30px] basis-[70%] py-12 rounded-3xl">
         <header>
           <time className="" dateTime={isoToDate(job.createdAt)}>Вакансия опубликована {isoToDate(job.createdAt)}</time>
 
@@ -55,8 +56,8 @@ export default async function JobPage({ params }: Props) {
       </article>
 
       {/* right */}
-      <aside className="flex-2">
-        <div className="bg-popover rounded-3xl w-full ">
+      <aside className=" basis-[30%]">
+        <div className="bg-popover p-6 rounded-3xl w-full mb-6">
           <header className="flex items-center gap-2.5 mb-4">
             <figure className="w-10 h-10 inline-block">
               <img src="#" alt="" className="w-full h-full rounded-full bg-red-500" />
@@ -71,10 +72,21 @@ export default async function JobPage({ params }: Props) {
 
           {/* <div className="my-4"></div> */}
 
-          {/* {job?.companyWebsite && ( */}
-          <a className="border-b border-current mt-2 font-medium -tracking-one inline-block" href={job.companyWebsite || '#'} target="_blank" rel="noopener">Подробнее о компании</a>
-          {/* )} */}
+          {job?.companyWebsite && (
+            <a className="border-b border-current mt-2 font-semibold -tracking-three leading-none text-sm inline-block" href={job.companyWebsite} target="_blank" rel="noopener">Подробнее о компании</a>
+          )}
         </div>
+
+        <div className="p-6 rounded-3xl w-full bg-popover mb-6">
+          <span className="text-sm font-medium -tracking-one mb-6 inline-block">Для отклика:</span>
+          <Button variant="default" className="w-full py-5">Посмотреть контакты</Button>
+
+        </div>
+
+        <div className="p-6 rounded-3xl w-full bg-popover text-sm">
+          Стань заметнее для работадателей → <a className="text-sidebar-primary" href="#">здесь</a>
+        </div>
+
       </aside>
     </main>
   );
