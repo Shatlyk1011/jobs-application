@@ -1,4 +1,4 @@
-import { CURRENCY, TCurrency } from "../../data/filters";
+import { TCurrency } from "../../data/filters";
 
 type JobImage = {
   createdAt: string;

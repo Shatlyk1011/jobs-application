@@ -12,6 +12,7 @@ const test = {
   img: "",
   level: "Middle",
   location: "Ashgabat",
+  format: 'on-site',
   salary: { from: "100", to: "200", currency: "TMT" },
   resumeUrl: "",
 };
@@ -28,9 +29,9 @@ const CVCards: FC<Props> = () => {
               <span className="text-sm opacity-80">{test.role}</span>
             </div>
 
-            <figure className="h-12 w-12 rounded-full bg-red-900">
+            {/* <figure className="h-12 w-12 rounded-full bg-red-900">
               <img src="#" alt="" className="h-full w-full rounded-full object-cover" />
-            </figure>
+            </figure> */}
           </div>
 
           <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
