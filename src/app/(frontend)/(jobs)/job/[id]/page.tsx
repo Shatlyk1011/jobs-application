@@ -2,11 +2,10 @@ import { getJobs } from "@/services/getJobs";
 
 import { isoToDate } from "@/composables/dateConvert";
 import { salaryConvert } from "@/composables/salaryConvert"
-;
-import { Coins, MapPin, StarIcon } from "lucide-react";
+  ;
 import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
-import { Button } from "@/components/ui/button";
+import ContactDialogButton from "@/components/ContactDialogButton";
 
 export async function generateStaticParams() {
   const jobs = await getJobs()
@@ -31,17 +30,14 @@ export default async function JobPage({ params }: Props) {
           <h1 className="mt-3 text-3xl font-medium">{job.title}</h1>
         </header>
 
-        <ul className="text-sidebar-primary flex mt-4 flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
-          <li className="bg-primary/20 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-            {/* <StarIcon className="h-4 w-4 opacity-30" /> */}
+        <ul className="text-sidebar-primary/80 flex mt-4 flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
+          <li className="bg-primary/20 max-w-max rounded-full px-3 py-1.5">
             <span>{job.level}</span>
           </li>
-          <li className="bg-primary/20 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-            {/* <MapPin className="h-4 w-4 opacity-60" /> */}
+          <li className="bg-primary/20 max-w-max rounded-full px-3 py-1.5">
             <span>{job.location}</span>
           </li>
-          <li className="bg-primary/20 flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
-            {/* <Coins className="h-4 w-4 opacity-60" /> */}
+          <li className="bg-primary/20 max-w-max rounded-full px-3 py-1.5">
             <span className="flex items-center">
               {salaryConvert(job.salary.from, job.salary.to)}
               <CurrencyIcon currency={job.salary.currency} isAvailable={!!job.salary.from && !!job.salary.to} />
@@ -79,7 +75,8 @@ export default async function JobPage({ params }: Props) {
 
         <div className="p-6 rounded-3xl w-full bg-popover mb-6">
           <span className="text-sm font-medium -tracking-one mb-6 inline-block">Для отклика:</span>
-          <Button variant="default" className="w-full py-5">Посмотреть контакты</Button>
+
+          <ContactDialogButton />
 
         </div>
 
