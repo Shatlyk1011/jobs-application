@@ -22,7 +22,7 @@ export default async function JobPage({ params }: Props) {
   const job = await getJobs(id)
 
   return (
-    <main className="min-h-svh w-full flex gap-5 mt-12 relative box-content">
+    <main className="min-h-svh w-full flex gap-5 py-12 relative box-content">
       <article className="h-full w-full bg-popover pt-10 px-[30px] basis-[70%] py-12 rounded-3xl">
         <header>
           <time className="" dateTime={isoToDate(job.createdAt)}>Вакансия опубликована {isoToDate(job.createdAt)}</time>

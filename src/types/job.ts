@@ -1,13 +1,13 @@
 import { CURRENCY, TCurrency } from "../../data/filters";
 
 type JobImage = {
-  "createdAt": string,
-  "updatedAt": string,
-  "alt": string,
-  "filename": string,
-  "mimeType": string,
-  "id": string,
-  "url": string,
+  createdAt: string,
+  updatedAt: string,
+  alt: string,
+  filename: string,
+  mimeType: string,
+  id: string,
+  url: string,
 }
 
 export interface IBaseFields {

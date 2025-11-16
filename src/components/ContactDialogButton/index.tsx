@@ -22,7 +22,7 @@ const ContactDialogButton:FC<Props> = () => {
         <DialogHeader>
           <DialogTitle className='mb-6'>Контакты работодателя</DialogTitle>
           <DialogDescription className='mb-4'>
-            <a href="#" className='border-b border-current text-sidebar-primary'>Ссылка на вакансию</a>
+            <a href="#" target='_blank' rel="noopener" className='border-b border-current text-sidebar-primary'>Ссылка на вакансию</a>
           </DialogDescription>
         </DialogHeader>
         <div className='bg-secondary text-secondary-foreground p-5 rounded-2xl text-sm'>
