@@ -19,6 +19,7 @@ const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ..
 );
 
 const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
+  const [mounted, setMounted] = useState(false)
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<string[]>([]);
@@ -57,6 +58,8 @@ const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
         }
       ],
     }
+    setMounted(true)
+    if (!mounted) return
     handleFilterRequest(query)
   }, [selectedProfessions, selectedLevels, selectedLocation, selectedFormat])
   return (
