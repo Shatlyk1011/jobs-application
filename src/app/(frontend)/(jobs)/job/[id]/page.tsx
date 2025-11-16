@@ -56,7 +56,7 @@ export default async function JobPage({ params }: Props) {
         <div className="bg-popover p-6 rounded-3xl w-full mb-6">
           <header className="flex items-center gap-2.5 mb-4">
             <figure className="w-10 h-10 inline-block">
-              <img src="#" alt="" className="w-full h-full rounded-full bg-red-500" />
+              <img src={job.companyLogo?.url} className="w-full object-cover h-full rounded-full bg-red-500" alt="" />
             </figure>
 
             <span>{job.companyName}</span>
