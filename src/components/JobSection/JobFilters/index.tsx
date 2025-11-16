@@ -3,8 +3,8 @@ import { Where } from "payload";
 
 import { XIcon } from "lucide-react";
 
-import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../data/filters";
-import { MultiSelect } from "../MultiSelect";
+import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../data/filters";
+import { MultiSelect } from "@/components/MultiSelect";
 
 interface Props {
   handleFilterRequest: (query: Where) => void
@@ -63,7 +63,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
     handleFilterRequest(query)
   }, [selectedProfessions, selectedLevels, selectedLocation, selectedFormat])
   return (
-    <section className="w-full">
+    <section className="w-full mb-4">
       <div className="test flex max-h-max w-full items-center gap-10">
         <h2 className="-tracking-two self-center text-2xl font-semibold text-nowrap">
           Вакансии: <span className="opacity-75">662</span>
