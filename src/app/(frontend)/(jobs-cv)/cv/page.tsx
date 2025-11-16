@@ -1,5 +1,5 @@
+import AddResumeDialogButton from "@/components/AddResumeDialogButton";
 import CVSection from "@/components/CVSection";
-import { Button } from "@/components/ui/button";
 
 export default async function JobsPage() {
   return (
@@ -9,7 +9,7 @@ export default async function JobsPage() {
         <p className="mb-5 text-base leading-[1.3] opacity-80">
           Заполните простую форму — и мы разместим <br /> ваше резюме на нашем сайте
         </p>
-        <Button>Разместить резюме</Button>
+        <AddResumeDialogButton>Разместить резюме</AddResumeDialogButton>
       </section>
 
       <section className="">
