@@ -5,6 +5,9 @@ const Media: CollectionConfig = {
   admin: {
     defaultColumns: ["title", "createdBy", "createdAt"],
   },
+  access: {
+    read: () => true
+  },
   fields: [
     {
       name: "alt",
