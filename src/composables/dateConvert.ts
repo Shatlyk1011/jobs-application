@@ -10,7 +10,21 @@ export const dateConvert = (date: string): string => {
 
 export function isoToDate(isoString: string) {
   const dt = new Date(isoString);
-  const months = ['', 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  const months = [
+    "",
+    "января",
+    "февраля",
+    "марта",
+    "апреля",
+    "мая",
+    "июня",
+    "июля",
+    "августа",
+    "сентября",
+    "октября",
+    "ноября",
+    "декабря",
+  ];
   const day = dt.getUTCDate();
   const month = months[dt.getUTCMonth() + 1];
   const year = dt.getUTCFullYear();

@@ -1,38 +1,36 @@
-import { salaryConvert } from '@/composables/salaryConvert';
-import { Coins, MapPin, StarIcon } from 'lucide-react';
+import { salaryConvert } from "@/composables/salaryConvert";
+import { Coins, MapPin, StarIcon } from "lucide-react";
 import CurrencyIcon from "@/components/ui/currency-icon";
-import Link from 'next/link';
-import { FC } from 'react';
+import Link from "next/link";
+import { FC } from "react";
 
-interface Props {};
+interface Props {}
 
 const test = {
-  name: 'Виктор Иванов',
-  role: 'Frontend Developer',
-  img: '',
-  level: 'Middle',
-  location: 'Ashgabat',
-  salary: {from: "100", to: "200", currency: "TMT"},
-  resumeUrl: '',
-}
+  name: "Виктор Иванов",
+  role: "Frontend Developer",
+  img: "",
+  level: "Middle",
+  location: "Ashgabat",
+  salary: { from: "100", to: "200", currency: "TMT" },
+  resumeUrl: "",
+};
 
-const CVCards:FC<Props> = () => {
+const CVCards: FC<Props> = () => {
   return (
     <section className="grid grid-cols-3 gap-5 pt-6 pb-20">
-      
       {/* card */}
-      <Link href={'#'} className='inline-block bg-popover p-5 rounded-2xl min-h-[280px]'>
-        <div className='flex h-full flex-col justify-between'>
-          <div className='flex justify-between'>
-            <div className='flex flex-col gap-2.5'>
-              <h3 className='text-lg font-semibold'>{test.name}</h3>
-              <span className=' text-sm opacity-80'>{test.role}</span>
+      <Link href={"#"} className="bg-popover inline-block min-h-[280px] rounded-2xl p-5">
+        <div className="flex h-full flex-col justify-between">
+          <div className="flex justify-between">
+            <div className="flex flex-col gap-2.5">
+              <h3 className="text-lg font-semibold">{test.name}</h3>
+              <span className="text-sm opacity-80">{test.role}</span>
             </div>
 
-            <figure className='w-12 h-12 rounded-full bg-red-900'>
-              <img src="#" alt="" className='w-full rounded-full h-full object-cover' />
+            <figure className="h-12 w-12 rounded-full bg-red-900">
+              <img src="#" alt="" className="h-full w-full rounded-full object-cover" />
             </figure>
-
           </div>
 
           <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
@@ -56,6 +54,6 @@ const CVCards:FC<Props> = () => {
         </div>
       </Link>
     </section>
-  )
+  );
 };
-export default CVCards
+export default CVCards;

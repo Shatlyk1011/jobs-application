@@ -1,14 +1,14 @@
 import { CURRENCY, TCurrency } from "../../data/filters";
 
 type JobImage = {
-  createdAt: string,
-  updatedAt: string,
-  alt: string,
-  filename: string,
-  mimeType: string,
-  id: string,
-  url: string,
-}
+  createdAt: string;
+  updatedAt: string;
+  alt: string;
+  filename: string;
+  mimeType: string;
+  id: string;
+  url: string;
+};
 
 export interface IBaseFields {
   hasNextPage: boolean;
@@ -28,9 +28,9 @@ export interface IJob {
   companyName: string;
   companyDescription: string;
   companyWebsite: string;
-  companyLogo?: JobImage
+  companyLogo?: JobImage;
   title: string;
-  mdx: any
+  mdx: any;
   jobContactUrl: string;
   profession: string;
   format: string;
@@ -47,5 +47,3 @@ export interface IJob {
 export interface IJobs extends IBaseFields {
   docs: IJob[];
 }
-
-

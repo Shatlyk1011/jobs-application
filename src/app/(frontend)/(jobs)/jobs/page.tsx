@@ -1,14 +1,13 @@
-import axios from '@/lib/axios'
+import axios from "@/lib/axios";
 
-import JobSection from '@/components/JobSection';
+import JobSection from "@/components/JobSection";
 
-import { IJobs } from '@/types/job';
-import { AxiosResponse } from 'axios';
+import { IJobs } from "@/types/job";
+import { AxiosResponse } from "axios";
 
 export default async function JobsPage() {
-
   const response: AxiosResponse<IJobs> = await axios(`/jobs?limit=15`);
-  const { data } = response
+  const { data } = response;
 
   return (
     <main className="h-svh w-full">

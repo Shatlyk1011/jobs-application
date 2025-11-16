@@ -7,7 +7,7 @@ import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../data/filters";
 import { MultiSelect } from "@/components/MultiSelect";
 
 interface Props {
-  handleFilterRequest: (query: Where) => void
+  handleFilterRequest: (query: Where) => void;
 }
 
 const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ...PROFESSION].reduce(
@@ -19,7 +19,7 @@ const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ..
 );
 
 const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<string[]>([]);
@@ -33,12 +33,12 @@ const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
         {
           // search
           title: {
-            contains: ''
-          }
+            contains: "",
+          },
         },
         {
           level: {
-            in: selectedLevels
+            in: selectedLevels,
           },
         },
         {
@@ -48,22 +48,22 @@ const JobFilters: FC<Props> = ({ handleFilterRequest }) => {
         },
         {
           format: {
-            in: selectedFormat
-          }
+            in: selectedFormat,
+          },
         },
         {
           profession: {
-            in: selectedProfessions
-          }
-        }
+            in: selectedProfessions,
+          },
+        },
       ],
-    }
-    setMounted(true)
-    if (!mounted) return
-    handleFilterRequest(query)
-  }, [selectedProfessions, selectedLevels, selectedLocation, selectedFormat])
+    };
+    setMounted(true);
+    if (!mounted) return;
+    handleFilterRequest(query);
+  }, [selectedProfessions, selectedLevels, selectedLocation, selectedFormat]);
   return (
-    <section className="w-full mb-4">
+    <section className="mb-4 w-full">
       <div className="test flex max-h-max w-full items-center gap-10">
         <h2 className="-tracking-two self-center text-2xl font-semibold text-nowrap">
           Вакансии: <span className="opacity-75">662</span>

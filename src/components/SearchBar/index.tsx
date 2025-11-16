@@ -5,7 +5,7 @@ interface Props {}
 
 const SearchBar: FC<Props> = () => {
   return (
-    <div className="h-12 w-full mb-4">
+    <div className="mb-4 h-12 w-full">
       <label className="relative h-full w-full">
         <input
           type="text"

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FC } from "react";
 import Link from "next/link";
 
@@ -16,7 +16,6 @@ interface Props {
 }
 
 const JobCards: FC<Props> = ({ jobs }) => {
-
   return (
     <section className="grid grid-cols-3 gap-5 pb-20">
       {jobs.docs.map((job) => (
@@ -25,7 +24,11 @@ const JobCards: FC<Props> = ({ jobs }) => {
             <div className="flex h-full w-full flex-col">
               <div className="flex w-full flex-wrap justify-between gap-x-6 gap-y-2">
                 <figure className="flex items-center gap-2">
-                  <img src={job.companyLogo?.url || '#'} alt="text" className="bg-secondary h-6 w-6 object-cover overflow-hidden rounded-full" />
+                  <img
+                    src={job.companyLogo?.url || "#"}
+                    alt="text"
+                    className="bg-secondary h-6 w-6 overflow-hidden rounded-full object-cover"
+                  />
                   <span className="text-sm font-medium">{job.companyName}</span>
                 </figure>
 

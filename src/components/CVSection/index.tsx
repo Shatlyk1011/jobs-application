@@ -1,21 +1,19 @@
-'use client'
-import { FC } from 'react';
+"use client";
+import { FC } from "react";
 
 //components
-import CVFilters from './CVFilters';
-import CVCards from './CVCards';
+import CVFilters from "./CVFilters";
+import CVCards from "./CVCards";
 
-interface Props {
-};
+interface Props {}
 
-const CVSection:FC<Props> = ({  }) => {
-
+const CVSection: FC<Props> = ({}) => {
   return (
     <div>
       <CVFilters />
       {/* <SearchBar /> */}
       <CVCards />
     </div>
-  )
+  );
 };
-export default CVSection
+export default CVSection;

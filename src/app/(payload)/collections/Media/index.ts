@@ -6,7 +6,7 @@ const Media: CollectionConfig = {
     defaultColumns: ["title", "createdBy", "createdAt"],
   },
   access: {
-    read: () => true
+    read: () => true,
   },
   fields: [
     {
