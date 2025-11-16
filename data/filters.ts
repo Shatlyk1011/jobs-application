@@ -78,23 +78,27 @@ export const LOCATION = [
     value: "turkmenabat",
   },
   {
-    label: "Другое",
-    value: "other",
+    label: "За рубежом",
+    value: "abroad",
   },
   {
-    label: "За рубежом",
-    value: "remote",
+    label: "Другое",
+    value: "other",
   },
 ];
 
 export const FORMAT = [
   {
+    label: "Удаленно",
+    value: "remote",
+  },
+  {
     label: "Офис",
     value: "onsite",
   },
   {
-    label: "Удаленно",
-    value: "remote",
+    label: "Гибрид",
+    value: "hybrid",
   },
   {
     label: "Релокация",
