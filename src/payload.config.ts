@@ -22,6 +22,7 @@ export default buildConfig({
       // importMapFile: path.resolve(dirname, "app", "(payload)", "admin", "importMap.js"),
     },
   },
+  defaultDepth: 2,
   // If you'd like to use Rich Text, pass your editor here
 
   // Define and configure your collections in this array

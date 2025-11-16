@@ -1,1 +1,2 @@
 - apply only filters with values
+- add default image url
