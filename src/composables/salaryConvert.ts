@@ -2,9 +2,9 @@ import { DollarSign, Euro, RussianRuble } from "lucide-react";
 import { TCurrency } from "../../data/filters";
 
 export function salaryConvert(from?: string, to?: string) {
-  if (from && !to) return `до ${from}`;
-  if (!from && to) return `от ${to}`;
-  if (from && to) return `до ${from} от ${to}`;
+  if (from && !to) return `от ${from}`;
+  if (!from && to) return `до ${to}`;
+  if (from && to) return `от ${from} до ${to}`;
   return "З/П не указано";
 }
 
