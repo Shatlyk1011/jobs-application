@@ -12,9 +12,9 @@ export default async function JobsPage() {
 
   return (
     <main className="h-svh w-full">
-      <section className="h-full w-full pt-10">
+      <div className="h-full w-full pt-10">
         <JobSection initialData={data} />
-      </section>
+      </div>
     </main>
   );
 }

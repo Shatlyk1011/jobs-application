@@ -1,16 +1,16 @@
 'use client'
 import { FC, useState } from 'react';
+import { AxiosResponse } from 'axios';
 import axios from '@/lib/axios'
+import { stringify } from 'qs-esm';
+import { Where } from 'payload';
 
 import { IJobs } from '@/types/job';
 
 //components
-import JobCards from "@/components/JobCards";
-import JobFilters from "@/components/JobFilters";
+import JobCards from "@/components/JobSection/JobCards";
+import JobFilters from "@/components/JobSection/JobFilters";
 import SearchBar from "@/components/SearchBar";
-import { AxiosResponse } from 'axios';
-import { Where } from 'payload';
-import { stringify } from 'qs-esm';
 
 interface Props {
   initialData: IJobs
