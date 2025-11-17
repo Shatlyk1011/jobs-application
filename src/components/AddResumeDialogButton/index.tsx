@@ -1,4 +1,5 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
+import dynamic from "next/dynamic";
 
 //components
 import {
@@ -11,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 
 import { Button } from "../ui/button";
-
 import ResumeForm from "./ResumeForm";
 
 interface Props {}
@@ -30,7 +30,7 @@ const AddResumeDialogButton: FC<Props> = () => {
           <DialogTitle className="mb-2">Разместите резюме</DialogTitle>
           <DialogDescription className="mb-4">Заполните форму для быстрой публикации вашего резюме</DialogDescription>
         </DialogHeader>
-        <ResumeForm/>
+        <ResumeForm />
       </DialogContent>
     </Dialog>
   );
