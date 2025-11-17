@@ -6,10 +6,24 @@ import { IResumes } from "@/types/resume";
 //components
 import AddResumeDialogButton from "@/components/AddResumeDialogButton";
 import CVSection from "@/components/CVSection";
+import { stringify } from "qs-esm";
+
+const stringifiedQuery = stringify(
+  {
+    where: {
+      isVisible: {
+        equals: true
+      }
+    },
+  },
+  { addQueryPrefix: true },
+);
 
 export default async function CVPage() {
 
-  const response: AxiosResponse<IResumes> = await axios(`/resume?limit=15`);
+
+
+  const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
   const { data } = response;
 
   return (

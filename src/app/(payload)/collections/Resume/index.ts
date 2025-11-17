@@ -6,6 +6,9 @@ const Resume: CollectionConfig = {
   access: {
     read: () => true,
   },
+  admin: {
+    defaultColumns: ['username', 'resumeLink', 'isVisible', 'createdAt']
+  },
   slug: "resume",
   fields: [
     {
