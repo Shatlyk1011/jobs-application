@@ -7,4 +7,6 @@ export const InitialResumeFormState: IResumeForm = {
   level: "",
   location: "",
   format: "",
+  feedback: "",
+  salary: {currency: 'TMT', from: '', to: ''}
 };

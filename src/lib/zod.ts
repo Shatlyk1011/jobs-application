@@ -1,3 +1,4 @@
+'use client'
 import { FormEvent, useState } from "react"
 
 import { z } from "zod"
@@ -6,13 +7,13 @@ import { IResumeForm } from "@/types/resume"
 
 // form scheme
 const formSchema = z.object({
-  name: z.string().min(2, "Please type your name"),
-  email: z
-    .string()
-    .min(4, "Please type your email address")
-    .refine((val) => val.length < 4 || z.string().email().safeParse(val).success, {
-      message: "Incorrect email address",
-    }),
+  username: z.string().min(2, "Пожалуйста, введите свое имя"),
+  resumeLink: z.url({error: 'Пожалуйста, введите валидный URL'}),
+  profession: z.string().min(2, 'Пожалуйста, выберите профессию'),
+  level: z.string().min(2, 'Пожалуйста, выберите ваш уровень'),
+  location: z.string().min(2, 'Пожалуйста, выберите ваше местонахождения'),
+  format: z.string().min(2, 'Пожалуйста, выберите формат работы'),
+  feedback: z.string().min(2, 'Пожалуйста, введите ваш Telegram или email для обратной связи'),
 })
 
 // types
