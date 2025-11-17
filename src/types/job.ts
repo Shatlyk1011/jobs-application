@@ -24,7 +24,7 @@ export interface IJob {
   format: string;
   level: string;
   location: string;
-  isVisible: boolean
+  isVisible: boolean;
   salary: SalaryType;
   id: string;
 }

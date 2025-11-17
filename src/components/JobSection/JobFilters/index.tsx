@@ -39,8 +39,8 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
         },
         {
           isVisible: {
-            equals: true
-          }
+            equals: true,
+          },
         },
         {
           level: {
