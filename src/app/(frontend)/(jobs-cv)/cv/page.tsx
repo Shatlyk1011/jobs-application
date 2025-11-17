@@ -12,17 +12,14 @@ const stringifiedQuery = stringify(
   {
     where: {
       isVisible: {
-        equals: true
-      }
+        equals: true,
+      },
     },
   },
   { addQueryPrefix: true },
 );
 
 export default async function CVPage() {
-
-
-
   const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
   const { data } = response;
 

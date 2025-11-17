@@ -7,7 +7,7 @@ const Resume: CollectionConfig = {
     read: () => true,
   },
   admin: {
-    defaultColumns: ['username', 'resumeLink', 'isVisible', 'createdAt']
+    defaultColumns: ["username", "resumeLink", "isVisible", "createdAt"],
   },
   slug: "resume",
   fields: [
@@ -64,7 +64,7 @@ const Resume: CollectionConfig = {
       options: FORMAT,
       required: true,
     },
-  
+
     {
       name: "salary",
       label: "Зарплата",
@@ -95,8 +95,8 @@ const Resume: CollectionConfig = {
       required: false,
       defaultValue: false,
       admin: {
-        position: 'sidebar'
-      }
+        position: "sidebar",
+      },
     },
   ],
 };

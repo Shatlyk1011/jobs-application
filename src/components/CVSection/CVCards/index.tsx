@@ -6,7 +6,7 @@ import Link from "next/link";
 import { IResumes } from "@/types/resume";
 
 interface Props {
-  resumes: IResumes
+  resumes: IResumes;
 }
 
 const CVCards: FC<Props> = ({ resumes }) => {
@@ -14,7 +14,11 @@ const CVCards: FC<Props> = ({ resumes }) => {
     <section className="grid grid-cols-3 gap-5 pt-6 pb-20">
       {/* card */}
       {resumes.docs.map((resume) => (
-        <Link key={resume.id} href={resume.resumeLink} className="bg-popover inline-block min-h-[280px] rounded-2xl p-5">
+        <Link
+          key={resume.id}
+          href={resume.resumeLink}
+          className="bg-popover inline-block min-h-[280px] rounded-2xl p-5"
+        >
           <div className="flex h-full flex-col justify-between">
             <div className="flex justify-between">
               <div className="flex flex-col gap-2.5">
@@ -41,7 +45,10 @@ const CVCards: FC<Props> = ({ resumes }) => {
                 <span className="flex items-center">
                   {salaryConvert(resume.salary?.from, resume.salary?.to)}
                   {/* @ts-ignore */}
-                  <CurrencyIcon currency={resume.salary?.currency} isAvailable={!!resume.salary?.from && !!resume.salary?.to} />
+                  <CurrencyIcon
+                    currency={resume.salary?.currency}
+                    isAvailable={!!resume.salary?.from && !!resume.salary?.to}
+                  />
                 </span>
               </li>
             </ul>

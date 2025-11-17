@@ -23,64 +23,93 @@ interface Props {}
 const Form: FC<Props> = () => {
   const [salaryView, setSalaryView] = useState(false);
 
-  const [form, setForm] = useState<IResumeForm>(InitialResumeFormState)
+  const [form, setForm] = useState<IResumeForm>(InitialResumeFormState);
 
-  const { createResume, isLoading } = useCreateResume(setForm)
+  const { createResume, isLoading } = useCreateResume(setForm);
 
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!salaryView) {
-      const { salary, ...rest } = form
-      return await createResume(rest)
+      const { salary, ...rest } = form;
+      return await createResume(rest);
     }
-    await createResume(form)
-  }
+    await createResume(form);
+  };
 
   const handleInput = (type: keyof IResumeForm, value?: string | string[][]) => {
-    setForm((prev) => ({ ...prev, [type]: value }))
-  }
+    setForm((prev) => ({ ...prev, [type]: value }));
+  };
 
   const handleSalary = (salaryKey: keyof SalaryType, value: string) => {
     setForm((prev) => ({
-      ...prev, salary: { ...prev.salary, [salaryKey]: value } as SalaryType
-    }))
-  }
+      ...prev,
+      salary: { ...prev.salary, [salaryKey]: value } as SalaryType,
+    }));
+  };
 
   const onInputChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement>) => {
-    handleInput(name as keyof IResumeForm, value)
-  }
+    handleInput(name as keyof IResumeForm, value);
+  };
 
   useEffect(() => {
     if (!salaryView) {
-      setForm(prev => {
-        const { salary, ...rest } = prev
-        return rest
-      })
+      setForm((prev) => {
+        const { salary, ...rest } = prev;
+        return rest;
+      });
     }
-  }, [salaryView])
+  }, [salaryView]);
 
   return (
     <>
       <div className="flex gap-4">
-        <Input autoComplete="off" onChange={onInputChange} value={form.username} placeholder="Ваше имя" name={'username' as keyof IResumeForm} className="placeholder:text-sm" required />
+        <Input
+          autoComplete="off"
+          onChange={onInputChange}
+          value={form.username}
+          placeholder="Ваше имя"
+          name={"username" as keyof IResumeForm}
+          className="placeholder:text-sm"
+          required
+        />
         <Input
           onChange={onInputChange}
           autoComplete="off"
           value={form.resumeLink}
           title="Пожалуйста укажите валидную ссылку на ваше резюме"
           className="placeholder:text-sm"
-          name={'resumeLink' as keyof IResumeForm}
+          name={"resumeLink" as keyof IResumeForm}
           placeholder="Ссылка на резюме"
           required
         />
       </div>
       <div className="flex gap-4">
-        <SelectComponent placeholder="Профессия" items={PROFESSION} onChange={(value) => handleInput('profession', value)} value={form.profession} />
-        <SelectComponent placeholder="Уровень" items={LEVEL} onChange={(value) => handleInput('level', value)} value={form.level} />
+        <SelectComponent
+          placeholder="Профессия"
+          items={PROFESSION}
+          onChange={(value) => handleInput("profession", value)}
+          value={form.profession}
+        />
+        <SelectComponent
+          placeholder="Уровень"
+          items={LEVEL}
+          onChange={(value) => handleInput("level", value)}
+          value={form.level}
+        />
       </div>
       <div className="flex gap-4">
-        <SelectComponent placeholder="Местонахождения" items={LOCATION} onChange={(value) => handleInput('location', value)} value={form.location} />
-        <SelectComponent placeholder="Формат работы" items={FORMAT} onChange={(value) => handleInput('format', value)} value={form.format} />
+        <SelectComponent
+          placeholder="Местонахождения"
+          items={LOCATION}
+          onChange={(value) => handleInput("location", value)}
+          value={form.location}
+        />
+        <SelectComponent
+          placeholder="Формат работы"
+          items={FORMAT}
+          onChange={(value) => handleInput("format", value)}
+          value={form.format}
+        />
       </div>
 
       <div
@@ -102,9 +131,27 @@ const Form: FC<Props> = () => {
             salaryView && "visible static z-1 translate-y-0 scale-100 opacity-100 select-auto",
           )}
         >
-          <Input autoComplete="off" onChange={(e) => handleSalary('from', e.target.value)} value={form.salary?.from || ''} placeholder="от" className="placeholder:text-sidebar-primary-foreground" />
-          <Input autoComplete="off" onChange={(e) => handleSalary('to', e.target.value)} placeholder="до" value={form.salary?.to || ''} className="placeholder:text-sidebar-primary-foreground" />
-          <SelectComponent items={CURRENCY_OBJ()} placeholder="Валюта" classes="text-sidebar-primary-foreground!" onChange={(value) => handleSalary('currency', value)} value={form.salary?.currency || ''} />
+          <Input
+            autoComplete="off"
+            onChange={(e) => handleSalary("from", e.target.value)}
+            value={form.salary?.from || ""}
+            placeholder="от"
+            className="placeholder:text-sidebar-primary-foreground"
+          />
+          <Input
+            autoComplete="off"
+            onChange={(e) => handleSalary("to", e.target.value)}
+            placeholder="до"
+            value={form.salary?.to || ""}
+            className="placeholder:text-sidebar-primary-foreground"
+          />
+          <SelectComponent
+            items={CURRENCY_OBJ()}
+            placeholder="Валюта"
+            classes="text-sidebar-primary-foreground!"
+            onChange={(value) => handleSalary("currency", value)}
+            value={form.salary?.currency || ""}
+          />
         </div>
       </div>
 

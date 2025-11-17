@@ -24,7 +24,7 @@ export interface IJob {
   format: string;
   level: string;
   location: string;
-  salary: SalaryType ;
+  salary: SalaryType;
   id: string;
 }
 

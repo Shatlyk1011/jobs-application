@@ -4,8 +4,8 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 interface Props {
   items: { label: string; value: string }[];
   placeholder: string;
-  onChange: (value: string) => void
-  value: string
+  onChange: (value: string) => void;
+  value: string;
   classes?: string;
 }
 

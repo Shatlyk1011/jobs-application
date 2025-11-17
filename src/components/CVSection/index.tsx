@@ -8,11 +8,10 @@ import CVFilters from "./CVFilters";
 import CVCards from "./CVCards";
 
 interface Props {
-  initialData: IResumes
+  initialData: IResumes;
 }
 
 const CVSection: FC<Props> = ({ initialData }) => {
-
   const [data, setData] = useState(initialData);
 
   return (

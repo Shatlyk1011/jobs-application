@@ -4,7 +4,7 @@ export type SalaryType = {
   currency: TCurrency;
   from: string;
   to: string;
-}
+};
 
 export interface IBaseFields {
   hasNextPage: boolean;

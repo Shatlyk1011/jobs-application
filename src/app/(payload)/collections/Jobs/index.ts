@@ -8,7 +8,15 @@ const Jobs: CollectionConfig = {
   },
   slug: "jobs",
   admin: {
-    defaultColumns: ['companyLogo','companyName', 'title', 'jobContactUrl', 'profession', 'createdAt', 'companyWebsite']
+    defaultColumns: [
+      "companyLogo",
+      "companyName",
+      "title",
+      "jobContactUrl",
+      "profession",
+      "createdAt",
+      "companyWebsite",
+    ],
   },
   fields: [
     {
