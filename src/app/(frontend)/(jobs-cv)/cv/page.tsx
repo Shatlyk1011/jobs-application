@@ -1,7 +1,17 @@
+import { AxiosResponse } from "axios";
+import axios from "@/lib/axios";
+
+import { IResumes } from "@/types/resume";
+
+//components
 import AddResumeDialogButton from "@/components/AddResumeDialogButton";
 import CVSection from "@/components/CVSection";
 
-export default async function JobsPage() {
+export default async function CVPage() {
+
+  const response: AxiosResponse<IResumes> = await axios(`/resume?limit=15`);
+  const { data } = response;
+
   return (
     <main className="h-svh w-full">
       <section className="mx-auto w-full max-w-3xl py-12 text-center">
@@ -13,7 +23,7 @@ export default async function JobsPage() {
       </section>
 
       <section className="">
-        <CVSection />
+        <CVSection initialData={data} />
       </section>
     </main>
   );
