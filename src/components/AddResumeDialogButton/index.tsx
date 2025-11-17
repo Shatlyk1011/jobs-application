@@ -17,7 +17,6 @@ import ResumeForm from "./ResumeForm";
 interface Props {}
 
 const AddResumeDialogButton: FC<Props> = () => {
-  
   return (
     <Dialog>
       <DialogTrigger asChild>

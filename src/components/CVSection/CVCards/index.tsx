@@ -12,7 +12,7 @@ const test = {
   img: "",
   level: "Middle",
   location: "Ashgabat",
-  format: 'on-site',
+  format: "on-site",
   salary: { from: "100", to: "200", currency: "TMT" },
   resumeUrl: "",
 };

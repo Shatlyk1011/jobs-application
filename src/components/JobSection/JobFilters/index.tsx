@@ -8,7 +8,7 @@ import { MultiSelect } from "@/components/MultiSelect";
 
 interface Props {
   handleFilterRequest: (query: Where) => void;
-  totalDocs: number
+  totalDocs: number;
 }
 
 const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ...PROFESSION].reduce(
