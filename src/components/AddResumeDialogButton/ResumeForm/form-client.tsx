@@ -1,15 +1,16 @@
-import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 import { cn } from "@/lib/utils";
 
 import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../data/filters";
 
 //components
-import { Input } from "@/components/ui/input";
 import { SelectComponent } from "../SelectComponent";
 import { Checkbox } from "@/components/ui/checkbox";
 
 import { IResumeForm } from "@/types/resume";
 import { SalaryType } from "@/types";
+import CustomInput from "./CustomInput";
+import { Input } from "@/components/ui/input";
 
 const CURRENCY_OBJ = () => {
   return CURRENCY.map((curr) => ({ label: curr, value: curr }));
@@ -18,10 +19,12 @@ const CURRENCY_OBJ = () => {
 interface Props {
   form: IResumeForm
   setForm: Dispatch<SetStateAction<IResumeForm>>
+  salaryView: boolean
+  setSalaryView: Dispatch<SetStateAction<boolean>>
+  errors: Partial<Record<"username" | "resumeLink" | "profession" | "level" | "location" | "format" | "feedback", string>>
 }
 
-const Form: FC<Props> = ({ form, setForm }) => {
-  const [salaryView, setSalaryView] = useState(false);
+const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) => {
 
   const handleInput = (type: keyof IResumeForm, value?: string | string[][]) => {
     setForm((prev) => ({ ...prev, [type]: value }));
@@ -38,36 +41,25 @@ const Form: FC<Props> = ({ form, setForm }) => {
     handleInput(name as keyof IResumeForm, value);
   };
 
-  useEffect(() => {
-    if (!salaryView) {
-      setForm((prev) => {
-        const { salary, ...rest } = prev;
-        return rest;
-      });
-    }
-  }, [salaryView]);
-
   return (
     <>
       <div className="flex gap-4">
-        <Input
-          autoComplete="off"
+        <CustomInput
           onChange={onInputChange}
           value={form.username}
           placeholder="Ваше имя"
           name={"username" as keyof IResumeForm}
           className="placeholder:text-sm"
-          required
+          errorMsg={errors?.username}
         />
-        <Input
+        <CustomInput
           onChange={onInputChange}
-          autoComplete="off"
           value={form.resumeLink}
           title="Пожалуйста укажите валидную ссылку на ваше резюме"
           className="placeholder:text-sm"
           name={"resumeLink" as keyof IResumeForm}
           placeholder="Ссылка на резюме"
-          required
+          errorMsg={errors?.resumeLink}
         />
       </div>
       <div className="flex gap-4">
@@ -76,12 +68,14 @@ const Form: FC<Props> = ({ form, setForm }) => {
           items={PROFESSION}
           onChange={(value) => handleInput("profession", value)}
           value={form.profession}
+          errorMsg={errors?.profession}
         />
         <SelectComponent
           placeholder="Уровень"
           items={LEVEL}
           onChange={(value) => handleInput("level", value)}
           value={form.level}
+          errorMsg={errors?.level}
         />
       </div>
       <div className="flex gap-4">
@@ -90,12 +84,14 @@ const Form: FC<Props> = ({ form, setForm }) => {
           items={LOCATION}
           onChange={(value) => handleInput("location", value)}
           value={form.location}
+          errorMsg={errors?.location}
         />
         <SelectComponent
           placeholder="Формат работы"
           items={FORMAT}
           onChange={(value) => handleInput("format", value)}
           value={form.format}
+          errorMsg={errors?.format}
         />
       </div>
 
@@ -141,6 +137,14 @@ const Form: FC<Props> = ({ form, setForm }) => {
           />
         </div>
       </div>
+      <CustomInput
+        onChange={onInputChange}
+        value={form.feedback}
+        placeholder="Ваш Telegram или email для обратной связи."
+        name={"feedback" as keyof IResumeForm}
+        className="placeholder:text-sm"
+        errorMsg={errors?.feedback}
+      />
     </>
   );
 };
