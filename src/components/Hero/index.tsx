@@ -14,7 +14,7 @@ export default function Hero() {
           </div>
         </WobbleCard>
       </Link>
-      <Link href={"/"}>
+      <Link href={"/cv"}>
         <WobbleCard containerClassName=" min-h-[220px] h-full bg-card text-card-foreground">
           <h2 className="max-w-80 text-left text-3xl font-semibold tracking-[-0.015em] text-balance">Резюме</h2>
           <p className="mt-4 max-w-104 text-left text-base/6">Выложите свое резюме что бы стать заметнее</p>
