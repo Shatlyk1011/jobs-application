@@ -57,6 +57,15 @@ const Jobs: CollectionConfig = {
       label: "Ссылка на вакансию",
       type: "text",
       required: true,
+      // @ts-ignore
+      validate: (url: string) => {
+        try {
+          new URL(url);
+          return true;
+        } catch (e) {
+          return "Пожалуйста укажите валидный url";
+        }
+      },
     },
     {
       name: "mdx",
@@ -120,6 +129,16 @@ const Jobs: CollectionConfig = {
           type: "text",
         },
       ],
+    },
+    {
+      name: "isVisible",
+      label: "Статус публикации",
+      type: "checkbox",
+      required: false,
+      defaultValue: true,
+      admin: {
+        position: "sidebar",
+      },
     },
   ],
 };
