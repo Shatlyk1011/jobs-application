@@ -4,9 +4,10 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
 
-// Collections
+// collections
 import Jobs from "./app/(payload)/collections/Jobs";
 import Media from "./app/(payload)/collections/Media";
+import Resume from "./app/(payload)/collections/Resume";
 
 import path from "path";
 import { fileURLToPath } from "node:url";
@@ -26,7 +27,7 @@ export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
 
   // Define and configure your collections in this array
-  collections: [Jobs, Media],
+  collections: [Jobs, Media, Resume],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || "",
