@@ -1,108 +1,108 @@
 export const PROFESSION = [
   {
     label: "Разработка",
-    value: "development",
+    value: "Разработка",
   },
   {
     label: "Тестирование",
-    value: "testing",
+    value: "Тестирование",
   },
   {
     label: "Аналитика",
-    value: "analytics",
+    value: "Аналитика",
   },
   {
     label: "HR",
-    value: "hr",
+    value: "HR",
   },
   {
     label: "Дизайн",
-    value: "design",
+    value: "Дизайн",
   },
   {
     label: "Менеджмент",
-    value: "management",
+    value: "Менеджмент",
   },
   {
     label: "Маркетинг",
-    value: "marketing",
+    value: "Маркетинг",
   },
   {
     label: "PR",
-    value: "pr",
+    value: "PR",
   },
   {
     label: "Контент",
-    value: "content",
+    value: "Контент",
   },
   {
     label: "Продажи",
-    value: "sales",
+    value: "Продажи",
   },
   {
     label: "Другое",
-    value: "other",
+    value: "Другое",
   },
 ];
 
 export const LEVEL = [
   {
     label: "Intern",
-    value: "intern",
+    value: "Intern",
   },
   {
     label: "Junior",
-    value: "junior",
+    value: "Junior",
   },
   {
     label: "Middle",
-    value: "middle",
+    value: "Middle",
   },
   {
     label: "Senior",
-    value: "senior",
+    value: "Senior",
   },
   {
     label: "Lead",
-    value: "lead",
+    value: "Lead",
   },
 ];
 
 export const LOCATION = [
   {
     label: "Ашхабад",
-    value: "ashgabat",
+    value: "Ашхабад",
   },
   {
     label: "Туркменабад",
-    value: "turkmenabat",
+    value: "Туркменабад",
   },
   {
     label: "За рубежом",
-    value: "abroad",
+    value: "За рубежом",
   },
   {
     label: "Другое",
-    value: "other",
+    value: "Другое",
   },
 ];
 
 export const FORMAT = [
   {
     label: "Удаленно",
-    value: "remote",
+    value: "Удаленно",
   },
   {
     label: "Офис",
-    value: "onsite",
+    value: "Офис",
   },
   {
     label: "Гибрид",
-    value: "hybrid",
+    value: "Гибрид",
   },
   {
     label: "Релокация",
-    value: "relocation",
+    value: "Релокация",
   },
 ];
 
