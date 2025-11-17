@@ -6,6 +6,7 @@ import { IResumeForm } from "@/types/resume";
 import { InitialResumeFormState } from "../../../../data/resume";
 import { DialogClose } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { useZodForm } from "@/lib/zod";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
@@ -16,24 +17,26 @@ interface Props {
 }
 
 const ResumeForm: FC<Props> = ({ close }) => {
+  const [salaryView, setSalaryView] = useState(false);
+
   const [form, setForm] = useState<IResumeForm>(InitialResumeFormState);
 
   const { createResume, isLoading } = useCreateResume(setForm, close);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const submit = async () => {
 
-    if (!false) {
+    if (!salaryView) {
       const { salary, ...rest } = form;
       return await createResume(rest);
     }
     await createResume(form);
   }
 
+  const { errors, handleSubmit } = useZodForm(form, submit)
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <Suspense>
-        <Form form={form} setForm={setForm} />
+        <Form form={form} setForm={setForm} errors={errors} salaryView={salaryView} setSalaryView={setSalaryView} />
         <div className="mt-4 flex justify-end gap-3">
           <DialogClose asChild>
             <Button type="button" variant="secondary" disabled={isLoading}>
