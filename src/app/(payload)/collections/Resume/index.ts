@@ -7,13 +7,19 @@ const Resume: CollectionConfig = {
     read: () => true,
   },
   admin: {
-    defaultColumns: ["username", "resumeLink", "isVisible", "createdAt"],
+    defaultColumns: ["username", "feedback", "resumeLink", "isVisible", "createdAt"],
   },
   slug: "resume",
   fields: [
     {
       name: "username",
       label: "Имя",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "feedback",
+      label: "Обратная связь (telegram, mail)",
       type: "text",
       required: true,
     },
