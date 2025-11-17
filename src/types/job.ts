@@ -1,4 +1,4 @@
-import { TCurrency } from "../../data/filters";
+import { IBaseFields, SalaryType } from ".";
 
 type JobImage = {
   createdAt: string;
@@ -9,18 +9,6 @@ type JobImage = {
   id: string;
   url: string;
 };
-
-export interface IBaseFields {
-  hasNextPage: boolean;
-  hasPrevPage: boolean;
-  limit: number;
-  nextPage: number | null;
-  page: number;
-  pagingCounter: number;
-  prevPage: number | null;
-  totalDocs: number;
-  totalPages: number;
-}
 
 export interface IJob {
   createdAt: string;
@@ -36,11 +24,7 @@ export interface IJob {
   format: string;
   level: string;
   location: string;
-  salary: {
-    currency: TCurrency;
-    from: string;
-    to: string;
-  };
+  salary: SalaryType ;
   id: string;
 }
 
