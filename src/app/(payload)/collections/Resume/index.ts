@@ -86,7 +86,7 @@ const Resume: CollectionConfig = {
       ],
     },
     {
-      name: "visibility",
+      name: "isVisible",
       label: "Статус публикации",
       type: "checkbox",
       required: false,

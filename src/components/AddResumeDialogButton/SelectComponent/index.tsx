@@ -1,15 +1,17 @@
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface Props {
   items: { label: string; value: string }[];
   placeholder: string;
+  onChange: (value: string) => void
+  value: string
   classes?: string;
 }
 
-export function SelectComponent({ items, placeholder, classes }: Props) {
+export function SelectComponent({ items, placeholder, onChange, value, classes }: Props) {
   return (
-    <Select>
+    <Select onValueChange={(value) => onChange(value)} value={value}>
       <SelectTrigger className={cn("w-full", classes)}>
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
