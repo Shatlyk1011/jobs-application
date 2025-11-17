@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { type IResumeForm } from "@/types/resume";
 import { InitialResumeFormState } from "../../data/resume";
 
-export function useCreateResume(setForm: Dispatch<SetStateAction<IResumeForm>>) {
+export function useCreateResume(setForm: Dispatch<SetStateAction<IResumeForm>>, close: () => void) {
   const [isLoading, setLoading] = useState(false);
   const createResume = async (form: IResumeForm) => {
     try {
@@ -21,13 +21,13 @@ export function useCreateResume(setForm: Dispatch<SetStateAction<IResumeForm>>) 
         setForm(InitialResumeFormState);
         toast.success("Успешно. Ваше резюме будет доступно после проверки модератора", {
           id: "loading-toast-id",
-          duration: 5000,
+          duration: 6000,
         });
       }
     } catch (err) {
-      console.log("err useResume", err);
+      close()
       setForm(InitialResumeFormState);
-      toast.error("Что то пошло не так. Попробуйте еще раз", { id: "loading-toast-id" });
+      toast.error("Что то пошло не так. Пожалуйста заполните все поля правильно, и попробуйте еще раз.", { id: "loading-toast-id", duration: 6000});
     } finally {
       setLoading(false);
     }

@@ -1,5 +1,5 @@
-import { FC, Suspense } from "react";
-import dynamic from "next/dynamic";
+'use client'
+import { FC, useState } from "react";
 
 //components
 import {
@@ -17,8 +17,10 @@ import ResumeForm from "./ResumeForm";
 interface Props {}
 
 const AddResumeDialogButton: FC<Props> = () => {
+  const [dialog, setDialog] = useState(false)
+
   return (
-    <Dialog>
+    <Dialog open={dialog} onOpenChange={setDialog}>
       <DialogTrigger asChild>
         <Button data-slot="dialog-trigger" variant="default" className="py-5">
           Разместить резюме
@@ -29,7 +31,7 @@ const AddResumeDialogButton: FC<Props> = () => {
           <DialogTitle className="mb-2">Разместите резюме</DialogTitle>
           <DialogDescription className="mb-4">Заполните форму для быстрой публикации вашего резюме</DialogDescription>
         </DialogHeader>
-        <ResumeForm />
+        <ResumeForm close={() => setDialog(false)} />
       </DialogContent>
     </Dialog>
   );

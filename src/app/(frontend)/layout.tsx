@@ -21,8 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${InterSans.variable} dark antialiased`}>{children}</body>
-      <Toaster theme="system" position="bottom-left" />
+      <body className={`${InterSans.variable} dark antialiased`}>
+        {children}
+        <Toaster theme="system" richColors position="bottom-left" />
+      </body>
     </html>
   );
 }

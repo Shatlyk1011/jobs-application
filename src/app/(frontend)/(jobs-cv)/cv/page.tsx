@@ -12,7 +12,7 @@ const stringifiedQuery = stringify(
   {
     where: {
       isVisible: {
-        equals: true,
+        equals: true
       },
     },
   },

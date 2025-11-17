@@ -1,40 +1,27 @@
-import { ChangeEvent, FC, MouseEvent, useEffect, useState } from "react";
+import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../data/filters";
-import { InitialResumeFormState } from "../../../../data/resume";
 
 //components
 import { Input } from "@/components/ui/input";
 import { SelectComponent } from "../SelectComponent";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
-import { DialogClose } from "@/components/ui/dialog";
+
 import { IResumeForm } from "@/types/resume";
 import { SalaryType } from "@/types";
-import useCreateResume from "@/services/useCreateResume";
 
 const CURRENCY_OBJ = () => {
   return CURRENCY.map((curr) => ({ label: curr, value: curr }));
 };
 
-interface Props {}
+interface Props {
+  form: IResumeForm
+  setForm: Dispatch<SetStateAction<IResumeForm>>
+}
 
-const Form: FC<Props> = () => {
+const Form: FC<Props> = ({ form, setForm }) => {
   const [salaryView, setSalaryView] = useState(false);
-
-  const [form, setForm] = useState<IResumeForm>(InitialResumeFormState);
-
-  const { createResume, isLoading } = useCreateResume(setForm);
-
-  const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (!salaryView) {
-      const { salary, ...rest } = form;
-      return await createResume(rest);
-    }
-    await createResume(form);
-  };
 
   const handleInput = (type: keyof IResumeForm, value?: string | string[][]) => {
     setForm((prev) => ({ ...prev, [type]: value }));
@@ -153,18 +140,6 @@ const Form: FC<Props> = () => {
             value={form.salary?.currency || ""}
           />
         </div>
-      </div>
-
-      <div className="mt-4 flex justify-end gap-3">
-        <DialogClose asChild>
-          <Button type="button" variant="secondary" disabled={isLoading}>
-            Отмена
-          </Button>
-        </DialogClose>
-
-        <Button type="submit" onClick={handleSubmit} disabled={isLoading}>
-          Отправить
-        </Button>
       </div>
     </>
   );
