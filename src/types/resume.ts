@@ -7,7 +7,7 @@ export interface IResume {
   level: string;
   location: string;
   format: string;
-  feedback: string
+  feedback: string;
   salary?: SalaryType;
 
   createdAt: string;
@@ -16,7 +16,7 @@ export interface IResume {
   id: string;
 }
 
-export interface IResumeForm extends Omit<IResume, "createdAt" | "updatedAt" | "isVisible" | "id" > {}
+export interface IResumeForm extends Omit<IResume, "createdAt" | "updatedAt" | "isVisible" | "id"> {}
 
 export interface IResumes extends IBaseFields {
   docs: IResume[];

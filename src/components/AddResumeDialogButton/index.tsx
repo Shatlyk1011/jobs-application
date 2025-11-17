@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FC, useState } from "react";
 
 //components
@@ -17,7 +17,7 @@ import ResumeForm from "./ResumeForm";
 interface Props {}
 
 const AddResumeDialogButton: FC<Props> = () => {
-  const [dialog, setDialog] = useState(false)
+  const [dialog, setDialog] = useState(false);
 
   return (
     <Dialog open={dialog} onOpenChange={setDialog}>

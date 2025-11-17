@@ -1,16 +1,16 @@
-import { Input } from '@/components/ui/input';
-import { FC } from 'react';
+import { Input } from "@/components/ui/input";
+import { FC } from "react";
 
 interface Props extends React.ComponentProps<"input"> {
-  errorMsg?:string
-};
+  errorMsg?: string;
+}
 
-const CustomInput:FC<Props> = ({errorMsg, ...rest}) => {
+const CustomInput: FC<Props> = ({ errorMsg, ...rest }) => {
   return (
-    <div className="flex flex-col gap-1 w-full">
-      <Input autoComplete="off" {...rest}/>
-      {errorMsg && <span className="text-[13px] ml-1 leading-[130%] font-normal text-destructive">{errorMsg}</span>}
+    <div className="flex w-full flex-col gap-1">
+      <Input autoComplete="off" {...rest} />
+      {errorMsg && <span className="text-destructive ml-1 text-[13px] leading-[130%] font-normal">{errorMsg}</span>}
     </div>
-  )
+  );
 };
-  export default CustomInput
+export default CustomInput;

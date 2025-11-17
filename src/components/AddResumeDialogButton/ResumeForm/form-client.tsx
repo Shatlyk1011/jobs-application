@@ -17,15 +17,16 @@ const CURRENCY_OBJ = () => {
 };
 
 interface Props {
-  form: IResumeForm
-  setForm: Dispatch<SetStateAction<IResumeForm>>
-  salaryView: boolean
-  setSalaryView: Dispatch<SetStateAction<boolean>>
-  errors: Partial<Record<"username" | "resumeLink" | "profession" | "level" | "location" | "format" | "feedback", string>>
+  form: IResumeForm;
+  setForm: Dispatch<SetStateAction<IResumeForm>>;
+  salaryView: boolean;
+  setSalaryView: Dispatch<SetStateAction<boolean>>;
+  errors: Partial<
+    Record<"username" | "resumeLink" | "profession" | "level" | "location" | "format" | "feedback", string>
+  >;
 }
 
 const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) => {
-
   const handleInput = (type: keyof IResumeForm, value?: string | string[][]) => {
     setForm((prev) => ({ ...prev, [type]: value }));
   };

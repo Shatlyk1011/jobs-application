@@ -13,7 +13,7 @@ const Form = dynamic(() => import("./form-client"), {
 });
 
 interface Props {
-  close: () => void
+  close: () => void;
 }
 
 const ResumeForm: FC<Props> = ({ close }) => {
@@ -24,15 +24,14 @@ const ResumeForm: FC<Props> = ({ close }) => {
   const { createResume, isLoading } = useCreateResume(setForm, close);
 
   const submit = async () => {
-
     if (!salaryView) {
       const { salary, ...rest } = form;
       return await createResume(rest);
     }
     await createResume(form);
-  }
+  };
 
-  const { errors, handleSubmit } = useZodForm(form, submit)
+  const { errors, handleSubmit } = useZodForm(form, submit);
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <Suspense>

@@ -6,13 +6,13 @@ interface Props {
   placeholder: string;
   onChange: (value: string) => void;
   value: string;
-  errorMsg?: string
+  errorMsg?: string;
   classes?: string;
 }
 
 export function SelectComponent({ items, placeholder, onChange, value, errorMsg, classes }: Props) {
   return (
-    <div className="flex flex-col gap-1 w-full">
+    <div className="flex w-full flex-col gap-1">
       <Select onValueChange={(value) => onChange(value)} value={value}>
         <SelectTrigger className={cn("w-full", classes)}>
           <SelectValue placeholder={placeholder} />
@@ -25,10 +25,9 @@ export function SelectComponent({ items, placeholder, onChange, value, errorMsg,
               </SelectItem>
             ))}
           </SelectGroup>
-
         </SelectContent>
       </Select>
-      {errorMsg && <span className="text-[13px] ml-1 leading-[130%] font-normal text-destructive">{errorMsg}</span>}
+      {errorMsg && <span className="text-destructive ml-1 text-[13px] leading-[130%] font-normal">{errorMsg}</span>}
     </div>
   );
 }

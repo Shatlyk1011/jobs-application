@@ -8,5 +8,5 @@ export const InitialResumeFormState: IResumeForm = {
   location: "",
   format: "",
   feedback: "",
-  salary: {currency: 'TMT', from: '', to: ''}
+  salary: { currency: "TMT", from: "", to: "" },
 };
