@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
+
 import "../globals.css";
 
 const InterSans = Inter({
@@ -20,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${InterSans.variable} dark antialiased`}>{children}</body>
+      <Toaster theme="system" position="bottom-left" />
     </html>
   );
 }
