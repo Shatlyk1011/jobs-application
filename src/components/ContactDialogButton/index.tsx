@@ -10,9 +10,11 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 
-interface Props {}
+interface Props {
+  contactUrl: string
+}
 
-const ContactDialogButton: FC<Props> = () => {
+const ContactDialogButton: FC<Props> = ({ contactUrl }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -24,7 +26,7 @@ const ContactDialogButton: FC<Props> = () => {
         <DialogHeader>
           <DialogTitle className="mb-6">Контакты работодателя</DialogTitle>
           <DialogDescription className="mb-4">
-            <a href="#" target="_blank" rel="noopener" className="text-sidebar-primary border-b border-current">
+            <a href={contactUrl} target="_blank" rel="noopener" className="text-sidebar-primary border-b border-current">
               Ссылка на вакансию
             </a>
           </DialogDescription>

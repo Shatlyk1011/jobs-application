@@ -81,7 +81,7 @@ export default async function JobPage({ params }: Props) {
         <div className="bg-popover mb-6 w-full rounded-3xl p-6">
           <span className="-tracking-one mb-6 inline-block text-sm font-medium">Для отклика:</span>
 
-          <ContactDialogButton />
+          <ContactDialogButton contactUrl={job.jobContactUrl} />
         </div>
 
         <div className="bg-popover w-full rounded-3xl p-6 text-sm">

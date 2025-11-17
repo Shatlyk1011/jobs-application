@@ -38,6 +38,11 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
           },
         },
         {
+          isVisible: {
+            equals: true
+          }
+        },
+        {
           level: {
             in: selectedLevels,
           },
