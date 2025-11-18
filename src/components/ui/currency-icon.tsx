@@ -3,7 +3,7 @@ import { TCurrency } from "../../../data/filters";
 import { getCurrencyIcon } from "@/composables/salaryConvert";
 
 interface Props {
-  currency: TCurrency;
+  currency?: TCurrency;
   isAvailable: boolean;
 }
 

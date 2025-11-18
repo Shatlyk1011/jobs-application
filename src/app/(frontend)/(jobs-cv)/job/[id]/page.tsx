@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getJobs } from "@/services/getJobs";
 
 import { isoToDate } from "@/composables/dateConvert";
@@ -86,9 +87,9 @@ export default async function JobPage({ params }: Props) {
 
         <div className="bg-popover w-full rounded-3xl p-6 text-sm">
           Стань заметнее для работадателей →{" "}
-          <a className="text-sidebar-primary" href="#">
+          <Link href="/cv" className="text-sidebar-primary" >
             здесь
-          </a>
+          </Link>
         </div>
       </aside>
     </main>

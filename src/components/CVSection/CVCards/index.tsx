@@ -2,7 +2,6 @@ import { FC } from "react";
 import { salaryConvert } from "@/composables/salaryConvert";
 import { Coins, MapPin, StarIcon } from "lucide-react";
 import CurrencyIcon from "@/components/ui/currency-icon";
-import Link from "next/link";
 import { IResumes } from "@/types/resume";
 
 interface Props {
@@ -11,19 +10,21 @@ interface Props {
 
 const CVCards: FC<Props> = ({ resumes }) => {
   return (
-    <section className="grid grid-cols-3 gap-5 pt-6 pb-20">
+    <article className="grid grid-cols-3 gap-5 pt-6 pb-20">
       {/* card */}
       {resumes.docs.map((resume) => (
-        <Link
+        <a
           key={resume.id}
           href={resume.resumeLink}
+          target="_blank"
+          rel="noopener"
           className="bg-popover inline-block min-h-[280px] rounded-2xl p-5"
         >
           <div className="flex h-full flex-col justify-between">
             <div className="flex justify-between">
               <div className="flex flex-col gap-2.5">
-                <h3 className="text-lg font-semibold">{resume.username}</h3>
-                <span className="text-sm opacity-80">{resume.profession}</span>
+                <h3 className="text-xl font-semibold">{resume.username}</h3>
+                <span className="text-base opacity-80">{resume.profession}</span>
               </div>
 
               {/* <figure className="h-12 w-12 rounded-full bg-red-900">
@@ -44,7 +45,6 @@ const CVCards: FC<Props> = ({ resumes }) => {
                 <Coins className="h-4 w-4 opacity-60" />
                 <span className="flex items-center">
                   {salaryConvert(resume.salary?.from, resume.salary?.to)}
-                  {/* @ts-ignore */}
                   <CurrencyIcon
                     currency={resume.salary?.currency}
                     isAvailable={!!resume.salary?.from && !!resume.salary?.to}
@@ -53,9 +53,9 @@ const CVCards: FC<Props> = ({ resumes }) => {
               </li>
             </ul>
           </div>
-        </Link>
+        </a>
       ))}
-    </section>
+    </article>
   );
 };
 export default CVCards;

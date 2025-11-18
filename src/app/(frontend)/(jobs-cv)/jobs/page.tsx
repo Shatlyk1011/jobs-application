@@ -22,7 +22,7 @@ export default async function JobsPage() {
   const { data } = response;
 
   return (
-    <main className="h-svh w-full">
+    <main className="h-full w-full">
       <div className="h-full w-full pt-10">
         <JobSection initialData={data} />
       </div>

@@ -24,7 +24,7 @@ export default async function CVPage() {
   const { data } = response;
 
   return (
-    <main className="h-svh w-full">
+    <main className=" w-full">
       <section className="mx-auto w-full max-w-3xl py-12 text-center">
         <h1 className="-tracking-two mb-4 text-4xl font-semibold">Станьте заметнее для HR</h1>
         <p className="mb-5 text-base leading-[1.3] opacity-80">
