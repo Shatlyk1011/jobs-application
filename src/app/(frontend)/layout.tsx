@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 
 import "../globals.css";
+import { ThemeProviders } from "../theme-providers";
 
 const InterSans = Inter({
   variable: "--font-inter-sans",
@@ -20,10 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${InterSans.variable} dark antialiased`}>
-        {children}
-        <Toaster theme="system" richColors position="bottom-left" />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${InterSans.variable} antialiased`}>
+        <ThemeProviders>
+          {children}
+          <Toaster theme="system" richColors position="bottom-left" />
+        </ThemeProviders>
       </body>
     </html>
   );
