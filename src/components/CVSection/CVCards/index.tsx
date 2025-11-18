@@ -47,7 +47,7 @@ const CVCards: FC<Props> = ({ resumes }) => {
                   {salaryConvert(resume.salary?.from, resume.salary?.to)}
                   <CurrencyIcon
                     currency={resume.salary?.currency}
-                    isAvailable={!!resume.salary?.from && !!resume.salary?.to}
+                    isAvailable={!!resume.salary?.from || !!resume.salary?.to}
                   />
                 </span>
               </li>
