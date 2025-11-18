@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 interface Props {};
 
 const ThemeToggle:FC<Props> = () => {
-  // const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const { setTheme, resolvedTheme } = useTheme()
 
@@ -16,7 +16,7 @@ const ThemeToggle:FC<Props> = () => {
   const handleChange = () => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
 
   // When mounted on client, now we can show the UI
-  // useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), [])
 
   return (
     <label className="theme-switch">
