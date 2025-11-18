@@ -2,6 +2,7 @@ import { FC } from "react";
 
 import { Logo } from "@/components/ui/Logo";
 import Link from "next/link";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 interface Props {}
 
@@ -26,7 +27,9 @@ const Header: FC<Props> = () => {
         </ul>
       </nav>
 
-      <p>213</p>
+      <div>
+        <ThemeToggle />
+      </div>
     </header>
   );
 };

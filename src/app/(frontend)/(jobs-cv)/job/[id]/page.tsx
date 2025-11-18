@@ -25,9 +25,12 @@ export default async function JobPage({ params }: Props) {
     <main className="relative box-content flex min-h-svh w-full gap-5 py-12">
       <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] py-12 pt-10">
         <header>
-          <time className="" dateTime={isoToDate(job.createdAt)}>
-            Вакансия опубликована {isoToDate(job.createdAt)}
-          </time>
+          <dl>
+            <dt className="sr-only">Вакансия опубликована</dt>
+            <time className="" dateTime={isoToDate(job.createdAt)}>
+              Вакансия опубликована {isoToDate(job.createdAt)}
+            </time>
+          </dl>
 
           <h1 className="mt-3 text-3xl font-medium">{job.title}</h1>
         </header>
