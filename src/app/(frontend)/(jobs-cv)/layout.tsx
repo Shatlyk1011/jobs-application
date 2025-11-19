@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="mx-auto box-border max-w-5xl px-12 max-md:px-5">
+    <div className="mx-auto box-border max-w-5xl px-12 max-md:px-4">
       <Header />
       {children}
     </div>

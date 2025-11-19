@@ -20,16 +20,16 @@ const AddResumeDialogButton: FC<Props> = () => {
   const [dialog, setDialog] = useState(false);
 
   return (
-    <Dialog open={dialog} onOpenChange={setDialog}>
+    <Dialog open={dialog} onOpenChange={setDialog} >
       <DialogTrigger asChild>
         <Button data-slot="dialog-trigger" variant="default" className="py-5">
           Разместить резюме
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-popover rounded-3xl border-none">
+      <DialogContent className="bg-popover rounded-3xl max-sm:rounded-2xl border-none max-sm:gap-3 max-sm:p-4">
         <DialogHeader>
-          <DialogTitle className="mb-2">Разместите резюме</DialogTitle>
-          <DialogDescription className="mb-4">Заполните форму для быстрой публикации вашего резюме</DialogDescription>
+          <DialogTitle className="mb-2 max-sm:text-xl max-sm:mb-1">Разместите резюме</DialogTitle>
+          <DialogDescription className="mb-4 max-sm:max-w-[85%] max-sm:mx-auto ">Заполните форму для быстрой публикации вашего резюме</DialogDescription>
         </DialogHeader>
         <ResumeForm close={() => setDialog(false)} />
       </DialogContent>

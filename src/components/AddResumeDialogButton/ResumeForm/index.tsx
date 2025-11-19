@@ -33,9 +33,9 @@ const ResumeForm: FC<Props> = ({ close }) => {
 
   const { errors, handleSubmit } = useZodForm(form, submit);
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-4 max-sm:gap-3" onSubmit={handleSubmit}>
       <Form form={form} setForm={setForm} errors={errors} salaryView={salaryView} setSalaryView={setSalaryView} />
-      <div className="mt-4 flex justify-end gap-3">
+      <div className="mt-4 flex justify-end gap-3 max-sm:mt-2 max-sm:text-xs">
         <DialogClose asChild>
           <Button type="button" variant="secondary" disabled={isLoading}>
             Отмена

@@ -44,7 +44,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
 
   return (
     <>
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-sm:flex-col max-sm:gap-3">
         <CustomInput
           onChange={onInputChange}
           value={form.username}
@@ -63,7 +63,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
           errorMsg={errors?.resumeLink}
         />
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-sm:flex-col max-sm:gap-3">
         <SelectComponent
           placeholder="Профессия"
           items={PROFESSION}
@@ -79,7 +79,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
           errorMsg={errors?.level}
         />
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-sm:flex-col max-sm:gap-3">
         <SelectComponent
           placeholder="Местонахождения"
           items={LOCATION}

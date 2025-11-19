@@ -8,7 +8,7 @@ interface Props {}
 
 const Header: FC<Props> = () => {
   return (
-    <header className="flex h-16 items-center justify-between gap-5">
+    <header className="flex h-16 items-center justify-between gap-5 max-sm:gap-3">
       <Link href="/" className="h-12 w-20 max-sm:min-w-14">
         <Logo className="h-full w-full fill-none text-inherit" />
       </Link>

@@ -10,7 +10,7 @@ interface Props {
 
 const CVCards: FC<Props> = ({ resumes }) => {
   return (
-    <article className="grid grid-cols-3 gap-5 pt-6 pb-20">
+    <article className="grid grid-cols-3 gap-5 pt-6 pb-20 max-lg:grid-cols-2 max-sm:grid-cols-1">
       {/* card */}
       {resumes.docs.map((resume) => (
         <a

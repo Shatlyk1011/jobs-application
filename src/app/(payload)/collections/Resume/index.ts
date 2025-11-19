@@ -5,7 +5,7 @@ import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../da
 const Resume: CollectionConfig = {
   access: {
     read: () => true,
-    create: () => true
+    create: () => true,
   },
   admin: {
     defaultColumns: ["username", "feedback", "resumeLink", "isVisible", "createdAt"],
