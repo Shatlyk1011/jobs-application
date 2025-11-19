@@ -23,15 +23,15 @@ export function useCreateResume(setForm: Dispatch<SetStateAction<IResumeForm>>, 
           id: "loading-toast-id",
           duration: 6000,
         });
+        close();
       }
     } catch (err) {
-      setForm(InitialResumeFormState);
-      toast.error("Что то пошло не так. Пожалуйста заполните все поля правильно, и попробуйте еще раз.", {
+      toast.error("Что то пошло не так. Попробуйте еще раз.", {
         id: "loading-toast-id",
         duration: 6000,
       });
     } finally {
-      close();
+      setForm(InitialResumeFormState);
       setLoading(false);
     }
   };
