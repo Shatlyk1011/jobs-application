@@ -22,12 +22,13 @@ const allFilters: Record<string, string> = [...FORMAT, ...LEVEL, ...LOCATION, ..
 
 const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
   const [mounted, setMounted] = useState(false);
+
+  const [search, setSearch] = useState('')
+
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<string[]>([]);
   const [selectedFormat, setSelectedFormat] = useState<string[]>([]);
-
-  const [search, setSearch] = useState('')
 
   const selectedOptions = [...selectedProfessions, ...selectedLevels, ...selectedLocation, ...selectedFormat];
 
@@ -67,6 +68,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
         },
       ],
     };
+    // prevent initial fetch
     setMounted(true);
     if (!mounted) return;
     handleFilterRequest(query);
@@ -75,10 +77,10 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
     <>
       <section className="mb-4 w-full">
         <div className="test flex max-h-max w-full items-center gap-10">
-          <h2 className="-tracking-two self-center text-2xl font-semibold text-nowrap">
+          <h2 className="-tracking-two self-center max-lg:self-center text-2xl font-semibold text-nowrap">
             Вакансии: <span className="opacity-75">{totalDocs}</span>
           </h2>
-          <div className="grid w-full grid-cols-4 gap-3">
+          <div className="grid w-full grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-2 gap-3 ">
             <MultiSelect
               singleLine={true}
               className="bg-popover hover:bg-secondary"
@@ -91,7 +93,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
             />
             <MultiSelect
               singleLine={true}
-              className="bg-popover hover:bg-secondary"
+              className="bg-popover hover:bg-secondary max-sm:hidden"
               maxCount={0}
               placeholder="Уровень"
               animation={0}
@@ -101,7 +103,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
             />
             <MultiSelect
               singleLine={true}
-              className="bg-popover hover:bg-secondary"
+              className="bg-popover hover:bg-secondary max-sm:hidden"
               maxCount={0}
               placeholder="Локация"
               animation={0}
@@ -111,7 +113,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
             />
             <MultiSelect
               singleLine={true}
-              className="bg-popover hover:bg-secondary"
+              className="bg-popover hover:bg-secondary max-sm:hidden"
               maxCount={0}
               placeholder="Формат"
               animation={0}

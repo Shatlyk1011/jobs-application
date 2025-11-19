@@ -39,7 +39,7 @@ export const WobbleCard = ({
       className={cn("relative mx-auto w-full overflow-hidden rounded-2xl bg-white", containerClassName)}
     >
       <div
-        className="relative h-full overflow-hidden [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.06),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl"
+        className="relative h-full overflow-hidden [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.06),rgba(255,255,255,0))] "
         style={{
           boxShadow:
             "0 10px 32px rgba(34, 42, 53, 0.12), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.05), 0 4px 6px rgba(34, 42, 53, 0.08), 0 24px 108px rgba(47, 48, 55, 0.10)",
@@ -48,11 +48,11 @@ export const WobbleCard = ({
         <motion.div
           style={{
             transform: isHovering
-              ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.03, 1.03, 1)`
+              ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.02, 1.02, 1)`
               : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
             transition: "transform 0.1s ease-out",
           }}
-          className={cn("h-full px-4 py-10 sm:px-10", className)}
+          className={cn("h-full px-10 py-10 max-md:p-8", className)}
         >
           {children}
         </motion.div>
