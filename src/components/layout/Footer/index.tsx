@@ -8,12 +8,12 @@ interface Props {}
 const Footer: FC<Props> = () => {
   return (
     <footer className="bg-popover mb-5 rounded-2xl p-8">
-      <div className="flex gap-8">
+      <div className="flex gap-8 max-lg:flex-col max-lg:gap-10">
         {/* left */}
-        <div className="flex basis-[30%]">
-          <Logo className="h-16 w-max" />
+        <div className="flex basis-[30%] gap-4 max-lg:gap-2.5 max-h-max items-center max-lg:order-2 max-lg:basis-full max-sm:flex-col">
+          <Logo className="h-16 w-max max-sm:h-20" />
 
-          <div className="max-h-max rounded-xl p-4 text-start text-sm font-medium">
+          <div className="max-h-max rounded-xl text-start text-sm font-medium text-nowrap max-sm:text-center">
             <span className="opacity-80">Служба поддержки</span> <br />{" "}
             <a
               target="_blank"
@@ -24,12 +24,12 @@ const Footer: FC<Props> = () => {
               Напишите нам
             </a>
           </div>
+          <p className="text-sm text-ring mt-5 text-end max-lg:flex-1">© 2025 | Все права защищены</p>
         </div>
 
         {/* right */}
-
-        <div className="text-ring -tracking-one flex flex-1 justify-end gap-10 text-[16px] font-medium">
-          <ul>
+        <div className="text-ring -tracking-one flex flex-1 justify-end gap-8 text-[16px] font-medium max-lg:justify-center max-sm:flex-col max-sm:items-center max-sm:text-center">
+          <ul className="max-lg:flex-1 ">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Вакансии</li>
             <li className="mb-2">
               <Link href="/jobs">Список вакансий</Link>
@@ -39,7 +39,7 @@ const Footer: FC<Props> = () => {
             </li>
           </ul>
 
-          <ul>
+          <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Сервисы</li>
             <li className="mb-2">
               <Link href="/cv">Резюме</Link>
@@ -56,7 +56,7 @@ const Footer: FC<Props> = () => {
             </li>
           </ul>
 
-          <ul>
+          <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Документы</li>
             <li className="mb-2">
               <Link href="/">Конфиденциальность</Link>
@@ -67,7 +67,7 @@ const Footer: FC<Props> = () => {
           </ul>
         </div>
       </div>
-      <p>© 2025 | Все права защищены</p>
+      <p className="text-sm text-ring mt-5 max-lg:hidden">© 2025 | Все права защищены</p>
     </footer>
   );
 };
