@@ -1,5 +1,6 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 //components
 import {
@@ -18,6 +19,14 @@ interface Props {}
 
 const AddResumeDialogButton: FC<Props> = () => {
   const [dialog, setDialog] = useState(false);
+
+  const modalValue = useSearchParams().get('modal')
+
+  useEffect(() => {
+    if (modalValue === 'open') {
+      setDialog(true)
+    }
+  }, [modalValue])
 
   return (
     <Dialog open={dialog} onOpenChange={setDialog} >

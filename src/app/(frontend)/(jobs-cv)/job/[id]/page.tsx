@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { getJobs } from "@/services/getJobs";
+import { siteConfig } from "@/config";
 
 import { isoToDate } from "@/composables/dateConvert";
 import { salaryConvert } from "@/composables/salaryConvert";
 import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
-import { siteConfig } from "@/config";
 
 export async function generateStaticParams() {
   const jobs = await getJobs();

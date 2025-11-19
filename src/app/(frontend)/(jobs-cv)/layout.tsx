@@ -1,5 +1,8 @@
-import Header from "@/components/layout/Header";
 import type { Metadata } from "next";
+
+//components
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Ganat",
@@ -15,6 +18,7 @@ export default function RootLayout({
     <div className="mx-auto box-border max-w-5xl px-12 max-md:px-4">
       <Header />
       {children}
+      <Footer />
     </div>
   );
 }
