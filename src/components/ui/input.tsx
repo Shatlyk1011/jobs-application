@@ -1,8 +1,32 @@
-import * as React from "react";
+
+import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+interface Props extends React.ComponentProps<"input"> {
+  as?: 'input' | 'textarea'
+}
+
+const Input: React.FC<Props> = ({ className, as, type, ...props }) => {
+  if (as === 'textarea') {
+    const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+    // Auto-resize textarea height based on content
+    const handleInput = (e?: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const textarea = textareaRef.current
+      if (textarea) {
+        textarea.style.height = "40px" // Reset height to recalculate
+        textarea.style.height = `${textarea.scrollHeight}px`
+      }
+      if (props.onChange && e) {
+        // @ts-ignore
+        props.onChange(e)
+      }
+    }
+    // @ts-ignore
+    return <textarea className="min-h-[120px] bg-input/30 border border-input px-3 py-2 rounded-lg placeholder:font-[inherit] placeholder:text-sm" {...props} ref={textareaRef} onChange={handleInput} />
+
+  }
   return (
     <input
       type={type}
