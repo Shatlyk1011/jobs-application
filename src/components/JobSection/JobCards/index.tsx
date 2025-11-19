@@ -31,7 +31,9 @@ const JobCards: FC<Props> = ({ jobs }) => {
                       className="bg-secondary h-6 w-6 overflow-hidden rounded-full object-cover"
                     />
                   ) : (
-                    <span className="bg-secondary h-6 w-6 overflow-hidden rounded-full flex items-center justify-center text-sm font-medium">{job.companyName[0]}</span>
+                    <span className="bg-secondary flex h-6 w-6 items-center justify-center overflow-hidden rounded-full text-sm font-medium">
+                      {job.companyName[0]}
+                    </span>
                   )}
                   <span className="text-sm font-medium">{job.companyName}</span>
                 </figure>
@@ -48,7 +50,9 @@ const JobCards: FC<Props> = ({ jobs }) => {
                   </li>
                   <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
                     <MapPin className="h-4 w-4 opacity-60" />
-                    <div className="first-letter:uppercase">{getLocation(job.location)} <span className="lowercase">{job.format}</span></div>
+                    <div className="first-letter:uppercase">
+                      {getLocation(job.location)} <span className="lowercase">{job.format}</span>
+                    </div>
                   </li>
                   <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
                     <Coins className="h-4 w-4 opacity-60" />

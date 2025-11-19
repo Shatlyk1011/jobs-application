@@ -39,7 +39,9 @@ const CVCards: FC<Props> = ({ resumes }) => {
               </li>
               <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
                 <MapPin className="h-4 w-4 opacity-60" />
-                <div className="first-letter:uppercase">{getLocation(resume.location)} <span className="lowercase">{resume.format}</span></div>
+                <div className="first-letter:uppercase">
+                  {getLocation(resume.location)} <span className="lowercase">{resume.format}</span>
+                </div>
               </li>
               <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
                 <Coins className="h-4 w-4 opacity-60" />

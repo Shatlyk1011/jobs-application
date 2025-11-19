@@ -20,25 +20,27 @@ interface Props {}
 const AddResumeDialogButton: FC<Props> = () => {
   const [dialog, setDialog] = useState(false);
 
-  const modalValue = useSearchParams().get('modal')
+  const modalValue = useSearchParams().get("modal");
 
   useEffect(() => {
-    if (modalValue === 'open') {
-      setDialog(true)
+    if (modalValue === "open") {
+      setDialog(true);
     }
-  }, [modalValue])
+  }, [modalValue]);
 
   return (
-    <Dialog open={dialog} onOpenChange={setDialog} >
+    <Dialog open={dialog} onOpenChange={setDialog}>
       <DialogTrigger asChild>
         <Button data-slot="dialog-trigger" variant="default" className="py-5">
           Разместить резюме
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-popover rounded-3xl max-sm:rounded-2xl border-none max-sm:gap-3 max-sm:p-4">
+      <DialogContent className="bg-popover rounded-3xl border-none max-sm:gap-3 max-sm:rounded-2xl max-sm:p-4">
         <DialogHeader>
-          <DialogTitle className="mb-2 max-sm:text-xl max-sm:mb-1">Разместите резюме</DialogTitle>
-          <DialogDescription className="mb-4 max-sm:max-w-[85%] max-sm:mx-auto ">Заполните форму для быстрой публикации вашего резюме</DialogDescription>
+          <DialogTitle className="mb-2 max-sm:mb-1 max-sm:text-xl">Разместите резюме</DialogTitle>
+          <DialogDescription className="mb-4 max-sm:mx-auto max-sm:max-w-[85%]">
+            Заполните форму для быстрой публикации вашего резюме
+          </DialogDescription>
         </DialogHeader>
         <ResumeForm close={() => setDialog(false)} />
       </DialogContent>

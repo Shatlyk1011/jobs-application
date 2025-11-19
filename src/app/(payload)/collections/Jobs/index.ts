@@ -107,7 +107,7 @@ const Jobs: CollectionConfig = {
       options: LEVEL,
       required: true,
     },
-    
+
     {
       name: "salary",
       label: "Зарплата",

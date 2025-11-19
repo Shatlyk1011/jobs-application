@@ -23,9 +23,9 @@ export const CURRENCY_ICON = {
 };
 
 export const getLocation = (location: string) => {
-  if (location.toLowerCase() === 'за рубежом') {
-    return ''
+  if (location.toLowerCase() === "за рубежом") {
+    return "";
   }
 
-  return location + ', '
-}
+  return location + ", ";
+};

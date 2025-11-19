@@ -36,7 +36,7 @@ export default async function JobPage({ params }: Props) {
           <h1 className="mt-3 text-3xl font-medium">{job.title}</h1>
         </header>
 
-        <ul className="text-sidebar-primary/70 dark:text-sidebar-primary/80 mt-4 flex flex-wrap gap-1.5 text-sm leading-[1.3] font-medium -tracking-one">
+        <ul className="text-sidebar-primary/70 dark:text-sidebar-primary/80 -tracking-one mt-4 flex flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
           <li className="bg-primary/10 dark:bg-primary/20 max-w-max rounded-full px-3 py-1.5">
             <span>{job.level}</span>
           </li>
@@ -54,11 +54,27 @@ export default async function JobPage({ params }: Props) {
         <div className="bg-secondary mt-10 rounded-2xl py-10 pr-[110px] pl-[30px]">
           <RichText content={job.mdx} />
         </div>
-        <p className="mt-4 text-[14px] text-ring">
-          Важно: Редакция Ganat не несёт ответственности за информацию в публикации от авторов, источников, пользователей, включая текст и изображения. Если вы нашли ошибку, пожалуйста, сообщите нам об этом <a className="border-b border-current text-sidebar-primary" target="_blank" rel="noopener" href={`mailto:${siteConfig.mail_support}`}>help.ganat@mail.ru</a> или в <a target="_blank" rel="noopener" className="border-b border-current text-sidebar-primary" href={siteConfig.telegram_support}>телеграм</a>
+        <p className="text-ring mt-4 text-[14px]">
+          Важно: Редакция Ganat не несёт ответственности за информацию в публикации от авторов, источников,
+          пользователей, включая текст и изображения. Если вы нашли ошибку, пожалуйста, сообщите нам об этом{" "}
+          <a
+            className="text-sidebar-primary border-b border-current"
+            target="_blank"
+            rel="noopener"
+            href={`mailto:${siteConfig.mail_support}`}
+          >
+            help.ganat@mail.ru
+          </a>{" "}
+          или в{" "}
+          <a
+            target="_blank"
+            rel="noopener"
+            className="text-sidebar-primary border-b border-current"
+            href={siteConfig.telegram_support}
+          >
+            телеграм
+          </a>
         </p>
-
-
       </article>
 
       {/* right */}
