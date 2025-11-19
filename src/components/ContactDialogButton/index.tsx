@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { siteConfig } from "@/config";
 
 import {
   Dialog,
@@ -40,7 +41,7 @@ const ContactDialogButton: FC<Props> = ({ contactUrl }) => {
           <p>
             Никогда не переводите работодателю деньги. Если вы столкнулись с мошенничеством или ошибкой — пожалуйста,
             сообщите нам в{" "}
-            <a href="#" className="border-b border-current">
+            <a href={siteConfig.telegram_support} target="_blank" rel="noopener" className="border-b border-current">
               телеграм
             </a>
           </p>
