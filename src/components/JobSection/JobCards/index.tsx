@@ -17,7 +17,7 @@ interface Props {
 
 const JobCards: FC<Props> = ({ jobs }) => {
   return (
-    <section className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-5 pb-20">
+    <section className="grid grid-cols-3 gap-5 pb-20 max-lg:grid-cols-2 max-sm:grid-cols-1">
       {jobs.docs.map((job) => (
         <div key={job.id} className="bg-popover text-popover-foreground h-full min-h-[360px] rounded-md">
           <Link rel="noopener" target="_blank" href={`/job/${job.id}`} className="inline-flex h-full w-full p-5">

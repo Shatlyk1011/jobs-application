@@ -2,14 +2,14 @@ import type { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 import { SearchIcon } from "lucide-react";
 
 interface Props {
-  value: string
-  setSearch: Dispatch<SetStateAction<string>>
+  value: string;
+  setSearch: Dispatch<SetStateAction<string>>;
 }
 
 const SearchBar: FC<Props> = ({ value, setSearch }) => {
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value)
-  }
+    setSearch(e.target.value);
+  };
   return (
     <div className="mb-4 h-12 w-full">
       <label className="relative h-full w-full">

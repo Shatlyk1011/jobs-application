@@ -25,7 +25,6 @@ export function useCreateResume(setForm: Dispatch<SetStateAction<IResumeForm>>, 
         });
       }
     } catch (err) {
-      
       setForm(InitialResumeFormState);
       toast.error("Что то пошло не так. Пожалуйста заполните все поля правильно, и попробуйте еще раз.", {
         id: "loading-toast-id",

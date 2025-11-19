@@ -90,7 +90,7 @@ export default async function JobPage({ params }: Props) {
 
         <div className="bg-popover w-full rounded-3xl p-6 text-sm">
           Стань заметнее для работадателей →{" "}
-          <Link href="/cv" className="text-sidebar-primary" >
+          <Link href="/cv" className="text-sidebar-primary">
             здесь
           </Link>
         </div>
