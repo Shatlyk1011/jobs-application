@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils";
 import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../data/filters";
 
 //components
-import { SelectComponent } from "../SelectComponent";
+import { SelectComponent } from "../../SelectComponent";
 import { Checkbox } from "@/components/ui/checkbox";
 
 import { IResumeForm } from "@/types/resume";
 import { SalaryType } from "@/types";
-import CustomInput from "./CustomInput";
+import CustomInput from "../../ui/CustomInput";
 import { Input } from "@/components/ui/input";
 
 const CURRENCY_OBJ = () => {

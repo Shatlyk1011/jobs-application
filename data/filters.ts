@@ -106,6 +106,21 @@ export const FORMAT = [
   },
 ];
 
+export const LANGUAGES = [
+  {
+    label: "Русский",
+    value: "Русский",
+  },
+  {
+    label: "Туркмен",
+    value: "Туркмен",
+  },
+  {
+    label: "Английский",
+    value: "Английский",
+  },
+];
+
 export const CURRENCY: TCurrency[] = ["TMT", "USD", "RUB", "EURO"];
 
 export type TCurrency = "TMT" | "USD" | "RUB" | "EURO";
