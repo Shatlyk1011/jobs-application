@@ -51,7 +51,6 @@ const JobSection: FC<Props> = ({ initialData }) => {
   return (
     <div>
       <JobFilters handleFilterRequest={handleFilterRequest} totalDocs={data.totalDocs} />
-
       <JobCards jobs={data} />
     </div>
   );
