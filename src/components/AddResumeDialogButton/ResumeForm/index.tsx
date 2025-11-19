@@ -35,8 +35,10 @@ const ResumeForm: FC<Props> = ({ close }) => {
   return (
     <form className="flex flex-col gap-4 max-sm:gap-3" onSubmit={handleSubmit}>
       <Form form={form} setForm={setForm} errors={errors} salaryView={salaryView} setSalaryView={setSalaryView} />
-      <div className="mt-4 flex justify-end gap-3 max-sm:mt-2 max-sm:text-xs max-sm:flex-col">
-        <p className="text-[13px] font-medium">Ссылка на резюме: <span className="opacity-70">Google Drive, Облако Mail.ru или другое</span></p>
+      <div className="mt-4 flex justify-end gap-3 max-sm:mt-2 max-sm:flex-col max-sm:text-xs">
+        <p className="text-[13px] font-medium">
+          Ссылка на резюме: <span className="opacity-70">Google Drive, Облако Mail.ru или другое</span>
+        </p>
         <DialogClose asChild className="order-3">
           <Button type="button" variant="secondary" disabled={isLoading}>
             Отмена

@@ -34,18 +34,18 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
 
   const handleDeleteOption = (option: string) => {
     if (selectedProfessions.includes(option)) {
-      return setSelectedProfessions(prev => prev.filter(val => val !== option))
+      return setSelectedProfessions((prev) => prev.filter((val) => val !== option));
     }
     if (selectedLevels.includes(option)) {
-      return setSelectedLevels(prev => prev.filter(val => val !== option))
+      return setSelectedLevels((prev) => prev.filter((val) => val !== option));
     }
     if (selectedLocation.includes(option)) {
-      return setSelectedLocation(prev => prev.filter(val => val !== option))
+      return setSelectedLocation((prev) => prev.filter((val) => val !== option));
     }
     if (selectedFormat.includes(option)) {
-      return setSelectedFormat(prev => prev.filter(val => val !== option))
+      return setSelectedFormat((prev) => prev.filter((val) => val !== option));
     }
-  }
+  };
 
   useEffect(() => {
     const query: Where = {
@@ -147,7 +147,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
                 key={o}
               >
                 <span className="mb-0.5 leading-[100%] text-nowrap">{allFilters[o]}</span>
-                <button className="leading-0 p-0.5 rounded-full hover:bg-ring/20" onClick={() => handleDeleteOption(o)}>
+                <button className="hover:bg-ring/20 rounded-full p-0.5 leading-0" onClick={() => handleDeleteOption(o)}>
                   <XIcon className="h-4 w-4 text-inherit opacity-80 hover:opacity-100" />
                 </button>
               </li>

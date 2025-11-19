@@ -10,7 +10,7 @@ const Footer: FC<Props> = () => {
     <footer className="bg-popover mb-5 rounded-2xl p-8">
       <div className="flex gap-8 max-lg:flex-col max-lg:gap-10">
         {/* left */}
-        <div className="flex basis-[30%] gap-4 max-lg:gap-2.5 max-h-max items-center max-lg:order-2 max-lg:basis-full max-sm:flex-col">
+        <div className="flex max-h-max basis-[30%] items-center gap-4 max-lg:order-2 max-lg:basis-full max-lg:gap-2.5 max-sm:flex-col">
           <Logo className="h-16 w-max max-sm:h-20" />
 
           <div className="max-h-max rounded-xl text-start text-sm font-medium text-nowrap max-sm:text-center">
@@ -24,25 +24,31 @@ const Footer: FC<Props> = () => {
               Напишите нам
             </a>
           </div>
-          <p className="text-sm text-ring mt-5 hidden max-lg:block text-end max-lg:flex-1">© 2025 | Все права защищены</p>
+          <p className="text-ring mt-5 hidden text-end text-sm max-lg:block max-lg:flex-1">
+            © 2025 | Все права защищены
+          </p>
         </div>
 
         {/* right */}
         <div className="text-ring -tracking-one flex flex-1 justify-end gap-8 text-[16px] font-medium max-lg:justify-center max-sm:flex-col max-sm:items-center max-sm:text-center">
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Вакансии</li>
-            <li className="mb-2 hover:text-foreground transition">
+            <li className="hover:text-foreground mb-2 transition">
               <Link href="/jobs">Список вакансий</Link>
             </li>
-            <li >
-              <a className="hover:text-foreground transition" href={siteConfig.telegram_support}>Работадателям</a>
+            <li>
+              <a className="hover:text-foreground transition" href={siteConfig.telegram_support}>
+                Работадателям
+              </a>
             </li>
           </ul>
 
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Сервисы</li>
             <li className="mb-2">
-              <Link className="hover:text-foreground transition" href="/cv">Резюме</Link>
+              <Link className="hover:text-foreground transition" href="/cv">
+                Резюме
+              </Link>
             </li>
             <li className="mb-2">
               <Link className="hover:text-foreground transition" href="/cv?modal=open" replace>
@@ -59,15 +65,19 @@ const Footer: FC<Props> = () => {
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Документы</li>
             <li className="mb-2">
-              <Link className="hover:text-foreground transition transition" href="/">Конфиденциальность</Link>
+              <Link className="hover:text-foreground transition" href="/">
+                Конфиденциальность
+              </Link>
             </li>
             <li>
-              <Link className="hover:text-foreground transition" href="/">Условия использования</Link>
+              <Link className="hover:text-foreground transition" href="/">
+                Условия использования
+              </Link>
             </li>
           </ul>
         </div>
       </div>
-      <p className="text-sm text-ring mt-5 max-lg:hidden">© 2025 | Все права защищены</p>
+      <p className="text-ring mt-5 text-sm max-lg:hidden">© 2025 | Все права защищены</p>
     </footer>
   );
 };
