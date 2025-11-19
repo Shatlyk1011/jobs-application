@@ -48,7 +48,7 @@ const Jobs: CollectionConfig = {
     },
     {
       name: "title",
-      label: "Загаловок",
+      label: "Загаловок (название вакансии)",
       type: "text",
       required: true,
     },
@@ -87,6 +87,13 @@ const Jobs: CollectionConfig = {
       required: true,
     },
     {
+      name: "location",
+      label: "Местонахождение",
+      type: "select",
+      options: LOCATION,
+      required: true,
+    },
+    {
       name: "format",
       label: "Формат",
       type: "select",
@@ -100,13 +107,7 @@ const Jobs: CollectionConfig = {
       options: LEVEL,
       required: true,
     },
-    {
-      name: "location",
-      label: "Местонахождение",
-      type: "select",
-      options: LOCATION,
-      required: true,
-    },
+    
     {
       name: "salary",
       label: "Зарплата",

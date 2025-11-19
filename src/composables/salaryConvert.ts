@@ -21,3 +21,11 @@ export const CURRENCY_ICON = {
   RUB: RussianRuble,
   EURO: Euro,
 };
+
+export const getLocation = (location: string) => {
+  if (location.toLowerCase() === 'за рубежом') {
+    return ''
+  }
+
+  return location + ', '
+}

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { salaryConvert } from "@/composables/salaryConvert";
+import { getLocation, salaryConvert } from "@/composables/salaryConvert";
 import { Coins, MapPin, StarIcon } from "lucide-react";
 import CurrencyIcon from "@/components/ui/currency-icon";
 import { IResumes } from "@/types/resume";
@@ -32,14 +32,14 @@ const CVCards: FC<Props> = ({ resumes }) => {
               </figure> */}
             </div>
 
-            <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
+            <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-[14px] leading-[1.3] font-medium">
               <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
                 <StarIcon className="h-4 w-4 opacity-60" />
                 <span>{resume.level}</span>
               </li>
               <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
                 <MapPin className="h-4 w-4 opacity-60" />
-                <span>{resume.location}</span>
+                <div className="first-letter:uppercase">{getLocation(resume.location)} <span className="lowercase">{resume.format}</span></div>
               </li>
               <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
                 <Coins className="h-4 w-4 opacity-60" />
