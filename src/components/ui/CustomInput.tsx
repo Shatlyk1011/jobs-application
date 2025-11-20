@@ -3,8 +3,7 @@ import { FC } from "react";
 
 interface Props extends React.ComponentProps<"input"> {
   errorMsg?: string;
-    as?: 'input' | 'textarea'
-
+  as?: "input" | "textarea";
 }
 
 const CustomInput: FC<Props> = ({ errorMsg, ...rest }) => {

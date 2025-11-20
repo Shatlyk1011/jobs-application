@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FC, Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
@@ -7,15 +7,15 @@ import Spinner from "../ui/Spinner";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
-  ssr: false
+  ssr: false,
 });
 
-interface Props {};
+interface Props {}
 
-const MentorForm:FC<Props> = () => {
-  const [form, setForm] = useState(InitialMentorFormState)
+const MentorForm: FC<Props> = () => {
+  const [form, setForm] = useState(InitialMentorFormState);
 
-  console.log('form', form);
+  console.log("form", form);
 
   // useEffect(() => {
   //   const handleBeforeUnload = (e: any) => {
@@ -26,14 +26,13 @@ const MentorForm:FC<Props> = () => {
   //   return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   // }, []);
   return (
-    <div className=" text-start px-8 py-8 rounded-2xl bg-popover max-w-2xl mx-auto">
-      <form className=" rounded-xl flex flex-col gap-5">
+    <div className="bg-popover mx-auto max-w-2xl rounded-2xl px-8 py-8 text-start">
+      <form className="flex flex-col gap-5 rounded-xl">
         <Suspense>
-          <Form form={form} setForm={setForm}/>
+          <Form form={form} setForm={setForm} />
         </Suspense>
-        
       </form>
     </div>
-  )
+  );
 };
-export default MentorForm
+export default MentorForm;

@@ -1,31 +1,36 @@
-
 import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
 interface Props extends React.ComponentProps<"input"> {
-  as?: 'input' | 'textarea'
+  as?: "input" | "textarea";
 }
 
 const Input: React.FC<Props> = ({ className, as, type, ...props }) => {
-  if (as === 'textarea') {
-    const textareaRef = useRef<HTMLTextAreaElement>(null)
+  if (as === "textarea") {
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     // Auto-resize textarea height based on content
     const handleInput = (e?: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const textarea = textareaRef.current
+      const textarea = textareaRef.current;
       if (textarea) {
-        textarea.style.height = "40px" // Reset height to recalculate
-        textarea.style.height = `${textarea.scrollHeight}px`
+        textarea.style.height = "40px"; // Reset height to recalculate
+        textarea.style.height = `${textarea.scrollHeight}px`;
       }
       if (props.onChange && e) {
         // @ts-ignore
-        props.onChange(e)
+        props.onChange(e);
       }
-    }
+    };
     // @ts-ignore
-    return <textarea className="min-h-[120px] bg-input/30 border border-input px-3 py-2 rounded-lg placeholder:font-[inherit] placeholder:text-sm" {...props} ref={textareaRef} onChange={handleInput} />
-
+    return (
+      <textarea
+        className="bg-input/30 border-input min-h-[120px] rounded-lg border px-3 py-2 placeholder:font-[inherit] placeholder:text-sm"
+        {...props}
+        ref={textareaRef}
+        onChange={handleInput}
+      />
+    );
   }
   return (
     <input
@@ -40,6 +45,6 @@ const Input: React.FC<Props> = ({ className, as, type, ...props }) => {
       {...props}
     />
   );
-}
+};
 
 export { Input };

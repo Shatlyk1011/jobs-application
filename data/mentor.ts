@@ -5,13 +5,13 @@ export const InitialMentorFormState: IMentor = {
   resumeLink: "",
   profession: [],
   language: [],
-  about: '',
-  howCanYouHelp: '',
-  position: '',
+  about: "",
+  howCanYouHelp: "",
+  position: "",
   image: null,
 
   email: "",
-  telegram: ''
+  telegram: "",
 };
 
 export const MENTOR_PROFESSION = [

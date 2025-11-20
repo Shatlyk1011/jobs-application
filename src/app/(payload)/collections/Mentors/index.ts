@@ -9,7 +9,7 @@ const Mentors: CollectionConfig = {
     create: () => true,
   },
   admin: {
-    defaultColumns: ["image","username", "telegram", "resumeLink", "isVisible"],
+    defaultColumns: ["image", "username", "telegram", "resumeLink", "isVisible"],
   },
   slug: "mentors",
   fields: [
@@ -30,7 +30,7 @@ const Mentors: CollectionConfig = {
       label: "Профессия",
       type: "select",
       options: MENTOR_PROFESSION,
-      hasMany:true,
+      hasMany: true,
       required: true,
     },
     {
@@ -38,7 +38,7 @@ const Mentors: CollectionConfig = {
       label: "Языки общения с учениками",
       type: "select",
       options: LANGUAGES,
-      hasMany:true,
+      hasMany: true,
       required: true,
     },
 
@@ -47,7 +47,7 @@ const Mentors: CollectionConfig = {
       label: "Фотография для профиля",
       type: "upload",
       relationTo: "media",
-      required: true
+      required: true,
     },
 
     {
@@ -63,7 +63,7 @@ const Mentors: CollectionConfig = {
       type: "textarea",
       required: true,
     },
-    
+
     {
       name: "resumeLink",
       label: "Ссылка на резюме или на успешные кейсы",
@@ -77,7 +77,7 @@ const Mentors: CollectionConfig = {
       type: "text",
       required: true,
     },
-    
+
     {
       name: "telegram",
       label: "Ник в Телеграм",
