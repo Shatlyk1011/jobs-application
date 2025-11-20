@@ -1,29 +1,30 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
+import { MENTOR_PROFESSION } from "../../../data/mentor";
+import { LANGUAGES } from "../../../data/filters";
+
+import { IMentor } from "@/types/mentors";
+
+import { getFileSize } from "@/composables/getFileSize";
+
+import { CheckIcon, Info, Paperclip } from "lucide-react";
+
+//components
 import CustomInput from "../ui/CustomInput";
 import { MultiSelect } from "../MultiSelect";
-import { MENTOR_PROFESSION } from "../../../data/mentor";
-import { CheckIcon, Info, Paperclip } from "lucide-react";
-import { LANGUAGES } from "../../../data/filters";
 import { Checkbox } from "../ui/checkbox";
-import Link from "next/link";
-import { IMentor } from "@/types/mentors";
 import { Button } from "../ui/button";
+import ImageSelect from "./image";
 
 interface Props {
   form: IMentor;
   setForm: Dispatch<SetStateAction<IMentor>>;
   isLoading: boolean;
+  errors: Partial<Record<"username" | "resumeLink" | "profession" | 'image' | "position" | "language" | "about" | "howCanYouHelp" | "email" | "telegram", string>>
 }
 
-const getFileSize = (file: File) => {
-  const sizeBytes = file.size;
-  const mb = sizeBytes / 1024 ** 2;
-
-  return mb.toFixed(2);
-};
-
-const Form: FC<Props> = ({ form, setForm, isLoading }) => {
+const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 
@@ -40,9 +41,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
       const imageFile = files[0];
 
       if (+getFileSize(imageFile) >= 1) {
-        setFileError("Размер не должен превышать 1мб");
-        handleInput("image", null);
-
+        setFileError("Размер файла не должен превышать 1мб");
         return;
       }
 
@@ -50,7 +49,6 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
     }
   };
 
-  const imageRef = useRef<HTMLInputElement | null>(null);
 
   const onInputChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement>) => {
     handleInput(name as keyof IMentor, value);
@@ -70,6 +68,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           placeholder="Аман Аманов"
           id="username"
           name="username"
+          errorMsg={errors.username}
           value={form.username}
           onChange={onInputChange}
         />
@@ -83,6 +82,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           placeholder="Senior Backend Developer at Belet"
           id="position"
           name="position"
+          errorMsg={errors.position}
           value={form.position}
           onChange={onInputChange}
         />
@@ -96,6 +96,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           badgeClassname="bg-input/30 hover:bg-secondary"
           maxCount={3}
           placeholder="Выберите сферы менторства"
+          errorMsg={errors.profession}
           animation={0}
           options={MENTOR_PROFESSION}
           onValueChange={setSelectedProfessions}
@@ -120,6 +121,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           badgeClassname="bg-input/30 hover:bg-secondary"
           maxCount={3}
           placeholder="Выберите языки"
+          errorMsg={errors.language}
           animation={0}
           options={LANGUAGES}
           onValueChange={setSelectedLanguages}
@@ -128,39 +130,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
       </div>
 
       {/* Image */}
-      <div className="mb-6 inline-block text-sm font-medium">
-        <span className="mb-2 inline-block">Фотография для профиля (max 1 mb)</span>
-
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => imageRef.current?.click()}
-            type="button"
-            className="bg-input/30 border-input flex h-[41px] max-w-max items-center justify-center gap-2 rounded-md border py-1 pr-4 pl-3 text-[14px] transition focus-within:ring-1 focus-within:ring-white/50 focus-within:outline-none hover:bg-white/10"
-          >
-            {form?.image ? <CheckIcon className="h-4 w-4" /> : <Paperclip className="h-4 w-4" />}
-            <span>{form?.image ? "Выбрано" : "Выберите фото"}</span>
-          </button>
-          {form?.image && (
-            <div className="-tracking-one flex flex-col text-[12px]">
-              <p title={form?.image.name} className="line-clamp-1">
-                <span className="opacity-80">Название:</span> {form?.image.name}
-              </p>
-              <p>
-                <span className="opacity-80">Размер:</span> {getFileSize(form.image)} мб
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
-      <input
-        ref={imageRef}
-        onChange={handleFile}
-        type="file"
-        accept=".jpg,.png,.webp"
-        id="image"
-        tabIndex={-1}
-        className="sr-only absolute left-[-999px] z-[-100]"
-      />
+      <ImageSelect image={form.image} handleFile={handleFile} errorMsg={fileError} />
 
       <div className="mb-6">
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="about">
@@ -177,6 +147,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           as="textarea"
           placeholder="Расскажите коротко о себе"
           id="about"
+          errorMsg={errors.about}
           name="about"
           value={form.about}
           onChange={onInputChange}
@@ -200,6 +171,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           as="textarea"
           placeholder="Расскажите как Вы сможете помочь ученикам"
           id="howCanYouHelp"
+          errorMsg={errors.howCanYouHelp}
           name="howCanYouHelp"
           value={form.howCanYouHelp}
           onChange={onInputChange}
@@ -214,6 +186,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           placeholder="google.drive/resume/10"
           id="resumeLink"
           name="resumeLink"
+          errorMsg={errors.resumeLink}
           value={form.resumeLink}
           onChange={onInputChange}
         />
@@ -223,7 +196,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="email">
           Ваш email
         </label>
-        <CustomInput placeholder="amanov@mail.ru" id="email" name="email" value={form.email} onChange={onInputChange} />
+        <CustomInput placeholder="amanov@mail.ru" id="email" name="email" errorMsg={errors.email} value={form.email} onChange={onInputChange} />
       </div>
 
       <div>
@@ -234,6 +207,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading }) => {
           placeholder="@amanov"
           id="telegram"
           name="telegram"
+          errorMsg={errors.telegram}
           value={form.telegram}
           onChange={onInputChange}
         />

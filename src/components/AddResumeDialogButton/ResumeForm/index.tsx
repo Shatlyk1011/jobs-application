@@ -6,7 +6,7 @@ import { IResumeForm } from "@/types/resume";
 import { InitialResumeFormState } from "../../../../data/resume";
 import { DialogClose } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { useResumeZodForm } from "@/lib/zod";
+import { useResumeZodForm } from "@/lib/zod/zod";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
