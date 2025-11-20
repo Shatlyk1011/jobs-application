@@ -97,7 +97,8 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
       <div
         className={cn(
           "relative flex flex-col items-start gap-3 overflow-hidden rounded-xl border px-4 py-4",
-          salaryView && "border-sidebar-primary/30 dark:border-sidebar-primary/60 bg-43 dark:bg-sidebar-primary/30 transition",
+          salaryView &&
+            "border-sidebar-primary/30 dark:border-sidebar-primary/60 bg-43 dark:bg-sidebar-primary/30 transition",
         )}
       >
         <div className="flex items-center gap-2">

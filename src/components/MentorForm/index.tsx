@@ -19,15 +19,15 @@ interface Props {}
 const MentorForm: FC<Props> = () => {
   const [form, setForm] = useState(InitialMentorFormState);
 
-  const { createMentor, isLoading } = useCreateMentor(setForm)
-  const { createImage } = useCreateImage()
+  const { createMentor, isLoading } = useCreateMentor(setForm);
+  const { createImage } = useCreateImage();
 
   const submit = async () => {
-    if (!form.image) return
-    const imageUrl = await createImage(form.image)
-    const { image, ...rest } = form
-    await createMentor({ ...rest, imageUrl })
-  }
+    if (!form.image) return;
+    const imageUrl = await createImage(form.image);
+    const { image, ...rest } = form;
+    await createMentor({ ...rest, imageUrl });
+  };
 
   const { errors, handleSubmit } = useMentorZodForm(form, submit);
 

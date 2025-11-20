@@ -9,7 +9,7 @@ const Mentors: CollectionConfig = {
     create: () => true,
   },
   admin: {
-    defaultColumns: [ "username", "telegram", "resumeLink", "isVisible"],
+    defaultColumns: ["username", "telegram", "resumeLink", "isVisible"],
   },
   slug: "mentors",
   fields: [

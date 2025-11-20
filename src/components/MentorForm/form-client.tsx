@@ -21,7 +21,21 @@ interface Props {
   form: IMentor;
   setForm: Dispatch<SetStateAction<IMentor>>;
   isLoading: boolean;
-  errors: Partial<Record<"username" | "resumeLink" | "profession" | 'image' | "position" | "language" | "about" | "howCanYouHelp" | "email" | "telegram", string>>
+  errors: Partial<
+    Record<
+      | "username"
+      | "resumeLink"
+      | "profession"
+      | "image"
+      | "position"
+      | "language"
+      | "about"
+      | "howCanYouHelp"
+      | "email"
+      | "telegram",
+      string
+    >
+  >;
 }
 
 const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
@@ -48,7 +62,6 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       handleInput("image", imageFile);
     }
   };
-
 
   const onInputChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement>) => {
     handleInput(name as keyof IMentor, value);
@@ -196,7 +209,14 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="email">
           Ваш email
         </label>
-        <CustomInput placeholder="amanov@mail.ru" id="email" name="email" errorMsg={errors.email} value={form.email} onChange={onInputChange} />
+        <CustomInput
+          placeholder="amanov@mail.ru"
+          id="email"
+          name="email"
+          errorMsg={errors.email}
+          value={form.email}
+          onChange={onInputChange}
+        />
       </div>
 
       <div>
@@ -224,7 +244,9 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       </div>
 
       <div className="mt-6">
-        <Button type="submit" disabled={isLoading}>Отправить заявку</Button>
+        <Button type="submit" disabled={isLoading}>
+          Отправить заявку
+        </Button>
       </div>
     </>
   );

@@ -155,7 +155,7 @@ interface MultiSelectProps
    */
   className?: string;
   badgeClassname?: string;
-  errorMsg?: string
+  errorMsg?: string;
 
   /**
    * If true, shows search functionality in the popover.

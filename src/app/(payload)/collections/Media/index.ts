@@ -8,7 +8,7 @@ const Media: CollectionConfig = {
   },
   access: {
     read: () => true,
-    create: () => true
+    create: () => true,
   },
   fields: [
     {

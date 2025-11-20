@@ -3,9 +3,9 @@ export interface IMentor {
   position: string;
   profession: string[];
   language: string[];
-  // 
+  //
   image?: File | null;
-  imageUrl?:string
+  imageUrl?: string;
   about: string;
   howCanYouHelp: string;
   resumeLink: string;
