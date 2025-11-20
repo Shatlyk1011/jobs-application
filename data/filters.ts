@@ -108,12 +108,12 @@ export const FORMAT = [
 
 export const LANGUAGES = [
   {
-    label: "Русский",
-    value: "Русский",
+    label: "Туркменский",
+    value: "Туркменский",
   },
   {
-    label: "Туркмен",
-    value: "Туркмен",
+    label: "Русский",
+    value: "Русский",
   },
   {
     label: "Английский",
