@@ -4,6 +4,23 @@ const nextConfig = {
   experimental: {
     turbopack: true,
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/mentor',
+        destination: '/mentors',
+        permanent: true,
+      },
+      {
+        source: '/job',
+        destination: '/jobs',
+        permanent: true,
+      },
+    ]
+  },
+
+
   /* config options here */
 };
 
