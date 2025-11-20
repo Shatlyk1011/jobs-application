@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { FC } from "react";
+import ErrorMsg from "./ErrorMsg";
 
 interface Props extends React.ComponentProps<"input"> {
   errorMsg?: string;
@@ -10,7 +11,7 @@ const CustomInput: FC<Props> = ({ errorMsg, ...rest }) => {
   return (
     <div className="flex w-full flex-col gap-1">
       <Input autoComplete="off" {...rest} />
-      {errorMsg && <span className="text-destructive ml-1 text-[13px] leading-[130%] font-normal">{errorMsg}</span>}
+      <ErrorMsg errorMsg={errorMsg} />
     </div>
   );
 };
