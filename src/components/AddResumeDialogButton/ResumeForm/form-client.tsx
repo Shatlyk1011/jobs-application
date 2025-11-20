@@ -1,5 +1,5 @@
-import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 import { cn } from "@/lib/utils";
+import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 
 import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../data/filters";
 
