@@ -16,6 +16,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
+import ErrorMsg from "../ui/ErrorMsg";
 
 /**
  * Animation types and configurations
@@ -154,6 +155,7 @@ interface MultiSelectProps
    */
   className?: string;
   badgeClassname?: string;
+  errorMsg?: string
 
   /**
    * If true, shows search functionality in the popover.
@@ -310,6 +312,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
       resetOnDefaultValueChange = true,
       closeOnSelect = false,
       badgeClassname,
+      errorMsg,
       ...props
     },
     ref,
@@ -1044,6 +1047,8 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
             />
           )}
         </Popover>
+
+        <ErrorMsg errorMsg={errorMsg} />
       </>
     );
   },

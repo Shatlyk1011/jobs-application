@@ -7,6 +7,7 @@ import { InitialMentorFormState } from "../../../data/mentor";
 import Spinner from "../ui/Spinner";
 import useCreateMentor from "@/services/useCreateMentor";
 import useCreateImage from "@/services/useCreateImage";
+import { useMentorZodForm } from "@/lib/zod/zod";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
@@ -21,12 +22,14 @@ const MentorForm: FC<Props> = () => {
   const { createMentor, isLoading } = useCreateMentor(setForm)
   const { createImage } = useCreateImage()
 
-  const handleSubmit = async () => {
+  const submit = async () => {
     if (!form.image) return
     const imageUrl = await createImage(form.image)
     const { image, ...rest } = form
     await createMentor({ ...rest, imageUrl })
   }
+
+  const { errors, handleSubmit } = useMentorZodForm(form, submit);
 
   // useEffect(() => {
   //   const handleBeforeUnload = (e: any) => {
@@ -38,12 +41,9 @@ const MentorForm: FC<Props> = () => {
   // }, []);
   return (
     <div className="bg-popover mx-auto max-w-2xl rounded-2xl px-8 py-8 text-start">
-      <form className="flex flex-col gap-5 rounded-xl" onSubmit={(e) => {
-        e.preventDefault()
-        handleSubmit()
-      }}>
+      <form className="flex flex-col gap-5 rounded-xl" onSubmit={handleSubmit}>
         <Suspense>
-          <Form form={form} setForm={setForm} isLoading={isLoading} />
+          <Form form={form} setForm={setForm} isLoading={isLoading} errors={errors} />
         </Suspense>
       </form>
     </div>

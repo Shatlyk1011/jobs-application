@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import ErrorMsg from "../ui/ErrorMsg";
 
 interface Props {
   items: { label: string; value: string }[];
@@ -27,7 +28,7 @@ export function SelectComponent({ items, placeholder, onChange, value, errorMsg,
           </SelectGroup>
         </SelectContent>
       </Select>
-      {errorMsg && <span className="text-destructive ml-1 text-[13px] leading-[130%] font-normal">{errorMsg}</span>}
+      <ErrorMsg errorMsg={errorMsg} />
     </div>
   );
 }
