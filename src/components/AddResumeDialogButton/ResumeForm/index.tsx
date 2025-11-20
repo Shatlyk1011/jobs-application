@@ -6,7 +6,7 @@ import { IResumeForm } from "@/types/resume";
 import { InitialResumeFormState } from "../../../../data/resume";
 import { DialogClose } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { useZodForm } from "@/lib/zod";
+import { useResumeZodForm } from "@/lib/zod";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
@@ -31,7 +31,7 @@ const ResumeForm: FC<Props> = ({ close }) => {
     await createResume(form);
   };
 
-  const { errors, handleSubmit } = useZodForm(form, submit);
+  const { errors, handleSubmit } = useResumeZodForm(form, submit);
   return (
     <form className="flex flex-col gap-4 max-sm:gap-3" onSubmit={handleSubmit}>
       <Form form={form} setForm={setForm} errors={errors} salaryView={salaryView} setSalaryView={setSalaryView} />
