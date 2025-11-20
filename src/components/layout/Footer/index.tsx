@@ -77,7 +77,10 @@ const Footer: FC<Props> = () => {
           </ul>
         </div>
       </div>
-      <p className="text-ring mt-5 text-sm max-lg:hidden">© 2025 | Все права защищены</p>
+      <div className="text-ring mt-5 text-sm flex gap-4 justify-between items-center max-lg:hidden">
+        <p>© 2025 | Все права защищены</p>
+        <p>Developed by <a className="text-foreground opacity-70 hover:opacity-100 transition" href="https://shatlykabdullayev.com" target="_blank" rel="noopener">@shatlyk</a></p>
+      </div>
     </footer>
   );
 };

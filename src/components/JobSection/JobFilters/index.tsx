@@ -88,6 +88,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
     if (!mounted) return;
     handleFilterRequest(query);
   }, [search, selectedProfessions, selectedLevels, selectedLocation, selectedFormat]);
+
   return (
     <>
       <section className="mb-4 w-full">
