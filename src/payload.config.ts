@@ -8,6 +8,7 @@ import { buildConfig } from "payload";
 import Jobs from "./app/(payload)/collections/Jobs";
 import Media from "./app/(payload)/collections/Media";
 import Resume from "./app/(payload)/collections/Resume";
+import Mentors from "./app/(payload)/collections/Mentors";
 
 import path from "path";
 import { fileURLToPath } from "node:url";
@@ -27,7 +28,7 @@ export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
 
   // Define and configure your collections in this array
-  collections: [Jobs, Media, Resume],
+  collections: [Jobs, Media, Resume, Mentors],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || "",
@@ -38,39 +39,3 @@ export default buildConfig({
   }),
   sharp,
 });
-
-// // storage-adapter-import-placeholder
-// import { mongooseAdapter } from "@payloadcms/db-mongodb";
-// import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
-// import { lexicalEditor } from "@payloadcms/richtext-lexical";
-// import path from "path";
-// import { buildConfig } from "payload";
-// import { fileURLToPath } from "url";
-// import sharp from "sharp";
-
-// const filename = fileURLToPath(import.meta.url);
-// const dirname = path.dirname(filename);
-
-// export default buildConfig({
-//   // admin: {
-//   //   user: Customers.slug,
-//   //   importMap: {
-//   //     baseDir: path.resolve(dirname),
-//   //   },
-//   // },
-//   cookiePrefix: "ashpez",
-//   collections: [Restaurants, Orders, Dishes, Cities, Users, Customers, Media, Categories, FeedbackAndCooperations],
-//   editor: lexicalEditor(),
-//   secret: process.env.PAYLOAD_SECRET || "",
-//   typescript: {
-//     outputFile: path.resolve(dirname, "payload-types.ts"),
-//   },
-//   db: mongooseAdapter({
-//     url: process.env.DATABASE_URI || "",
-//   }),
-//   sharp,
-//   plugins: [
-//     payloadCloudPlugin(),
-//     // storage-adapter-placeholder
-//   ],
-// });
