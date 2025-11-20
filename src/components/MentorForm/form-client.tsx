@@ -3,7 +3,7 @@ import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useRef, useState 
 import CustomInput from "../ui/CustomInput";
 import { MultiSelect } from "../MultiSelect";
 import { MENTOR_PROFESSION } from "../../../data/mentor";
-import { CheckCheckIcon, CheckIcon, Info, Paperclip } from "lucide-react";
+import { CheckIcon, Info, Paperclip } from "lucide-react";
 import { LANGUAGES } from "../../../data/filters";
 import { Checkbox } from "../ui/checkbox";
 import Link from "next/link";
@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 interface Props {
   form: IMentor;
   setForm: Dispatch<SetStateAction<IMentor>>;
+  isLoading: boolean;
 }
 
 const getFileSize = (file: File) => {
@@ -22,7 +23,7 @@ const getFileSize = (file: File) => {
   return mb.toFixed(2);
 };
 
-const Form: FC<Props> = ({ form, setForm }) => {
+const Form: FC<Props> = ({ form, setForm, isLoading }) => {
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 
@@ -197,7 +198,7 @@ const Form: FC<Props> = ({ form, setForm }) => {
         </div>
         <CustomInput
           as="textarea"
-          placeholder="Расскажите как вы сможете помочь ученикам"
+          placeholder="Расскажите как Вы сможете помочь ученикам"
           id="howCanYouHelp"
           name="howCanYouHelp"
           value={form.howCanYouHelp}
@@ -249,7 +250,7 @@ const Form: FC<Props> = ({ form, setForm }) => {
       </div>
 
       <div className="mt-6">
-        <Button type="submit">Отправить заявку</Button>
+        <Button type="submit" disabled={isLoading}>Отправить заявку</Button>
       </div>
     </>
   );

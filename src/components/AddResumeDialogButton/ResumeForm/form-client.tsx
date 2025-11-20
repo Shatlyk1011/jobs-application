@@ -50,14 +50,12 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
           value={form.username}
           placeholder="Ваше имя"
           name={"username" as keyof IResumeForm}
-          className="placeholder:text-sm"
           errorMsg={errors?.username}
         />
         <CustomInput
           onChange={onInputChange}
           value={form.resumeLink}
           title="Пожалуйста укажите валидную ссылку на ваше резюме"
-          className="placeholder:text-sm"
           name={"resumeLink" as keyof IResumeForm}
           placeholder="Ссылка на резюме"
           errorMsg={errors?.resumeLink}
@@ -99,12 +97,12 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
       <div
         className={cn(
           "relative flex flex-col items-start gap-3 overflow-hidden rounded-xl border px-4 py-4",
-          salaryView && "border-sidebar-primary/60 bg-sidebar-primary/30 transition",
+          salaryView && "border-sidebar-primary/30 dark:border-sidebar-primary/60 bg-43 dark:bg-sidebar-primary/30 transition",
         )}
       >
         <div className="flex items-center gap-2">
-          <Checkbox onClick={() => setSalaryView(!salaryView)} className="" checked={salaryView} id="salary" />
-          <label className="-tracking-two text-sm font-medium" htmlFor="salary">
+          <Checkbox onClick={() => setSalaryView(!salaryView)} checked={salaryView} id="salary" />
+          <label className="-tracking-two text-foreground text-sm font-medium" htmlFor="salary">
             Указать зарплатные ожидения
           </label>
         </div>
@@ -120,19 +118,18 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
             onChange={(e) => handleSalary("from", e.target.value)}
             value={form.salary?.from || ""}
             placeholder="от"
-            className="placeholder:text-sidebar-primary-foreground"
+            className=""
           />
           <Input
             autoComplete="off"
             onChange={(e) => handleSalary("to", e.target.value)}
             placeholder="до"
             value={form.salary?.to || ""}
-            className="placeholder:text-sidebar-primary-foreground"
+            className=""
           />
           <SelectComponent
             items={CURRENCY_OBJ()}
             placeholder="Валюта"
-            classes="text-sidebar-primary-foreground!"
             onChange={(value) => handleSalary("currency", value)}
             value={form.salary?.currency || ""}
           />
@@ -143,7 +140,6 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
         value={form.feedback}
         placeholder="Ваш Telegram или email для обратной связи."
         name={"feedback" as keyof IResumeForm}
-        className="placeholder:text-sm"
         errorMsg={errors?.feedback}
       />
     </>

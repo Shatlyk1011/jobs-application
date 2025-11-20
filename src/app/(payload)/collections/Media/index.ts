@@ -2,11 +2,13 @@ import type { CollectionConfig } from "payload";
 import path from "path";
 
 const Media: CollectionConfig = {
+  slug: "media",
   admin: {
     defaultColumns: ["title", "createdBy", "createdAt"],
   },
   access: {
     read: () => true,
+    create: () => true
   },
   fields: [
     {
@@ -18,7 +20,6 @@ const Media: CollectionConfig = {
     },
   ],
   labels: { plural: "Images", singular: "Image" },
-  slug: "media",
 
   upload: {
     formatOptions: {

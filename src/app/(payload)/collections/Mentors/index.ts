@@ -9,7 +9,7 @@ const Mentors: CollectionConfig = {
     create: () => true,
   },
   admin: {
-    defaultColumns: ["image", "username", "telegram", "resumeLink", "isVisible"],
+    defaultColumns: [ "username", "telegram", "resumeLink", "isVisible"],
   },
   slug: "mentors",
   fields: [
@@ -43,10 +43,9 @@ const Mentors: CollectionConfig = {
     },
 
     {
-      name: "image",
-      label: "Фотография для профиля",
-      type: "upload",
-      relationTo: "media",
+      name: "imageUrl",
+      label: "Ссылка на фотографию",
+      type: "text",
       required: true,
     },
 
