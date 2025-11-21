@@ -11,6 +11,11 @@ const nextConfig = {
         source: "/mentor",
         destination: "/mentors",
         permanent: true,
+      },      
+      {
+        source: "/mentors/new",
+        destination: "/mentor/new",
+        permanent: true,
       },
       {
         source: "/job",
