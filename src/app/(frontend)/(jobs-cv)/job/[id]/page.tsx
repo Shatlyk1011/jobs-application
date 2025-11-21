@@ -8,10 +8,10 @@ import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
 
-export async function generateStaticParams() {
-  const jobs = await getJobs();
-  return jobs.map((job) => ({ id: job.id.toString() }));
-}
+// export async function generateStaticParams() {
+//   const jobs = await getJobs();
+//   return jobs.map((job) => ({ id: job.id.toString() }));
+// }
 
 interface Props {
   params: Promise<{ id: string }>;

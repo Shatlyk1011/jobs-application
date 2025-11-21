@@ -10,6 +10,7 @@ import { useResumeZodForm } from "@/lib/zod/zod";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
+  ssr: false
 });
 
 interface Props {

@@ -1,27 +1,30 @@
 import { AxiosResponse } from "axios";
 import axios from "@/lib/axios";
+import { stringify } from "qs-esm";
 
 import { IResumes } from "@/types/resume";
 
 //components
 import AddResumeDialogButton from "@/components/AddResumeDialogButton";
 import CVSection from "@/components/CVSection";
-import { stringify } from "qs-esm";
-
-const stringifiedQuery = stringify(
-  {
-    where: {
-      isVisible: {
-        equals: true,
-      },
-    },
-  },
-  { addQueryPrefix: true },
-);
 
 export default async function CVPage() {
-  const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
-  const { data } = response;
+  //   const stringifiedQuery = stringify(
+  //   {
+  //     where: {
+  //       isVisible: {
+  //         equals: true,
+  //       },
+  //     },
+  //   },
+  //   { addQueryPrefix: true },
+  // );
+
+  //   const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
+  //   if (!response) {
+  //     return null
+  //   }
+  //   const { data } = response;
 
   return (
     <main className="w-full">
@@ -32,11 +35,11 @@ export default async function CVPage() {
         <p className="mb-5 text-base leading-[1.3] opacity-80 max-sm:mx-auto max-sm:max-w-[80%] max-sm:text-sm">
           Заполните простую форму — и мы разместим <br className="max-sm:hidden" /> ваше резюме на нашем сайте бесплатно
         </p>
-        <AddResumeDialogButton />
+        {/* <AddResumeDialogButton /> */}
       </section>
 
       <section className="">
-        <CVSection initialData={data} />
+        {/* <CVSection initialData={data} /> */}
       </section>
     </main>
   );

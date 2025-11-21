@@ -11,8 +11,6 @@ const ThemeToggle: FC<Props> = () => {
 
   const lightTheme = resolvedTheme === "dark";
 
-  console.log("isLight", lightTheme);
-
   const handleChange = () => setTheme(resolvedTheme === "dark" ? "light" : "dark");
 
   // When mounted on client, now we can show the UI
