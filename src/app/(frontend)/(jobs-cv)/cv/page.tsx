@@ -7,6 +7,7 @@ import { IResumes } from "@/types/resume";
 //components
 import AddResumeDialogButton from "@/components/AddResumeDialogButton";
 import CVSection from "@/components/CVSection";
+import { Suspense } from "react";
 
 export default async function CVPage() {
   const stringifiedQuery = stringify(
@@ -35,7 +36,9 @@ export default async function CVPage() {
         <p className="mb-5 text-base leading-[1.3] opacity-80 max-sm:mx-auto max-sm:max-w-[80%] max-sm:text-sm">
           Заполните простую форму — и мы разместим <br className="max-sm:hidden" /> ваше резюме на нашем сайте бесплатно
         </p>
-        <AddResumeDialogButton />
+        <Suspense>
+          <AddResumeDialogButton />
+        </Suspense>
       </section>
 
       <section className="">
