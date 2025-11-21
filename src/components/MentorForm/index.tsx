@@ -14,7 +14,7 @@ const Form = dynamic(() => import("./form-client"), {
   ssr: false,
 });
 
-interface Props { }
+interface Props {}
 
 const MentorForm: FC<Props> = () => {
   const [form, setForm] = useState(InitialMentorFormState);

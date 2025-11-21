@@ -38,9 +38,7 @@ export default async function CVPage() {
         {/* <AddResumeDialogButton /> */}
       </section>
 
-      <section className="">
-        {/* <CVSection initialData={data} /> */}
-      </section>
+      <section className="">{/* <CVSection initialData={data} /> */}</section>
     </main>
   );
 }

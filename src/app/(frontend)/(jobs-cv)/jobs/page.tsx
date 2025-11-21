@@ -23,14 +23,12 @@ export default async function JobsPage() {
   // if (!response) {
   //   return null
   // }
-  
+
   // const { data } = response;
 
   return (
     <main className="h-full w-full">
-      <div className="h-full w-full pt-10">
-        {/* <JobSection initialData={data} /> */}
-      </div>
+      <div className="h-full w-full pt-10">{/* <JobSection initialData={data} /> */}</div>
     </main>
   );
 }

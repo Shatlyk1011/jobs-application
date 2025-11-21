@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_URL } from "@/services/shared/constant";
 
-console.log('API_URL', API_URL);
+console.log("API_URL", API_URL);
 const instance = axios.create({
   baseURL: API_URL,
   headers: {
