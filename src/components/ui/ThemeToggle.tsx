@@ -17,7 +17,7 @@ const ThemeToggle: FC<Props> = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <label className="theme-switch">
+    <label className="theme-switch" tabIndex={0}>
       <input type="checkbox" onChange={handleChange} checked={lightTheme} className="theme-switch__checkbox" />
       <div className="theme-switch__container">
         <div className="theme-switch__clouds"></div>

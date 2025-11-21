@@ -2,7 +2,7 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import { Coins, MapPin, StarIcon } from "lucide-react";
+import { Building2, Coins, MapPin, StarIcon } from "lucide-react";
 
 import { IJobs } from "@/types/job";
 
@@ -19,7 +19,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
   return (
     <section className="grid grid-cols-3 gap-5 pb-20 max-lg:grid-cols-2 max-sm:grid-cols-1">
       {jobs.docs.map((job) => (
-        <div key={job.id} className="bg-popover text-popover-foreground h-full min-h-[360px] rounded-md">
+        <div key={job.id} className="bg-popover text-popover-foreground h-full min-h-[360px] rounded-lg">
           <Link rel="noopener" target="_blank" href={`/job/${job.id}`} className="inline-flex h-full w-full p-5">
             <div className="flex h-full w-full flex-col">
               <div className="flex w-full flex-wrap justify-between gap-x-6 gap-y-2">
@@ -31,9 +31,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                       className="bg-secondary h-6 w-6 overflow-hidden rounded-full object-cover"
                     />
                   ) : (
-                    <span className="bg-secondary flex h-6 w-6 items-center justify-center overflow-hidden rounded-full text-sm font-medium">
-                      {job.companyName[0]}
-                    </span>
+                      <Building2 className="stroke-[1.5] opacity-60" />
                   )}
                   <span className="text-sm font-medium">{job.companyName}</span>
                 </figure>

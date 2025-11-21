@@ -7,6 +7,7 @@ import { salaryConvert } from "@/composables/salaryConvert";
 import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
+import { Building2 } from "lucide-react";
 
 // export async function generateStaticParams() {
 //   const jobs = await getJobs();
@@ -78,17 +79,21 @@ export default async function JobPage({ params }: Props) {
       </article>
 
       {/* right */}
-      <aside className="basis-[30%]">
+      <aside className="basis-[30%] max-w-[30%]">
         <div className="bg-popover mb-6 w-full rounded-3xl p-6">
           <header className="mb-4 flex items-center gap-2.5">
-            <figure className="inline-block h-10 w-10">
-              <img src={job.companyLogo?.url} className="h-full w-full rounded-full bg-red-500 object-cover" alt="" />
+            <figure className="inline-block min-h-10 min-w-10 max-h-10 max-w-10">
+              {job.companyLogo?.url ? (
+                <img src={job.companyLogo?.url} className="w-10 h-10 inline-block rounded-full bg-red-500 object-cover object-center" alt="" />
+              ) : (
+                <Building2 className="stroke-[1.5] w-full h-full opacity-50" />
+              )}
             </figure>
 
             <span>{job.companyName}</span>
           </header>
 
-          {job?.companyDescription && <p className="mb-2.5 text-base">{job.companyDescription}</p>}
+          {job?.companyDescription && <p className="mb-2.5 text-base wrap-break-word">{job.companyDescription}</p>}
 
           {/* <div className="my-4"></div> */}
 
