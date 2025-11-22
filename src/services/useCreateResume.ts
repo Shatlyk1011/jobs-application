@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import axios from "@/lib/axios";
 import { toast } from "sonner";
+import axios from "@/lib/axios";
 
 import { type IResumeForm } from "@/types/resume";
 import { InitialResumeFormState } from "../../data/resume";

@@ -4,12 +4,12 @@ import { toast } from "sonner";
 
 import { InitialMentorFormState } from "../../data/mentor";
 
-import { IMentor } from "@/types/mentors";
+import { IMentorResponse } from "@/types/mentors";
 
-export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentor>>) {
+export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse>>) {
   const [isLoading, setLoading] = useState(false);
 
-  const createMentor = async (form: IMentor) => {
+  const createMentor = async (form: IMentorResponse) => {
     try {
       setLoading(true);
       toast.loading("Отправляем запрос...", { id: "loading-toast-id" });
