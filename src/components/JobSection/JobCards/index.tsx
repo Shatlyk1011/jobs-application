@@ -31,7 +31,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                       className="bg-secondary h-6 w-6 overflow-hidden rounded-full object-cover"
                     />
                   ) : (
-                      <Building2 className="stroke-[1.5] opacity-60" />
+                    <Building2 className="stroke-[1.5] opacity-60" />
                   )}
                   <span className="text-sm font-medium">{job.companyName}</span>
                 </figure>

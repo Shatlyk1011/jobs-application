@@ -5,26 +5,23 @@ import Link from "next/link";
 
 export default async function MentorsPage() {
   return (
-    <div className="text-center w-[70%] h-[300vh] pb-10 pt-14 px-4">
-      <header className="flex gap-4 justify-center mb-10">
-        <Button asChild className='text-sm py-4 px-7 flex-1' variant="secondary">
-          <a href={siteConfig.telegram_support} target='_blank' rel="noopener">Подобрать ментора</a>
+    <div className="h-[300vh] w-[70%] px-4 pt-14 pb-10 text-center">
+      <header className="mb-10 flex justify-center gap-4">
+        <Button asChild className="flex-1 px-7 py-4 text-sm" variant="secondary">
+          <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
+            Подобрать ментора
+          </a>
         </Button>
-        <Button asChild className='text-sm py-4 px-7 flex-1'>
-          <Link
-            href="/mentor/new"
-            target="_blank"
-            rel="noopener"
-          >
+        <Button asChild className="flex-1 px-7 py-4 text-sm">
+          <Link href="/mentor/new" target="_blank" rel="noopener">
             Стать ментором
           </Link>
         </Button>
       </header>
 
-      <MentorSection/>
+      <MentorSection />
 
-
-       {/* <p className="-tracking-one mx-auto mt-10 max-w-max rounded-xl px-6 py-3 text-lg font-semibold">
+      {/* <p className="-tracking-one mx-auto mt-10 max-w-max rounded-xl px-6 py-3 text-lg font-semibold">
         Приглашаем опытных разработчиков к <br /> совместному  сотрудничеству!
       </p> */}
     </div>

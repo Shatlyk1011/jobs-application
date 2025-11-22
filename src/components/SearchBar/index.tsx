@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 interface Props {
   value: string;
   setSearch: Dispatch<SetStateAction<string>>;
-  classes?: string
+  classes?: string;
 }
 
 const SearchBar: FC<Props> = ({ value, setSearch, classes }) => {
@@ -20,7 +20,7 @@ const SearchBar: FC<Props> = ({ value, setSearch, classes }) => {
           placeholder="Поиск"
           value={value}
           onChange={handleInput}
-          className="focus:ring-ring bg-popover placeholder:text-sm h-[inherit] w-[inherit] rounded-md pl-10 caret-current ring ring-transparent placeholder:font-[inherit] placeholder:leading-none focus:outline-none"
+          className="focus:ring-ring bg-popover h-[inherit] w-[inherit] rounded-md pl-10 caret-current ring ring-transparent placeholder:font-[inherit] placeholder:text-sm placeholder:leading-none focus:outline-none"
         />
         <span className="absolute top-[55%] left-4 -translate-y-1/2">
           <SearchIcon className="text-ring h-4 w-4" />

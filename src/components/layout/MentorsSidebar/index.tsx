@@ -1,53 +1,86 @@
-'use client'
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { FC } from 'react';
-import { Logo } from '../../ui/Logo';
-import { Button } from '../../ui/button';
-import { siteConfig } from '@/config';
+"use client";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FC } from "react";
+import { Logo } from "../../ui/Logo";
+import { Button } from "../../ui/button";
+import { siteConfig } from "@/config";
 
-interface Props {};
+interface Props {}
 
 const { mentors, howitworks, mentornew } = {
-  mentors: '/mentors',
-  howitworks: '/mentors/howitworks',
-  mentornew: '/mentor/new',
-}
+  mentors: "/mentors",
+  howitworks: "/mentors/howitworks",
+  mentornew: "/mentor/new",
+};
 
-const MentorsSidebar:FC<Props> = () => {
+const MentorsSidebar: FC<Props> = () => {
   const pathname = usePathname();
 
-return (
-  <div className='w-[30%] max-w-40 relative pt-10'>
-
-    <aside className="h-[calc(100svh-54px)] sticky top-10 left-0 w-full">
-      <header className='flex items-center mb-8'>
-        <Logo className='h-14 w-max' />
-        <h2 className='text-base font-semibold -tracking-two'>Менторы</h2>
-      </header>
-      <ul className='text-base font-normal flex flex-col gap-1 mb-10'>
-        <li>
-          <Link href={mentors} target='_blank' rel="noopener" className={cn("opacity-80 hover:opacity-100 transition", pathname === mentors && 'text-sidebar-primary font-medium opacity-100')}>Менторы</Link>
-        </li>
-        <li>
-          <Link href={howitworks} target='_blank' rel="noopener" className={cn("opacity-80 hover:opacity-100 transition", pathname === howitworks && 'text-sidebar-primary font-medium opacity-100')}>Как это работает</Link>
-        </li>
-        <li>
-          <Link href={mentornew} target='_blank' rel="noopener" className={cn("opacity-80 hover:opacity-100 transition", pathname === mentornew && 'text-sidebar-primary font-medium opacity-100')}>Стать ментором</Link>
-          
-        </li>
-      </ul>
-      <div className='flex flex-col text-base leading-[1.3] font-medium -tracking-two'>
-        <p className='mb-4'>Нужна помощь при <br /> подборе ментора? <br /></p>
-        <p className='mb-6'>Напишите нам, <br /> и мы поможем</p>
-        <Button asChild className='text-sm py-4 px-7 max-w-max ' variant="secondary">
-          <a href={siteConfig.telegram_support} target='_blank' rel="noopener">Написать нам</a>
-        </Button>
-      </div>
-    </aside>
-  </div>
-
-  )
+  return (
+    <div className="relative w-[30%] max-w-40 pt-10">
+      <aside className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
+        <header className="mb-8 flex items-center">
+          <Logo className="h-14 w-max" />
+          <h2 className="-tracking-two text-base font-semibold">Менторы</h2>
+        </header>
+        <ul className="mb-10 flex flex-col gap-1 text-base font-normal">
+          <li>
+            <Link
+              href={mentors}
+              target="_blank"
+              rel="noopener"
+              className={cn(
+                "opacity-80 transition hover:opacity-100",
+                pathname === mentors && "text-sidebar-primary font-medium opacity-100",
+              )}
+            >
+              Менторы
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={howitworks}
+              target="_blank"
+              rel="noopener"
+              className={cn(
+                "opacity-80 transition hover:opacity-100",
+                pathname === howitworks && "text-sidebar-primary font-medium opacity-100",
+              )}
+            >
+              Как это работает
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={mentornew}
+              target="_blank"
+              rel="noopener"
+              className={cn(
+                "opacity-80 transition hover:opacity-100",
+                pathname === mentornew && "text-sidebar-primary font-medium opacity-100",
+              )}
+            >
+              Стать ментором
+            </Link>
+          </li>
+        </ul>
+        <div className="-tracking-two flex flex-col text-base leading-[1.3] font-medium">
+          <p className="mb-4">
+            Нужна помощь при <br /> подборе ментора? <br />
+          </p>
+          <p className="mb-6">
+            Напишите нам, <br /> и мы поможем
+          </p>
+          <Button asChild className="max-w-max px-7 py-4 text-sm" variant="secondary">
+            <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
+              Написать нам
+            </a>
+          </Button>
+        </div>
+      </aside>
+    </div>
+  );
 };
-export default MentorsSidebar
+export default MentorsSidebar;

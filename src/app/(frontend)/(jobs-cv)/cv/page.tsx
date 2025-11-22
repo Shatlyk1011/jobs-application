@@ -23,7 +23,7 @@ export default async function CVPage() {
 
   const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
   if (!response) {
-    return null
+    return null;
   }
   const { data } = response;
 

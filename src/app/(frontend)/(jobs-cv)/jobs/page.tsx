@@ -21,7 +21,7 @@ export default async function JobsPage() {
   const response: AxiosResponse<IJobs> = await axios(`/jobs${stringifiedQuery}`);
 
   if (!response) {
-    return null
+    return null;
   }
 
   const { data } = response;

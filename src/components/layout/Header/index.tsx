@@ -6,12 +6,12 @@ import Link from "next/link";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 
 interface Props {
-  sticky?: boolean
+  sticky?: boolean;
 }
 
 const Header: FC<Props> = ({ sticky }) => {
   return (
-    <header className={cn("flex h-16 items-center justify-between gap-5 max-sm:gap-3 ", sticky && "sticky top-0")}>
+    <header className={cn("flex h-16 items-center justify-between gap-5 max-sm:gap-3", sticky && "sticky top-0")}>
       <Link href="/" className="h-16 w-20 max-sm:min-w-14">
         <Logo className="h-full w-full fill-none text-inherit" />
       </Link>

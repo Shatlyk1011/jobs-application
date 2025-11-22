@@ -12,11 +12,10 @@ export default function MentorsLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <main className="mx-auto box-border max-w-5xl px-12 max-md:px-4">
       <div className="flex gap-16">
-        <MentorsSidebar/>
+        <MentorsSidebar />
         {children}
       </div>
     </main>

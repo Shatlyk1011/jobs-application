@@ -79,14 +79,18 @@ export default async function JobPage({ params }: Props) {
       </article>
 
       {/* right */}
-      <aside className="basis-[30%] max-w-[30%]">
+      <aside className="max-w-[30%] basis-[30%]">
         <div className="bg-popover mb-6 w-full rounded-3xl p-6">
           <header className="mb-4 flex items-center gap-2.5">
-            <figure className="inline-block min-h-10 min-w-10 max-h-10 max-w-10">
+            <figure className="inline-block max-h-10 min-h-10 max-w-10 min-w-10">
               {job.companyLogo?.url ? (
-                <img src={job.companyLogo?.url} className="w-10 h-10 inline-block rounded-full bg-red-500 object-cover object-center" alt="" />
+                <img
+                  src={job.companyLogo?.url}
+                  className="inline-block h-10 w-10 rounded-full bg-red-500 object-cover object-center"
+                  alt=""
+                />
               ) : (
-                <Building2 className="stroke-[1.5] w-full h-full opacity-50" />
+                <Building2 className="h-full w-full stroke-[1.5] opacity-50" />
               )}
             </figure>
 

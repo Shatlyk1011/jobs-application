@@ -34,10 +34,10 @@ const MentorForm: FC<Props> = () => {
   useEffect(() => {
     const handleBeforeUnload = (e: any) => {
       e.preventDefault();
-      e.returnValue = '';
+      e.returnValue = "";
     };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, []);
 
   return (
