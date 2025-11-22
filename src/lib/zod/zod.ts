@@ -10,7 +10,7 @@ import {
   MentorFormData,
   mentorFormScheme,
 } from "./formSchemes";
-import { IMentor } from "@/types/mentors";
+import { IMentorResponse, IMentor } from "@/types/mentors";
 
 // use form hook
 export const useResumeZodForm = (form: IResumeForm, onSubmit: () => Promise<void>) => {
@@ -38,7 +38,7 @@ export const useResumeZodForm = (form: IResumeForm, onSubmit: () => Promise<void
   return { errors, handleSubmit };
 };
 
-export const useMentorZodForm = (form: IMentor, onSubmit: () => Promise<void>) => {
+export const useMentorZodForm = (form: IMentorResponse, onSubmit: () => Promise<void>) => {
   const [errors, setErrors] = useState<MentorFormErrors>({});
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

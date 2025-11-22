@@ -1,5 +1,5 @@
 export interface IMentor {
-  id: string
+  id: string;
   createdAt: string;
   updatedAt: string;
   username: string;
@@ -7,16 +7,16 @@ export interface IMentor {
   profession: string[];
   language: string[];
   //
-  price: string
+  price: string;
   image?: File | null;
   imageUrl?: string;
   about: string;
   howCanYouHelp: string;
-  slug: string
+  slug: string;
   mdx?: any;
   resumeLink: string;
   email: string;
   telegram: string;
 }
 
-export interface IMentorResponse extends Omit<IMentor, 'id' | 'createdAt' | 'updatedAt' | 'price'> {}
+export interface IMentorResponse extends Omit<IMentor, "id" | "createdAt" | "updatedAt" | "price"> {}

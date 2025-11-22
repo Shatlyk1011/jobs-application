@@ -7,21 +7,21 @@ interface Props {
 
 export async function generateStaticParams() {
   const mentors = await getMentors();
-  console.log('mentors', mentors);
-  return mentors
+  console.log("mentors", mentors);
+  return mentors;
 }
 
 export default async function MentorPage({ params }: Props) {
   const { slug } = await params;
 
   const result = await getMentorBySlug(slug);
-  const mentor = result[0]
+  const mentor = result[0];
 
   return (
-    <section className="p-5 pb-10 my-10 rounded-2xl bg-popover w-full">
-      <article className="flex items-start gap-5 relative">
-         {/* left */}
-        <figure className="min-h-14 min-w-14 sticky top-5 left-0">
+    <section className="bg-popover my-10 w-full rounded-2xl p-5 pb-10">
+      <article className="relative flex items-start gap-5">
+        {/* left */}
+        <figure className="sticky top-5 left-0 min-h-14 min-w-14">
           <img
             src="https://cdn.prod.website-files.com/63b754bfedfa853c38da34fd/660bdb422da58631b9220e9d_PicRetouch_20240207_134501259.png"
             alt="profile image"
@@ -36,9 +36,8 @@ export default async function MentorPage({ params }: Props) {
           <h4 className="-tracking-two mb-5 text-sm">Backend Developer at SpaceX</h4>
 
           <RichText content={mentor.mdx} />
-
         </div>
       </article>
     </section>
-  )
+  );
 }

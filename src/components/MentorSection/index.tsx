@@ -1,7 +1,8 @@
 import { FC } from "react";
+import Link from "next/link";
+
 import Filters from "./Filters";
 import { Button } from "../ui/button";
-import Link from "next/link";
 
 interface Props {}
 
@@ -11,10 +12,9 @@ const MentorSection: FC<Props> = () => {
       <Filters />
 
       {/* mentor card */}
-
       <Link
-        href={`/mentors/${123}`}
-        className="bg-popover hover:bg-popover/50 flex w-full items-start gap-5 rounded-xl p-4 shadow-xl/2 transition"
+        href={`/mentors/${"amanov-aman"}`}
+        className="bg-popover hover:bg-popover/80 flex w-full items-start gap-5 rounded-xl p-5 pb-6 shadow-xl/2 transition"
       >
         {/* left */}
         <figure className="min-h-14 min-w-14">
@@ -26,7 +26,6 @@ const MentorSection: FC<Props> = () => {
         </figure>
 
         {/* right */}
-
         <div className="text-start">
           <h3 className="-tracking-two mb-3 text-lg">Аманов Аман</h3>
           <h4 className="-tracking-two mb-5 text-sm">Backend Developer at SpaceX</h4>
@@ -41,7 +40,7 @@ const MentorSection: FC<Props> = () => {
               Смотреть профиль
             </Button>
 
-            <p className="-tracking-three text-[14px]">200TMT / час занятия в ZOOM</p>
+            <p className="-tracking-three text-[14px] font-medium">200TMT / час занятия в ZOOM</p>
           </div>
         </div>
       </Link>

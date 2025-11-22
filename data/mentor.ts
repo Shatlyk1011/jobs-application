@@ -1,4 +1,4 @@
-import { IMentorResponse} from "@/types/mentors";
+import { IMentorResponse } from "@/types/mentors";
 
 export const InitialMentorFormState: IMentorResponse = {
   username: "",
@@ -9,7 +9,7 @@ export const InitialMentorFormState: IMentorResponse = {
   howCanYouHelp: "",
   position: "",
   image: null,
-  slug: '',
+  slug: "",
 
   email: "",
   telegram: "",

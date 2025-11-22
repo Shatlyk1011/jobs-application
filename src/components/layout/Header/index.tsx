@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FC } from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -29,22 +29,37 @@ const Header: FC<Props> = ({ sticky }) => {
       <nav className="flex flex-1 justify-center">
         <ul className="flex items-center text-base font-medium tracking-tight max-sm:gap-4 max-sm:text-sm">
           <li>
-            <Link href={"/jobs"} className={cn(
-              "transition hover:bg-input/50 px-4 py-2.5 rounded-md",
-              pathname === jobs && "text-sidebar-primary font-medium opacity-100",
-            )}>Вакансии</Link>
+            <Link
+              href={"/jobs"}
+              className={cn(
+                "hover:bg-input/50 rounded-md px-4 py-2.5 transition",
+                pathname === jobs && "text-sidebar-primary font-medium opacity-100",
+              )}
+            >
+              Вакансии
+            </Link>
           </li>
           <li>
-            <Link href={"/cv"} className={cn(
-              "transition hover:bg-input/50 px-4 py-2 rounded-md",
-              pathname === resume && "text-sidebar-primary font-medium opacity-100",
-            )}>Резюме</Link>
+            <Link
+              href={"/cv"}
+              className={cn(
+                "hover:bg-input/50 rounded-md px-4 py-2 transition",
+                pathname === resume && "text-sidebar-primary font-medium opacity-100",
+              )}
+            >
+              Резюме
+            </Link>
           </li>
           <li>
-            <Link href={"/mentors"} className={cn(
-              "transition hover:bg-input/50 px-4 py-2.5 rounded-md",
-              pathname === mentors && "text-sidebar-primary font-medium opacity-100",
-            )}>Менторы</Link>
+            <Link
+              href={"/mentors"}
+              className={cn(
+                "hover:bg-input/50 rounded-md px-4 py-2.5 transition",
+                pathname === mentors && "text-sidebar-primary font-medium opacity-100",
+              )}
+            >
+              Менторы
+            </Link>
           </li>
         </ul>
       </nav>

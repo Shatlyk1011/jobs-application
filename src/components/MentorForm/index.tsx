@@ -8,6 +8,7 @@ import Spinner from "../ui/Spinner";
 import useCreateMentor from "@/services/useCreateMentor";
 import useCreateImage from "@/services/useCreateImage";
 import { useMentorZodForm } from "@/lib/zod/zod";
+import { nameToSlug } from "@/composables/utils";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
@@ -26,7 +27,7 @@ const MentorForm: FC<Props> = () => {
     if (!form.image) return;
     const imageUrl = await createImage(form.image);
     const { image, ...rest } = form;
-    await createMentor({ ...rest, imageUrl });
+    await createMentor({ ...rest, imageUrl, slug: nameToSlug(form.username) });
   };
 
   const { errors, handleSubmit } = useMentorZodForm(form, submit);
