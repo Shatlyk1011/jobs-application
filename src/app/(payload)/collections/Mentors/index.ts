@@ -57,6 +57,13 @@ const Mentors: CollectionConfig = {
     },
 
     {
+      name: "mdx",
+      label: "Описание вакансии",
+      type: "richText",
+      required: false,
+    },
+
+    {
       name: "howCanYouHelp",
       label: "С чем можете помочь ученикам?",
       type: "textarea",
