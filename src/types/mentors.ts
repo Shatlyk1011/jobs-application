@@ -21,11 +21,10 @@ export interface IMentor {
 
 export interface IMentorResponse extends Omit<IMentor, "id" | "createdAt" | "updatedAt" | "price"> {}
 
-
 export interface IConsultation {
-  username: string
-  email: string
-  telegram: string
-  phoneNumber?: string
-  requestBody?: string
+  username: string;
+  email: string;
+  telegram: string;
+  phoneNumber?: string;
+  requestBody?: string;
 }

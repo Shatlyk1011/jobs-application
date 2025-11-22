@@ -16,12 +16,12 @@ export const InitialMentorFormState: IMentorResponse = {
 };
 
 export const InitialConsultationFormState: IConsultation = {
-  username: '',
-  email: '',
-  telegram: '',
-  phoneNumber: '',
-  requestBody: '',
-}
+  username: "",
+  email: "",
+  telegram: "",
+  phoneNumber: "",
+  requestBody: "",
+};
 
 export const MENTOR_PROFESSION = [
   {

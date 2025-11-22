@@ -63,7 +63,7 @@ const Consultation: CollectionConfig = {
         },
       ],
       required: false,
-      defaultValue: 'pending',
+      defaultValue: "pending",
       admin: {
         position: "sidebar",
       },

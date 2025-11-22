@@ -1,18 +1,18 @@
-import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
-import { IConsultation } from '@/types/mentors';
+import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
+import { IConsultation } from "@/types/mentors";
 
 //components
-import CustomInput from '../ui/CustomInput';
-import { Button } from '../ui/button';
+import CustomInput from "../ui/CustomInput";
+import { Button } from "../ui/button";
 
 interface Props {
-  form: IConsultation
+  form: IConsultation;
   setForm: Dispatch<SetStateAction<IConsultation>>;
-  isLoading: boolean
-  errors: Partial<Record<"username" | "email" | "telegram", string>>
-};
+  isLoading: boolean;
+  errors: Partial<Record<"username" | "email" | "telegram", string>>;
+}
 
-const Form:FC<Props> = ({ form, setForm, isLoading, errors }) => {
+const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
   const handleInput = (type: keyof IConsultation, value?: string | string[][] | File | null) => {
     setForm((prev) => ({ ...prev, [type]: value }));
   };
@@ -21,9 +21,9 @@ const Form:FC<Props> = ({ form, setForm, isLoading, errors }) => {
     handleInput(name as keyof IConsultation, value);
   };
   return (
-    <div className='flex flex-col gap-y-4 pb-2'>
-      <div className='flex gap-4 '>
-        <div className='w-full'>
+    <div className="flex flex-col gap-y-4 pb-2">
+      <div className="flex gap-4">
+        <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="username">
             Ваше имя*
           </label>
@@ -36,7 +36,7 @@ const Form:FC<Props> = ({ form, setForm, isLoading, errors }) => {
             onChange={onInputChange}
           />
         </div>
-        <div className='w-full'>
+        <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="email">
             Почта*
           </label>
@@ -51,8 +51,8 @@ const Form:FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </div>
       </div>
 
-      <div className='flex gap-4'>
-        <div className='w-full'>
+      <div className="flex gap-4">
+        <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="telegram">
             Ник в телеграм (через @)*
           </label>
@@ -65,7 +65,7 @@ const Form:FC<Props> = ({ form, setForm, isLoading, errors }) => {
             onChange={onInputChange}
           />
         </div>
-        <div className='w-full'>
+        <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="phoneNumber">
             Номер телефона
           </label>
@@ -80,7 +80,7 @@ const Form:FC<Props> = ({ form, setForm, isLoading, errors }) => {
       </div>
 
       <div>
-        <div className='w-full'>
+        <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="requestBody">
             Ваш запрос
           </label>
@@ -95,15 +95,20 @@ const Form:FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </div>
       </div>
 
-      <div className='mt-1'>
-        <Button type="submit" className='w-full' disabled={isLoading}>Записаться на консультацию</Button>
-        <div className='text-sm text-center mt-3 text-ring'>
-          <p>Нажимая на кнопку «Записаться на консультацию», Вы соглашаетесь с <br /></p>
-          <a className='text-sidebar-primary' href="#">Условиями использования</a>
+      <div className="mt-1">
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          Записаться на консультацию
+        </Button>
+        <div className="text-ring mt-3 text-center text-sm">
+          <p>
+            Нажимая на кнопку «Записаться на консультацию», Вы соглашаетесь с <br />
+          </p>
+          <a className="text-sidebar-primary" href="#">
+            Условиями использования
+          </a>
         </div>
-
       </div>
     </div>
-  )
+  );
 };
-  export default Form
+export default Form;
