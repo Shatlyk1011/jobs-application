@@ -30,3 +30,13 @@ export const mentorFormScheme = z.object({
 
 export type MentorFormData = z.infer<typeof mentorFormScheme>;
 export type MentorFormErrors = Partial<Record<keyof MentorFormData, string>>;
+
+//new consultation form scheme
+export const consultationFormScheme = z.object({
+  username: z.string().min(2, "Пожалуйста, введите свое имя"),
+  email: z.email({ error: "Пожалуйста, введите свой email для обратной связи" }),
+  telegram: z.string().min(2, "Пожалуйста, введите свой telegram для обратной связи"),
+});
+
+export type ConsultationFormData = z.infer<typeof consultationFormScheme>;
+export type ConsultationFormErrors = Partial<Record<keyof ConsultationFormData, string>>;
