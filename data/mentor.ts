@@ -1,6 +1,6 @@
-import { IMentor } from "@/types/mentors";
+import { IMentorResponse} from "@/types/mentors";
 
-export const InitialMentorFormState: Omit<IMentor, 'id' | 'createdAt' | 'updatedAt' | 'price'> = {
+export const InitialMentorFormState: IMentorResponse = {
   username: "",
   resumeLink: "",
   profession: [],

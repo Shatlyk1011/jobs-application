@@ -19,13 +19,15 @@ const MentorsSidebar: FC<Props> = () => {
   const pathname = usePathname();
 
   return (
-    <div className="relative w-[30%] max-w-40 pt-10">
-      <aside className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
+    <aside className="relative w-[30%] max-w-40 pt-10">
+      <div className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
         <header className="mb-8 flex items-center">
-          <Logo className="h-14 w-max" />
+          <Link href="/">
+            <Logo className="h-14 w-max" />
+          </Link>
           <h2 className="-tracking-two text-base font-semibold">Менторы</h2>
         </header>
-        <ul className="mb-10 flex flex-col gap-1 text-base font-normal">
+        <ul className="mb-10 flex flex-col gap-1 text-sm font-normal">
           <li>
             <Link
               href={mentors}
@@ -66,7 +68,7 @@ const MentorsSidebar: FC<Props> = () => {
             </Link>
           </li>
         </ul>
-        <div className="-tracking-two flex flex-col text-base leading-[1.3] font-medium">
+        <div className="-tracking-two flex flex-col text-sm leading-[1.3] font-medium">
           <p className="mb-4">
             Нужна помощь при <br /> подборе ментора? <br />
           </p>
@@ -79,8 +81,8 @@ const MentorsSidebar: FC<Props> = () => {
             </a>
           </Button>
         </div>
-      </aside>
-    </div>
+      </div>
+    </aside>
   );
 };
 export default MentorsSidebar;

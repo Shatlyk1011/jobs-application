@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, RefObject, useRef } from "react";
-import { getFileSize } from "@/composables/getFileSize";
+import { getFileSize } from "@/composables/utils";
 import { CheckIcon, Paperclip } from "lucide-react";
 import ErrorMsg from "../ui/ErrorMsg";
 

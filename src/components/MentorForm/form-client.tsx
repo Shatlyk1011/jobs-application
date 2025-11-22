@@ -4,9 +4,9 @@ import Link from "next/link";
 import { MENTOR_PROFESSION } from "../../../data/mentor";
 import { LANGUAGES } from "../../../data/filters";
 
-import { IMentor } from "@/types/mentors";
+import { IMentor, IMentorResponse } from "@/types/mentors";
 
-import { getFileSize } from "@/composables/getFileSize";
+import { getFileSize } from "@/composables/utils";
 
 import { Info } from "lucide-react";
 
@@ -18,8 +18,8 @@ import { Button } from "../ui/button";
 import ImageSelect from "./image";
 
 interface Props {
-  form: IMentor;
-  setForm: Dispatch<SetStateAction<IMentor>>;
+  form: IMentorResponse;
+  setForm: Dispatch<SetStateAction<IMentorResponse>>;
   isLoading: boolean;
   errors: Partial<
     Record<
