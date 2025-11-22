@@ -22,7 +22,7 @@ const MentorsSidebar: FC<Props> = () => {
     <aside className="relative w-[30%] max-w-40 pt-10">
       <div className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
         <header className="mb-8 flex items-center">
-          <Link href="/">
+          <Link href="/mentors">
             <Logo className="h-14 w-max" />
           </Link>
           <h2 className="-tracking-two text-base font-semibold">Менторы</h2>
@@ -31,8 +31,6 @@ const MentorsSidebar: FC<Props> = () => {
           <li>
             <Link
               href={mentors}
-              target="_blank"
-              rel="noopener"
               className={cn(
                 "opacity-80 transition hover:opacity-100",
                 pathname === mentors && "text-sidebar-primary font-medium opacity-100",

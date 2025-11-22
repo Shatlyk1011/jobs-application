@@ -36,7 +36,10 @@ const JobCards: FC<Props> = ({ jobs }) => {
                   <span className="text-sm font-medium">{job.companyName}</span>
                 </figure>
 
-                <time className="text-sm font-medium opacity-80">{dateConvert(job.createdAt)}</time>
+                <dl>
+                  <dt className="sr-only">Вакансия опубликована</dt>
+                  <time className="text-sm font-medium opacity-80">{dateConvert(job.createdAt)}</time>
+                </dl>
               </div>
 
               <h3 className="my-10 text-xl font-semibold text-balance">{job.title}</h3>

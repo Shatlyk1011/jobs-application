@@ -9,10 +9,12 @@ import {
   MentorFormErrors,
   MentorFormData,
   mentorFormScheme,
+  ConsultationFormErrors,
+  ConsultationFormData,
 } from "./formSchemes";
-import { IMentorResponse, IMentor } from "@/types/mentors";
+import { IMentorResponse, IMentor, IConsultation } from "@/types/mentors";
 
-// use form hook
+// resume zod form
 export const useResumeZodForm = (form: IResumeForm, onSubmit: () => Promise<void>) => {
   const [errors, setErrors] = useState<ResumeFormErrors>({});
 
@@ -38,6 +40,7 @@ export const useResumeZodForm = (form: IResumeForm, onSubmit: () => Promise<void
   return { errors, handleSubmit };
 };
 
+// mentor zod form
 export const useMentorZodForm = (form: IMentorResponse, onSubmit: () => Promise<void>) => {
   const [errors, setErrors] = useState<MentorFormErrors>({});
 
@@ -50,6 +53,32 @@ export const useMentorZodForm = (form: IMentorResponse, onSubmit: () => Promise<
       const newErrors: MentorFormErrors = {};
       result.error.issues.forEach((issue) => {
         const field = issue.path[0] as keyof MentorFormData;
+        newErrors[field] = issue.message;
+      });
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+    await onSubmit();
+  };
+
+  return { errors, handleSubmit };
+};
+
+// consultation zod form
+export const useConsultationZodForm = (form: IConsultation, onSubmit: () => Promise<void>) => {
+  const [errors, setErrors] = useState<ConsultationFormErrors>({});
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Validate form data with Zod
+    const result = mentorFormScheme.safeParse(form);
+
+    if (!result.success) {
+      const newErrors: ConsultationFormErrors = {};
+      result.error.issues.forEach((issue) => {
+        const field = issue.path[0] as keyof ConsultationFormData;
         newErrors[field] = issue.message;
       });
       setErrors(newErrors);
