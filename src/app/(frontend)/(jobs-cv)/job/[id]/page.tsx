@@ -9,10 +9,10 @@ import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
 import { Building2 } from "lucide-react";
 
-// export async function generateStaticParams() {
-//   const jobs = await getJobs();
-//   return jobs.map((job) => ({ id: job.id.toString() }));
-// }
+export async function generateStaticParams() {
+  const jobs = await getJobs();
+  return jobs.map((job) => ({ id: job.id.toString() }));
+}
 
 interface Props {
   params: Promise<{ id: string }>;

@@ -1,6 +1,6 @@
 import { IMentor } from "@/types/mentors";
 
-export const InitialMentorFormState: IMentor = {
+export const InitialMentorFormState: Omit<IMentor, 'id' | 'createdAt' | 'updatedAt' | 'price'> = {
   username: "",
   resumeLink: "",
   profession: [],
@@ -9,6 +9,7 @@ export const InitialMentorFormState: IMentor = {
   howCanYouHelp: "",
   position: "",
   image: null,
+  slug: '',
 
   email: "",
   telegram: "",

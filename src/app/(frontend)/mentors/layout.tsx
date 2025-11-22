@@ -1,4 +1,3 @@
-import Header from "@/components/layout/Header";
 import MentorsSidebar from "@/components/layout/MentorsSidebar";
 import type { Metadata } from "next";
 
@@ -13,7 +12,7 @@ export default function MentorsLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="mx-auto box-border max-w-5xl px-12 max-md:px-4">
+    <main className="mx-auto box-border max-w-4xl px-12 max-md:px-4">
       <div className="flex gap-16">
         <MentorsSidebar />
         {children}
