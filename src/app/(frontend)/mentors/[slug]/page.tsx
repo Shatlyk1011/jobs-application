@@ -8,7 +8,6 @@ interface Props {
 
 export async function generateStaticParams() {
   const mentors = await getMentors();
-  console.log("mentors", mentors);
   return mentors;
 }
 
@@ -19,8 +18,8 @@ export default async function MentorPage({ params }: Props) {
   const mentor = result[0];
 
   return (
-    <section className="w-full py-10">
-      <article className="bg-popover relative mb-6 flex items-start gap-5 rounded-3xl p-5 pr-12 pb-10">
+    <section className="py-10 w-full ">
+      <article className="relative bg-popover rounded-3xl p-5 pr-12 pb-10 flex items-start gap-5 mb-6">
         {/* left */}
         <figure className="sticky top-5 left-0 min-h-14 min-w-14">
           <img
@@ -40,7 +39,7 @@ export default async function MentorPage({ params }: Props) {
         </div>
       </article>
 
-      <section className="bg-popover rounded-3xl p-5">
+      <section className="bg-popover rounded-3xl p-5 ">
         <ConsultationForm />
       </section>
     </section>

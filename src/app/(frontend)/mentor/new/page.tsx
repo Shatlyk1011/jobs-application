@@ -5,7 +5,7 @@ import CreateMentorForm from "@/components/CreateMentorForm";
 export default function MentorNewPage() {
   return (
     <main className="mx-auto w-full max-w-3xl px-10 py-5 text-center" suppressHydrationWarning>
-      <div className="mb-6 flex items-center justify-center gap-10">
+      <header className="mb-6 flex items-center justify-center gap-10">
         <div className="flex-1">
           <Logo className="h-full w-full opacity-90" />
         </div>
@@ -21,7 +21,7 @@ export default function MentorNewPage() {
             Заполните пожалуйста анкету, чтобы мы могли <br /> больше узнать о Вас.
           </p>
         </div>
-      </div>
+      </header>
 
       <CreateMentorForm />
     </main>

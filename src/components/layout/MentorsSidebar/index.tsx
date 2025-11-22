@@ -21,13 +21,13 @@ const MentorsSidebar: FC<Props> = () => {
   return (
     <aside className="relative w-[30%] max-w-40 pt-10">
       <div className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
-        <header className="mb-8 flex items-center">
+        <header className="mb-8 flex gap-2 items-center">
           <Link href="/mentors">
             <Logo className="h-14 w-max" />
           </Link>
-          <h2 className="-tracking-two text-base font-semibold">Менторы</h2>
+          <h2 className="-tracking-two text-lg font-semibold">Менторы</h2>
         </header>
-        <ul className="mb-10 flex flex-col gap-1 text-sm font-normal">
+        <ul className="mb-10 flex flex-col gap-1 text-base font-normal">
           <li>
             <Link
               href={mentors}
@@ -66,14 +66,14 @@ const MentorsSidebar: FC<Props> = () => {
             </Link>
           </li>
         </ul>
-        <div className="-tracking-two flex flex-col text-sm leading-[1.3] font-medium">
+        <div className="-tracking-two flex flex-col text-base leading-[1.3] font-medium">
           <p className="mb-4">
             Нужна помощь при <br /> подборе ментора? <br />
           </p>
           <p className="mb-6">
             Напишите нам, <br /> и мы поможем
           </p>
-          <Button asChild className="max-w-max px-7 py-4 text-sm" variant="secondary">
+          <Button asChild className="max-w-max px-7 py-4 text-base" variant="secondary">
             <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
               Написать нам
             </a>
