@@ -8,6 +8,7 @@ export interface IMentor {
   imageUrl?: string;
   about: string;
   howCanYouHelp: string;
+  mdx?:any
   resumeLink: string;
   email: string;
   telegram: string;
