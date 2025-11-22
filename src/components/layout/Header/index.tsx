@@ -1,9 +1,9 @@
 import { FC } from "react";
+import { cn } from "@/lib/utils";
 
 import { Logo } from "@/components/ui/Logo";
 import Link from "next/link";
 import ThemeToggle from "@/components/ui/ThemeToggle";
-import { cn } from "@/lib/utils";
 
 interface Props {
   sticky?: boolean

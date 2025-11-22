@@ -19,22 +19,22 @@ const MentorsSidebar:FC<Props> = () => {
   const pathname = usePathname();
 
 return (
-  <div className='w-[30%] relative pt-10'>
+  <div className='w-[30%] max-w-40 relative pt-10'>
 
     <aside className="h-[calc(100svh-54px)] sticky top-10 left-0 w-full">
       <header className='flex items-center mb-8'>
-        <Logo className='h-16 w-max'/>
-        <h2 className='text-lg font-medium'>Менторы</h2>
+        <Logo className='h-14 w-max' />
+        <h2 className='text-base font-semibold -tracking-two'>Менторы</h2>
       </header>
       <ul className='text-base font-normal flex flex-col gap-1 mb-10'>
         <li>
-          <Link href={mentors} className={cn("opacity-80 hover:opacity-100 transition", pathname === mentors && 'text-sidebar-primary font-medium opacity-100')}>Менторы</Link>
+          <Link href={mentors} target='_blank' rel="noopener" className={cn("opacity-80 hover:opacity-100 transition", pathname === mentors && 'text-sidebar-primary font-medium opacity-100')}>Менторы</Link>
         </li>
         <li>
-          <Link href={howitworks} className={cn("opacity-80 hover:opacity-100 transition", pathname === howitworks && 'text-sidebar-primary font-medium opacity-100')}>Как это работает</Link>
+          <Link href={howitworks} target='_blank' rel="noopener" className={cn("opacity-80 hover:opacity-100 transition", pathname === howitworks && 'text-sidebar-primary font-medium opacity-100')}>Как это работает</Link>
         </li>
         <li>
-          <Link href={mentornew} className={cn("opacity-80 hover:opacity-100 transition", pathname === mentornew && 'text-sidebar-primary font-medium opacity-100')}>Стать ментором</Link>
+          <Link href={mentornew} target='_blank' rel="noopener" className={cn("opacity-80 hover:opacity-100 transition", pathname === mentornew && 'text-sidebar-primary font-medium opacity-100')}>Стать ментором</Link>
           
         </li>
       </ul>

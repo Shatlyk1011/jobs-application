@@ -8,7 +8,7 @@ import { IMentor } from "@/types/mentors";
 
 import { getFileSize } from "@/composables/getFileSize";
 
-import { CheckIcon, Info, Paperclip } from "lucide-react";
+import { Info } from "lucide-react";
 
 //components
 import CustomInput from "../ui/CustomInput";

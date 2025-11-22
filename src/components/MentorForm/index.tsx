@@ -1,5 +1,5 @@
 "use client";
-import { FC, Suspense, useState } from "react";
+import { FC, Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 import { InitialMentorFormState } from "../../../data/mentor";
@@ -31,14 +31,15 @@ const MentorForm: FC<Props> = () => {
 
   const { errors, handleSubmit } = useMentorZodForm(form, submit);
 
-  // useEffect(() => {
-  //   const handleBeforeUnload = (e: any) => {
-  //     e.preventDefault();
-  //     e.returnValue = '';
-  //   };
-  //   window.addEventListener('beforeunload', handleBeforeUnload);
-  //   return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  // }, []);
+  useEffect(() => {
+    const handleBeforeUnload = (e: any) => {
+      e.preventDefault();
+      e.returnValue = '';
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, []);
+
   return (
     <div className="bg-popover mx-auto max-w-2xl rounded-2xl px-8 py-8 text-start">
       <form className="flex flex-col gap-5 rounded-xl" onSubmit={handleSubmit}>
