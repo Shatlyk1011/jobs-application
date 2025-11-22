@@ -1,6 +1,6 @@
 import { Logo } from "@/components/ui/Logo";
 
-import MentorForm from "@/components/MentorForm";
+import CreateMentorForm from "@/components/CreateMentorForm";
 
 export default function MentorNewPage() {
   return (
@@ -23,7 +23,7 @@ export default function MentorNewPage() {
         </div>
       </div>
 
-      <MentorForm />
+      <CreateMentorForm />
     </main>
   );
 }

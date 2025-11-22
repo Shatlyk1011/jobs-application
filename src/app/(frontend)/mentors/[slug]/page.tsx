@@ -1,3 +1,4 @@
+import ConsultationForm from "@/components/ConsultationForm";
 import RichText from "@/components/RichText";
 import { getMentorBySlug, getMentors } from "@/services/getMentors";
 
@@ -18,8 +19,8 @@ export default async function MentorPage({ params }: Props) {
   const mentor = result[0];
 
   return (
-    <section className="bg-popover my-10 w-full rounded-2xl p-5 pb-10">
-      <article className="relative flex items-start gap-5">
+    <section className="py-10 w-full ">
+      <article className="relative bg-popover rounded-3xl p-5 pr-12 pb-10 flex items-start gap-5 mb-6">
         {/* left */}
         <figure className="sticky top-5 left-0 min-h-14 min-w-14">
           <img
@@ -38,6 +39,10 @@ export default async function MentorPage({ params }: Props) {
           <RichText content={mentor.mdx} />
         </div>
       </article>
+
+      <section className="bg-popover rounded-3xl p-5 ">
+        <ConsultationForm />
+      </section>
     </section>
   );
 }
