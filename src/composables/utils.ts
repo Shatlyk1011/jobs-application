@@ -4,3 +4,8 @@ export const getFileSize = (file: File) => {
 
   return mb.toFixed(2);
 };
+
+export function nameToSlug(name: string) {
+  const [first, second] = name.split(' ')
+  return `${first}-${second}`
+}
