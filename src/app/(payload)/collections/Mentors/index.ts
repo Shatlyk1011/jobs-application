@@ -57,17 +57,17 @@ const Mentors: CollectionConfig = {
     },
 
     {
-      name: "mdx",
-      label: "Описание вакансии",
-      type: "richText",
-      required: false,
-    },
-
-    {
       name: "howCanYouHelp",
       label: "С чем можете помочь ученикам?",
       type: "textarea",
       required: true,
+    },
+
+    {
+      name: "mdx",
+      label: "Описание вакансии",
+      type: "richText",
+      required: false,
     },
 
     {
@@ -97,6 +97,25 @@ const Mentors: CollectionConfig = {
       type: "checkbox",
       required: false,
       defaultValue: true,
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "price",
+      label: "Цена за час занятия",
+      type: "text",
+      required: false,
+      defaultValue: 200,
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "slug",
+      label: "Slug (url-name)",
+      type: "text",
+      required: true,
       admin: {
         position: "sidebar",
       },
