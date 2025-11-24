@@ -11,8 +11,9 @@ import {
   mentorFormScheme,
   ConsultationFormErrors,
   ConsultationFormData,
+  consultationFormScheme,
 } from "./formSchemes";
-import { IMentorResponse, IMentor, IConsultation } from "@/types/mentors";
+import { IMentorResponse, IConsultation } from "@/types/mentors";
 
 // resume zod form
 export const useResumeZodForm = (form: IResumeForm, onSubmit: () => Promise<void>) => {
@@ -73,7 +74,7 @@ export const useConsultationZodForm = (form: IConsultation, onSubmit: () => Prom
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Validate form data with Zod
-    const result = mentorFormScheme.safeParse(form);
+    const result = consultationFormScheme.safeParse(form);
 
     if (!result.success) {
       const newErrors: ConsultationFormErrors = {};

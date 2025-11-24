@@ -70,7 +70,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
             Номер телефона
           </label>
           <CustomInput
-            placeholder="61 415926"
+            placeholder="61415926"
             id="phoneNumber"
             name="phoneNumber"
             value={form.phoneNumber}
@@ -79,20 +79,18 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </div>
       </div>
 
-      <div>
-        <div className="w-full">
-          <label className="mb-2 inline-block text-sm font-medium" htmlFor="requestBody">
-            Ваш запрос
-          </label>
-          <CustomInput
-            as="textarea"
-            placeholder="Подготовиться к собеседованию, помочь с проектом"
-            id="requestBody"
-            name="requestBody"
-            value={form.requestBody}
-            onChange={onInputChange}
-          />
-        </div>
+      <div className="w-full">
+        <label className="mb-2 inline-block text-sm font-medium" htmlFor="requestBody">
+          Ваш запрос
+        </label>
+        <CustomInput
+          as="textarea"
+          placeholder="Подготовиться к собеседованию, помочь с проектом"
+          id="requestBody"
+          name="requestBody"
+          value={form.requestBody}
+          onChange={onInputChange}
+        />
       </div>
 
       <div className="mt-1">
@@ -100,7 +98,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
           Записаться на консультацию
         </Button>
         <div className="text-ring mt-3 text-center text-sm">
-          <p className="text-balance">
+          <p>
             Нажимая на кнопку «Записаться на консультацию», Вы соглашаетесь с <br />
           </p>
           <a className="text-sidebar-primary" href="#">

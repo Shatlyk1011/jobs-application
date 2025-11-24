@@ -27,6 +27,7 @@ export interface IConsultation {
   username: string;
   email: string;
   telegram: string;
+  consultationWithSlug?: string
   phoneNumber?: string;
   requestBody?: string;
 }
