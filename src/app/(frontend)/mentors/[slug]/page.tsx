@@ -1,7 +1,7 @@
+import { stringify } from "qs-esm";
 import ConsultationForm from "@/components/ConsultationForm";
 import RichText from "@/components/RichText";
 import useMentors from "@/services/useMentors";
-import { stringify } from "qs-esm";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -51,12 +51,12 @@ export default async function MentorPage({ params }: Props) {
           <h3 className="-tracking-two mb-3 text-lg">Аманов Аман</h3>
           <h4 className="-tracking-two mb-5 text-sm">Backend Developer at SpaceX</h4>
 
-          <RichText content={mentor.mdx} />
+          <RichText content={mentor?.mdx} />
         </div>
       </article>
 
       <div className="bg-popover rounded-3xl p-5">
-        <ConsultationForm />
+        <ConsultationForm mentorName={mentor.username} price={mentor.price} />
       </div>
     </section>
   );

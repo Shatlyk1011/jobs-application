@@ -34,7 +34,7 @@ export type MentorFormErrors = Partial<Record<keyof MentorFormData, string>>;
 //new consultation form scheme
 export const consultationFormScheme = z.object({
   username: z.string().min(2, "Пожалуйста, введите свое имя"),
-  email: z.email({ error: "Пожалуйста, введите свой email для обратной связи" }),
+  email: z.email({ error: "Пожалуйста, введите свой email" }),
   telegram: z.string().min(2, "Пожалуйста, введите свой telegram для обратной связи"),
 });
 

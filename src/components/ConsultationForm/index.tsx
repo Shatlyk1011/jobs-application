@@ -11,9 +11,13 @@ const Form = dynamic(() => import("./form-client"), {
   ssr: false,
 });
 
-interface Props {}
+interface Props {
+  mentorName: string
+  price: string
 
-const ConsultationForm: FC<Props> = () => {
+}
+
+const ConsultationForm: FC<Props> = ({ mentorName, price }) => {
   const [form, setForm] = useState(InitialConsultationFormState);
 
   const { createConsultation, isLoading } = useCreateConsultation(setForm);
@@ -29,10 +33,10 @@ const ConsultationForm: FC<Props> = () => {
       <div className="-tracking-one mb-5">
         <h3 className="mb-3 text-xl font-semibold">Записаться на консультацию</h3>
         <h4 className="mb-1 text-[14px] font-medium opacity-80">
-          Ментор: <span className="opacity-60">{"Amanov Aman"}</span>
+          Ментор: <span className="opacity-60">{mentorName}</span>
         </h4>
         <p className="text-[14px] font-medium opacity-80">
-          Стоимость: <span className="opacity-60"> 200TMT / час онлайн занятия </span>
+          Стоимость: <span className="opacity-60"> {price} / час онлайн занятия </span>
         </p>
       </div>
       <Suspense>

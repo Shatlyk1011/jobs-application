@@ -42,8 +42,6 @@ const MentorsSidebar: FC<Props> = () => {
           <li>
             <Link
               href={howitworks}
-              target="_blank"
-              rel="noopener"
               className={cn(
                 "opacity-80 transition hover:opacity-100",
                 pathname === howitworks && "text-sidebar-primary font-medium opacity-100",
