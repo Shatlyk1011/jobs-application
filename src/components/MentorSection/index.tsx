@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FC, useState } from "react";
 import Link from "next/link";
 
@@ -14,13 +14,13 @@ import { AxiosResponse } from "axios";
 import { debounce } from "@/composables/utils";
 
 interface Props {
-  initialData: IMentor[]
+  initialData: IMentor[];
 }
 
 const MentorSection: FC<Props> = ({ initialData }) => {
   const [data, setData] = useState(initialData);
 
-  console.log('data', data);
+  console.log("data", data);
 
   if (!initialData) return null;
 
@@ -52,11 +52,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
           >
             {/* left */}
             <figure className="min-h-14 min-w-14">
-              <img
-                src={m.imageUrl}
-                alt="profile image"
-                className="h-14 w-14 rounded-[18px] object-cover"
-              />
+              <img src={m.imageUrl} alt="profile image" className="h-14 w-14 rounded-[18px] object-cover" />
             </figure>
 
             {/* right */}
@@ -64,9 +60,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
               <h3 className="-tracking-two mb-3 text-lg">{m.username}</h3>
               <h4 className="-tracking-two mb-5 text-sm">{m.position}</h4>
 
-              <p className="tracking-one mb-6 text-sm opacity-80">
-                {m.about}
-              </p>
+              <p className="tracking-one mb-6 text-sm opacity-80">{m.about}</p>
 
               <div className="flex items-center gap-4 text-sm">
                 <Button variant="outline" className="text-[14px]" size="sm">

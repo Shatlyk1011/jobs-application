@@ -6,7 +6,7 @@ import { siteConfig } from "@/config";
 import Link from "next/link";
 
 interface Props {
-  classes?: string
+  classes?: string;
 }
 
 const Footer: FC<Props> = ({ classes }) => {

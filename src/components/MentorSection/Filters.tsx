@@ -11,7 +11,6 @@ import SearchBar from "../SearchBar";
 
 interface Props {
   handleFilterRequest: (query: Where) => void;
-
 }
 
 const Filters: FC<Props> = () => {

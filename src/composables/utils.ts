@@ -10,7 +10,6 @@ export function nameToSlug(name: string) {
   return `${first}-${second}`;
 }
 
-
 export function debounce(func: Function, delay: number) {
   let timeoutId: undefined | ReturnType<typeof setTimeout>;
 

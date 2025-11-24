@@ -21,7 +21,7 @@ const MentorsSidebar: FC<Props> = () => {
   return (
     <aside className="relative w-[30%] max-w-44 pt-10">
       <div className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
-        <header className="mb-8 flex gap-2 items-center">
+        <header className="mb-8 flex items-center gap-2">
           <Link href="/mentors">
             <Logo className="h-14 w-max" />
           </Link>
@@ -70,7 +70,7 @@ const MentorsSidebar: FC<Props> = () => {
           <p className="mb-4">
             Напишите нам, и мы <br /> поможем Вам при выборе ментора.
           </p>
-          <Button asChild className="max-w-max px-7 py-4 " variant="secondary">
+          <Button asChild className="max-w-max px-7 py-4" variant="secondary">
             <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
               Написать нам
             </a>

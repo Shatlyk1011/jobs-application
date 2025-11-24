@@ -10,9 +10,8 @@ import ContactDialogButton from "@/components/ContactDialogButton";
 import { Building2 } from "lucide-react";
 
 export async function generateStaticParams() {
+  const { getJobs } = useJobs();
 
-  const { getJobs } = useJobs()
-  
   const jobs = await getJobs();
   return jobs.map((job) => ({ id: job.id.toString() }));
 }
@@ -24,7 +23,7 @@ interface Props {
 export default async function JobPage({ params }: Props) {
   const { id } = await params;
 
-  const { getJob } = useJobs()
+  const { getJob } = useJobs();
 
   const job = await getJob(id);
 

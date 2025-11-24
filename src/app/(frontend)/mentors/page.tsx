@@ -9,7 +9,7 @@ import MentorSection from "@/components/MentorSection";
 import { Button } from "@/components/ui/button";
 
 export default async function MentorsPage() {
-  const mentors = await getMentors()
+  const mentors = await getMentors();
 
   return (
     <div className="h-[300vh] w-[70%] px-4 pt-14 pb-10 text-center">
