@@ -1,49 +1,84 @@
-import { FC } from "react";
+'use client'
+import { FC, useState } from "react";
 import Link from "next/link";
 
-import Filters from "./Filters";
+import axios from "@/lib/axios";
+
+import { IMentor } from "@/types/mentors";
+
+import MentorFilters from "./Filters";
 import { Button } from "../ui/button";
+import { Where } from "payload";
+import { stringify } from "qs-esm";
+import { AxiosResponse } from "axios";
+import { debounce } from "@/composables/utils";
 
-interface Props {}
+interface Props {
+  initialData: IMentor[]
+}
 
-const MentorSection: FC<Props> = () => {
+const MentorSection: FC<Props> = ({ initialData }) => {
+  const [data, setData] = useState(initialData);
+
+  console.log('data', data);
+
+  if (!initialData) return null;
+
+  const fetchJobs = async (query: Where) => {
+    const stringifiedQuery = stringify(
+      {
+        where: query,
+      },
+      { addQueryPrefix: true },
+    );
+
+    const mentors: AxiosResponse<IMentor[]> = await axios(`/jobs${stringifiedQuery}`);
+    setData(mentors.data);
+  };
+
+  const handleFilterRequest = debounce(fetchJobs, 800);
+
   return (
     <section className="">
-      <Filters />
+      <MentorFilters handleFilterRequest={handleFilterRequest} />
 
       {/* mentor card */}
-      <Link
-        href={`/mentors/${"amanov-aman"}`}
-        className="bg-popover hover:bg-popover/80 flex w-full items-start gap-5 rounded-xl p-5 pb-6 shadow-xl/2 transition"
-      >
-        {/* left */}
-        <figure className="min-h-14 min-w-14">
-          <img
-            src="https://cdn.prod.website-files.com/63b754bfedfa853c38da34fd/660bdb422da58631b9220e9d_PicRetouch_20240207_134501259.png"
-            alt="profile image"
-            className="h-14 w-14 rounded-[18px] object-cover"
-          />
-        </figure>
+      <div className="flex flex-col gap-5">
+        {data.map((m) => (
+          <Link
+            key={m.id}
+            href={`/mentors/${m.slug}`}
+            className="bg-popover hover:bg-popover/80 flex w-full items-start gap-5 rounded-xl p-5 pb-6 shadow-xl/2 transition"
+          >
+            {/* left */}
+            <figure className="min-h-14 min-w-14">
+              <img
+                src={m.imageUrl}
+                alt="profile image"
+                className="h-14 w-14 rounded-[18px] object-cover"
+              />
+            </figure>
 
-        {/* right */}
-        <div className="text-start">
-          <h3 className="-tracking-two mb-3 text-lg">Аманов Аман</h3>
-          <h4 className="-tracking-two mb-5 text-sm">Backend Developer at SpaceX</h4>
+            {/* right */}
+            <div className="text-start">
+              <h3 className="-tracking-two mb-3 text-lg">{m.username}</h3>
+              <h4 className="-tracking-two mb-5 text-sm">{m.position}</h4>
 
-          <p className="tracking-one mb-6 text-sm opacity-80">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum fugit dolorem quo similique neque magni
-            omnis qui placeat vitae animi numquam natus, error quas totam vero debitis voluptatem accusamus eum?
-          </p>
+              <p className="tracking-one mb-6 text-sm opacity-80">
+                {m.about}
+              </p>
 
-          <div className="flex items-center gap-4 text-sm">
-            <Button variant="outline" className="text-[14px]" size="sm">
-              Смотреть профиль
-            </Button>
+              <div className="flex items-center gap-4 text-sm">
+                <Button variant="outline" className="text-[14px]" size="sm">
+                  Смотреть профиль
+                </Button>
 
-            <p className="-tracking-three text-[14px] font-medium">200TMT / час занятия в ZOOM</p>
-          </div>
-        </div>
-      </Link>
+                <p className="-tracking-three text-[14px] font-medium">{m.price}TMT / час занятия в ZOOM</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 };

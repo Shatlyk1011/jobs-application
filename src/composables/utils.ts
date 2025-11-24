@@ -9,3 +9,17 @@ export function nameToSlug(name: string) {
   const [first, second] = name.split(" ");
   return `${first}-${second}`;
 }
+
+
+export function debounce(func: Function, delay: number) {
+  let timeoutId: undefined | ReturnType<typeof setTimeout>;
+
+  return function (...args: any) {
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      // @ts-ignore
+      func.apply(this, args);
+    }, delay);
+  };
+}
