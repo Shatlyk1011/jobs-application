@@ -1,35 +1,33 @@
-import axios from "@/lib/axios";
 import { stringify } from "qs-esm";
 
 import JobSection from "@/components/JobSection";
 
-import { IJobs } from "@/types/job";
-import { AxiosResponse } from "axios";
+import { useJobs } from "@/services/useJobs";
 
-export default async function JobsPage() {
-  const stringifiedQuery = stringify(
-    {
-      where: {
-        isVisible: {
-          equals: true,
-        },
+const stringifiedQuery = stringify(
+  {
+    where: {
+      isVisible: {
+        equals: true,
       },
     },
-    { addQueryPrefix: true },
-  );
+  },
+  { addQueryPrefix: true },
+);
 
-  const response: AxiosResponse<IJobs> = await axios(`/jobs${stringifiedQuery}`);
+export default async function JobsPage() {
 
-  if (!response) {
-    return null;
-  }
+  const { getJobs } = useJobs()
 
-  const { data } = response;
+  const jobs = await getJobs(stringifiedQuery)
+  console.log('jobs', jobs);
+
+  if (!jobs) return null;
 
   return (
     <main className="h-full w-full">
       <div className="h-full w-full pt-10">
-        <JobSection initialData={data} />
+        <JobSection initialData={jobs} />
       </div>
     </main>
   );

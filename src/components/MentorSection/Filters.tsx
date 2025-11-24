@@ -1,11 +1,18 @@
 "use client";
 
 import { FC, useState } from "react";
+import { Where } from "payload";
+
 import { MENTOR_PROFESSION } from "../../../data/mentor";
+
+//components
 import { SelectComponent } from "../SelectComponent";
 import SearchBar from "../SearchBar";
 
-interface Props {}
+interface Props {
+  handleFilterRequest: (query: Where) => void;
+
+}
 
 const Filters: FC<Props> = () => {
   const [profession, setProfession] = useState("Все направления");

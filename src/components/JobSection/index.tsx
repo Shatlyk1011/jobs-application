@@ -5,28 +5,15 @@ import axios from "@/lib/axios";
 import { stringify } from "qs-esm";
 import { Where } from "payload";
 
-import { IJobs } from "@/types/job";
+import { IJob, IJobs } from "@/types/job";
 
 //components
 import JobCards from "@/components/JobSection/JobCards";
 import JobFilters from "@/components/JobSection/JobFilters";
-import SearchBar from "@/components/SearchBar";
+import { debounce } from "@/composables/utils";
 
 interface Props {
-  initialData: IJobs;
-}
-
-function debounce(func: Function, delay: number) {
-  let timeoutId: undefined | ReturnType<typeof setTimeout>;
-
-  return function (...args: any) {
-    clearTimeout(timeoutId);
-
-    timeoutId = setTimeout(() => {
-      // @ts-ignore
-      func.apply(this, args);
-    }, delay);
-  };
+  initialData: IJob[];
 }
 
 const JobSection: FC<Props> = ({ initialData }) => {
@@ -43,14 +30,14 @@ const JobSection: FC<Props> = ({ initialData }) => {
     );
 
     const jobs: AxiosResponse<IJobs> = await axios(`/jobs${stringifiedQuery}`);
-    setData(jobs.data);
+    setData(jobs.data.docs);
   };
 
   const handleFilterRequest = debounce(fetchJobs, 800);
 
   return (
     <div>
-      <JobFilters handleFilterRequest={handleFilterRequest} totalDocs={data.totalDocs} />
+      <JobFilters handleFilterRequest={handleFilterRequest} totalDocs={data.length - 1} />
       <JobCards jobs={data} />
     </div>
   );

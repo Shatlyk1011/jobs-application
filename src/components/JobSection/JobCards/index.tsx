@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { Building2, Coins, MapPin, StarIcon } from "lucide-react";
 
-import { IJobs } from "@/types/job";
+import { IJob } from "@/types/job";
 
 import { dateConvert } from "@/composables/dateConvert";
 import { getLocation, salaryConvert } from "@/composables/salaryConvert";
@@ -12,13 +12,13 @@ import { getLocation, salaryConvert } from "@/composables/salaryConvert";
 import CurrencyIcon from "@/components/ui/currency-icon";
 
 interface Props {
-  jobs: IJobs;
+  jobs: IJob[];
 }
 
 const JobCards: FC<Props> = ({ jobs }) => {
   return (
     <section className="grid grid-cols-3 gap-5 pb-20 max-lg:grid-cols-2 max-sm:grid-cols-1">
-      {jobs.docs.map((job) => (
+      {jobs.map((job) => (
         <div key={job.id} className="bg-popover text-popover-foreground h-full min-h-[360px] rounded-lg">
           <Link rel="noopener" target="_blank" href={`/job/${job.id}`} className="inline-flex h-full w-full p-5">
             <div className="flex h-full w-full flex-col">

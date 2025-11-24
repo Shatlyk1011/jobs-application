@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getJobs } from "@/services/getJobs";
+import { useJobs } from "@/services/useJobs";
 import { siteConfig } from "@/config";
 
 import { isoToDate } from "@/composables/dateConvert";
@@ -10,6 +10,9 @@ import ContactDialogButton from "@/components/ContactDialogButton";
 import { Building2 } from "lucide-react";
 
 export async function generateStaticParams() {
+
+  const { getJobs } = useJobs()
+  
   const jobs = await getJobs();
   return jobs.map((job) => ({ id: job.id.toString() }));
 }
@@ -21,7 +24,9 @@ interface Props {
 export default async function JobPage({ params }: Props) {
   const { id } = await params;
 
-  const job = await getJobs(id);
+  const { getJob } = useJobs()
+
+  const job = await getJob(id);
 
   return (
     <main className="relative box-content flex min-h-svh w-full gap-5 py-12">
