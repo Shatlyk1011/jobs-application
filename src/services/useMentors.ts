@@ -4,16 +4,15 @@ import { AxiosResponse } from "axios";
 import { stringify } from "qs-esm";
 
 const useMentors = () => {
-
-  const getMentor = async (id:string) => {
+  const getMentor = async (id: string) => {
     const { data } = await axios.get(`/mentors/${id || ""}`);
-    return data
-  }
+    return data;
+  };
 
-  const getMentors = async (query?:string) => {
+  const getMentors = async (query?: string) => {
     const { data }: AxiosResponse<IMentors> = await axios.get(`/mentors/${query || ""}`);
-    return data.docs
-  }
+    return data.docs;
+  };
 
   const getMentorBySlug = async (slug?: string): Promise<IMentor[]> => {
     const stringifiedQuery = stringify(
@@ -30,9 +29,9 @@ const useMentors = () => {
     const { data } = await axios.get(`/mentors/${stringifiedQuery}`);
 
     return data.docs || data;
-  }
+  };
 
-  return { getMentor, getMentors, getMentorBySlug }
-}
+  return { getMentor, getMentors, getMentorBySlug };
+};
 
-export default useMentors
+export default useMentors;

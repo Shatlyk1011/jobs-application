@@ -18,7 +18,7 @@ interface Props {
 const MentorSection: FC<Props> = ({ initialData }) => {
   const [data, setData] = useState(initialData);
 
-  const { getMentors } = useMentors()
+  const { getMentors } = useMentors();
 
   if (!initialData) return null;
 
@@ -65,7 +65,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
                   Смотреть профиль
                 </Button>
 
-                <p className="-tracking-two text-sm font-medium text-[15px]">{m.price}TMT / час онлайн занятия</p>
+                <p className="-tracking-two text-sm text-[15px] font-medium">{m.price}TMT / час онлайн занятия</p>
               </div>
             </div>
           </Link>

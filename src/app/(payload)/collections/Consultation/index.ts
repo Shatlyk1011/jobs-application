@@ -46,7 +46,7 @@ const Consultation: CollectionConfig = {
       type: "text",
       required: true,
     },
-    
+
     {
       name: "status",
       label: "Статус",

@@ -5,8 +5,7 @@ import { Logo } from "@/components/ui/Logo";
 export default function Home() {
   return (
     <main className="bg-primary min-h-svh w-full">
-      <div className="max-w-5xl mx-auto">
-
+      <div className="mx-auto max-w-5xl">
         <header className="bg-primary py-2" title="Salamaleykum">
           <Logo className="text-secondary-foreground h-20 w-full" />
         </header>
@@ -15,7 +14,7 @@ export default function Home() {
             <Hero />
           </div>
         </section>
-        <div className="max-w-5xl mx-auto px-12 pb-5">
+        <div className="mx-auto max-w-5xl px-12 pb-5">
           <Footer classes="mb-0 " />
         </div>
       </div>

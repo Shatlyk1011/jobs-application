@@ -9,7 +9,7 @@ import { IConsultation } from "@/types/mentors";
 
 export function useCreateConsultation(setForm: Dispatch<SetStateAction<IConsultation>>) {
   const [isLoading, setLoading] = useState(false);
-  const [isSuccess, setSuccess] = useState(true)
+  const [isSuccess, setSuccess] = useState(true);
 
   const createConsultation = async (form: IConsultation) => {
     try {
@@ -23,7 +23,7 @@ export function useCreateConsultation(setForm: Dispatch<SetStateAction<IConsulta
 
       if (req.status === 201) {
         setForm(InitialConsultationFormState);
-        setSuccess(true)
+        setSuccess(true);
         toast.success("Ваша заявка успешна создана. Мы свяжемся с Вами в ближайшее время.", {
           id: "loading-toast-id",
           duration: 6000,

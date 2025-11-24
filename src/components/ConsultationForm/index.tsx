@@ -13,9 +13,9 @@ const Form = dynamic(() => import("./form-client"), {
 });
 
 interface Props {
-  mentorName: string
-  price: string
-  slug: string
+  mentorName: string;
+  price: string;
+  slug: string;
 }
 
 const ConsultationForm: FC<Props> = ({ mentorName, price, slug }) => {
@@ -49,10 +49,10 @@ const ConsultationForm: FC<Props> = ({ mentorName, price, slug }) => {
       ) : (
         // success block
         <div className="text-center">
-          <div className="text-center p-6 ">
-            <CircleCheck className="w-16 h-16 inline-block text-green-500" />
-            <h6 className="font-medium mt-3 mb-1 text-base">Ваш запрос отправлен</h6>
-            <p className="opacity-60 text-sm -tracking-two">Мы свяжемся с Вами в ближайшее время</p>
+          <div className="p-6 text-center">
+            <CircleCheck className="inline-block h-16 w-16 text-green-500" />
+            <h6 className="mt-3 mb-1 text-base font-medium">Ваш запрос отправлен</h6>
+            <p className="-tracking-two text-sm opacity-60">Мы свяжемся с Вами в ближайшее время</p>
           </div>
         </div>
       )}

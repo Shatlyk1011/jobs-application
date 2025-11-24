@@ -5,7 +5,7 @@ import { AxiosResponse } from "axios";
 
 export const useJobs = () => {
   const getJob = async (id: string): Promise<IJob> => {
-   return ((await axios(`/jobs/${id}`)).data);
+    return (await axios(`/jobs/${id}`)).data;
   };
 
   const getJobs = async (query?: string): Promise<IJob[]> => {

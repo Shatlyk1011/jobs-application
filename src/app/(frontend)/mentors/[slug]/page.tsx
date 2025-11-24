@@ -18,9 +18,8 @@ const stringifiedQuery = stringify(
   { addQueryPrefix: true },
 );
 
-
 export async function generateStaticParams() {
-  const { getMentors } = useMentors()
+  const { getMentors } = useMentors();
   const mentors = await getMentors(stringifiedQuery);
   return mentors;
 }
@@ -28,7 +27,7 @@ export async function generateStaticParams() {
 export default async function MentorPage({ params }: Props) {
   const { slug } = await params;
 
-  const { getMentorBySlug } = useMentors()
+  const { getMentorBySlug } = useMentors();
 
   const result = await getMentorBySlug(slug);
   const mentor = result[0];

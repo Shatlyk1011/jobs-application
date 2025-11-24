@@ -19,9 +19,8 @@ const stringifiedQuery = stringify(
   { addQueryPrefix: true },
 );
 
-
 export default async function MentorsPage() {
-  const { getMentors } = useMentors()
+  const { getMentors } = useMentors();
 
   const mentors = await getMentors(stringifiedQuery);
 
