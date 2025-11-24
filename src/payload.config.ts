@@ -9,6 +9,7 @@ import Jobs from "./app/(payload)/collections/Jobs";
 import Media from "./app/(payload)/collections/Media";
 import Resume from "./app/(payload)/collections/Resume";
 import Mentors from "./app/(payload)/collections/Mentors";
+import Consultation from "./app/(payload)/collections/Consultation";
 
 import path from "path";
 import { fileURLToPath } from "node:url";
@@ -28,7 +29,7 @@ export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
 
   // Define and configure your collections in this array
-  collections: [Jobs, Media, Resume, Mentors],
+  collections: [Jobs, Media, Resume, Mentors, Consultation],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || "",

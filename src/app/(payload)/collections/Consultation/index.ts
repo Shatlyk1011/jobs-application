@@ -6,7 +6,7 @@ const Consultation: CollectionConfig = {
     create: () => true,
   },
   admin: {
-    defaultColumns: ["username", "telegram", "resumeLink", "isVisible"],
+    defaultColumns: ["username", "telegram", "consultationWithSlug", "status"],
   },
   slug: "consultation",
   fields: [
@@ -40,6 +40,13 @@ const Consultation: CollectionConfig = {
       type: "textarea",
       required: false,
     },
+    {
+      name: "consultationWithSlug",
+      label: "Консультация с (slug)",
+      type: "text",
+      required: true,
+    },
+    
     {
       name: "status",
       label: "Статус",

@@ -56,7 +56,7 @@ export default async function MentorPage({ params }: Props) {
       </article>
 
       <div className="bg-popover rounded-3xl p-5">
-        <ConsultationForm mentorName={mentor.username} price={mentor.price} />
+        <ConsultationForm mentorName={mentor.username} price={mentor.price} slug={mentor.slug} />
       </div>
     </section>
   );
