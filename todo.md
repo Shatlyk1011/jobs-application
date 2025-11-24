@@ -3,4 +3,6 @@
 
 - empty result states
 
-- when leaving new mentor page, add alert
+- add responsiveness
+
+-next faster

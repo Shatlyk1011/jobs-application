@@ -90,7 +90,7 @@ export default async function JobPage({ params }: Props) {
               {job.companyLogo?.url ? (
                 <img
                   src={job.companyLogo?.url}
-                  className="inline-block h-10 w-10 rounded-full bg-red-500 object-cover object-center"
+                  className="inline-block h-10 w-10 rounded-full bg-neutral-500 object-cover object-center"
                   alt=""
                 />
               ) : (
