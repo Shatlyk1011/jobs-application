@@ -2,16 +2,14 @@
 import { FC, useState } from "react";
 import Link from "next/link";
 
-import axios from "@/lib/axios";
-
 import { IMentor } from "@/types/mentors";
 
 import MentorFilters from "./Filters";
 import { Button } from "../ui/button";
 import { Where } from "payload";
 import { stringify } from "qs-esm";
-import { AxiosResponse } from "axios";
 import { debounce } from "@/composables/utils";
+import useMentors from "@/services/useMentors";
 
 interface Props {
   initialData: IMentor[];
@@ -20,7 +18,7 @@ interface Props {
 const MentorSection: FC<Props> = ({ initialData }) => {
   const [data, setData] = useState(initialData);
 
-  console.log("data", data);
+  const { getMentors } = useMentors()
 
   if (!initialData) return null;
 
@@ -32,8 +30,8 @@ const MentorSection: FC<Props> = ({ initialData }) => {
       { addQueryPrefix: true },
     );
 
-    const mentors: AxiosResponse<IMentor[]> = await axios(`/jobs${stringifiedQuery}`);
-    setData(mentors.data);
+    const mentors = await getMentors(stringifiedQuery);
+    setData(mentors);
   };
 
   const handleFilterRequest = debounce(fetchJobs, 800);
@@ -63,11 +61,11 @@ const MentorSection: FC<Props> = ({ initialData }) => {
               <p className="tracking-one mb-6 text-sm opacity-80">{m.about}</p>
 
               <div className="flex items-center gap-4 text-sm">
-                <Button variant="outline" className="text-[14px]" size="sm">
+                <Button variant="outline" className="text-sm" size="sm">
                   Смотреть профиль
                 </Button>
 
-                <p className="-tracking-three text-[14px] font-medium">{m.price}TMT / час занятия в ZOOM</p>
+                <p className="-tracking-two text-sm font-medium text-[15px]">{m.price}TMT / час онлайн занятия</p>
               </div>
             </div>
           </Link>

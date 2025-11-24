@@ -102,7 +102,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       </div>
 
       <div>
-        <label className="mb-2 inline-block text-sm font-medium">Сфера</label>
+        <label className="mb-2 inline-block text-sm font-medium">Сфера (менторства)</label>
         <MultiSelect
           singleLine={true}
           className="bg-input/30 hover:bg-input/30 min-h-[41px]"
@@ -151,7 +151,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </label>
         <div className="my-2 text-sm opacity-70">
           <span className="mb-5 inline-block">Например, </span>
-          <p className="mb-4">
+          <p className="mb-4 select-none" >
             Приветствую, более 8 лет занимаюсь дизайном. Начал свою карьеру графическим дизайнером, а потом нашел себя в
             UX-дизайне. Сегодня являюсь ведущим Product Designer в компании - Belli Creative
           </p>
@@ -173,7 +173,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </label>
         <div className="my-2 text-sm opacity-70">
           <span className="mb-5 inline-block">Например, </span>
-          <p className="mb-4">
+          <p className="mb-4 ">
             → Расскажу как написать свой первый пет проект. <br />
             → Научу оптимизировать код для высокой производительности. <br />
             → Расскажу о выборе фреймворков (React, Vue), CI/CD и интеграции с бэкендом. <br />→ Подготовлю к

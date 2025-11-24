@@ -7,7 +7,7 @@ export const getFileSize = (file: File) => {
 
 export function nameToSlug(name: string) {
   const [first, second] = name.split(" ");
-  return `${first}-${second}`;
+  return `${first.toLowerCase()}-${second.toLowerCase()}`;
 }
 
 export function debounce(func: Function, delay: number) {

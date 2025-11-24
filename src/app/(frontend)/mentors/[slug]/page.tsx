@@ -1,18 +1,34 @@
 import ConsultationForm from "@/components/ConsultationForm";
 import RichText from "@/components/RichText";
-import { getMentorBySlug, getMentors } from "@/services/getMentors";
+import useMentors from "@/services/useMentors";
+import { stringify } from "qs-esm";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const stringifiedQuery = stringify(
+  {
+    where: {
+      isVisible: {
+        equals: true,
+      },
+    },
+  },
+  { addQueryPrefix: true },
+);
+
+
 export async function generateStaticParams() {
-  const mentors = await getMentors();
+  const { getMentors } = useMentors()
+  const mentors = await getMentors(stringifiedQuery);
   return mentors;
 }
 
 export default async function MentorPage({ params }: Props) {
   const { slug } = await params;
+
+  const { getMentorBySlug } = useMentors()
 
   const result = await getMentorBySlug(slug);
   const mentor = result[0];
@@ -39,9 +55,9 @@ export default async function MentorPage({ params }: Props) {
         </div>
       </article>
 
-      <section className="bg-popover rounded-3xl p-5">
+      <div className="bg-popover rounded-3xl p-5">
         <ConsultationForm />
-      </section>
+      </div>
     </section>
   );
 }

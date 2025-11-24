@@ -19,7 +19,6 @@ export default async function JobsPage() {
   const { getJobs } = useJobs();
 
   const jobs = await getJobs(stringifiedQuery);
-  console.log("jobs", jobs);
 
   if (!jobs) return null;
 

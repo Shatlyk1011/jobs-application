@@ -100,7 +100,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
           Записаться на консультацию
         </Button>
         <div className="text-ring mt-3 text-center text-sm">
-          <p>
+          <p className="text-balance">
             Нажимая на кнопку «Записаться на консультацию», Вы соглашаетесь с <br />
           </p>
           <a className="text-sidebar-primary" href="#">

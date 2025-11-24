@@ -5,9 +5,11 @@ import { toast } from "sonner";
 import { InitialMentorFormState } from "../../data/mentor";
 
 import { IMentorResponse } from "@/types/mentors";
+import { useRouter } from "next/navigation";
 
 export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse>>) {
   const [isLoading, setLoading] = useState(false);
+  const router = useRouter()
 
   const createMentor = async (form: IMentorResponse) => {
     try {
@@ -21,6 +23,7 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
 
       if (req.status === 201) {
         setForm(InitialMentorFormState);
+        router.push('/mentors')
         toast.success("Спасибо за ваш отклик. Мы свяжемся с Вами в самое ближайшее время.", {
           id: "loading-toast-id",
           duration: 6000,

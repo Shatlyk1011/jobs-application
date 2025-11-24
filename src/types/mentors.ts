@@ -1,3 +1,5 @@
+import { IBaseFields } from ".";
+
 export interface IMentor {
   id: string;
   createdAt: string;
@@ -27,4 +29,8 @@ export interface IConsultation {
   telegram: string;
   phoneNumber?: string;
   requestBody?: string;
+}
+
+export interface IMentors extends IBaseFields {
+  docs: IMentor[];
 }

@@ -96,7 +96,7 @@ const Mentors: CollectionConfig = {
       label: "Статус публикации",
       type: "checkbox",
       required: false,
-      defaultValue: true,
+      defaultValue: false,
       admin: {
         position: "sidebar",
       },

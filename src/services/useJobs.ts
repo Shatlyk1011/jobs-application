@@ -1,6 +1,7 @@
 import axios from "@/lib/axios";
 
-import { IJob } from "@/types/job";
+import { IJob, IJobs } from "@/types/job";
+import { AxiosResponse } from "axios";
 
 export const useJobs = () => {
   const getJob = async (id: string): Promise<IJob> => {
@@ -8,7 +9,7 @@ export const useJobs = () => {
   };
 
   const getJobs = async (query?: string): Promise<IJob[]> => {
-    const response = await axios(`/jobs/${query}`);
+    const response: AxiosResponse<IJobs> = await axios(`/jobs/${query}`);
 
     return response.data.docs;
   };

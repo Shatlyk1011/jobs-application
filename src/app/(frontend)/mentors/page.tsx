@@ -1,15 +1,29 @@
 import Link from "next/link";
+import { stringify } from "qs-esm";
 
 import { siteConfig } from "@/config";
-
-import { getMentors } from "@/services/getMentors";
 
 //components
 import MentorSection from "@/components/MentorSection";
 import { Button } from "@/components/ui/button";
+import useMentors from "@/services/useMentors";
+
+const stringifiedQuery = stringify(
+  {
+    where: {
+      isVisible: {
+        equals: true,
+      },
+    },
+  },
+  { addQueryPrefix: true },
+);
+
 
 export default async function MentorsPage() {
-  const mentors = await getMentors();
+  const { getMentors } = useMentors()
+
+  const mentors = await getMentors(stringifiedQuery);
 
   return (
     <div className="h-[300vh] w-[70%] px-4 pt-14 pb-10 text-center">
