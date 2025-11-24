@@ -29,7 +29,7 @@ export default async function CVPage() {
 
   return (
     <main className="w-full">
-      <section className="mx-auto w-full max-w-3xl py-12 text-center">
+      <section className="mx-auto w-full max-w-3xl py-6 text-center">
         <h1 className="-tracking-two mb-4 text-4xl font-semibold max-sm:mb-2 max-sm:text-3xl">
           Станьте заметнее для HR
         </h1>

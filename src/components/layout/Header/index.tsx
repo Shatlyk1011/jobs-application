@@ -27,7 +27,7 @@ const Header: FC<Props> = ({ sticky }) => {
       </Link>
 
       <nav className="flex flex-1 justify-center">
-        <ul className="flex items-center text-base font-medium tracking-tight max-sm:gap-4 max-sm:text-sm">
+        <ul className="flex items-center text-base font-medium tracking-tight max-sm:text-sm">
           <li>
             <Link
               href={"/jobs"}

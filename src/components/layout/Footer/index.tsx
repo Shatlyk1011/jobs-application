@@ -1,13 +1,17 @@
+import { FC } from "react";
+import { cn } from "@/lib/utils";
+
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/config";
 import Link from "next/link";
-import { FC } from "react";
 
-interface Props {}
+interface Props {
+  classes?: string
+}
 
-const Footer: FC<Props> = () => {
+const Footer: FC<Props> = ({ classes }) => {
   return (
-    <footer className="bg-popover mb-5 rounded-2xl p-8">
+    <footer className={cn("bg-popover mb-5 rounded-2xl p-8", classes)}>
       <div className="flex gap-8 max-lg:flex-col max-lg:gap-10">
         {/* left */}
         <div className="flex max-h-max basis-[30%] items-center gap-4 max-lg:order-2 max-lg:basis-full max-lg:gap-2.5 max-sm:flex-col">
@@ -77,9 +81,9 @@ const Footer: FC<Props> = () => {
           </ul>
         </div>
       </div>
-      <div className="text-ring mt-5 flex items-center justify-between gap-4 text-sm max-lg:hidden">
+      <div className="text-ring mt-5 flex items-center justify-between gap-4 text-xs max-lg:hidden">
         <p>© 2025 | Все права защищены</p>
-        <p>
+        {/* <p>
           Developed by{" "}
           <a
             className="text-foreground opacity-70 transition hover:opacity-100"
@@ -89,7 +93,7 @@ const Footer: FC<Props> = () => {
           >
             @shatlyk
           </a>
-        </p>
+        </p> */}
       </div>
     </footer>
   );

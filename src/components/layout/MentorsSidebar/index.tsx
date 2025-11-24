@@ -19,7 +19,7 @@ const MentorsSidebar: FC<Props> = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="relative w-[30%] max-w-40 pt-10">
+    <aside className="relative w-[30%] max-w-44 pt-10">
       <div className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
         <header className="mb-8 flex gap-2 items-center">
           <Link href="/mentors">
@@ -66,14 +66,11 @@ const MentorsSidebar: FC<Props> = () => {
             </Link>
           </li>
         </ul>
-        <div className="-tracking-two flex flex-col text-base leading-[1.3] font-medium">
+        <div className="-tracking-two flex flex-col text-sm leading-[1.3] font-medium">
           <p className="mb-4">
-            Нужна помощь при <br /> подборе ментора? <br />
+            Напишите нам, и мы <br /> поможем Вам при выборе ментора.
           </p>
-          <p className="mb-6">
-            Напишите нам, <br /> и мы поможем
-          </p>
-          <Button asChild className="max-w-max px-7 py-4 text-base" variant="secondary">
+          <Button asChild className="max-w-max px-7 py-4 " variant="secondary">
             <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
               Написать нам
             </a>
