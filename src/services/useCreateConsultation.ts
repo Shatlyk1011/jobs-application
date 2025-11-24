@@ -9,7 +9,7 @@ import { IConsultation } from "@/types/mentors";
 
 export function useCreateConsultation(setForm: Dispatch<SetStateAction<IConsultation>>) {
   const [isLoading, setLoading] = useState(false);
-  const [isSuccess, setSuccess] = useState(true);
+  const [isSuccess, setSuccess] = useState(false);
 
   const createConsultation = async (form: IConsultation) => {
     try {
