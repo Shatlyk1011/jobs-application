@@ -15,10 +15,10 @@ interface Props {
   jobs: IJob[];
 }
 
-const JobCards: FC<Props> = ({ jobs }) => {
+const JobCards: FC<Props> = ({ jobs, }) => {
   return (
-    <section className="grid grid-cols-3 gap-5 pb-20 max-lg:grid-cols-2 max-sm:grid-cols-1">
-      {jobs.map((job) => (
+    <section className="grid grid-cols-3 gap-5 pb-20 min-h-[478px] max-lg:grid-cols-2 max-sm:grid-cols-1">
+      {jobs?.length ? jobs.map((job) => (
         <div key={job.id} className="bg-popover text-popover-foreground h-full min-h-[360px] rounded-lg">
           <Link target="_blank" rel="noopener" href={`/job/${job.id}`} className="inline-flex h-full w-full p-5">
             <div className="flex h-full w-full flex-col">
@@ -67,7 +67,11 @@ const JobCards: FC<Props> = ({ jobs }) => {
             </div>
           </Link>
         </div>
-      ))}
+      )) : (
+        <div className="py-10 text-center w-full col-span-3 flex  flex-col items-center gap-2">
+          <p className="max-w-1/3  font-medium -tracking-one">По вашему запросу ничего не найдено. Попробуйте изменить фильтры поиска.</p>
+        </div>
+      )}
     </section>
   );
 };
