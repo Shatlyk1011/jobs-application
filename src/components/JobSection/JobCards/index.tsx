@@ -24,9 +24,9 @@ const JobCards: FC<Props> = ({ jobs }) => {
             <div className="flex h-full w-full flex-col">
               <div className="flex w-full flex-wrap justify-between gap-x-6 gap-y-2">
                 <figure className="flex items-center gap-2">
-                  {job.companyLogo?.url ? (
+                  {job.base64Image?.data ? (
                     <img
-                      src={job.companyLogo?.url || "#"}
+                      src={job.base64Image.data}
                       alt="text"
                       className="bg-secondary h-6 w-6 overflow-hidden rounded-full object-cover"
                     />

@@ -1,13 +1,12 @@
 import { IBaseFields, SalaryType } from ".";
 
-type JobImage = {
+type Base64 = {
   createdAt: string;
   updatedAt: string;
-  alt: string;
-  filename: string;
-  mimeType: string;
+  data: string;
   id: string;
-  url: string;
+  name: string
+  alt?: string;
 };
 
 export interface IJob {
@@ -16,7 +15,7 @@ export interface IJob {
   companyName: string;
   companyDescription: string;
   companyWebsite: string;
-  companyLogo?: JobImage;
+  base64Image?: Base64;
   title: string;
   mdx: any;
   jobContactUrl: string;

@@ -37,7 +37,7 @@ const JobSection: FC<Props> = ({ initialData }) => {
 
   return (
     <div>
-      <JobFilters handleFilterRequest={handleFilterRequest} totalDocs={data.length - 1} />
+      <JobFilters handleFilterRequest={handleFilterRequest} totalDocs={data.length} />
       <JobCards jobs={data} />
     </div>
   );
