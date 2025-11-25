@@ -11,7 +11,7 @@ export interface IMentor {
   //
   price: string;
   image?: File | null;
-  imageUrl?: string;
+  imageBase64?: string;
   about: string;
   howCanYouHelp: string;
   slug: string;

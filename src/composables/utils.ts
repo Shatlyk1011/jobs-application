@@ -6,7 +6,7 @@ export const getFileSize = (file: File) => {
 };
 
 export function nameToSlug(name: string) {
-  const [first, second] = name.split(" ");
+  const [first = '', second = ''] = name.split(" ");
   return `${first.toLowerCase()}-${second.toLowerCase()}`;
 }
 

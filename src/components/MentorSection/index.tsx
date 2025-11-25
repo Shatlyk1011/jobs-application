@@ -50,7 +50,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
           >
             {/* left */}
             <figure className="min-h-14 min-w-14">
-              <img src={m.imageUrl} alt="profile image" className="h-14 w-14 rounded-[18px] object-cover" />
+              <img src={m.imageBase64} alt="profile image" className="h-14 w-14 rounded-[18px] object-cover" />
             </figure>
 
             {/* right */}
