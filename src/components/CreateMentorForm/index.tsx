@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { InitialMentorFormState } from "../../../data/mentor";
 
 import useCreateMentor from "@/services/useCreateMentor";
-import useCreateImage from "@/services/useCreateImage";
 
 import { useMentorZodForm } from "@/lib/zod/zod";
 import { nameToSlug } from "@/composables/utils";
@@ -23,13 +22,17 @@ const CreateMentorForm: FC<Props> = () => {
   const [form, setForm] = useState(InitialMentorFormState);
 
   const { createMentor, isLoading } = useCreateMentor(setForm);
-  const { createImage } = useCreateImage();
 
   const submit = async () => {
     if (!form.image) return;
-    const imageUrl = await createImage(form.image);
+    const buffer = Buffer.from(await form.image.arrayBuffer())
+
+    const imageBase64 = `data:${form.image.type};base64,${buffer.toString('base64')}`
+
+    console.log('imageBase64', imageBase64);
+
     const { image, ...rest } = form;
-    await createMentor({ ...rest, imageUrl, slug: nameToSlug(form.username) });
+    await createMentor({ ...rest, imageBase64, slug: nameToSlug(form.username) });
   };
 
   const { errors, handleSubmit } = useMentorZodForm(form, submit);
