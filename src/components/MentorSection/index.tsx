@@ -1,15 +1,18 @@
 "use client";
 import { FC, useState } from "react";
 import Link from "next/link";
+import { stringify } from "qs-esm";
+import { Where } from "payload";
 
 import { IMentor } from "@/types/mentors";
 
+import { debounce } from "@/composables/utils";
+
+import useMentors from "@/services/useMentors";
+
 import MentorFilters from "./Filters";
 import { Button } from "../ui/button";
-import { Where } from "payload";
-import { stringify } from "qs-esm";
-import { debounce } from "@/composables/utils";
-import useMentors from "@/services/useMentors";
+import ScreenLoading from "../ui/ScreenLoading";
 
 interface Props {
   initialData: IMentor[];
@@ -17,31 +20,38 @@ interface Props {
 
 const MentorSection: FC<Props> = ({ initialData }) => {
   const [data, setData] = useState(initialData);
+  const [isLoading, setLoading] = useState(false);
 
   const { getMentors } = useMentors();
 
   if (!initialData) return null;
 
-  const fetchJobs = async (query: Where) => {
+  const fetchMentors = async (query: Where) => {
     const stringifiedQuery = stringify(
-      {
-        where: query,
-      },
-      { addQueryPrefix: true },
+      { where: query },
+      { addQueryPrefix: true }
     );
 
-    const mentors = await getMentors(stringifiedQuery);
-    setData(mentors);
+    try {
+      setLoading(true)
+      const mentors = await getMentors(stringifiedQuery);
+      setData(mentors);
+    } catch (err) {
+      console.log('fetch mentors error', err);
+
+    } finally {
+      setLoading(false)
+    }
   };
 
-  const handleFilterRequest = debounce(fetchJobs, 800);
+  const handleFilterRequest = debounce(fetchMentors, data?.length === 0 ? 500 : 1200);
 
   return (
     <section className="">
-      <MentorFilters handleFilterRequest={handleFilterRequest} />
+      <MentorFilters handleFilterRequest={handleFilterRequest} totalDocs={data?.length} />
 
       {/* mentor card */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 relative">
         {data.map((m) => (
           <Link
             key={m.id}
@@ -70,7 +80,12 @@ const MentorSection: FC<Props> = ({ initialData }) => {
             </div>
           </Link>
         ))}
+        {isLoading && (
+          <ScreenLoading style={{ minHeight: "320px" }} />
+        )}
       </div>
+
+
     </section>
   );
 };
