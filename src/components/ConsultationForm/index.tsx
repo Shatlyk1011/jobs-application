@@ -5,7 +5,7 @@ import Spinner from "../ui/Spinner";
 import { InitialConsultationFormState } from "../../../data/mentor";
 import useCreateConsultation from "@/services/useCreateConsultation";
 import { useConsultationZodForm } from "@/lib/zod/zod";
-import { CircleCheck } from "lucide-react";
+import SuccessBlock from "../ui/SuccessBlock";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
@@ -48,13 +48,7 @@ const ConsultationForm: FC<Props> = ({ mentorName, price, slug }) => {
         </>
       ) : (
         // success block
-        <div className="text-center">
-          <div className="p-6 text-center">
-            <CircleCheck className="inline-block h-16 w-16 text-green-500" />
-            <h6 className="mt-3 mb-1 text-base font-medium">Ваш запрос отправлен</h6>
-            <p className="-tracking-two text-sm opacity-60">Мы свяжемся с Вами в ближайшее время</p>
-          </div>
-        </div>
+          <SuccessBlock />
       )}
     </form>
   );

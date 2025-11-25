@@ -28,7 +28,6 @@ export function useCreateConsultation(setForm: Dispatch<SetStateAction<IConsulta
           id: "loading-toast-id",
           duration: 6000,
         });
-        // redirect user
       }
     } catch (err) {
       toast.error("Что то пошло не так. Попробуйте еще раз.", {

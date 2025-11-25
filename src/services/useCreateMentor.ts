@@ -9,6 +9,8 @@ import { IMentorResponse } from "@/types/mentors";
 
 export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse>>) {
   const [isLoading, setLoading] = useState(false);
+  const [isSuccess, setSuccess] = useState(false);
+
   const router = useRouter();
 
   const createMentor = async (form: IMentorResponse) => {
@@ -22,13 +24,16 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
       });
 
       if (req.status === 201) {
+        setSuccess(true);
         setForm(InitialMentorFormState);
-        router.push("/mentors");
         toast.success("Спасибо за ваш отклик. Мы свяжемся с Вами в самое ближайшее время.", {
           id: "loading-toast-id",
           duration: 6000,
         });
-        // redirect user
+
+        setTimeout(() => {
+          router.push("/mentors");  
+        }, 3000)
       }
     } catch (err) {
       toast.error("Что то пошло не так. Попробуйте еще раз.", {
@@ -40,7 +45,7 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
     }
   };
 
-  return { createMentor, isLoading };
+  return { createMentor, isLoading, isSuccess };
 }
 
 export default useCreateMentor;

@@ -10,6 +10,7 @@ import { useMentorZodForm } from "@/lib/zod/zod";
 import { nameToSlug } from "@/composables/utils";
 
 import Spinner from "../ui/Spinner";
+import SuccessBlock from "../ui/SuccessBlock";
 
 const Form = dynamic(() => import("./form-client"), {
   loading: () => <Spinner />,
@@ -21,7 +22,7 @@ interface Props {}
 const CreateMentorForm: FC<Props> = () => {
   const [form, setForm] = useState(InitialMentorFormState);
 
-  const { createMentor, isLoading } = useCreateMentor(setForm);
+  const { createMentor, isLoading, isSuccess } = useCreateMentor(setForm);
 
   const submit = async () => {
     if (!form.image) return;
@@ -48,11 +49,15 @@ const CreateMentorForm: FC<Props> = () => {
 
   return (
     <section className="bg-popover mx-auto max-w-2xl rounded-2xl px-8 py-8 text-start">
-      <form className="flex flex-col gap-5 rounded-xl" onSubmit={handleSubmit}>
-        <Suspense>
-          <Form form={form} setForm={setForm} isLoading={isLoading} errors={errors} />
-        </Suspense>
-      </form>
+      {isSuccess ? (
+        <form className="flex flex-col gap-5 rounded-xl" onSubmit={handleSubmit}>
+          <Suspense>
+            <Form form={form} setForm={setForm} isLoading={isLoading} errors={errors} />
+          </Suspense>
+        </form>
+      ) : (
+        <SuccessBlock />
+      )}
     </section>
   );
 };
