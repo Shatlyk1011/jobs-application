@@ -49,7 +49,7 @@ const CreateMentorForm: FC<Props> = () => {
 
   return (
     <section className="bg-popover mx-auto max-w-2xl rounded-2xl px-8 py-8 text-start">
-      {isSuccess ? (
+      {!isSuccess ? (
         <form className="flex flex-col gap-5 rounded-xl" onSubmit={handleSubmit}>
           <Suspense>
             <Form form={form} setForm={setForm} isLoading={isLoading} errors={errors} />
