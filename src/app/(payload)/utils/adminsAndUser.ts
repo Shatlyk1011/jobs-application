@@ -8,15 +8,15 @@ const adminsAndUser: Access = ({ req: { user } }) => {
       return true;
     }
 
-    if (checkRole(["guest"], user)) {
-      return false;
-    }
+    // if (checkRole(["moderator"], user)) {
+    //   return false;
+    // }
 
-    return {
-      id: {
-        equals: user.id,
-      },
-    };
+    // return {
+    //   id: {
+    //     equals: user.id,
+    //   },
+    // };
   }
 
   return false;
