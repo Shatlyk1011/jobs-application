@@ -5,7 +5,7 @@ type Base64 = {
   updatedAt: string;
   data: string;
   id: string;
-  name: string
+  name: string;
   alt?: string;
 };
 

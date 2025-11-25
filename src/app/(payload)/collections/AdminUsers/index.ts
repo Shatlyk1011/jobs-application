@@ -18,7 +18,7 @@ const AdminUsers: CollectionConfig = {
         return false;
       }
 
-      return false
+      return false;
     },
     update: admins,
   },
@@ -83,7 +83,6 @@ const AdminUsers: CollectionConfig = {
       type: "select",
     },
   ],
-
 
   slug: "adminUsers",
   timestamps: true,

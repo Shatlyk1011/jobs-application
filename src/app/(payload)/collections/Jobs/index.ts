@@ -73,7 +73,7 @@ const Jobs: CollectionConfig = {
       type: "richText",
       required: true,
     },
-    
+
     {
       name: "base64Image",
       label: "Логотип компании",

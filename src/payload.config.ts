@@ -17,14 +17,12 @@ import Mentors from "./app/(payload)/collections/Mentors";
 import Consultation from "./app/(payload)/collections/Consultation";
 import Base64Images from "./app/(payload)/collections/Base64Images";
 
-
-
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
   editor: lexicalEditor({}),
-  
+
   admin: {
     user: AdminUsers.slug,
     importMap: {
