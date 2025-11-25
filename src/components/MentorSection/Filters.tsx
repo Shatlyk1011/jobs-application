@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Where } from "payload";
 
 import { MENTOR_PROFESSION } from "../../../data/mentor";
@@ -11,17 +11,50 @@ import SearchBar from "../SearchBar";
 
 interface Props {
   handleFilterRequest: (query: Where) => void;
+  totalDocs: number
 }
 
-const Filters: FC<Props> = () => {
-  const [profession, setProfession] = useState("Все направления");
+const ALL_PROFESSIONS = "Все направления"
+
+const Filters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
+  const [mounted, setMounted] = useState(false);
   const [search, setSearch] = useState("");
+
+  const [profession, setProfession] = useState(ALL_PROFESSIONS);
+
+  useEffect(() => {
+    const query: Where = {
+      and: [
+        {
+          // search
+          username: {
+            contains: search,
+          },
+        },
+        {
+          isVisible: {
+            equals: true,
+          },
+        },
+        profession !== ALL_PROFESSIONS ? {
+          profession: {
+            in: profession
+          }
+        } : {},
+      ],
+    };
+    // prevent initial fetch
+    setMounted(true);
+    if (!mounted) return;
+    console.log('here');
+    handleFilterRequest(query);
+  }, [search, profession]);
 
   return (
     <section className="">
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-lg font-medium text-nowrap">
-          Менторы <span>44</span>
+          Менторы <span>{totalDocs}</span>
         </h1>
         <div className="w-full max-w-[220px]">
           <SelectComponent
