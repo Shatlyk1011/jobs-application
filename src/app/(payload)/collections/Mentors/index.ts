@@ -42,17 +42,7 @@ const Mentors: CollectionConfig = {
       required: true,
     },
 
-    {
-      name: "imageBase64",
-      label: "Base64 изображение ",
-      type: "textarea",
-      validate: () => true,
-      admin: {
-        // hidden: true
-        position: "sidebar",
-      },
-      required: true,
-    },
+    
 
     {
       name: "about",
@@ -124,6 +114,17 @@ const Mentors: CollectionConfig = {
       admin: {
         position: "sidebar",
       },
+    },
+    {
+      name: "imageBase64",
+      label: "Base64 изображение ",
+      type: "textarea",
+      validate: () => true,
+      admin: {
+        // hidden: true
+        position: "sidebar",
+      },
+      required: true,
     },
   ],
 };
