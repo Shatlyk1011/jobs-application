@@ -38,7 +38,7 @@ export default async function MentorPage({ params }: Props) {
         {/* left */}
         <figure className="sticky top-5 left-0 min-h-14 min-w-14">
           <img
-            src="https://cdn.prod.website-files.com/63b754bfedfa853c38da34fd/660bdb422da58631b9220e9d_PicRetouch_20240207_134501259.png"
+            src={mentor.imageBase64}
             alt="profile image"
             className="h-14 w-14 rounded-[18px] object-cover"
           />

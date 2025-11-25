@@ -43,9 +43,14 @@ const Mentors: CollectionConfig = {
     },
 
     {
-      name: "imageUrl",
-      label: "Ссылка на фотографию",
-      type: "text",
+      name: "imageBase64",
+      label: "Base64 изображение ",
+      type: "textarea",
+      validate: () => true,
+      admin: {
+        // hidden: true
+        position: 'sidebar'
+      },
       required: true,
     },
 

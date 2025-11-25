@@ -1,11 +1,7 @@
 import type { CollectionConfig } from "payload";
-import path from "path";
 
 const Media: CollectionConfig = {
   slug: "media",
-  admin: {
-    defaultColumns: ["title", "createdBy", "createdAt"],
-  },
   access: {
     read: () => true,
     create: () => true,
@@ -29,9 +25,8 @@ const Media: CollectionConfig = {
       },
     },
     mimeTypes: ["image/*"],
-    staticDir: path.resolve(__dirname, "../../../../../public/api/media/file/"),
-    // staticURL: "/media",
+    disableLocalStorage: true
   },
-};
+}
 
 export default Media;
