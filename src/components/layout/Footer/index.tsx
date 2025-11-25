@@ -18,14 +18,14 @@ const Footer: FC<Props> = ({ classes }) => {
           <Logo className="h-16 w-max max-sm:h-20" />
 
           <div className="max-h-max rounded-xl text-start text-sm font-medium text-nowrap max-sm:text-center">
-            <span className="opacity-70">Служба поддержки</span> <br />{" "}
+            <span className="opacity-70 ">Возникли трудности? </span> <br />
             <a
               target="_blank"
               rel="noopener"
               href={siteConfig.telegram_support}
-              className="border-b border-current font-semibold"
+              className="border-b border-current leading-[1.1] font-semibold"
             >
-              Напишите нам
+              Напишите в службу <br /> поддержки
             </a>
           </div>
           <p className="text-ring mt-5 hidden text-end text-sm max-lg:block max-lg:flex-1">

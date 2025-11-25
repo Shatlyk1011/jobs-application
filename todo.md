@@ -3,3 +3,7 @@
 - add responsiveness
 
 - next faster
+
+- работадателям страница
+
+- check telegram save
