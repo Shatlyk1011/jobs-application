@@ -4,8 +4,8 @@ const nextConfig = {
   experimental: {
     turbopack: true,
     serverActions: {
-      bodySizeLimit: '2mb'
-    }
+      bodySizeLimit: "2mb",
+    },
   },
 
   async redirects() {

@@ -37,11 +37,7 @@ export default async function MentorPage({ params }: Props) {
       <article className="bg-popover relative mb-6 flex items-start gap-5 rounded-3xl p-5 pr-12 pb-10">
         {/* left */}
         <figure className="sticky top-5 left-0 min-h-14 min-w-14">
-          <img
-            src={mentor.imageBase64}
-            alt="profile image"
-            className="h-14 w-14 rounded-[18px] object-cover"
-          />
+          <img src={mentor.imageBase64} alt="profile image" className="h-14 w-14 rounded-[18px] object-cover" />
         </figure>
 
         {/* right */}

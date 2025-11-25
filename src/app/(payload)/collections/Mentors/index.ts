@@ -49,7 +49,7 @@ const Mentors: CollectionConfig = {
       validate: () => true,
       admin: {
         // hidden: true
-        position: 'sidebar'
+        position: "sidebar",
       },
       required: true,
     },

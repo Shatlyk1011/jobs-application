@@ -48,7 +48,7 @@ const ConsultationForm: FC<Props> = ({ mentorName, price, slug }) => {
         </>
       ) : (
         // success block
-          <SuccessBlock />
+        <SuccessBlock />
       )}
     </form>
   );

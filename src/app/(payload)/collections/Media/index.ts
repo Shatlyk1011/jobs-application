@@ -25,8 +25,8 @@ const Media: CollectionConfig = {
       },
     },
     mimeTypes: ["image/*"],
-    disableLocalStorage: true
+    disableLocalStorage: true,
   },
-}
+};
 
 export default Media;

@@ -32,8 +32,8 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
         });
 
         setTimeout(() => {
-          router.push("/mentors");  
-        }, 3000)
+          router.push("/mentors");
+        }, 3000);
       }
     } catch (err) {
       toast.error("Что то пошло не так. Попробуйте еще раз.", {
