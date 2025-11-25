@@ -87,9 +87,9 @@ export default async function JobPage({ params }: Props) {
         <div className="bg-popover mb-6 w-full rounded-3xl p-6">
           <header className="mb-4 flex items-center gap-2.5">
             <figure className="inline-block max-h-10 min-h-10 max-w-10 min-w-10">
-              {job.companyLogo?.url ? (
+              {job.base64Image?.data ? (
                 <img
-                  src={job.companyLogo?.url}
+                  src={job.base64Image.data}
                   className="inline-block h-10 w-10 rounded-full bg-neutral-500 object-cover object-center"
                   alt=""
                 />
@@ -125,7 +125,7 @@ export default async function JobPage({ params }: Props) {
 
         <div className="bg-popover w-full rounded-3xl p-6 text-sm">
           Стань заметнее для работадателей →{" "}
-          <Link href="/cv" className="text-sidebar-primary">
+          <Link target="_blank" rel="noopener" href="/cv" className="text-sidebar-primary">
             здесь
           </Link>
         </div>
