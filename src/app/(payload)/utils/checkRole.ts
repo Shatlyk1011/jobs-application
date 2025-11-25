@@ -1,4 +1,4 @@
-export const checkRole = (allRoles: ("admin" | "author" | "guest" | "user")[] = [], user?: any | null): boolean => {
+export const checkRole = (allRoles: ("admin" | "moderator")[] = [], user?: any | null): boolean => {
   if (user) {
     if (
       allRoles.some((role) => {
