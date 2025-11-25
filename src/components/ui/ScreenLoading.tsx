@@ -1,10 +1,12 @@
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 
-interface Props {}
+interface Props {
+  style?: CSSProperties
+}
 
-const ScreenLoading: FC<Props> = () => {
+const ScreenLoading: FC<Props> = ({ style }) => {
   return (
-    <div className="loader">
+    <div className="loader" style={style}>
       <div className="justify-content-center primary-loading"></div>
     </div>
   );

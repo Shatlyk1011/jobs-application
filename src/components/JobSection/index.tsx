@@ -1,11 +1,10 @@
 "use client";
 import { FC, useState } from "react";
-import { AxiosResponse } from "axios";
-import axios from "@/lib/axios";
 import { stringify } from "qs-esm";
 import { Where } from "payload";
 
-import { IJob, IJobs } from "@/types/job";
+import { IJob, } from "@/types/job";
+import { useJobs } from "@/services/useJobs";
 
 //components
 import JobCards from "@/components/JobSection/JobCards";
@@ -22,28 +21,26 @@ const JobSection: FC<Props> = ({ initialData }) => {
   const [isLoading, setLoading] = useState(false);
 
   if (!initialData) return null;
+  const { getJobs } = useJobs()
 
   const fetchJobs = async (query: Where) => {
     const stringifiedQuery = stringify(
-      {
-        where: query,
-      },
+      { where: query },
       { addQueryPrefix: true },
     );
     try {
       setLoading(true)
-      const jobs: AxiosResponse<IJobs> = await axios(`/jobs${stringifiedQuery}`);
-      setData(jobs.data.docs);
-
+      const jobs = await getJobs(stringifiedQuery);
+      setData(jobs);
     } catch (err) {
-      console.log('err', err);
+      console.log('fetch jobs error', err);
     }
     finally {
       setLoading(false)
     }
   };
 
-  const handleFilterRequest = debounce(fetchJobs, data?.length === 0 ? 2000 : 1200);
+  const handleFilterRequest = debounce(fetchJobs, data?.length === 0 ? 500 : 1200);
 
   return (
     <>

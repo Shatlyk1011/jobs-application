@@ -4,6 +4,7 @@ import { Where } from "payload";
 import { XIcon } from "lucide-react";
 
 import { FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../data/filters";
+
 import { MultiSelect } from "@/components/MultiSelect";
 import SearchBar from "@/components/SearchBar";
 
@@ -52,7 +53,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
       and: [
         {
           // search
-          title: {
+          companyName: {
             contains: search,
           },
         },
