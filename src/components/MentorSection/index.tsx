@@ -13,6 +13,7 @@ import useMentors from "@/services/useMentors";
 import MentorFilters from "./Filters";
 import { Button } from "../ui/button";
 import ScreenLoading from "../ui/ScreenLoading";
+import EmptyResult from "../ui/EmptyResult";
 
 interface Props {
   initialData: IMentor[];
@@ -52,7 +53,8 @@ const MentorSection: FC<Props> = ({ initialData }) => {
 
       {/* mentor card */}
       <div className="flex flex-col gap-5 relative">
-        {data.map((m) => (
+        {!data.length ? (
+          data.map((m) => (
           <Link
             key={m.id}
             href={`/mentors/${m.slug}`}
@@ -79,7 +81,12 @@ const MentorSection: FC<Props> = ({ initialData }) => {
               </div>
             </div>
           </Link>
-        ))}
+          ))
+        ) : (
+          <EmptyResult classes="max-w-1/2 mx-auto">
+            По вашему запросу никого не найдено. Попробуйте изменить фильтры поиска.
+          </EmptyResult>
+        )}
         {isLoading && (
           <ScreenLoading style={{ minHeight: "320px" }} />
         )}
