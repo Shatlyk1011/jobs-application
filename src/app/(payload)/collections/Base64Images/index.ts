@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { admins } from "../../utils/admins";
+import adminsAndModerator from "../../utils/adminsAndModerator";
 
 const Base64Images: CollectionConfig = {
   slug: "base64Images",
@@ -8,7 +8,7 @@ const Base64Images: CollectionConfig = {
   },
   access: {
     read: () => true,
-    create: admins,
+    create: adminsAndModerator,
   },
   fields: [
     { name: "name", label: "Название", type: "text", required: true },
