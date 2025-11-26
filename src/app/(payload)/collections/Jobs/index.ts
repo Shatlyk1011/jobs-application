@@ -66,6 +66,12 @@ const Jobs: CollectionConfig = {
       required: false,
     },
     {
+      name: "additionalNote",
+      label: "Заметка при заявке на вакансию",
+      type: "text",
+      required: false,
+    },
+    {
       name: "mdx",
       label: "Описание вакансии",
       type: "richText",
