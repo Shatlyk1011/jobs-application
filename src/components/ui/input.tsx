@@ -25,7 +25,7 @@ const Input: React.FC<Props> = ({ className, as, type, ...props }) => {
     return (
       // @ts-ignore
       <textarea
-        className="bg-input/30 border-input min-h-[120px] text-sm rounded-lg border px-3 py-2 placeholder:font-[inherit] placeholder:text-sm"
+        className="bg-input/30 border-input min-h-[120px] rounded-lg border px-3 py-2 text-sm placeholder:font-[inherit] placeholder:text-sm"
         {...props}
         ref={textareaRef}
         onChange={handleInput}
