@@ -60,6 +60,12 @@ const Jobs: CollectionConfig = {
       },
     },
     {
+      name: "additionalContact",
+      label: "Обратная связь (телегамм, форма, мейл или другое )",
+      type: "text",
+      required: false,
+    },
+    {
       name: "mdx",
       label: "Описание вакансии",
       type: "richText",
