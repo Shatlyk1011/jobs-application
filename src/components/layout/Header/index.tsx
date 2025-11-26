@@ -32,7 +32,7 @@ const Header: FC<Props> = ({ sticky }) => {
             <Link
               href={"/jobs"}
               className={cn(
-                "hover:bg-input/50 rounded-md px-4 py-2.5 transition",
+                "hover:bg-input/50 rounded-md px-4 max-sm:px-2 py-2.5 transition",
                 pathname === jobs && "text-sidebar-primary font-medium opacity-100",
               )}
             >
@@ -43,7 +43,7 @@ const Header: FC<Props> = ({ sticky }) => {
             <Link
               href={"/cv"}
               className={cn(
-                "hover:bg-input/50 rounded-md px-4 py-2 transition",
+                "hover:bg-input/50 rounded-md px-4 max-sm:px-2 py-2 transition",
                 pathname === resume && "text-sidebar-primary font-medium opacity-100",
               )}
             >
@@ -54,7 +54,7 @@ const Header: FC<Props> = ({ sticky }) => {
             <Link
               href={"/mentors"}
               className={cn(
-                "hover:bg-input/50 rounded-md px-4 py-2.5 transition",
+                "hover:bg-input/50 rounded-md px-4 max-sm:px-2 py-2.5 transition",
                 pathname === mentors && "text-sidebar-primary font-medium opacity-100",
               )}
             >
