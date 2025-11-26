@@ -55,20 +55,20 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
         <CustomInput
           onChange={onInputChange}
           value={form.resumeLink}
-          title="Пожалуйста укажите валидную ссылку на ваше резюме"
           name={"resumeLink" as keyof IResumeForm}
           placeholder="Ссылка на резюме"
           errorMsg={errors?.resumeLink}
         />
       </div>
       <div className="flex gap-4 max-sm:flex-col max-sm:gap-3">
-        <SelectComponent
-          placeholder="Профессия"
-          items={PROFESSION}
-          onChange={(value) => handleInput("profession", value)}
+        <CustomInput
+          onChange={onInputChange}
           value={form.profession}
+          name={"profession" as keyof IResumeForm}
+          placeholder="Должность (Frontend developer)"
           errorMsg={errors?.profession}
         />
+
         <SelectComponent
           placeholder="Уровень"
           items={LEVEL}

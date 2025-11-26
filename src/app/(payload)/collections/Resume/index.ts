@@ -14,7 +14,7 @@ const Resume: CollectionConfig = {
   fields: [
     {
       name: "username",
-      label: "Имя",
+      label: "Ваше имя",
       type: "text",
       required: true,
     },
@@ -42,9 +42,8 @@ const Resume: CollectionConfig = {
     },
     {
       name: "profession",
-      label: "Профессия",
-      type: "select",
-      options: PROFESSION,
+      label: "Должность",
+      type: "text",
       required: true,
     },
 
