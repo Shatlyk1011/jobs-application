@@ -49,7 +49,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
 
       {/* mentor card */}
       <div className="relative flex flex-col gap-5">
-        {!data.length ? (
+        {data.length ? (
           data.map((m) => (
             <Link
               key={m.id}
