@@ -14,7 +14,7 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact }) =>
   const isTelegram = jobContactUrl.includes("t.me");
 
   return (
-    <Dialog>
+    <Dialog >
       <DialogTrigger asChild>
         <Button data-slot="dialog-trigger" variant="default" className="w-full py-5">
           Посмотреть контакты
@@ -32,7 +32,9 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact }) =>
             >
               {isTelegram ? "Ссылка на вакансию (в телеграм)" : "Ссылка на вакансию"}
             </a>
-            <AdditionalContactComponent additionalContact={additionalContact} />
+            {additionalContact && (
+              <AdditionalContactComponent additionalContact={additionalContact} />
+            )}
           </div>
         </DialogHeader>
         <div className="bg-secondary text-secondary-foreground rounded-2xl p-5 text-sm">

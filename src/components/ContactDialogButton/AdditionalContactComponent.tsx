@@ -1,15 +1,17 @@
 "use client";
-import { FC, useRef } from "react";
+import { FC, useRef, useState } from "react";
 
 import { CheckCheck, Copy } from "lucide-react";
 import { copyToClipboard } from "@/composables/utils";
 
 interface Props {
-  additionalContact?: string;
+  additionalContact: string;
 }
 
 const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
-  if (!additionalContact) return null;
+
+  const [isSuccess, setSuccess] = useState(false)
+
 
   const isTelegram = additionalContact.includes("t.me");
   const isLink = additionalContact.includes("http");
@@ -27,6 +29,11 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
   const onClick = async (value: string) => {
     if (value) {
       await copyToClipboard(value);
+      setSuccess(true)
+
+      setTimeout(() => {
+        setSuccess(false)
+      }, 4000)
     }
   };
 
@@ -48,9 +55,12 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
           <span className="opacity-80">Отправить заявку тут:</span>
           <div className="flex items-center gap-2 text-white">
             {additionalContact}
-            <button onClick={() => onClick(additionalContact)} ref={copyBtn} className="group">
-              <Copy size="20" className="opacity-80 transition group-focus:hidden hover:opacity-100" />
-              <CheckCheck size="20" className="hidden text-green-500 group-focus:inline-block" />
+            <button onClick={() => onClick(additionalContact)} ref={copyBtn}>
+              {isSuccess ? (
+                <CheckCheck size="20" className="text-green-500 " />
+              ) : (
+                <Copy size="20" className="opacity-80 transition hover:opacity-100" />
+              )}
             </button>
           </div>
         </div>
