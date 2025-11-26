@@ -4,18 +4,23 @@ import { siteConfig } from "@/config";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
+import AdditionalContactComponent from "./AdditionalContactComponent";
+
 
 interface Props {
-  contactUrl: string;
+  jobContactUrl: string;
+  additionalContact?: string
 }
 
-const ContactDialogButton: FC<Props> = ({ contactUrl }) => {
+const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact }) => {
+
+  const isTelegram = jobContactUrl.includes('t.me')
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -26,16 +31,17 @@ const ContactDialogButton: FC<Props> = ({ contactUrl }) => {
       <DialogContent className="bg-popover rounded-3xl border-none">
         <DialogHeader>
           <DialogTitle className="mb-6">Контакты работодателя</DialogTitle>
-          <DialogDescription className="mb-4">
+          <div className="mb-4 flex flex-col gap-3 text-sm">
             <a
-              href={contactUrl}
+              href={jobContactUrl}
               target="_blank"
               rel="noopener"
-              className="text-sidebar-primary border-b border-current"
+              className="text-sidebar-primary border-b border-current max-w-max"
             >
-              Ссылка на вакансию
+              {isTelegram ? "Ссылка на вакансию (в телеграм)" : "Ссылка на вакансию"}
             </a>
-          </DialogDescription>
+            <AdditionalContactComponent additionalContact={additionalContact} />
+          </div>
         </DialogHeader>
         <div className="bg-secondary text-secondary-foreground rounded-2xl p-5 text-sm">
           <p>
@@ -51,3 +57,6 @@ const ContactDialogButton: FC<Props> = ({ contactUrl }) => {
   );
 };
 export default ContactDialogButton;
+
+
+
