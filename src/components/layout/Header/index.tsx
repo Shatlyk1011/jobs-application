@@ -26,8 +26,8 @@ const Header: FC<Props> = ({ sticky }) => {
         <Logo className="h-full w-full fill-none text-inherit" />
       </Link>
 
-      <nav className="flex flex-1 justify-center">
-        <ul className="flex items-center text-base font-medium tracking-tight max-sm:text-sm">
+      <nav className="flex flex-1 justify-center max-sm:justify-end">
+        <ul className="flex items-center  text-base font-medium tracking-tight max-sm:text-sm">
           <li>
             <Link
               href={"/jobs"}

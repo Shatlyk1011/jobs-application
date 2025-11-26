@@ -207,7 +207,7 @@ body {
 
 @media screen and (max-width: 640px) {
   .theme-switch {
-    --toggle-size: 10px;
+    --toggle-size: px;
   }
 }
 

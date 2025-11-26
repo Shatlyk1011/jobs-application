@@ -44,7 +44,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
 
   return (
     <>
-      <div className="flex gap-4 max-sm:flex-col max-sm:gap-3">
+      <div className="flex gap-4 max-sm:gap-2">
         <CustomInput
           onChange={onInputChange}
           value={form.username}
@@ -60,12 +60,12 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
           errorMsg={errors?.resumeLink}
         />
       </div>
-      <div className="flex gap-4 max-sm:flex-col max-sm:gap-3">
+      <div className="flex gap-4 max-sm:gap-2">
         <CustomInput
           onChange={onInputChange}
           value={form.profession}
           name={"profession" as keyof IResumeForm}
-          placeholder="Должность (Frontend developer)"
+          placeholder="Должность (Frontend Dev)"
           errorMsg={errors?.profession}
         />
 
@@ -77,7 +77,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
           errorMsg={errors?.level}
         />
       </div>
-      <div className="flex gap-4 max-sm:flex-col max-sm:gap-3">
+      <div className="flex gap-4 max-sm:gap-2">
         <SelectComponent
           placeholder="Местонахождения"
           items={LOCATION}
@@ -96,7 +96,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
 
       <div
         className={cn(
-          "relative flex flex-col items-start gap-3 overflow-hidden rounded-xl border px-4 py-4",
+          "relative flex flex-col items-start gap-3 overflow-hidden rounded-xl border px-4 py-4 max-sm:px-3 max-sm:py-3 max-sm:rounded-lg",
           salaryView &&
             "border-sidebar-primary/30 dark:border-sidebar-primary/60 bg-43 dark:bg-sidebar-primary/30 transition",
         )}

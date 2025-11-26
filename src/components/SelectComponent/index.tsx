@@ -16,7 +16,7 @@ export function SelectComponent({ items, placeholder, onChange, value, errorMsg,
     <div className="flex w-full flex-col gap-1">
       <Select onValueChange={(value) => onChange(value)} value={value}>
         <SelectTrigger className={cn("w-full", classes)}>
-          <SelectValue placeholder={placeholder} />
+          <SelectValue placeholder={placeholder} className="" />
         </SelectTrigger>
         <SelectContent className="flex">
           <SelectGroup>
