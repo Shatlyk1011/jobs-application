@@ -1,5 +1,6 @@
 "use client";
 import { FC, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 import { CheckCheck, Copy } from "lucide-react";
 import { copyToClipboard } from "@/composables/utils";
@@ -12,15 +13,21 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
 
   const [isSuccess, setSuccess] = useState(false)
 
-
-  const isTelegram = additionalContact.includes("t.me");
+  const isTelegram = additionalContact[0] === '@'
   const isLink = additionalContact.includes("http");
 
   const getText = () => {
-    if (isTelegram) return " Отправить заявку в телеграм";
+    if (isTelegram) return "Отправить заявку в телеграм";
     else if (isLink && !isTelegram) return "Отправить заявку";
     return null;
   };
+
+  const getUrl = () => {
+    if (isTelegram) {
+      return `https://t.me/${additionalContact.slice(1, -1)}`
+    }
+    return additionalContact
+  }
 
   const text = getText();
 
@@ -33,7 +40,7 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
 
       setTimeout(() => {
         setSuccess(false)
-      }, 4000)
+      }, 6000)
     }
   };
 
@@ -41,7 +48,7 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
     <>
       {!!text && (
         <a
-          href={additionalContact}
+          href={getUrl()}
           target="_blank"
           rel="noopener"
           className="text-sidebar-primary max-w-max border-b border-current"
@@ -51,15 +58,15 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
       )}
 
       {!isLink && !isTelegram && (
-        <div className="text-foreground opacity flex gap-1">
-          <span className="opacity-80">Отправить заявку тут:</span>
-          <div className="flex items-center gap-2 text-white">
+        <div className="text-foreground opacity flex items-center gap-1">
+          <span className="">Отправить заявку тут:</span>
+          <div className={cn("flex items-center gap-2 font-semibold px-2.5 py-1 bg-secondary rounded-sm transition", isSuccess && 'bg-green-200 dark:bg-green-900')}>
             {additionalContact}
             <button onClick={() => onClick(additionalContact)} ref={copyBtn}>
               {isSuccess ? (
-                <CheckCheck size="20" className="text-green-500 " />
+                <CheckCheck size="18" className="" />
               ) : (
-                <Copy size="20" className="opacity-80 transition hover:opacity-100" />
+                  <Copy size="18" className="opacity-80 transition hover:opacity-100" />
               )}
             </button>
           </div>

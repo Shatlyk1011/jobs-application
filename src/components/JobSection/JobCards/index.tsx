@@ -44,7 +44,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                   </dl>
                 </div>
 
-                <h3 className="my-10 text-xl font-semibold text-balance">{job.title}</h3>
+                <h3 className="my-10 text-lg font-semibold text-balance">{job.title}</h3>
                 <div className="flex flex-1 items-end">
                   <ul className="text-secondary-foreground flex flex-wrap gap-1.5 text-sm leading-[1.3] font-medium">
                     <li className="bg-secondary flex max-w-max items-center gap-1.5 rounded-full px-3 py-1.5">
