@@ -142,7 +142,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
         </div>
         {/* all selected filters */}
         {!!selectedOptions.length && (
-          <ul className="mt-5 max-sm:mt-2 flex flex-wrap gap-3">
+          <ul className="mt-5 flex flex-wrap gap-3 max-sm:mt-2">
             {selectedOptions.map((o) => (
               <li
                 className="bg-secondary-foreground text-secondary flex items-center gap-1 rounded-full px-3 pt-1.5 pb-1 text-sm font-medium"

@@ -37,7 +37,7 @@ const Footer: FC<Props> = ({ classes }) => {
         <div className="text-ring -tracking-one flex flex-1 justify-end gap-8 text-[16px] font-medium max-lg:justify-center max-sm:flex-col max-sm:items-center max-sm:text-center">
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Вакансии</li>
-            <li className="hover:text-foreground mb-2 max-sm:mb-1 transition">
+            <li className="hover:text-foreground mb-2 transition max-sm:mb-1">
               <Link href="/jobs">Список вакансий</Link>
             </li>
             <li>
