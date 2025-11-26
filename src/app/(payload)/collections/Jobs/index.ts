@@ -79,7 +79,7 @@ const Jobs: CollectionConfig = {
       label: "Логотип компании",
       type: "relationship",
       relationTo: "base64Images",
-      required: true,
+      required: false,
     },
     {
       name: "profession",
