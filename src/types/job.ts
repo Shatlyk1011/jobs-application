@@ -19,7 +19,7 @@ export interface IJob {
   title: string;
   mdx: any;
   jobContactUrl: string;
-  additionalContact?:string
+  additionalContact?: string;
   profession: string;
   format: string;
   level: string;

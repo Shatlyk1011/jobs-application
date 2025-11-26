@@ -1,25 +1,17 @@
 import { FC } from "react";
 import { siteConfig } from "@/config";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import AdditionalContactComponent from "./AdditionalContactComponent";
 
-
 interface Props {
   jobContactUrl: string;
-  additionalContact?: string
+  additionalContact?: string;
 }
 
 const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact }) => {
-
-  const isTelegram = jobContactUrl.includes('t.me')
+  const isTelegram = jobContactUrl.includes("t.me");
 
   return (
     <Dialog>
@@ -36,7 +28,7 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact }) =>
               href={jobContactUrl}
               target="_blank"
               rel="noopener"
-              className="text-sidebar-primary border-b border-current max-w-max"
+              className="text-sidebar-primary max-w-max border-b border-current"
             >
               {isTelegram ? "Ссылка на вакансию (в телеграм)" : "Ссылка на вакансию"}
             </a>
@@ -57,6 +49,3 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact }) =>
   );
 };
 export default ContactDialogButton;
-
-
-
