@@ -8,6 +8,7 @@ import { IResumes } from "@/types/resume";
 import AddResumeDialogButton from "@/components/AddResumeDialogButton";
 import CVSection from "@/components/CVSection";
 import { Suspense } from "react";
+import EmptyResult from "@/components/ui/EmptyResult";
 
 export default async function CVPage() {
   const stringifiedQuery = stringify(
@@ -23,7 +24,7 @@ export default async function CVPage() {
 
   const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
   if (!response) {
-    return null;
+    return <EmptyResult classes="min-h-[50vh] justify-center">Что то пошло не так</EmptyResult>;
   }
   const { data } = response;
 

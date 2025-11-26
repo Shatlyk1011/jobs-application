@@ -10,6 +10,7 @@ import { dateConvert } from "@/composables/dateConvert";
 import { getLocation, salaryConvert } from "@/composables/salaryConvert";
 
 import CurrencyIcon from "@/components/ui/currency-icon";
+import EmptyResult from "@/components/ui/EmptyResult";
 
 interface Props {
   jobs: IJob[];
@@ -73,11 +74,9 @@ const JobCards: FC<Props> = ({ jobs }) => {
           </div>
         ))
       ) : (
-        <div className="col-span-3 flex w-full flex-col items-center gap-2 py-10 text-center">
-          <p className="-tracking-one max-w-1/3 font-medium">
+          <EmptyResult classes="col-span-3 max-w-1/3 mx-auto">
             По вашему запросу ничего не найдено. Попробуйте изменить фильтры поиска.
-          </p>
-        </div>
+          </EmptyResult>
       )}
     </section>
   );

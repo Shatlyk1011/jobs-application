@@ -15,7 +15,7 @@ const Jobs: CollectionConfig = {
       "jobContactUrl",
       "profession",
       "createdAt",
-      "companyWebsite",
+      "isVisible",
     ],
   },
   fields: [
