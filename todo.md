@@ -7,3 +7,5 @@
 - работадателям страница
 
 - check telegram save
+
+- seo

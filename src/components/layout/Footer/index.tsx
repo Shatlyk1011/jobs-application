@@ -18,7 +18,7 @@ const Footer: FC<Props> = ({ classes }) => {
           <Logo className="h-16 w-max max-sm:h-20" />
 
           <div className="max-h-max rounded-xl text-start text-sm font-medium text-nowrap max-sm:text-center">
-            <span className="opacity-70">Возникли трудности? </span> <br />
+            <span className="opacity-70">Нужна помощь? </span> <br />
             <a
               target="_blank"
               rel="noopener"
@@ -37,7 +37,7 @@ const Footer: FC<Props> = ({ classes }) => {
         <div className="text-ring -tracking-one flex flex-1 justify-end gap-8 text-[16px] font-medium max-lg:justify-center max-sm:flex-col max-sm:items-center max-sm:text-center">
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Вакансии</li>
-            <li className="hover:text-foreground mb-2 transition">
+            <li className="hover:text-foreground mb-2 max-sm:mb-1 transition">
               <Link href="/jobs">Список вакансий</Link>
             </li>
             <li>
@@ -49,12 +49,12 @@ const Footer: FC<Props> = ({ classes }) => {
 
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Сервисы</li>
-            <li className="mb-2">
+            <li className="mb-2 max-sm:mb-1">
               <Link className="hover:text-foreground transition" href="/cv">
                 Резюме
               </Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 max-sm:mb-1">
               <Link className="hover:text-foreground transition" href="/cv?modal=open" replace>
                 Разместите резюме
               </Link>
@@ -68,7 +68,7 @@ const Footer: FC<Props> = ({ classes }) => {
 
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Документы</li>
-            <li className="mb-2">
+            <li className="mb-2 max-sm:mb-1">
               <Link className="hover:text-foreground transition" href="/">
                 Конфиденциальность
               </Link>
