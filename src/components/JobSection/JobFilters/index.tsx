@@ -53,7 +53,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
       and: [
         {
           // search
-          companyName: {
+          title: {
             contains: search,
           },
         },
