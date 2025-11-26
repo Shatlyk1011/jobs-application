@@ -42,8 +42,6 @@ const Mentors: CollectionConfig = {
       required: true,
     },
 
-    
-
     {
       name: "about",
       label: "О себе",

@@ -1,7 +1,7 @@
 import { CSSProperties, FC } from "react";
 
 interface Props {
-  style?: CSSProperties
+  style?: CSSProperties;
 }
 
 const ScreenLoading: FC<Props> = ({ style }) => {

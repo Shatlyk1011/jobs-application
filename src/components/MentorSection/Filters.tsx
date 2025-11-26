@@ -11,10 +11,10 @@ import SearchBar from "../SearchBar";
 
 interface Props {
   handleFilterRequest: (query: Where) => void;
-  totalDocs: number
+  totalDocs: number;
 }
 
-const ALL_PROFESSIONS = "Все направления"
+const ALL_PROFESSIONS = "Все направления";
 
 const Filters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
   const [mounted, setMounted] = useState(false);
@@ -36,17 +36,19 @@ const Filters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
             equals: true,
           },
         },
-        profession !== ALL_PROFESSIONS ? {
-          profession: {
-            in: profession
-          }
-        } : {},
+        profession !== ALL_PROFESSIONS
+          ? {
+              profession: {
+                in: profession,
+              },
+            }
+          : {},
       ],
     };
     // prevent initial fetch
     setMounted(true);
     if (!mounted) return;
-    console.log('here');
+    console.log("here");
     handleFilterRequest(query);
   }, [search, profession]);
 

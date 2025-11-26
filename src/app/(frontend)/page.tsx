@@ -7,7 +7,7 @@ export default function Home() {
     <main className="bg-primary min-h-svh w-full">
       <div className="mx-auto max-w-5xl">
         <header className="bg-primary py-2" title="Salamaleykum">
-          <Logo className="text-gray-100 h-20 w-full" />
+          <Logo className="h-20 w-full text-gray-100" />
         </header>
         <section className="mx-auto h-full w-full max-w-5xl justify-center px-12 pt-6">
           <div className="min-h-[50vw]">
