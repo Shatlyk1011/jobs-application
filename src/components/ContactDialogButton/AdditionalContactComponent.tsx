@@ -10,10 +10,9 @@ interface Props {
 }
 
 const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
+  const [isSuccess, setSuccess] = useState(false);
 
-  const [isSuccess, setSuccess] = useState(false)
-
-  const isTelegram = additionalContact[0] === '@'
+  const isTelegram = additionalContact[0] === "@";
   const isLink = additionalContact.includes("http");
 
   const getText = () => {
@@ -24,10 +23,10 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
 
   const getUrl = () => {
     if (isTelegram) {
-      return `https://t.me/${additionalContact.slice(1, -1)}`
+      return `https://t.me/${additionalContact.slice(1, -1)}`;
     }
-    return additionalContact
-  }
+    return additionalContact;
+  };
 
   const text = getText();
 
@@ -36,11 +35,11 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
   const onClick = async (value: string) => {
     if (value) {
       await copyToClipboard(value);
-      setSuccess(true)
+      setSuccess(true);
 
       setTimeout(() => {
-        setSuccess(false)
-      }, 6000)
+        setSuccess(false);
+      }, 6000);
     }
   };
 
@@ -60,13 +59,18 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
       {!isLink && !isTelegram && (
         <div className="text-foreground opacity flex items-center gap-1">
           <span className="">Отправить заявку тут:</span>
-          <div className={cn("flex items-center gap-2 font-semibold px-2.5 py-1 bg-secondary rounded-sm transition", isSuccess && 'bg-green-200 dark:bg-green-900')}>
+          <div
+            className={cn(
+              "bg-secondary flex items-center gap-2 rounded-sm px-2.5 py-1 font-semibold transition",
+              isSuccess && "bg-green-200 dark:bg-green-900",
+            )}
+          >
             {additionalContact}
             <button onClick={() => onClick(additionalContact)} ref={copyBtn}>
               {isSuccess ? (
                 <CheckCheck size="18" className="" />
               ) : (
-                  <Copy size="18" className="opacity-80 transition hover:opacity-100" />
+                <Copy size="18" className="opacity-80 transition hover:opacity-100" />
               )}
             </button>
           </div>

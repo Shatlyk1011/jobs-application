@@ -9,14 +9,14 @@ import { CircleAlert } from "lucide-react";
 interface Props {
   jobContactUrl: string;
   additionalContact?: string;
-  additionalNote?: string
+  additionalNote?: string;
 }
 
 const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact, additionalNote }) => {
   const isTelegram = jobContactUrl.includes("t.me");
 
   return (
-    <Dialog >
+    <Dialog>
       <DialogTrigger asChild>
         <Button data-slot="dialog-trigger" variant="default" className="w-full py-5">
           Посмотреть контакты
@@ -34,18 +34,16 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact, addi
             >
               {isTelegram ? "Ссылка на вакансию (в телеграм)" : "Ссылка на вакансию"}
             </a>
-            {additionalContact && (
-              <AdditionalContactComponent additionalContact={additionalContact} />
-            )}
+            {additionalContact && <AdditionalContactComponent additionalContact={additionalContact} />}
             {additionalNote && (
-              <div className=" flex text-sidebar-primary items-center gap-2 text-xs font-semibold trackingone rounded-lg">
+              <div className="text-sidebar-primary trackingone flex items-center gap-2 rounded-lg text-xs font-semibold">
                 <CircleAlert size="24" className="text-inherit" />
                 <p>{additionalNote}</p>
               </div>
             )}
           </div>
         </DialogHeader>
-        <div className="bg-secondary text-secondary-foreground rounded-2xl py-4 px-4 text-sm">
+        <div className="bg-secondary text-secondary-foreground rounded-2xl px-4 py-4 text-sm">
           <p>
             Никогда не переводите работодателю деньги. Если вы столкнулись с мошенничеством или ошибкой — пожалуйста,
             сообщите нам в{" "}
