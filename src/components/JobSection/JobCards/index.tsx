@@ -80,7 +80,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
         ))
       ) : (
         <EmptyResult classes="col-span-3 max-lg:col-span-2 max-sm:col-span-1 max-w-1/3 max-sm:max-w-[300px] max-lg:max-w-1/2 mx-auto">
-          По вашему запросу ничего не найдено. Попробуйте изменить фильтры поиска.
+            По Вашему запросу ничего не найдено. Попробуйте изменить фильтры поиска.
         </EmptyResult>
       )}
     </section>

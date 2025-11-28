@@ -175,7 +175,7 @@ body {
 .mdx ul li::before {
   content: "";
   position: absolute;
-  z-index: 100;
+  z-index: 80;
   width: 8px;
   height: 2px;
   background: currentColor;

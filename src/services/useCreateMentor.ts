@@ -26,7 +26,7 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
       if (req.status === 201) {
         setSuccess(true);
         setForm(InitialMentorFormState);
-        toast.success("Спасибо за ваш отклик. Мы свяжемся с Вами в самое ближайшее время.", {
+        toast.success("Спасибо за Ваш отклик. Мы свяжемся с Вами в самое ближайшее время.", {
           id: "loading-toast-id",
           duration: 6000,
         });

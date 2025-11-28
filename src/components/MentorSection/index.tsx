@@ -80,7 +80,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
           ))
         ) : (
           <EmptyResult classes="max-w-1/2 mx-auto">
-            По вашему запросу никого не найдено. Попробуйте изменить фильтры поиска.
+              По Вашему запросу никого не найдено. Попробуйте изменить фильтры поиска.
           </EmptyResult>
         )}
         {isLoading && <ScreenLoading style={{ minHeight: "320px" }} />}

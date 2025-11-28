@@ -61,7 +61,7 @@ export default async function JobPage({ params }: Props) {
         </div>
         <p className="text-ring mt-4 text-[14px]">
           Важно: Редакция Ganat не несёт ответственности за информацию в публикации от авторов, источников,
-          пользователей, включая текст и изображения. Если вы нашли ошибку, пожалуйста, сообщите нам об этом{" "}
+          пользователей, включая текст и изображения. Если Вы нашли ошибку, пожалуйста, сообщите нам об этом{" "}
           <a
             className="text-sidebar-primary border-b border-current"
             target="_blank"

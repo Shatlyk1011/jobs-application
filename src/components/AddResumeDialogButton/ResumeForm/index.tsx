@@ -38,7 +38,7 @@ const ResumeForm: FC<Props> = ({ close }) => {
       <DialogHeader className="max-sm:mb-6">
         <DialogTitle className="mb-2 max-sm:mb-1 max-sm:text-xl">Разместите резюме</DialogTitle>
         <DialogDescription className="mb-4 max-sm:mx-auto max-sm:mb-0 max-sm:max-w-[90%] max-sm:leading-[1.3]">
-          Заполните форму для быстрой публикации вашего резюме
+          Заполните форму для быстрой публикации Вашего резюме
         </DialogDescription>
       </DialogHeader>
       <Form form={form} setForm={setForm} errors={errors} salaryView={salaryView} setSalaryView={setSalaryView} />

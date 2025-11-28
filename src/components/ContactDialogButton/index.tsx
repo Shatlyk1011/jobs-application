@@ -15,7 +15,7 @@ interface Props {
 const ContactDialogButton: FC<Props> = ({
   jobContactUrl,
   additionalContact,
-  additionalNote = "1231231 23 123 12 31 23 12 31 23 123 ",
+  additionalNote,
 }) => {
   const isTelegram = jobContactUrl.includes("t.me");
 
@@ -49,7 +49,7 @@ const ContactDialogButton: FC<Props> = ({
         </DialogHeader>
         <div className="bg-secondary text-secondary-foreground rounded-2xl px-4 py-4 text-sm">
           <p>
-            Никогда не переводите работодателю деньги. Если вы столкнулись с мошенничеством или ошибкой — пожалуйста,
+            Никогда не переводите работодателю деньги. Если Вы столкнулись с мошенничеством или ошибкой — пожалуйста,
             сообщите нам в{" "}
             <a href={siteConfig.telegram_support} target="_blank" rel="noopener" className="border-b border-current">
               телеграм

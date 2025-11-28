@@ -22,7 +22,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
   };
   return (
     <div className="flex flex-col gap-y-4 pb-2">
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-sm:flex-col">
         <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="username">
             Ваше имя*
@@ -51,7 +51,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </div>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-sm:flex-col">
         <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="telegram">
             Ник в телеграм (через @)*

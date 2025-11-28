@@ -35,7 +35,7 @@ export default async function CVPage() {
           Станьте заметнее для HR
         </h1>
         <p className="mb-5 text-base leading-[1.3] opacity-80 max-sm:mx-auto max-sm:max-w-[80%] max-sm:text-sm">
-          Заполните простую форму — и мы разместим <br className="max-sm:hidden" /> ваше резюме на нашем сайте
+          Заполните простую форму — и мы разместим <br className="max-sm:hidden" /> Ваше резюме на нашем сайте
         </p>
         <Suspense>
           <AddResumeDialogButton />

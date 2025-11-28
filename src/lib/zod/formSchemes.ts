@@ -5,10 +5,10 @@ export const resumeFormScheme = z.object({
   username: z.string().min(2, "Пожалуйста, введите свое имя"),
   resumeLink: z.url({ error: "Пожалуйста, введите валидный URL" }),
   profession: z.string().min(2, "Пожалуйста, выберите профессию"),
-  level: z.string().min(2, "Пожалуйста, выберите ваш уровень"),
-  location: z.string().min(2, "Пожалуйста, выберите ваше местонахождения"),
+  level: z.string().min(2, "Пожалуйста, выберите Ваш уровень"),
+  location: z.string().min(2, "Пожалуйста, выберите Ваше местонахождения"),
   format: z.string().min(2, "Пожалуйста, выберите формат работы"),
-  feedback: z.string().min(2, "Пожалуйста, введите ваш Telegram или email для обратной связи"),
+  feedback: z.string().min(2, "Пожалуйста, введите Ваш Telegram или email для обратной связи"),
 });
 
 export type ResumeFormData = z.infer<typeof resumeFormScheme>;
