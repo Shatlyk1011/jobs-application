@@ -25,7 +25,7 @@ export default async function MentorsPage() {
   const mentors = await getMentors(stringifiedQuery);
 
   return (
-    <div className="h-[300vh] w-[70%] px-4 pt-14 pb-10 text-center">
+    <div className="h-[300vh] w-[70%] px-4 pt-14 pb-10 text-center max-md:w-full max-md:pt-8">
       <header className="mb-10 flex justify-center gap-4">
         <Button asChild className="flex-1 px-7 py-4 text-sm" variant="secondary">
           <a href={siteConfig.telegram_support} target="_blank" rel="noopener">

@@ -2,10 +2,11 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Logo } from "../../ui/Logo";
 import { Button } from "../../ui/button";
 import { siteConfig } from "@/config";
+import { Menu, X } from "lucide-react";
 
 interface Props {}
 
@@ -17,10 +18,22 @@ const { mentors, howitworks, mentornew } = {
 
 const MentorsSidebar: FC<Props> = () => {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false)
 
   return (
-    <aside className="relative w-[30%] max-w-44 pt-10">
-      <div className="sticky top-10 left-0 h-[calc(100svh-54px)] w-full">
+    <aside className="relative w-[30%] max-w-44 pt-10 max-md:w-full max-md:pt-8 max-md:max-w-max">
+      <Button onClick={() => setOpen(!open)} size="icon" className="z-200 relative hidden max-md:flex" variant="outline">
+        {open ? (
+          <X />
+        ) : (
+          <Menu />
+        )}
+      </Button>
+      {/* overlay */}
+      <div role="button" onClick={() => setOpen(false)} className={cn("z-80 w-svh h-svh hidden max-md:block bg-black/30 backdrop-blur-[1px] fixed top-0 left-0 select-none transition-all duration-300", open ? "opacity-100 visible " : "opacity-0 invisible")}>
+
+      </div>
+      <div className={cn("sticky top-10 left-0 h-[calc(100svh-54px)] w-full max-md:absolute max-md:min-w-64 max-md:p-5 max-md:pt-22 max-md:z-100 max-md:bg-popover max-md:border-r max-md:border-white/5 max-md:min-h-svh max-md:top-0 max-md:-left-5 translate-x-0 transition", open ? 'max-md:translate-x-0' : 'max-md:translate-x-[-110%]')}>
         <header className="mb-8 flex items-center gap-2">
           <Link href="/mentors">
             <Logo className="h-14 w-max" />
@@ -68,8 +81,8 @@ const MentorsSidebar: FC<Props> = () => {
           <p className="mb-4">
             Напишите нам, и мы <br /> поможем Вам при выборе ментора.
           </p>
-          <Button asChild className="max-w-max px-7 py-4" variant="secondary">
-            <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
+          <Button asChild className="max-w-max px-7 py-4 " variant="secondary">
+            <a href={siteConfig.telegram_support} className="max-md:min-w-full" target="_blank" rel="noopener">
               Написать нам
             </a>
           </Button>

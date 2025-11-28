@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${InterSans.variable} antialiased`}>
         <ThemeProviders>
           {children}
-          <Toaster theme="system" richColors position="bottom-left" />
+          <Toaster richColors position="bottom-left" />
         </ThemeProviders>
       </body>
     </html>
