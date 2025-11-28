@@ -16,7 +16,7 @@ const CVSection: FC<Props> = ({ initialData }) => {
       {initialData.docs.length !== 0 ? (
         <CVFilters />
       ) : (
-          <p className="-tracking-two bg-popover/70 mx-auto max-w-md rounded-2xl px-7 py-5 text-center text-base leading-[1.3] font-medium max-lg:max-w-[80%] max-lg:text-sm max-sm:px-4 max-sm:py-4">
+        <p className="-tracking-two bg-popover/70 mx-auto max-w-md rounded-2xl px-7 py-5 text-center text-base leading-[1.3] font-medium max-lg:max-w-[80%] max-lg:text-sm max-sm:px-4 max-sm:py-4">
           Это займет всего 3 минуты. Заполните Ваше резюме, и мы выставим его на нашей платформе.
         </p>
       )}

@@ -28,8 +28,8 @@ export default async function JobPage({ params }: Props) {
   const job = await getJob(id);
 
   return (
-    <main className="relative box-content flex min-h-svh w-full gap-5 py-12 max-sm:py-6 max-lg:flex-col">
-      <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] max-sm:px-6 max-sm:py-8 py-12 pt-10 max-lg:order-2">
+    <main className="relative box-content flex min-h-svh w-full gap-5 py-12 max-lg:flex-col max-sm:py-6">
+      <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] py-12 pt-10 max-lg:order-2 max-sm:px-6 max-sm:py-8">
         <header>
           <dl>
             <dt className="sr-only">Вакансия опубликована</dt>
@@ -56,7 +56,7 @@ export default async function JobPage({ params }: Props) {
           </li>
         </ul>
 
-        <div className="bg-secondary mt-10 max-sm:mt-6 rounded-2xl py-10 max-sm:py-6  pr-[110px] pl-[30px] max-sm:px-5">
+        <div className="bg-secondary mt-10 rounded-2xl py-10 pr-[110px] pl-[30px] max-sm:mt-6 max-sm:px-5 max-sm:py-6">
           <RichText content={job.mdx} />
         </div>
         <p className="text-ring mt-4 text-[14px]">
@@ -83,8 +83,8 @@ export default async function JobPage({ params }: Props) {
       </article>
 
       {/* right */}
-      <aside className="max-w-[30%] basis-[30%] max-lg:max-w-full max-lg:flex max-lg:flex-col max-lg:gap-4">
-        <div className="bg-popover mb-6 max-lg:mb-0 w-full rounded-3xl p-5">
+      <aside className="max-w-[30%] basis-[30%] max-lg:flex max-lg:max-w-full max-lg:flex-col max-lg:gap-4">
+        <div className="bg-popover mb-6 w-full rounded-3xl p-5 max-lg:mb-0">
           <header className="mb-4 flex items-center gap-2.5">
             <figure className="inline-block max-h-10 min-h-10 max-w-10 min-w-10">
               {job.base64Image?.data ? (
@@ -117,8 +117,8 @@ export default async function JobPage({ params }: Props) {
           )}
         </div>
 
-        <div className="bg-popover mb-6 max-lg:mb-0 w-full rounded-3xl p-5">
-          <span className="-tracking-one mb-6 max-lg:mb-4 inline-block text-sm font-medium">Для отклика:</span>
+        <div className="bg-popover mb-6 w-full rounded-3xl p-5 max-lg:mb-0">
+          <span className="-tracking-one mb-6 inline-block text-sm font-medium max-lg:mb-4">Для отклика:</span>
 
           <ContactDialogButton
             jobContactUrl={job.jobContactUrl}
@@ -127,7 +127,7 @@ export default async function JobPage({ params }: Props) {
           />
         </div>
 
-        <div className="bg-popover w-full rounded-3xl p-5 text-sm ">
+        <div className="bg-popover w-full rounded-3xl p-5 text-sm">
           Стань заметнее для работадателей →{" "}
           <Link target="_blank" rel="noopener" href="/cv" className="text-sidebar-primary">
             здесь

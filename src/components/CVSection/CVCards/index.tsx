@@ -10,7 +10,7 @@ interface Props {
 
 const CVCards: FC<Props> = ({ resumes }) => {
   return (
-    <section className="grid grid-cols-3 gap-5 pt-6 pb-20 max-sm:pb-12 max-lg:grid-cols-2 max-sm:grid-cols-1">
+    <section className="grid grid-cols-3 gap-5 pt-6 pb-20 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:pb-12">
       {/* card */}
       {resumes.docs.map((resume) => (
         <a
@@ -18,12 +18,12 @@ const CVCards: FC<Props> = ({ resumes }) => {
           href={resume.resumeLink}
           target="_blank"
           rel="noopener"
-          className="bg-popover inline-block min-h-[280px] max-sm:min-h-[200px] rounded-2xl p-5"
+          className="bg-popover inline-block min-h-[280px] rounded-2xl p-5 max-sm:min-h-[200px]"
         >
           <div className="flex h-full flex-col justify-between">
             <div className="flex justify-between">
               <div className="flex flex-col gap-2.5">
-                <h3 className="text-xl font-semibold ">{resume.username}</h3>
+                <h3 className="text-xl font-semibold">{resume.username}</h3>
                 <span className="text-base opacity-80">{resume.profession}</span>
               </div>
 
