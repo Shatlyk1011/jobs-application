@@ -52,7 +52,7 @@ export const WobbleCard = ({
               : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
             transition: "transform 0.1s ease-out",
           }}
-          className={cn("h-full px-10 py-10 max-md:p-8", className)}
+          className={cn("h-full px-10 py-8 max-md:p-8", className)}
         >
           {children}
         </motion.div>
