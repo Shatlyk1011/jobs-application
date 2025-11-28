@@ -28,8 +28,8 @@ export default async function JobPage({ params }: Props) {
   const job = await getJob(id);
 
   return (
-    <main className="relative box-content flex min-h-svh w-full gap-5 py-12">
-      <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] py-12 pt-10">
+    <main className="relative box-content flex min-h-svh w-full gap-5 py-12 max-sm:py-6 max-lg:flex-col">
+      <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] max-sm:px-6 max-sm:py-8 py-12 pt-10 max-lg:order-2">
         <header>
           <dl>
             <dt className="sr-only">Вакансия опубликована</dt>
@@ -56,7 +56,7 @@ export default async function JobPage({ params }: Props) {
           </li>
         </ul>
 
-        <div className="bg-secondary mt-10 rounded-2xl py-10 pr-[110px] pl-[30px]">
+        <div className="bg-secondary mt-10 max-sm:mt-6 rounded-2xl py-10 max-sm:py-6  pr-[110px] pl-[30px] max-sm:px-5">
           <RichText content={job.mdx} />
         </div>
         <p className="text-ring mt-4 text-[14px]">
@@ -83,15 +83,15 @@ export default async function JobPage({ params }: Props) {
       </article>
 
       {/* right */}
-      <aside className="max-w-[30%] basis-[30%]">
-        <div className="bg-popover mb-6 w-full rounded-3xl p-6">
+      <aside className="max-w-[30%] basis-[30%] max-lg:max-w-full max-lg:flex max-lg:flex-col max-lg:gap-4">
+        <div className="bg-popover mb-6 max-lg:mb-0 w-full rounded-3xl p-5">
           <header className="mb-4 flex items-center gap-2.5">
             <figure className="inline-block max-h-10 min-h-10 max-w-10 min-w-10">
               {job.base64Image?.data ? (
                 <img
                   src={job.base64Image.data}
                   className="inline-block h-10 w-10 rounded-full bg-neutral-500 object-cover object-center"
-                  alt=""
+                  alt="company logo"
                 />
               ) : (
                 <Building2 className="h-full w-full stroke-[1.5] opacity-50" />
@@ -101,7 +101,7 @@ export default async function JobPage({ params }: Props) {
             <span>{job.companyName}</span>
           </header>
 
-          {job?.companyDescription && <p className="mb-2.5 text-base wrap-break-word">{job.companyDescription}</p>}
+          {job?.companyDescription && <p className="mb-2.5 text-sm wrap-break-word">{job.companyDescription}</p>}
 
           {/* <div className="my-4"></div> */}
 
@@ -117,8 +117,8 @@ export default async function JobPage({ params }: Props) {
           )}
         </div>
 
-        <div className="bg-popover mb-6 w-full rounded-3xl p-6">
-          <span className="-tracking-one mb-6 inline-block text-sm font-medium">Для отклика:</span>
+        <div className="bg-popover mb-6 max-lg:mb-0 w-full rounded-3xl p-5">
+          <span className="-tracking-one mb-6 max-lg:mb-4 inline-block text-sm font-medium">Для отклика:</span>
 
           <ContactDialogButton
             jobContactUrl={job.jobContactUrl}
@@ -127,7 +127,7 @@ export default async function JobPage({ params }: Props) {
           />
         </div>
 
-        <div className="bg-popover w-full rounded-3xl p-6 text-sm">
+        <div className="bg-popover w-full rounded-3xl p-5 text-sm ">
           Стань заметнее для работадателей →{" "}
           <Link target="_blank" rel="noopener" href="/cv" className="text-sidebar-primary">
             здесь
