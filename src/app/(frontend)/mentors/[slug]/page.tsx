@@ -5,6 +5,8 @@ import useMentors from "@/services/useMentors";
 
 import { DEFAULT_LIMIT } from "@/shared/constant";
 
+export const revalidate = 600
+
 interface Props {
   params: Promise<{ slug: string }>;
 }

@@ -9,6 +9,8 @@ import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
 import { Building2 } from "lucide-react";
 
+export const revalidate = 600
+
 export async function generateStaticParams() {
   const { getJobs } = useJobs();
 
