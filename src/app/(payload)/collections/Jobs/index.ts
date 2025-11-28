@@ -71,20 +71,7 @@ const Jobs: CollectionConfig = {
       type: "text",
       required: false,
     },
-    {
-      name: "mdx",
-      label: "Описание вакансии",
-      type: "richText",
-      required: true,
-    },
 
-    {
-      name: "base64Image",
-      label: "Логотип компании",
-      type: "relationship",
-      relationTo: "base64Images",
-      required: false,
-    },
     {
       name: "profession",
       label: "Профессия",
@@ -111,6 +98,21 @@ const Jobs: CollectionConfig = {
       label: "Уровень",
       type: "select",
       options: LEVEL,
+      required: true,
+    },
+
+    {
+      name: "base64Image",
+      label: "Логотип компании",
+      type: "relationship",
+      relationTo: "base64Images",
+      required: false,
+    },
+
+    {
+      name: "mdx",
+      label: "Описание вакансии",
+      type: "richText",
       required: true,
     },
 

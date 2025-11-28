@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { stringify } from "qs-esm";
 
+import { DEFAULT_LIMIT } from "@/shared/constant";
+
 import { siteConfig } from "@/config";
 
 //components
@@ -15,6 +17,7 @@ const stringifiedQuery = stringify(
         equals: true,
       },
     },
+    limit: DEFAULT_LIMIT
   },
   { addQueryPrefix: true },
 );

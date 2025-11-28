@@ -3,6 +3,8 @@ import ConsultationForm from "@/components/ConsultationForm";
 import RichText from "@/components/RichText";
 import useMentors from "@/services/useMentors";
 
+import { DEFAULT_LIMIT } from "@/shared/constant";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -14,6 +16,7 @@ const stringifiedQuery = stringify(
         equals: true,
       },
     },
+    limit: DEFAULT_LIMIT
   },
   { addQueryPrefix: true },
 );

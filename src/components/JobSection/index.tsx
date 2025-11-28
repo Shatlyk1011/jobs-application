@@ -25,6 +25,7 @@ const JobSection: FC<Props> = ({ initialData }) => {
 
   const fetchJobs = async (query: Where) => {
     const stringifiedQuery = stringify({ where: query }, { addQueryPrefix: true });
+
     try {
       setLoading(true);
       const jobs = await getJobs(stringifiedQuery);

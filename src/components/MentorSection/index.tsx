@@ -5,6 +5,7 @@ import { stringify } from "qs-esm";
 import { Where } from "payload";
 
 import { IMentor } from "@/types/mentors";
+import { DEFAULT_LIMIT } from "@/shared/constant";
 
 import { debounce } from "@/composables/utils";
 
@@ -28,7 +29,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
   if (!initialData) return null;
 
   const fetchMentors = async (query: Where) => {
-    const stringifiedQuery = stringify({ where: query }, { addQueryPrefix: true });
+    const stringifiedQuery = stringify({ where: query, limit: DEFAULT_LIMIT }, { addQueryPrefix: true });
 
     try {
       setLoading(true);

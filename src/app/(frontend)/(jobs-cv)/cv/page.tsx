@@ -2,6 +2,8 @@ import { AxiosResponse } from "axios";
 import axios from "@/lib/axios";
 import { stringify } from "qs-esm";
 
+import { DEFAULT_LIMIT } from "@/shared/constant";
+
 import { IResumes } from "@/types/resume";
 
 //components
@@ -10,17 +12,20 @@ import CVSection from "@/components/CVSection";
 import { Suspense } from "react";
 import EmptyResult from "@/components/ui/EmptyResult";
 
-export default async function CVPage() {
-  const stringifiedQuery = stringify(
-    {
-      where: {
-        isVisible: {
-          equals: true,
-        },
+const stringifiedQuery = stringify(
+  {
+    where: {
+      isVisible: {
+        equals: true,
       },
     },
-    { addQueryPrefix: true },
-  );
+    limit: DEFAULT_LIMIT
+  },
+  { addQueryPrefix: true },
+);
+
+export default async function CVPage() {
+
 
   const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
   if (!response) {

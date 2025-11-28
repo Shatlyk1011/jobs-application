@@ -3,6 +3,7 @@ import { stringify } from "qs-esm";
 import JobSection from "@/components/JobSection";
 
 import { useJobs } from "@/services/useJobs";
+import { DEFAULT_LIMIT } from "@/shared/constant";
 
 const stringifiedQuery = stringify(
   {
@@ -11,6 +12,7 @@ const stringifiedQuery = stringify(
         equals: true,
       },
     },
+    limit: DEFAULT_LIMIT
   },
   { addQueryPrefix: true },
 );
