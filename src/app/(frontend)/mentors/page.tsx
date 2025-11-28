@@ -25,14 +25,14 @@ export default async function MentorsPage() {
   const mentors = await getMentors(stringifiedQuery);
 
   return (
-    <div className="h-[300vh] w-[70%] px-4 pt-14 pb-10 text-center max-md:w-full max-md:pt-8">
-      <header className="mb-10 flex justify-center gap-4">
-        <Button asChild className="flex-1 px-7 py-4 text-sm" variant="secondary">
+    <div className="h-full w-[70%] px-4 max-md:px-0 pt-14 pb-10 text-center max-md:w-full max-md:pt-8">
+      <header className="mb-10 flex justify-center gap-4 max-md:gap-3 max-sm:flex-col max-sm:max-w-[88%] max-sm:ml-auto max-sm:pl-4">
+        <Button asChild className="flex-1 px-7 py-4 text-sm max-sm:py-2.5 max-md:order-2" variant="secondary">
           <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
             Подобрать ментора
           </a>
         </Button>
-        <Button asChild className="flex-1 px-7 py-4 text-sm">
+        <Button asChild className="flex-1 px-7 py-4 text-sm max-sm:py-2.5">
           <Link href="/mentor/new" target="_blank" rel="noopener">
             Стать ментором
           </Link>

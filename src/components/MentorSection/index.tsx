@@ -54,26 +54,26 @@ const MentorSection: FC<Props> = ({ initialData }) => {
             <Link
               key={m.id}
               href={`/mentors/${m.slug}`}
-              className="bg-popover hover:bg-popover/80 flex w-full items-start gap-5 rounded-xl p-5 pb-6 shadow-xl/2 transition"
+              className="bg-popover hover:bg-popover/80 flex w-full items-start gap-5 max-sm:gap-3 rounded-xl p-5 pb-6 max-sm:p-4 max-sm:pb-6 shadow-xl/2 transition max-sm:flex-col"
             >
               {/* left */}
-              <figure className="min-h-14 min-w-14">
-                <img src={m.imageBase64} alt="profile image" className="h-14 w-14 rounded-[18px] object-cover" />
+              <figure className="min-h-14 min-w-14 ">
+                <img src={m.imageBase64} alt="profile image" className="h-14 w-14 rounded-[18px]  object-cover" />
               </figure>
 
               {/* right */}
               <div className="text-start">
-                <h3 className="-tracking-two mb-3 text-lg">{m.username}</h3>
-                <h4 className="-tracking-two mb-5 text-sm">{m.position}</h4>
+                <h3 className="-tracking-two mb-3 max-sm:mb-2 text-lg">{m.username}</h3>
+                <h4 className="-tracking-two mb-5 max-sm:mb-3 text-sm">{m.position}</h4>
 
-                <p className="tracking-one mb-6 text-sm opacity-80">{m.about}</p>
+                <p className="tracking-one mb-6 max-sm:mb-4 text-sm opacity-80">{m.about}</p>
 
-                <div className="flex items-center gap-4 text-sm">
-                  <Button variant="outline" className="text-sm" size="sm">
+                <div className="flex items-center gap-4 text-sm max-sm:flex-col max-sm:gap-3">
+                  <Button variant="outline" className="text-sm max-sm:min-w-full" size="sm">
                     Смотреть профиль
                   </Button>
 
-                  <p className="-tracking-two text-sm text-[15px] font-medium">{m.price}TMT / час онлайн занятия</p>
+                  <p className="-tracking-two text-sm text-[15px] font-medium max-sm:text-center">{m.price}TMT / час онлайн занятия</p>
                 </div>
               </div>
             </Link>

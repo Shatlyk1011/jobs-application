@@ -21,7 +21,7 @@ const MentorsSidebar: FC<Props> = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <aside className="relative w-[30%] max-w-44 pt-10 max-md:w-full max-md:pt-8 max-md:max-w-max">
+    <aside className="relative w-[30%] max-w-44 pt-10 max-md:w-full max-md:pt-8 max-md:max-w-max max-sm:absolute">
       <Button onClick={() => setOpen(!open)} size="icon" className="z-200 relative hidden max-md:flex" variant="outline">
         {open ? (
           <X />
@@ -30,7 +30,7 @@ const MentorsSidebar: FC<Props> = () => {
         )}
       </Button>
       {/* overlay */}
-      <div role="button" onClick={() => setOpen(false)} className={cn("z-80 w-svh h-svh hidden max-md:block bg-black/30 backdrop-blur-[1px] fixed top-0 left-0 select-none transition-all duration-300", open ? "opacity-100 visible " : "opacity-0 invisible")}>
+      <div role="button" onClick={() => setOpen(false)} className={cn("z-80 w-svh h-svh hidden max-md:block bg-black/30 fixed top-0 left-0 select-none transition-all duration-300", open ? "opacity-100 visible " : "opacity-0 invisible")}>
 
       </div>
       <div className={cn("sticky top-10 left-0 h-[calc(100svh-54px)] w-full max-md:absolute max-md:min-w-64 max-md:p-5 max-md:pt-22 max-md:z-100 max-md:bg-popover max-md:border-r max-md:border-white/5 max-md:min-h-svh max-md:top-0 max-md:-left-5 translate-x-0 transition", open ? 'max-md:translate-x-0' : 'max-md:translate-x-[-110%]')}>
