@@ -15,11 +15,11 @@ export const useJobs = () => {
     { revalidate: siteConfig.revalidateTime },
   );
 
-  const getJobs = async (query?: string): Promise<IJob[]> => {
+  const getJobs = unstable_cache(async (query?: string): Promise<IJob[]> => {
     const response: AxiosResponse<IJobs> = await axios(`/jobs/${query || ""}`);
 
     return response.data.docs;
-  };
+  }, ['getJobs'], {revalidate: siteConfig.revalidateTime});
 
   return { getJob, getJobs };
 };
