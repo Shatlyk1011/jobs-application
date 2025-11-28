@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from "../ui/button";
 import AdditionalContactComponent from "./AdditionalContactComponent";
 import { CircleAlert } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Props {
   jobContactUrl: string;
@@ -34,15 +35,15 @@ const ContactDialogButton: FC<Props> = ({
               href={jobContactUrl}
               target="_blank"
               rel="noopener"
-              className="text-sidebar-primary max-w-max border-b border-current"
+              className={cn("text-sidebar-primary max-w-max border-b border-current", additionalNote ? 'text-inherit' : "text-sidebar-primary")}
             >
               {isTelegram ? "Ссылка на вакансию (в телеграм)" : "Ссылка на вакансию"}
             </a>
             {additionalContact && <AdditionalContactComponent additionalContact={additionalContact} />}
             {additionalNote && (
-              <div className="text-sidebar-primary trackingone bg-secondary mt-2 flex items-center gap-2 rounded-lg px-2 py-2 text-xs font-semibold">
-                <CircleAlert className="h-6 w-6 text-inherit max-sm:h-5 max-sm:w-5" />
-                <p>{additionalNote}</p>
+              <div className="text-sidebar-primary trackingone bg-secondary/50 mt-2 flex items-center gap-2 rounded-lg px-2 py-2 pr-6 text-[16px] font-semibold">
+                <CircleAlert className="min-h-6 min-w-6 text-inherit max-sm:min-h-5 max-sm:min-w-5" />
+                <p className="opacity-90">{additionalNote}</p>
               </div>
             )}
           </div>

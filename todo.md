@@ -9,3 +9,5 @@
 - check telegram save
 
 - seo
+
+- fix mentors page header in mobile

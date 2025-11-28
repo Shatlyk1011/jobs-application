@@ -101,7 +101,7 @@ export default async function JobPage({ params }: Props) {
             <span>{job.companyName}</span>
           </header>
 
-          {job?.companyDescription && <p className="mb-2.5 text-sm wrap-break-word">{job.companyDescription}</p>}
+          {job?.companyDescription && <p className="mb-2.5 text-[16px]">{job.companyDescription}</p>}
 
           {/* <div className="my-4"></div> */}
 

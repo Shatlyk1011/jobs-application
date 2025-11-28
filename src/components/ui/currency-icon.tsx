@@ -13,7 +13,7 @@ const CurrencyIcon: FC<Props> = ({ currency, isAvailable }) => {
   const Icon = getCurrencyIcon(currency);
 
   if (typeof Icon === "string") {
-    return <span>&nbsp;{Icon}</span>; // Wrap string in a span for rendering
+    return <span>&nbsp;{Icon}</span>; 
   }
   return <Icon className="h-4 w-4" />;
 };

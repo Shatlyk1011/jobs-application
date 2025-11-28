@@ -68,7 +68,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                         {salaryConvert(job.salary.from, job.salary.to)}
                         <CurrencyIcon
                           currency={job.salary.currency}
-                          isAvailable={!!job.salary.from && !!job.salary.to}
+                          isAvailable={(!!job.salary.to || !!job.salary.from)}
                         />
                       </span>
                     </li>
