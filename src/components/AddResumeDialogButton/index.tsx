@@ -35,13 +35,7 @@ const AddResumeDialogButton: FC<Props> = () => {
           Разместить резюме
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-popover rounded-3xl border-none max-sm:min-h-full max-sm:max-w-full max-sm:gap-3 max-sm:overflow-y-auto max-sm:rounded-none max-sm:px-2 max-sm:pt-12 max-sm:pb-6">
-        <DialogHeader className="">
-          <DialogTitle className="mb-2 max-sm:mb-1 max-sm:text-xl">Разместите резюме</DialogTitle>
-          <DialogDescription className="mb-4 max-sm:mx-auto max-sm:mb-0 max-sm:max-w-[90%] max-sm:leading-[1.3]">
-            Заполните форму для быстрой публикации вашего резюме
-          </DialogDescription>
-        </DialogHeader>
+      <DialogContent className="bg-popover rounded-3xl border-none max-sm:min-h-full max-sm:max-w-full max-sm:gap-3 max-sm:overflow-y-auto max-sm:rounded-none max-sm:px-2 max-sm:pt-10 max-sm:pb-6">
         <ResumeForm close={() => setDialog(false)} />
       </DialogContent>
     </Dialog>
