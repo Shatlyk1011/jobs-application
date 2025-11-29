@@ -34,6 +34,11 @@ export async function generateMetadata(props: {
   })
   let imageList = [ogImageUrl]
 
+  const ogImages = imageList.map((img) => {
+    return {
+      url: img && img.includes('http') ? img : siteConfig.siteUrl + img,
+    }
+  })
 
   return {
     title: job.title,
@@ -46,6 +51,7 @@ export async function generateMetadata(props: {
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
+      images: ogImages,
       url: './',
     },
     twitter: {
