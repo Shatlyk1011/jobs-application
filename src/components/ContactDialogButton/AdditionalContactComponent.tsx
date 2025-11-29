@@ -16,7 +16,7 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
   const isLink = additionalContact.includes("http");
 
   const getText = () => {
-    if (isTelegram) return "Отправить заявку в телеграм";
+    if (isTelegram) return "Отправить заявку в телеграме";
     else if (isLink && !isTelegram) return "Отправить заявку";
     return null;
   };
@@ -45,12 +45,12 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
 
   return (
     <>
-      {!!text && (
+      {text && (
         <a
           href={getUrl()}
           target="_blank"
           rel="noopener"
-          className="text-sidebar-primary max-w-max border-b border-current"
+          className="max-w-max border-b border-current"
         >
           {text}
         </a>
