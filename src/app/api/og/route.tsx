@@ -47,7 +47,7 @@ export async function GET(req: Request) {
               tw="flex text-xl uppercase font-bold tracking-tight"
               style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
             >
-              {values.type}
+              `values.type`
             </div>
             <div
               tw={`flex leading-[1.1] ${getFontSize(heading.length)} font-bold`}

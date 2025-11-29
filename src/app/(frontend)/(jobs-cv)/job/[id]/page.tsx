@@ -21,20 +21,18 @@ export async function generateMetadata(props: {
   const params = await props.params
   const job = await getJob(params.id);
 
-  if (!job) {
-    return
-  }
+  if (!job) return
 
   const publishedAt = new Date(job.createdAt).toISOString()
   const modifiedAt = new Date(job.updatedAt || job.createdAt).toISOString()
 
   const ogImageUrl = getOgImageUrl({
     heading: job.title,
-    type: 'Blog Post',
+    type: 'Page',
   })
 
-  console.log('OG IMAGE URL', ogImageUrl);
-  let imageList = typeof ogImageUrl === 'string' ? [ogImageUrl] : ogImageUrl
+  let imageList = [ogImageUrl]
+  console.log('imageList', imageList);
 
   const ogImages = imageList.map((img) => {
     return {
