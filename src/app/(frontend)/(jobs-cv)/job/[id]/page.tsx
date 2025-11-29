@@ -8,8 +8,54 @@ import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
 import { Building2 } from "lucide-react";
+import { getOgImageUrl } from "@/lib/utils";
+import { Metadata } from "next";
 
 export const revalidate = 600;
+
+export async function generateMetadata(props: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata | undefined> {
+  const { getJob } = useJobs();
+
+  const params = await props.params
+  const job = await getJob(params.id);
+
+  if (!job) {
+    return
+  }
+
+  const publishedAt = new Date(job.createdAt).toISOString()
+  const modifiedAt = new Date(job.updatedAt || job.createdAt).toISOString()
+
+  const ogImageUrl = getOgImageUrl({
+    heading: job.title,
+    type: '',
+  })
+  let imageList = [ogImageUrl]
+
+
+  return {
+    title: job.title,
+    description: job.profession,
+    openGraph: {
+      title: job.title,
+      description: job.companyName || job.profession,
+      siteName: siteConfig.title,
+      locale: 'ru_RU',
+      type: 'article',
+      publishedTime: publishedAt,
+      modifiedTime: modifiedAt,
+      url: './',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: job.title,
+      description: job.profession,
+      images: imageList,
+    },
+  }
+}
 
 export async function generateStaticParams() {
   const { getJobs } = useJobs();
