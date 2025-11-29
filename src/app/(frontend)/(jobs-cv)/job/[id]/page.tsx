@@ -31,7 +31,7 @@ export default async function JobPage({ params }: Props) {
 
   return (
     <main className="relative box-content flex min-h-svh w-full gap-5 py-12 max-lg:flex-col max-sm:py-6">
-      <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] py-12 pt-10 max-lg:order-2 max-sm:px-6 max-sm:py-8">
+      <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] py-12 pt-10 max-lg:order-2 max-sm:px-4 max-sm:py-6">
         <header>
           <dl>
             <dt className="sr-only">Вакансия опубликована</dt>
@@ -58,7 +58,7 @@ export default async function JobPage({ params }: Props) {
           </li>
         </ul>
 
-        <div className="bg-secondary mt-10 rounded-2xl py-10 pr-[110px] pl-[30px] max-sm:mt-6 max-sm:px-5 max-sm:py-6">
+        <div className="bg-secondary mt-10 rounded-2xl py-10 pr-[110px] pl-[30px] max-sm:mt-6 max-sm:px-4 max-sm:py-5">
           <RichText content={job.mdx} />
         </div>
         <p className="text-ring mt-4 text-[14px]">
