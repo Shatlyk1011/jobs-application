@@ -23,19 +23,26 @@ const MentorsSidebar: FC<Props> = () => {
   const close = () => setOpen(false)
 
   return (
-    <aside className="relative w-[30%] max-w-44 pt-10 max-md:w-full max-md:pt-8 max-sm:pt-4 max-md:max-w-max max-sm:absolute">
-      <Button onClick={() => setOpen(!open)} size="icon" className="z-200 relative hidden max-md:flex" variant="outline">
-        {open ? (
-          <X />
-        ) : (
-          <Menu />
-        )}
-      </Button>
+    <aside className="relative w-[30%] max-w-44 pt-10 max-md:w-full max-md:pt-8 max-sm:pt-4 max-md:max-w-max max-sm:absolute max-sm:max-w-[calc(100%-24px)] top-0 ">
+      <header className="z-200 relative hidden max-md:flex items-center justify-between">
+        <Button onClick={() => setOpen(!open)} size="icon" className="" variant="outline">
+          {open ? (
+            <X />
+          ) : (
+            <Menu />
+          )}
+        </Button>
+        <Link href="/mentors" className="flex flex-col items-center gap text-xs">
+          <Logo className="h-14 max-w-max hidden max-sm:block" />
+        </Link>
+
+      </header>
+
       {/* overlay */}
       <div role="button" onClick={close} className={cn("z-80 w-svh h-svh hidden max-md:block bg-black/30 fixed top-0 left-0 select-none transition-all duration-300", open ? "opacity-100 visible " : "opacity-0 invisible")}>
 
       </div>
-      <div className={cn("sticky top-10 left-0 h-[calc(100svh-54px)] w-full max-md:absolute max-md:min-w-64 max-md:p-5 max-md:pt-22 max-md:z-100 max-md:bg-popover max-md:border-r max-md:border-white/5 max-md:min-h-svh max-md:top-0 max-md:-left-5 translate-x-0 transition", open ? 'max-md:translate-x-0' : 'max-md:translate-x-[-110%]')}>
+      <div className={cn("sticky top-10 left-0 h-[calc(100svh-54px)] w-full max-sm:max-w-2/3 max-md:absolute max-md:min-w-64 max-md:p-5 max-md:pt-22 max-md:z-100 max-md:bg-popover max-md:border-r max-md:border-white/5 max-md:min-h-svh max-md:top-0 max-md:-left-3 translate-x-0 transition", open ? 'max-md:translate-x-0' : 'max-md:translate-x-[-110%]')}>
         <header className="mb-8 flex items-center gap-2">
           <Link href="/mentors">
             <Logo className="h-14 w-max" />
@@ -83,10 +90,10 @@ const MentorsSidebar: FC<Props> = () => {
           </li>
         </ul>
         <div className="-tracking-two flex flex-col text-sm max-sm:text-base leading-[1.3] font-medium">
-          <p className="mb-4">
-            Напишите нам, и мы <br /> поможем Вам при выборе ментора.
+          <p className="mb-4 max-sm:leading-[1.35]">
+            Напишите нам, и мы <br /> поможем Вам при <br className="hidden max-md:block" /> выборе ментора.
           </p>
-          <Button asChild className="max-w-max px-7 py-4 " variant="secondary">
+          <Button asChild className="max-w-max px-7 py-4 max-sm:border-neutral-500/30 max-sm:dark:border" variant="secondary">
             <a href={siteConfig.telegram_support} className="max-md:min-w-full" target="_blank" rel="noopener">
               Написать нам
             </a>

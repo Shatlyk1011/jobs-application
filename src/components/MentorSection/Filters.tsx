@@ -54,7 +54,7 @@ const Filters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
 
   return (
     <section className="">
-      <div className="mb-6 flex items-center justify-between max-sm:flex-wrap max-sm:gap-y-3">
+      <div className="mb-6 max-sm:mb-4 flex items-center justify-between max-sm:flex-wrap max-sm:gap-y-3">
         <h1 className="text-lg font-medium text-nowrap">
           Менторы <span>{totalDocs}</span>
         </h1>
