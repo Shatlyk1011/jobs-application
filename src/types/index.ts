@@ -17,3 +17,8 @@ export interface IBaseFields {
   totalDocs: number;
   totalPages: number;
 }
+
+export type OgImageSchema = {
+  heading: string
+  type: string
+}

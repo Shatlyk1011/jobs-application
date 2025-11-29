@@ -92,7 +92,7 @@ export default async function JobPage({ params }: Props) {
               {job.base64Image?.data ? (
                 <img
                   src={job.base64Image.data}
-                  className="inline-block h-10 w-10 rounded-full bg-neutral-500 object-cover object-center"
+                  className="inline-block h-10 w-10 rounded-full bg-[#222] object-contain object-center"
                   alt="company logo"
                 />
               ) : (

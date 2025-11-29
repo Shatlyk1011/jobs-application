@@ -33,7 +33,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                       <img
                         src={job.base64Image.data}
                         alt="text"
-                        className="bg-secondary h-6 w-6 overflow-hidden rounded-full object-cover"
+                        className="bg-secondary h-6 w-6 overflow-hidden rounded-full bg-[#222] object-contain"
                       />
                     ) : (
                       <Building2 className="stroke-[1.5] opacity-60" />

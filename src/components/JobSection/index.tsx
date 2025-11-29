@@ -11,6 +11,7 @@ import JobCards from "@/components/JobSection/JobCards";
 import JobFilters from "@/components/JobSection/JobFilters";
 import { debounce } from "@/composables/utils";
 import ScreenLoading from "../ui/ScreenLoading";
+import { DEFAULT_LIMIT } from "@/shared/constant";
 
 interface Props {
   initialData: IJob[];
@@ -24,7 +25,7 @@ const JobSection: FC<Props> = ({ initialData }) => {
   const { getJobs } = useJobs();
 
   const fetchJobs = async (query: Where) => {
-    const stringifiedQuery = stringify({ where: query }, { addQueryPrefix: true });
+    const stringifiedQuery = stringify({ where: query, limit: DEFAULT_LIMIT }, { addQueryPrefix: true });
 
     try {
       setLoading(true);
