@@ -9,7 +9,7 @@ export const siteConfig = {
 
   siteUrl: 'https://www.ganat.org',
   
-  logoBlack: '/images/logo-black.png',
-  logoWhite: '/images/logo-white.png',
-  socialBanner: '/images/og-image.png',
+  logoBlack: `${process.env.BASE_PATH || ''}/images/logo-black.png`,
+  logoWhite: `${process.env.BASE_PATH || ''}/images/logo-white.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/opengraph-image.png`,
 };
