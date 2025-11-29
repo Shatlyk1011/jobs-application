@@ -19,14 +19,12 @@ const stringifiedQuery = stringify(
         equals: true,
       },
     },
-    limit: DEFAULT_LIMIT
+    limit: DEFAULT_LIMIT,
   },
   { addQueryPrefix: true },
 );
 
 export default async function CVPage() {
-
-
   const response: AxiosResponse<IResumes> = await axios(`/resume${stringifiedQuery}`);
   if (!response) {
     return <EmptyResult classes="min-h-[50vh] justify-center">Что то пошло не так</EmptyResult>;

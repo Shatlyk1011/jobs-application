@@ -18,7 +18,7 @@ interface Props {
 
 const JobCards: FC<Props> = ({ jobs }) => {
   return (
-    <section className="grid min-h-[478px] grid-cols-3 gap-5 max-lg:gap-3 pb-20 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:pb-12">
+    <section className="grid min-h-[478px] grid-cols-3 gap-5 pb-20 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1 max-sm:pb-12">
       {jobs?.length ? (
         jobs.map((job) => (
           <div
@@ -68,7 +68,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                         {salaryConvert(job.salary.from, job.salary.to)}
                         <CurrencyIcon
                           currency={job.salary.currency}
-                          isAvailable={(!!job.salary.to || !!job.salary.from)}
+                          isAvailable={!!job.salary.to || !!job.salary.from}
                         />
                       </span>
                     </li>
@@ -80,7 +80,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
         ))
       ) : (
         <EmptyResult classes="col-span-3 max-lg:col-span-2 max-sm:col-span-1 max-w-1/3 max-sm:max-w-[300px] max-lg:max-w-1/2 mx-auto">
-            По Вашему запросу ничего не найдено. Попробуйте изменить фильтры поиска.
+          По Вашему запросу ничего не найдено. Попробуйте изменить фильтры поиска.
         </EmptyResult>
       )}
     </section>

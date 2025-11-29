@@ -5,7 +5,7 @@ import useMentors from "@/services/useMentors";
 
 import { DEFAULT_LIMIT } from "@/shared/constant";
 
-export const revalidate = 600
+export const revalidate = 600;
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -18,7 +18,7 @@ const stringifiedQuery = stringify(
         equals: true,
       },
     },
-    limit: DEFAULT_LIMIT
+    limit: DEFAULT_LIMIT,
   },
   { addQueryPrefix: true },
 );
@@ -39,17 +39,21 @@ export default async function MentorPage({ params }: Props) {
 
   return (
     <section className="w-full py-10 max-lg:py-8 max-sm:pt-20">
-      <article className="bg-popover relative mb-6 max-sm:mb-4 flex max-sm:flex-col items-start gap-5 max-lg:gap-3 rounded-3xl p-5 pr-12 max-lg:p-4 max-lg:rounded-2xl pb-10">
+      <article className="bg-popover relative mb-6 flex items-start gap-5 rounded-3xl p-5 pr-12 pb-10 max-lg:gap-3 max-lg:rounded-2xl max-lg:p-4 max-sm:mb-4 max-sm:flex-col">
         {/* left */}
         <figure className="sticky top-5 left-0 min-h-14 min-w-14 max-sm:static">
-          <img src={mentor.imageBase64} alt="profile image" className="h-14 w-14 rounded-[18px] max-sm:rounded-[14px] object-cover" />
+          <img
+            src={mentor.imageBase64}
+            alt="profile image"
+            className="h-14 w-14 rounded-[18px] object-cover max-sm:rounded-[14px]"
+          />
         </figure>
 
         {/* right */}
 
         <div className="text-start">
-          <h3 className="-tracking-two mb-3 max-lg:mb-2 text-lg">{mentor.username}</h3>
-          <h4 className="-tracking-two mb-5 max-lg:mb-3 text-sm">{mentor.position}</h4>
+          <h3 className="-tracking-two mb-3 text-lg max-lg:mb-2">{mentor.username}</h3>
+          <h4 className="-tracking-two mb-5 text-sm max-lg:mb-3">{mentor.position}</h4>
 
           <RichText content={mentor?.mdx} />
         </div>

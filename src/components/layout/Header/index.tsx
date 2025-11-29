@@ -21,7 +21,7 @@ const Header: FC<Props> = ({ sticky }) => {
   const pathname = usePathname();
 
   return (
-    <header className={cn("flex h-16 items-center justify-between gap-5 max-sm:gap-1 ", sticky && "sticky top-0")}>
+    <header className={cn("flex h-16 items-center justify-between gap-5 max-sm:gap-1", sticky && "sticky top-0")}>
       <Link href="/" className="h-12 w-20 max-sm:min-w-8">
         <Logo className="h-full w-full fill-none text-inherit" />
       </Link>

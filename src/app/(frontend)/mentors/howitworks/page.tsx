@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function HowItWorks() {
   return (
     <section className="w-full py-10 max-sm:pt-22">
-      <div className="bg-popover w-full rounded-2xl p-8 pb-12 max-sm:p-6 max-sm:pr-10 pr-12 text-sm ">
+      <div className="bg-popover w-full rounded-2xl p-8 pr-12 pb-12 text-sm max-sm:p-6 max-sm:pr-10">
         <h1 className="mb-4 text-2xl font-semibold">Как это работает?</h1>
 
         <p className="mb-3">
@@ -14,7 +14,10 @@ export default async function HowItWorks() {
 
         <ol className="mb-5 flex flex-col gap-1">
           <li>
-            <span className="opacity-70">1)</span> Выберите ментора на <Link className="border-b transition border-current hover:text-sidebar-primary" href="/mentors">сайте.</Link>
+            <span className="opacity-70">1)</span> Выберите ментора на{" "}
+            <Link className="hover:text-sidebar-primary border-b border-current transition" href="/mentors">
+              сайте.
+            </Link>
           </li>
           <li>
             <span className="opacity-70">2)</span> Изучите профиль и оставьте заявку на консультацию.
@@ -27,7 +30,8 @@ export default async function HowItWorks() {
             <span className="opacity-70">4)</span> Подтвердите бронь — мы создадим чат в Telegram с Вами и ментором.
           </li>
           <li>
-            <span className="opacity-70">5)</span> В день консультации отправим в чат ссылку на онлайн встречу — и начнём!
+            <span className="opacity-70">5)</span> В день консультации отправим в чат ссылку на онлайн встречу — и
+            начнём!
           </li>
         </ol>
 
@@ -38,7 +42,12 @@ export default async function HowItWorks() {
         <div>
           Не знаете, какой ментор подойдёт? <br />
           Наш менеджер поможет с подбором —{" "}
-          <a className="border-b transition border-current hover:text-sidebar-primary" href={siteConfig.telegram_support} target="_blank" rel="noopener">
+          <a
+            className="hover:text-sidebar-primary border-b border-current transition"
+            href={siteConfig.telegram_support}
+            target="_blank"
+            rel="noopener"
+          >
             напишите нам.
           </a>
         </div>

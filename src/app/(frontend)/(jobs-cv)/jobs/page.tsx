@@ -12,7 +12,7 @@ const stringifiedQuery = stringify(
         equals: true,
       },
     },
-    limit: DEFAULT_LIMIT
+    limit: DEFAULT_LIMIT,
   },
   { addQueryPrefix: true },
 );

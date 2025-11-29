@@ -13,11 +13,7 @@ interface Props {
   additionalNote?: string;
 }
 
-const ContactDialogButton: FC<Props> = ({
-  jobContactUrl,
-  additionalContact,
-  additionalNote,
-}) => {
+const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact, additionalNote }) => {
   const isTelegram = jobContactUrl.includes("t.me");
 
   return (
@@ -35,7 +31,10 @@ const ContactDialogButton: FC<Props> = ({
               href={jobContactUrl}
               target="_blank"
               rel="noopener"
-              className={cn("text-sidebar-primary max-w-max border-b border-current", additionalNote ? 'text-inherit' : "text-sidebar-primary")}
+              className={cn(
+                "text-sidebar-primary max-w-max border-b border-current",
+                additionalNote ? "text-inherit" : "text-sidebar-primary",
+              )}
             >
               {isTelegram ? "Ссылка на вакансию (в телеграм)" : "Ссылка на вакансию"}
             </a>
