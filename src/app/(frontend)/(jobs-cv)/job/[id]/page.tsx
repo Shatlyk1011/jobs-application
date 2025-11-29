@@ -11,6 +11,7 @@ import { getOgImageUrl } from "@/lib/utils";
 
 import { isoToDate } from "@/composables/dateConvert";
 import { salaryConvert } from "@/composables/salaryConvert";
+
 import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
@@ -50,14 +51,14 @@ export async function generateMetadata(props: {
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
-      images: imageList,
+      images: ogImageUrl,
       url: './',
     },
     twitter: {
       card: 'summary_large_image',
       title: job.title,
       description: job.companyDescription || customDesc,
-      images: imageList,
+      images: ogImageUrl,
     },
   }
 }
