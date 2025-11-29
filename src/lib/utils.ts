@@ -8,9 +8,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getOgImageUrl(ogImageSchema: OgImageSchema) {
+export function getOgImageUrl({heading, type}: OgImageSchema) {
   const ogUrl = new URL(`${siteConfig.siteUrl}/api/og`)
-  ogUrl.searchParams.set('heading', ogImageSchema.heading)
-  ogUrl.searchParams.set('type', ogImageSchema.type)
+  ogUrl.searchParams.set('heading', heading)
+  ogUrl.searchParams.set('type', type)
   return ogUrl.toString()
 }
