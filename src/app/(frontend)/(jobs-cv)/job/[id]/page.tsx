@@ -10,7 +10,6 @@ import ContactDialogButton from "@/components/ContactDialogButton";
 import { Building2 } from "lucide-react";
 import { getOgImageUrl } from "@/lib/utils";
 import { Metadata } from "next";
-import { LOCATION } from "../../../../../../data/filters";
 
 export const revalidate = 600;
 
@@ -31,7 +30,7 @@ export async function generateMetadata(props: {
 
   const ogImageUrl = getOgImageUrl({
     heading: job.title,
-    type: '',
+    type: 'Blog Post',
   })
 
   console.log('OG IMAGE URL', ogImageUrl);
@@ -43,14 +42,14 @@ export async function generateMetadata(props: {
     }
   })
 
-  const customDesc = `Компания ${job.companyName} ${job.location === "Другое" ? "" : `, находится в ${job.location}`}` 
+  const customDesc = `Компания ${job.companyName} ${job.location === "Другое" ? "" : `, находится в ${job.location.toLocaleLowerCase()}`}` 
 
   return {
     title: job.title,
     description: job.companyDescription || customDesc,
     openGraph: {
       title: job.title,
-      description: job.companyName || customDesc,
+      description: job.companyDescription || customDesc,
       siteName: siteConfig.title,
       locale: 'ru_RU',
       type: 'article',
