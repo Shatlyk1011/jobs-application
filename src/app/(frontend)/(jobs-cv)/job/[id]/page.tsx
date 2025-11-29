@@ -1,15 +1,19 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
 import { useJobs } from "@/services/useJobs";
+
 import { siteConfig } from "@/config";
+
+import { Building2 } from "lucide-react";
+
+import { getOgImageUrl } from "@/lib/utils";
 
 import { isoToDate } from "@/composables/dateConvert";
 import { salaryConvert } from "@/composables/salaryConvert";
 import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
-import { Building2 } from "lucide-react";
-import { getOgImageUrl } from "@/lib/utils";
-import { Metadata } from "next";
 
 export const revalidate = 600;
 
@@ -32,13 +36,6 @@ export async function generateMetadata(props: {
   })
 
   let imageList = [ogImageUrl]
-  console.log('imageList', imageList);
-
-  const ogImages = imageList.map((img) => {
-    return {
-      url: img && img.includes('http') ? img : siteConfig.siteUrl + img,
-    }
-  })
 
   const customDesc = `Компания ${job.companyName} ${job.location === "Другое" ? "" : `, находится в ${job.location.toLocaleLowerCase()}`}` 
 
@@ -53,7 +50,7 @@ export async function generateMetadata(props: {
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
-      images: ogImages,
+      images: imageList,
       url: './',
     },
     twitter: {
