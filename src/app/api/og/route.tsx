@@ -28,6 +28,7 @@ export async function GET(req: Request) {
       if (length < 120) return 'text-[45px]'
       return 'text-[35px]'
     }
+    console.log('HELLO FROM API');
 
     return new ImageResponse(
       (

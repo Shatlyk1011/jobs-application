@@ -82,7 +82,7 @@ export default async function JobPage({ params }: Props) {
   const job = await getJob(id);
 
   return (
-    <main className="relative box-content flex min-h-svh w-full gap-5 py-12 max-lg:flex-col max-sm:py-6">
+    <main className="relative box-content flex min-h-svh w-full gap-4 py-12 max-lg:flex-col max-sm:py-6">
       <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] py-12 pt-10 max-lg:order-2 max-sm:px-4 max-sm:py-6">
         <header>
           <dl>
@@ -138,8 +138,8 @@ export default async function JobPage({ params }: Props) {
 
       {/* right */}
       <aside className="max-w-[30%] basis-[30%] max-lg:flex max-lg:max-w-full max-lg:flex-col max-lg:gap-4">
-        <div className="bg-popover mb-6 w-full rounded-3xl p-5 max-lg:mb-0">
-          <header className="mb-4 flex items-center gap-2.5">
+        <div className="bg-popover mb-4 w-full rounded-3xl p-5 max-lg:mb-0">
+          <header className=" bg-red-500 flex items-center gap-2.5">
             <figure className="inline-block max-h-10 min-h-10 max-w-10 min-w-10">
               {job.base64Image?.data ? (
                 <img
@@ -155,7 +155,7 @@ export default async function JobPage({ params }: Props) {
             <span>{job.companyName}</span>
           </header>
 
-          {job?.companyDescription && <p className="mb-2.5 text-[16px]">{job.companyDescription}</p>}
+          {job?.companyDescription && <p className="mb-2.5 mt-4 text-[16px]">{job.companyDescription}</p>}
 
           {/* <div className="my-4"></div> */}
 
@@ -171,7 +171,7 @@ export default async function JobPage({ params }: Props) {
           )}
         </div>
 
-        <div className="bg-popover mb-6 w-full rounded-3xl p-5 max-lg:mb-0">
+        <div className="bg-popover mb-4 w-full rounded-3xl p-5 max-lg:mb-0">
           <span className="-tracking-one mb-6 inline-block text-sm font-medium max-lg:mb-4">Для отклика:</span>
 
           <ContactDialogButton

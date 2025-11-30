@@ -18,7 +18,7 @@ interface Props {
 
 const JobCards: FC<Props> = ({ jobs }) => {
   return (
-    <section className="grid min-h-[478px] grid-cols-3 gap-5 pb-20 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1 max-sm:pb-12">
+    <section className="grid min-h-[478px] grid-cols-3 gap-4 pb-20 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1 max-sm:pb-12">
       {jobs?.length ? (
         jobs.map((job) => (
           <div
