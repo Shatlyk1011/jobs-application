@@ -139,7 +139,7 @@ export default async function JobPage({ params }: Props) {
       {/* right */}
       <aside className="max-w-[30%] basis-[30%] max-lg:flex max-lg:max-w-full max-lg:flex-col max-lg:gap-4">
         <div className="bg-popover mb-4 w-full rounded-3xl p-5 max-lg:mb-0">
-          <header className=" bg-red-500 flex items-center gap-2.5">
+          <header className="flex items-center gap-2.5">
             <figure className="inline-block max-h-10 min-h-10 max-w-10 min-w-10">
               {job.base64Image?.data ? (
                 <img
