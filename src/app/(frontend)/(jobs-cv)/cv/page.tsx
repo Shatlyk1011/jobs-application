@@ -18,7 +18,7 @@ import EmptyResult from "@/components/ui/EmptyResult";
 export const metadata: Metadata = constructMetadata({
   title: "Ganat - Резюме",
   description: "Загружайте резюме. Получайте отклики от работодателей, находите вакансии.",
-})
+});
 
 const stringifiedQuery = stringify(
   {

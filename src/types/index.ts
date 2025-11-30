@@ -19,6 +19,6 @@ export interface IBaseFields {
 }
 
 export type OgImageSchema = {
-  heading: string
-  type: string
-}
+  heading: string;
+  type: string;
+};

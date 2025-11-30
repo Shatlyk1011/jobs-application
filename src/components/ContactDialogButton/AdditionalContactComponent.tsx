@@ -46,12 +46,7 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
   return (
     <>
       {text && (
-        <a
-          href={getUrl()}
-          target="_blank"
-          rel="noopener"
-          className="max-w-max border-b border-current"
-        >
+        <a href={getUrl()} target="_blank" rel="noopener" className="max-w-max border-b border-current">
           {text}
         </a>
       )}

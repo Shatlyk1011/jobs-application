@@ -4,12 +4,13 @@ export const siteConfig = {
 
   revalidateTime: 600,
 
-  title: 'Ganat - IT Вакансии, Резюме, Менторы',
-  description: 'Публикуйте резюме, откликайтесь на вакансии и находите менторов. Ваш путь к новой карьере начинается здесь!',
+  title: "Ganat - IT Вакансии, Резюме, Менторы",
+  description:
+    "Публикуйте резюме, откликайтесь на вакансии и находите менторов. Ваш путь к новой карьере начинается здесь!",
 
-  siteUrl: 'https://www.ganat.org',
-  
-  logoBlack: `${process.env.BASE_PATH || ''}/images/logo-black.png`,
-  logoWhite: `${process.env.BASE_PATH || ''}/images/logo-white.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/opengraph-image.png`,
+  siteUrl: "https://www.ganat.org",
+
+  logoBlack: `${process.env.BASE_PATH || ""}/images/logo-black.png`,
+  logoWhite: `${process.env.BASE_PATH || ""}/images/logo-white.png`,
+  socialBanner: `${process.env.BASE_PATH || ""}/static/images/opengraph-image.png`,
 };

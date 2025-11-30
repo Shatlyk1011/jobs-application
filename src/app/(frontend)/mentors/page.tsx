@@ -15,8 +15,9 @@ import useMentors from "@/services/useMentors";
 
 export const metadata: Metadata = constructMetadata({
   title: "Ganat - Менторы",
-  description: "Развивайтесь с профессионалами: от junior-разработчика до senior-специалиста. Разместите запрос или станьте ментором — помогайте другим расти!",
-})
+  description:
+    "Развивайтесь с профессионалами: от junior-разработчика до senior-специалиста. Разместите запрос или станьте ментором — помогайте другим расти!",
+});
 
 const stringifiedQuery = stringify(
   {

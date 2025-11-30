@@ -8,8 +8,9 @@ import CreateMentorForm from "@/components/CreateMentorForm";
 
 export const metadata: Metadata = constructMetadata({
   title: "Ganat - Менторы",
-  description: "Мы рады талантливым и опытным менторам, способных поделиться знаниями и помочь начинающим и зрелым профессионалам достичь новых высот.",
-})
+  description:
+    "Мы рады талантливым и опытным менторам, способных поделиться знаниями и помочь начинающим и зрелым профессионалам достичь новых высот.",
+});
 
 export default function MentorNewPage() {
   return (

@@ -18,23 +18,21 @@ import ContactDialogButton from "@/components/ContactDialogButton";
 
 export const revalidate = 600;
 
-export async function generateMetadata(props: {
-  params: Promise<{ id: string }>
-}): Promise<Metadata | undefined> {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata | undefined> {
   const { getJob } = useJobs();
-  const params = await props.params
+  const params = await props.params;
   const job = await getJob(params.id);
 
-  if (!job) return
+  if (!job) return;
 
-  const customDesc = `Компания ${job.companyName} ${job.location === "Другое" ? "" : `, находится в ${job.location.toLocaleLowerCase()}`}` 
+  const customDesc = `Компания ${job.companyName} ${job.location === "Другое" ? "" : `, находится в ${job.location.toLocaleLowerCase()}`}`;
 
   return {
     ...constructMetadata({
       title: job.title,
       description: job.companyDescription || customDesc,
-    })
-  }
+    }),
+  };
 }
 
 export async function generateStaticParams() {
@@ -129,7 +127,7 @@ export default async function JobPage({ params }: Props) {
             <span>{job.companyName}</span>
           </header>
 
-          {job?.companyDescription && <p className="mb-2.5 mt-4 text-[16px]">{job.companyDescription}</p>}
+          {job?.companyDescription && <p className="mt-4 mb-2.5 text-[16px]">{job.companyDescription}</p>}
 
           {/* <div className="my-4"></div> */}
 

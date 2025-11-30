@@ -21,15 +21,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
-    url: './',
+    url: "./",
     siteName: siteConfig.title,
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   alternates: {
-    canonical: './',
+    canonical: "./",
     types: {
-      'application/rss+xml': `${siteConfig.siteUrl}/feed.xml`,
+      "application/rss+xml": `${siteConfig.siteUrl}/feed.xml`,
     },
   },
   robots: {
@@ -38,28 +38,27 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   twitter: {
     title: siteConfig.title,
-    card: 'summary_large_image',
+    card: "summary_large_image",
     images: [siteConfig.socialBanner],
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   console.info(
     "%cSalam, govmy?",
     "color: #ffffff; background-color: #222; padding: 6px 12px; border-radius: 4px; font-size: 14px; border: 1px solid #fff1; letter-spacing:-0.2px font-weight: medium;",
-  )
+  );
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${InterSans.variable} antialiased`}>

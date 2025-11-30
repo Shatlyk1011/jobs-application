@@ -10,11 +10,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getOgImageUrl({ heading, type }: OgImageSchema) {
-  const ogUrl = new URL(`${siteConfig.siteUrl}/api/og`)
-  ogUrl.searchParams.set('heading', heading)
-  ogUrl.searchParams.set('type', type)
-  const ogImageUrl = ogUrl.toString()
-  return ogImageUrl
+  const ogUrl = new URL(`${siteConfig.siteUrl}/api/og`);
+  ogUrl.searchParams.set("heading", heading);
+  ogUrl.searchParams.set("type", type);
+  const ogImageUrl = ogUrl.toString();
+  return ogImageUrl;
 }
 
 export function constructMetadata({
@@ -23,18 +23,29 @@ export function constructMetadata({
 
   ...props
 }: {
-  title: string
-  description: string
-  [key: string]: Metadata[keyof Metadata]
+  title: string;
+  description: string;
+  [key: string]: Metadata[keyof Metadata];
 }): Metadata {
   return {
     title,
     description,
-    keywords: ["Ganat", "IT вакансии", "Работа в IT", "Резюме IT", "Поиск ментора IT", "IT специалисту", "IT карьера", "Разместить резюме", "Менторство IT", "IT фриланс"],
+    keywords: [
+      "Ganat",
+      "IT вакансии",
+      "Работа в IT",
+      "Резюме IT",
+      "Поиск ментора IT",
+      "IT специалисту",
+      "IT карьера",
+      "Разместить резюме",
+      "Менторство IT",
+      "IT фриланс",
+    ],
     openGraph: {
       title,
       description,
-      locale:'ru_RU',
+      locale: "ru_RU",
       type: "website",
       images: [
         {
@@ -56,5 +67,5 @@ export function constructMetadata({
       icon: "/favicon.ico",
     },
     ...props,
-  }
+  };
 }
