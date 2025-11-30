@@ -4,8 +4,27 @@ import RichText from "@/components/RichText";
 import useMentors from "@/services/useMentors";
 
 import { DEFAULT_LIMIT } from "@/shared/constant";
+import { Metadata } from "next";
+import { constructMetadata } from "@/lib/utils";
 
 export const revalidate = 600;
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata | undefined> {
+  const { getMentor } = useMentors()
+  const { slug } = await props.params
+  const mentor = await getMentor(slug)
+
+  if (!mentor) return
+
+  return {
+    ...constructMetadata({
+      title: `Ментор ${mentor.username}`,
+      description: mentor.howCanYouHelp
+    })
+  }
+}
 
 interface Props {
   params: Promise<{ slug: string }>;

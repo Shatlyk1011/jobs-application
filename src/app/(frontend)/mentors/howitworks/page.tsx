@@ -1,5 +1,14 @@
-import { siteConfig } from "@/config";
+import { Metadata } from "next";
 import Link from "next/link";
+
+import { siteConfig } from "@/config";
+
+import { constructMetadata } from "@/lib/utils";
+
+export const metadata: Metadata = constructMetadata({
+  title: "Менторы - Как это работает?",
+  description: "Узнайте как работает секция с менторами",
+})
 
 export default async function HowItWorks() {
   return (

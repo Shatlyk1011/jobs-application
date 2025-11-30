@@ -7,7 +7,7 @@ import { siteConfig } from "@/config";
 
 import { Building2 } from "lucide-react";
 
-import { getOgImageUrl } from "@/lib/utils";
+import { constructMetadata, getOgImageUrl } from "@/lib/utils";
 
 import { isoToDate } from "@/composables/dateConvert";
 import { salaryConvert } from "@/composables/salaryConvert";
@@ -22,44 +22,18 @@ export async function generateMetadata(props: {
   params: Promise<{ id: string }>
 }): Promise<Metadata | undefined> {
   const { getJob } = useJobs();
-
   const params = await props.params
   const job = await getJob(params.id);
 
   if (!job) return
 
-  const publishedAt = new Date(job.createdAt).toISOString()
-  const modifiedAt = new Date(job.updatedAt || job.createdAt).toISOString()
-
-  const ogImageUrl = getOgImageUrl({
-    heading: job.title,
-    type: 'Page',
-  })
-
-  let imageList = [ogImageUrl]
-
   const customDesc = `Компания ${job.companyName} ${job.location === "Другое" ? "" : `, находится в ${job.location.toLocaleLowerCase()}`}` 
 
   return {
-    title: job.title,
-    description: job.companyDescription || customDesc,
-    openGraph: {
+    ...constructMetadata({
       title: job.title,
       description: job.companyDescription || customDesc,
-      siteName: siteConfig.title,
-      locale: 'ru_RU',
-      type: 'article',
-      publishedTime: publishedAt,
-      modifiedTime: modifiedAt,
-      images: ogImageUrl,
-      url: './',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: job.title,
-      description: job.companyDescription || customDesc,
-      images: ogImageUrl,
-    },
+    })
   }
 }
 

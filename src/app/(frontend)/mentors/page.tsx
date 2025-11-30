@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { stringify } from "qs-esm";
+import { Metadata } from "next";
 
 import { DEFAULT_LIMIT } from "@/shared/constant";
+
+import { constructMetadata } from "@/lib/utils";
 
 import { siteConfig } from "@/config";
 
@@ -9,6 +12,11 @@ import { siteConfig } from "@/config";
 import MentorSection from "@/components/MentorSection";
 import { Button } from "@/components/ui/button";
 import useMentors from "@/services/useMentors";
+
+export const metadata: Metadata = constructMetadata({
+  title: "Ganat - Менторы",
+  description: "Развивайтесь с профессионалами: от junior-разработчика до senior-специалиста. Разместите запрос или станьте ментором — помогайте другим расти!",
+})
 
 const stringifiedQuery = stringify(
   {

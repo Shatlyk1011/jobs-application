@@ -4,6 +4,8 @@ import JobSection from "@/components/JobSection";
 
 import { useJobs } from "@/services/useJobs";
 import { DEFAULT_LIMIT } from "@/shared/constant";
+import { Metadata } from "next";
+import { constructMetadata } from "@/lib/utils";
 
 const stringifiedQuery = stringify(
   {
@@ -16,6 +18,13 @@ const stringifiedQuery = stringify(
   },
   { addQueryPrefix: true },
 );
+
+
+export const metadata: Metadata = constructMetadata({
+  title: "Ganat - Вакансии",
+  description: "Лучшие IT-вакансии в Туркменистане",
+})
+
 
 export default async function JobsPage() {
   const { getJobs } = useJobs();

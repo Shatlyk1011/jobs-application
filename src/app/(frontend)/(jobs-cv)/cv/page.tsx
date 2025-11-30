@@ -1,8 +1,11 @@
 import { AxiosResponse } from "axios";
 import axios from "@/lib/axios";
 import { stringify } from "qs-esm";
+import { Metadata } from "next";
 
 import { DEFAULT_LIMIT } from "@/shared/constant";
+
+import { constructMetadata } from "@/lib/utils";
 
 import { IResumes } from "@/types/resume";
 
@@ -11,6 +14,11 @@ import AddResumeDialogButton from "@/components/AddResumeDialogButton";
 import CVSection from "@/components/CVSection";
 import { Suspense } from "react";
 import EmptyResult from "@/components/ui/EmptyResult";
+
+export const metadata: Metadata = constructMetadata({
+  title: "Ganat - Резюме",
+  description: "Загружайте резюме. Получайте отклики от работодателей, находите вакансии.",
+})
 
 const stringifiedQuery = stringify(
   {

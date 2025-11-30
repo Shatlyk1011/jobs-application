@@ -7,7 +7,7 @@ import { stringify } from "qs-esm";
 
 const useMentors = () => {
   const getMentor = unstable_cache(
-    async (id: string) => {
+    async (id: string): Promise<IMentor> => {
       const { data } = await axios.get(`/mentors/${id || ""}`);
       return data;
     },
