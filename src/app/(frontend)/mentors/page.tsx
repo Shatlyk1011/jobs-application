@@ -19,6 +19,9 @@ export const metadata: Metadata = constructMetadata({
     "Развивайтесь с профессионалами: от junior-разработчика до senior-специалиста. Разместите запрос или станьте ментором — помогайте другим расти!",
 });
 
+export const revalidate = 600;
+
+
 const stringifiedQuery = stringify(
   {
     where: {
@@ -35,8 +38,6 @@ export default async function MentorsPage() {
   const { getMentors } = useMentors();
 
   const mentors = await getMentors(stringifiedQuery);
-
-  console.log('mentors', mentors);
 
   return (
     <div className="h-full w-[70%] px-4 pt-14 pb-10 text-center max-md:w-full max-md:px-0 max-md:pt-8 max-sm:pt-22">
