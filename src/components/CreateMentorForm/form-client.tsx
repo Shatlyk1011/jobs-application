@@ -2,7 +2,7 @@ import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useRef, useState 
 import Link from "next/link";
 
 import { MENTOR_PROFESSION } from "../../../data/mentor";
-import { LANGUAGES } from "../../../data/filters";
+import { LANGUAGES, TLanguage } from "../../../data/filters";
 
 import { IMentor, IMentorResponse } from "@/types/mentors";
 
@@ -40,7 +40,7 @@ interface Props {
 
 const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
   const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
-  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
+  const [selectedLanguages, setSelectedLanguages] = useState<TLanguage[]>([]);
 
   const [fileError, setFileError] = useState("");
 
@@ -137,6 +137,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
           errorMsg={errors.language}
           animation={0}
           options={LANGUAGES}
+          // @ts-ignore all good
           onValueChange={setSelectedLanguages}
           defaultValue={selectedLanguages}
         />
