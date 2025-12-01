@@ -36,6 +36,8 @@ export default async function MentorsPage() {
 
   const mentors = await getMentors(stringifiedQuery);
 
+  console.log('mentors', mentors);
+
   return (
     <div className="h-full w-[70%] px-4 pt-14 pb-10 text-center max-md:w-full max-md:px-0 max-md:pt-8 max-sm:pt-22">
       <header className="mb-10 flex justify-center gap-4 max-md:gap-3 max-md:pl-6 max-sm:mb-6 max-sm:ml-auto max-sm:max-w-full max-sm:flex-col max-sm:pl-0">

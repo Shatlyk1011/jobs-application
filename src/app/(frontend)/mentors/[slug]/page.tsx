@@ -10,9 +10,10 @@ import { constructMetadata } from "@/lib/utils";
 export const revalidate = 600;
 
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata | undefined> {
-  const { getMentor } = useMentors();
+  const { getMentorBySlug } = useMentors();
   const { slug } = await props.params;
-  const mentor = await getMentor(slug);
+  const findMentor = await getMentorBySlug(slug);
+  const mentor = findMentor[0]
 
   if (!mentor) return;
 
