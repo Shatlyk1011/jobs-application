@@ -95,7 +95,7 @@ const MentorsSidebar: FC<Props> = () => {
           </li>
         </ul>
         <div className="-tracking-two flex flex-col text-sm leading-[1.3] max-sm:text-base">
-          <p className="tracking-one mb-4 text-white/70 max-sm:leading-[1.35]">
+          <p className="tracking-one mb-4 text-foreground/70 max-sm:leading-[1.35]">
             Напишите нам, и мы <br /> поможем при выборе ментора.
           </p>
           <Button
