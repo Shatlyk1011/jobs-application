@@ -111,7 +111,7 @@ const MentorsSidebar: FC<Props> = () => {
 
         <div className="mt-auto max-sm:mb-10 text-ring text-sm max-sm:text-base ">
           <a className="text-nowrap hover:text-white transition inline-block" target="_blank" rel="noopener" href={siteConfig.mentor_agreement}>Договор с менторами</a>
-          <a className="text-nowrap hover:text-white transition inline-block" target="_blank" rel="noopener" href={siteConfig.mentor_agreement}>Конфиденциальность</a>
+          <a className="text-nowrap hover:text-white transition inline-block" target="_blank" rel="noopener" href="#">Конфиденциальность</a>
 
           <p className="mt-10">© 2025 Ganat <br /> Все права защищены</p>
         </div>

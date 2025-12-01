@@ -1,4 +1,5 @@
 import { IBaseFields } from ".";
+import { TLanguage } from "../../data/filters";
 
 export interface IMentor {
   id: string;
@@ -7,7 +8,7 @@ export interface IMentor {
   username: string;
   position: string;
   profession: string[];
-  language: string[];
+  language: TLanguage[];
   //
   price: string;
   image?: File | null;
