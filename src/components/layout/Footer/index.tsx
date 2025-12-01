@@ -74,12 +74,12 @@ const Footer: FC<Props> = ({ classes }) => {
           <ul className="max-lg:flex-1">
             <li className="text-foreground mb-3 text-[18px] font-semibold">Документы</li>
             <li className="mb-2 max-sm:mb-1">
-              <Link className="hover:text-foreground transition" href="/">
+              <Link className="hover:text-foreground transition" href="/docs">
                 Конфиденциальность
               </Link>
             </li>
             <li>
-              <Link className="hover:text-foreground transition" href="/">
+              <Link className="hover:text-foreground transition" href="/docs#terms">
                 Условия использования
               </Link>
             </li>

@@ -9,8 +9,7 @@ const ImageSample: FC<Props> = () => {
 
   const { resolvedTheme } = useTheme();
 
-  const isDark = resolvedTheme === "dark";
-
+  const isDark = mounted ? resolvedTheme === "dark" : true;
 
   useEffect(() => setMounted(true), []);
 
