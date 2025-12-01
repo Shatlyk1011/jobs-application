@@ -59,7 +59,7 @@ const Footer: FC<Props> = ({ classes }) => {
                 Разместите резюме
               </Link>
             </li>
-            <li>
+            <li className="mb-2 max-sm:mb-1">
               <Link className="hover:text-foreground transition" href="/mentors">
                 Менторы
               </Link>

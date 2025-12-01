@@ -1,13 +1,18 @@
 "use client";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 interface Props {}
 
 const ImageSample: FC<Props> = () => {
+  const [mounted, setMounted] = useState(false);
+
   const { resolvedTheme } = useTheme();
 
   const isDark = resolvedTheme === "dark";
+
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <figure className="relative my-6 w-full" title="Пример карточки с ментором">
