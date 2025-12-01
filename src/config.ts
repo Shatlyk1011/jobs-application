@@ -12,5 +12,5 @@ export const siteConfig = {
 
   logoBlack: `${process.env.BASE_PATH || ""}/images/logo-black.png`,
   logoWhite: `${process.env.BASE_PATH || ""}/images/logo-white.png`,
-  socialBanner: `${process.env.BASE_PATH || ""}/static/images/opengraph-image.png`,
+  socialBanner: `${process.env.BASE_PATH || ""}/images/og-image.png`,
 };

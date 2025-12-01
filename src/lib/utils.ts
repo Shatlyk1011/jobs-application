@@ -49,7 +49,7 @@ export function constructMetadata({
       type: "website",
       images: [
         {
-          url: "/images/og-image.png",
+          url: siteConfig.socialBanner,
           width: 1200,
           height: 630,
           alt: title,
@@ -60,7 +60,7 @@ export function constructMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: "/images/og-image.png",
+      images: siteConfig.socialBanner,
     },
 
     icons: {

@@ -55,13 +55,18 @@ const Footer: FC<Props> = ({ classes }) => {
               </Link>
             </li>
             <li className="mb-2 max-sm:mb-1">
-              <Link className="hover:text-foreground transition" href="/cv?modal=open" replace>
+              <Link className="hover:text-foreground transition" href="/cv?modal=open">
                 Разместите резюме
               </Link>
             </li>
             <li>
-              <Link className="hover:text-foreground transition" href="/mentors" replace>
+              <Link className="hover:text-foreground transition" href="/mentors">
                 Менторы
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-foreground transition" href="/mentor/new" target="_blank" rel="noopener">
+                Стать ментором
               </Link>
             </li>
           </ul>
