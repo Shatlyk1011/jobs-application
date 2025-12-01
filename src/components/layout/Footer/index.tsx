@@ -87,7 +87,7 @@ const Footer: FC<Props> = ({ classes }) => {
         </div>
       </div>
       <div className="text-ring mt-5 flex items-center justify-between gap-4 text-xs max-lg:hidden">
-        <p>© 2025 | Все права защищены</p>
+        <p>© 2025 Ganat | Все права защищены</p>
         {/* <p>
           Developed by{" "}
           <a

@@ -4,6 +4,8 @@ export const siteConfig = {
 
   revalidateTime: 600,
 
+  mentor_agreement: "https://docs.google.com/document/d/16cKVyVabuD_0rGCDdxHHlX1sI8i5Wwg3x6j-kWaMigc/edit?usp=sharing",
+
   title: "Ganat - IT Вакансии, Резюме, Менторы",
   description:
     "Публикуйте резюме, откликайтесь на вакансии и находите менторов. Ваш путь к новой карьере начинается здесь!",

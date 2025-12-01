@@ -23,7 +23,7 @@ const MentorsSidebar: FC<Props> = () => {
   const close = () => setOpen(false);
 
   return (
-    <aside className="relative top-0 w-[30%] max-w-44 pt-10 max-md:w-full max-md:max-w-max max-md:pt-8 max-sm:absolute max-sm:max-w-[calc(100%-24px)] max-sm:pt-4">
+    <aside className="relative top-0 w-[30%] max-w-44 pt-10 max-md:w-full max-md:max-w-max max-md:pt-8 max-sm:absolute max-sm:max-w-[calc(100%-50px)] max-sm:pt-4">
       <header className="relative z-200 hidden items-center justify-between max-md:flex">
         <Button onClick={() => setOpen(!open)} size="icon" className="" variant="outline">
           {open ? <X /> : <Menu />}
@@ -44,7 +44,7 @@ const MentorsSidebar: FC<Props> = () => {
       ></div>
       <div
         className={cn(
-          "max-md:bg-popover sticky top-10 left-0 h-[calc(100svh-54px)] w-full translate-x-0 transition max-md:absolute max-md:top-0 max-md:-left-3 max-md:z-100 max-md:min-h-svh max-md:min-w-64 max-md:border-r max-md:border-white/5 max-md:p-5 max-md:pt-22 max-sm:max-w-2/3",
+          "max-md:bg-popover sticky top-10 flex flex-col  left-0 h-[calc(100svh-108px)] w-full translate-x-0 transition max-md:absolute max-md:top-0 max-md:-left-3 max-md:z-100 max-md:min-h-svh max-md:min-w-64 max-md:border-r max-md:border-white/5 max-md:p-5 max-md:pt-22 max-sm:max-w-2/3",
           open ? "max-md:translate-x-0" : "max-md:translate-x-[-110%]",
         )}
       >
@@ -94,9 +94,9 @@ const MentorsSidebar: FC<Props> = () => {
             </Link>
           </li>
         </ul>
-        <div className="-tracking-two flex flex-col text-sm leading-[1.3] font-medium max-sm:text-base">
-          <p className="mb-4 max-sm:leading-[1.35]">
-            Напишите нам, и мы <br /> поможем Вам при <br className="hidden max-md:block" /> выборе ментора.
+        <div className="-tracking-two flex flex-col text-sm leading-[1.3] max-sm:text-base">
+          <p className="mb-4 text-white/70 tracking-one max-sm:leading-[1.35]">
+            Напишите нам, и мы <br /> поможем при выборе ментора.
           </p>
           <Button
             asChild
@@ -108,7 +108,17 @@ const MentorsSidebar: FC<Props> = () => {
             </a>
           </Button>
         </div>
+
+        <div className="mt-auto max-sm:mb-10 text-ring text-sm max-sm:text-base ">
+          <a className="text-nowrap hover:text-white transition inline-block" target="_blank" rel="noopener" href={siteConfig.mentor_agreement}>Договор с менторами</a>
+          <a className="text-nowrap hover:text-white transition inline-block" target="_blank" rel="noopener" href={siteConfig.mentor_agreement}>Конфиденциальность</a>
+
+          <p className="mt-10">© 2025 Ganat <br /> Все права защищены</p>
+        </div>
+
       </div>
+
+
     </aside>
   );
 };
