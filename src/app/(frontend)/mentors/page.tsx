@@ -40,9 +40,6 @@ export default async function MentorsPage() {
 
   const mentors = await getMentors(stringifiedQuery);
 
-
-
-
   return (
     <div className="h-full w-[70%] px-4 pt-14 pb-10 text-center max-md:w-full max-md:px-0 max-md:pt-8 max-sm:pt-22">
       {/* <header className="mb-10 flex justify-center gap-4 max-md:gap-3 max-md:pl-6 max-sm:mb-6 max-sm:ml-auto max-sm:max-w-full max-sm:flex-col max-sm:pl-0"> */}
@@ -60,10 +57,18 @@ export default async function MentorsPage() {
 
       {/* <MentorSection initialData={mentors} /> */}
 
-      <h1 className="-tracking-one text-center w-full max-w-max rounded-xl mx-auto mb-4 max-sm:mb-2 max-sm:text-xl text-2xl font-semibold">
+      <h1 className="-tracking-one mx-auto mb-4 w-full max-w-max rounded-xl text-center text-2xl font-semibold max-sm:mb-2 max-sm:text-xl">
         Станьте ментором на нашей платформе!
       </h1>
-      <p className="opacity-80 mx-4 text-sm"> Мы ищем опытных разработчиков, готовых делиться знаниями <br className="max-md:hidden" /> и помогать другим расти. Мы поможем с организацией, тех-поддержской и с <b>получением оплаты в размере  100% <br className="max-md:hidden" /></b> от стоимости сессии.</p>
+      <p className="mx-4 text-sm opacity-80">
+        {" "}
+        Мы ищем опытных разработчиков, готовых делиться знаниями <br className="max-md:hidden" /> и помогать другим
+        расти. Мы поможем с организацией, тех-поддержской и с{" "}
+        <b>
+          получением оплаты в размере 100% <br className="max-md:hidden" />
+        </b>{" "}
+        от стоимости сессии.
+      </p>
 
       <div className="mx-6 mt-3">
         <Button asChild className="flex-1 px-7 py-4 text-sm max-sm:py-2.5" size="sm">

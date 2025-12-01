@@ -13,7 +13,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   const { getMentorBySlug } = useMentors();
   const { slug } = await props.params;
   const findMentor = await getMentorBySlug(slug);
-  const mentor = findMentor[0]
+  const mentor = findMentor[0];
 
   if (!mentor) return;
 

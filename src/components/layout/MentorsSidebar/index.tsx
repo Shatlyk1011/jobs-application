@@ -44,7 +44,7 @@ const MentorsSidebar: FC<Props> = () => {
       ></div>
       <div
         className={cn(
-          "max-md:bg-popover sticky top-10 flex flex-col  left-0 h-[calc(100svh-108px)] w-full translate-x-0 transition max-md:absolute max-md:top-0 max-md:-left-3 max-md:z-100 max-md:min-h-svh max-md:min-w-64 max-md:border-r max-md:border-white/5 max-md:p-5 max-md:pt-22 max-sm:max-w-2/3",
+          "max-md:bg-popover sticky top-10 left-0 flex h-[calc(100svh-108px)] w-full translate-x-0 flex-col transition max-md:absolute max-md:top-0 max-md:-left-3 max-md:z-100 max-md:min-h-svh max-md:min-w-64 max-md:border-r max-md:border-white/5 max-md:p-5 max-md:pt-22 max-sm:max-w-2/3",
           open ? "max-md:translate-x-0" : "max-md:translate-x-[-110%]",
         )}
       >
@@ -95,7 +95,7 @@ const MentorsSidebar: FC<Props> = () => {
           </li>
         </ul>
         <div className="-tracking-two flex flex-col text-sm leading-[1.3] max-sm:text-base">
-          <p className="mb-4 text-white/70 tracking-one max-sm:leading-[1.35]">
+          <p className="tracking-one mb-4 text-white/70 max-sm:leading-[1.35]">
             Напишите нам, и мы <br /> поможем при выборе ментора.
           </p>
           <Button
@@ -109,16 +109,24 @@ const MentorsSidebar: FC<Props> = () => {
           </Button>
         </div>
 
-        <div className="mt-auto max-sm:mb-10 text-ring text-sm max-sm:text-base ">
-          <a className="text-nowrap hover:text-white transition inline-block" target="_blank" rel="noopener" href={siteConfig.mentor_agreement}>Договор с менторами</a>
-          <a className="text-nowrap hover:text-white transition inline-block" target="_blank" rel="noopener" href="#">Конфиденциальность</a>
+        <div className="text-ring mt-auto text-sm max-sm:mb-10 max-sm:text-base">
+          <a
+            className="inline-block text-nowrap transition hover:text-white"
+            target="_blank"
+            rel="noopener"
+            href={siteConfig.mentor_agreement}
+          >
+            Договор с менторами
+          </a>
+          <a className="inline-block text-nowrap transition hover:text-white" target="_blank" rel="noopener" href="#">
+            Конфиденциальность
+          </a>
 
-          <p className="mt-10">© 2025 Ganat <br /> Все права защищены</p>
+          <p className="mt-10">
+            © 2025 Ganat <br /> Все права защищены
+          </p>
         </div>
-
       </div>
-
-
     </aside>
   );
 };

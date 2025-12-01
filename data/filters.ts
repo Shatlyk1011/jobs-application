@@ -125,9 +125,9 @@ export const CURRENCY: TCurrency[] = ["TMT", "USD", "RUB", "EURO"];
 
 export type TCurrency = "TMT" | "USD" | "RUB" | "EURO";
 
-export type TLanguage = 'Туркменский' | 'Русский' | 'Английский'
+export type TLanguage = "Туркменский" | "Русский" | "Английский";
 
 export interface ILanguage {
-  label: TLanguage, value: TLanguage
+  label: TLanguage;
+  value: TLanguage;
 }
-

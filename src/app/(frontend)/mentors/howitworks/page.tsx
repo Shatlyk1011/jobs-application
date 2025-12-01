@@ -12,7 +12,7 @@ export const metadata: Metadata = constructMetadata({
 
 export default async function HowItWorks() {
   return (
-    <section className="w-full py-10 max-sm:pt-22 flex flex-col gap-5">
+    <section className="flex w-full flex-col gap-5 py-10 max-sm:pt-22">
       <div className="bg-popover w-full rounded-2xl p-8 pr-12 pb-12 text-sm max-sm:p-6 max-sm:pr-10">
         <h2 className="mb-4 text-2xl font-semibold">Как это работает?</h2>
 

@@ -28,19 +28,19 @@ interface Props {
 }
 
 const getFlagIcon = (lang: TLanguage) => {
-  if (lang === 'Русский') {
-    return RussiaFlag
-  } else if (lang === 'Туркменский') {
-    return TurkmenFlag
+  if (lang === "Русский") {
+    return RussiaFlag;
+  } else if (lang === "Туркменский") {
+    return TurkmenFlag;
   }
-  return USAFlag
-}
+  return USAFlag;
+};
 
 const MentorSection: FC<Props> = ({ initialData }) => {
   const [data, setData] = useState(initialData);
   const [isLoading, setLoading] = useState(false);
 
-  console.log('data', data);
+  console.log("data", data);
 
   const { getMentors } = useMentors();
 
@@ -76,26 +76,31 @@ const MentorSection: FC<Props> = ({ initialData }) => {
               className="bg-popover hover:bg-popover/80 flex w-full items-start gap-5 rounded-xl p-5 pb-6 shadow-xl/2 transition max-sm:flex-col max-sm:gap-3 max-sm:p-4 max-sm:pb-6"
             >
               {/* left */}
-              <div className="max-sm:flex gap-4 ">
+              <div className="gap-4 max-sm:flex">
                 <figure className="min-h-14 min-w-14">
                   <img src={m.imageBase64} alt="profile image" className="h-14 w-14 rounded-[18px] object-cover" />
                 </figure>
 
-                <ul className="flex gap-x-1 mt-1 w-full flex-wrap mb-4">
-                  <li className="text-[12px] basis-full text-start font-semibold -tracking-one flex items-center gap-1">
+                <ul className="mt-1 mb-4 flex w-full flex-wrap gap-x-1">
+                  <li className="-tracking-one flex basis-full items-center gap-1 text-start text-[12px] font-semibold">
                     <span className="opacity-70">Языки</span>
-                    <button className="relative group "><Info className="w-2.5 h-2.5 max-sm:w-3 max-sm:h-3" /> <p className="absolute min-w-[180px] top-4 left-[-90px] opacity-0 invisible select-none transition group-hover:opacity-100 group-hover:visible group-hover:select-auto text-[12px] bg-secondary px-2 py-1 rounded-lg">Языки проведения онлайн сессии</p></button>
+                    <button className="group relative">
+                      <Info className="h-2.5 w-2.5 max-sm:h-3 max-sm:w-3" />{" "}
+                      <p className="bg-secondary invisible absolute top-4 left-[-90px] min-w-[180px] rounded-lg px-2 py-1 text-[12px] opacity-0 transition select-none group-hover:visible group-hover:opacity-100 group-hover:select-auto">
+                        Языки проведения онлайн сессии
+                      </p>
+                    </button>
                   </li>
                   {m.language.map((lang) => {
-                    const Icon = getFlagIcon(lang)
+                    const Icon = getFlagIcon(lang);
                     return (
                       <li className="flex items-center" key={lang}>
-                        <Icon className="w-4 h-4 leading-0" />
+                        <Icon className="h-4 w-4 leading-0" />
                       </li>
-                    )
+                    );
                   })}
                   <li className="">
-                    <USAFlag className="w-4 h-4 leading-0 flex items-center" />
+                    <USAFlag className="flex h-4 w-4 items-center leading-0" />
                   </li>
                 </ul>
               </div>
@@ -103,21 +108,23 @@ const MentorSection: FC<Props> = ({ initialData }) => {
               {/* right */}
               <div className="text-start">
                 <h3 className="-tracking-two mb-0 text-lg max-sm:mb-2">{m.username}</h3>
-                <ul className="flex gap-2 text-[13px] mt-1 mb-4">
+                <ul className="mt-1 mb-4 flex gap-2 text-[13px]">
                   {m.profession.map((prof) => (
-                    <li className="px-2 rounded-full bg-secondary" key={prof}>{prof}</li>
+                    <li className="bg-secondary rounded-full px-2" key={prof}>
+                      {prof}
+                    </li>
                   ))}
                 </ul>
                 <h4 className="-tracking-two mb-2 text-sm max-sm:mb-3">{m.position}</h4>
 
                 <p className="tracking-one mb-6 text-sm opacity-80 max-sm:mb-4">{m.about}</p>
 
-                <div className="flex items-center gap-4 text-sm max-lg:flex-col max-sm:gap-3 ">
-                  <Button variant="outline" className=" max-lg:min-w-full text-[15px]" size="sm">
+                <div className="flex items-center gap-4 text-sm max-lg:flex-col max-sm:gap-3">
+                  <Button variant="outline" className="text-[15px] max-lg:min-w-full" size="sm">
                     Смотреть профиль
                   </Button>
 
-                  <p className="-tracking-two text-sm font-medium max-sm:text-center text-[15px]">
+                  <p className="-tracking-two text-sm text-[15px] font-medium max-sm:text-center">
                     {m.price}TMT / час онлайн занятия
                   </p>
                 </div>
