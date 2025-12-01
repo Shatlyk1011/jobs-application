@@ -19,7 +19,7 @@ export default function Hero() {
         </WobbleCard>
       </Link>
       <Link href={"/cv"} prefetch>
-        <WobbleCard containerClassName=" min-h-[220px] max-sm:min-h-[180px] h-full bg-card text-card-foreground">
+        <WobbleCard containerClassName=" min-h-[200px] max-sm:min-h-[180px] h-full bg-card text-card-foreground">
           <h2 className="max-w-80 text-left text-2xl font-semibold tracking-[-0.015em] text-balance max-sm:text-2xl">
             Резюме
           </h2>
@@ -28,7 +28,7 @@ export default function Hero() {
           </p>
         </WobbleCard>
       </Link>
-      <Link href={"/mentors"} className="col-span-2 h-full min-h-[220px] max-lg:col-span-1 max-sm:min-h-[180px]">
+      <Link href={"/mentors"} className="col-span-2 h-full min-h-[200px] max-lg:col-span-1 max-sm:min-h-[180px]">
         <WobbleCard containerClassName="col-span-2 max-lg:col-span-1 bg-card-foreground text-card h-full">
           <div className="max-w-sm">
             <h2 className="w-full text-left text-2xl font-semibold tracking-[-0.015em] max-sm:text-2xl">Менторы</h2>
