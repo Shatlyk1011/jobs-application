@@ -36,9 +36,9 @@ const stringifiedQuery = stringify(
 );
 
 export default async function MentorsPage() {
-  const { getMentors } = useMentors();
+  // const { getMentors } = useMentors();
 
-  const mentors = await getMentors(stringifiedQuery);
+  // const mentors = await getMentors(stringifiedQuery);
 
   return (
     <div className="h-full w-[70%] px-4 pt-14 pb-10 text-center max-md:w-full max-md:px-0 max-md:pt-8 max-sm:pt-22">
