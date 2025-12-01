@@ -38,7 +38,7 @@ const JobSection: FC<Props> = ({ initialData }) => {
     }
   };
 
-  const handleFilterRequest = debounce(fetchJobs, data?.length === 0 ? 500 : 1200);
+  const handleFilterRequest = debounce(fetchJobs, 1500);
 
   return (
     <>

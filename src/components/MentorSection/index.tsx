@@ -60,7 +60,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
     }
   };
 
-  const handleFilterRequest = debounce(fetchMentors, data?.length === 0 ? 500 : 1200);
+  const handleFilterRequest = debounce(fetchMentors, 1500);
 
   return (
     <section className="">

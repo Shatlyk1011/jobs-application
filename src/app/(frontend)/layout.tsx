@@ -56,15 +56,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   console.info(
-    "%cSalam, govmy?",
+    "%cSalam",
     "color: #ffffff; background-color: #222; padding: 6px 12px; border-radius: 4px; font-size: 14px; border: 1px solid #fff1; letter-spacing:-0.2px font-weight: medium;",
   );
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <body className={`${InterSans.variable} antialiased`}>
         <ThemeProviders>
           {children}
-          <Toaster richColors position="bottom-left" />
+          <Toaster richColors theme="dark" position="bottom-left" />
         </ThemeProviders>
       </body>
     </html>

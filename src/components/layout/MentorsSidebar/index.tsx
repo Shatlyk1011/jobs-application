@@ -111,14 +111,14 @@ const MentorsSidebar: FC<Props> = () => {
 
         <div className="text-ring mt-auto text-sm max-sm:mb-10 max-sm:text-base">
           <a
-            className="inline-block text-nowrap transition hover:text-white"
+            className="inline-block text-nowrap transition hover:text-foreground"
             target="_blank"
             rel="noopener"
             href={siteConfig.mentor_agreement}
           >
             Договор с менторами
           </a>
-          <a className="inline-block text-nowrap transition hover:text-white" target="_blank" rel="noopener" href="#">
+          <a className="inline-block text-nowrap transition hover:text-foreground" target="_blank" rel="noopener" href="#">
             Конфиденциальность
           </a>
 
