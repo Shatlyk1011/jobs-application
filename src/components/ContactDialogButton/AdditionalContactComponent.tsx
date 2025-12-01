@@ -20,10 +20,10 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
     else if (isLink && !isTelegram) return "Отправить заявку";
     return null;
   };
-
+  console.log('additionalContact', additionalContact);
   const getUrl = () => {
     if (isTelegram) {
-      return `https://t.me/${additionalContact.slice(1, -1)}`;
+      return `https://t.me/${additionalContact}`;
     }
     return additionalContact;
   };
