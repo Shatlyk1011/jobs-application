@@ -35,7 +35,7 @@ export default async function JobsPage() {
 
   return (
     <main className="h-full w-full">
-      <div className="h-full w-full pt-10 max-sm:pt-6">
+      <div className="h-full w-full pt-8 max-sm:pt-6">
         <JobSection initialData={jobs} />
       </div>
     </main>

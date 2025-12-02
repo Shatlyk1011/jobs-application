@@ -93,7 +93,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
   return (
     <>
       <section className="mb-4 w-full">
-        <div className="flex max-h-max w-full items-center gap-10 flex-wrap">
+        <div className="flex max-h-max w-full items-center gap-10">
           <h2 className="-tracking-two self-center text-2xl font-semibold text-nowrap max-lg:self-center">
             Вакансии: <span className="opacity-75">{totalDocs}</span>
           </h2>
