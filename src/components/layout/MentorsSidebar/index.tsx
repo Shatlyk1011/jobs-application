@@ -118,9 +118,9 @@ const MentorsSidebar: FC<Props> = () => {
           >
             Договор с менторами
           </a>
-          <a className="inline-block text-nowrap transition hover:text-foreground" target="_blank" rel="noopener" href="#">
+          {/* <a className="inline-block text-nowrap transition hover:text-foreground" target="_blank" rel="noopener" href="#">
             Конфиденциальность
-          </a>
+          </a> */}
 
           <p className="mt-10">
             © 2025 Ganat <br /> Все права защищены
