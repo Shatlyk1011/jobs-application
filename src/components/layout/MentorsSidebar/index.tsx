@@ -95,7 +95,7 @@ const MentorsSidebar: FC<Props> = () => {
           </li>
         </ul>
         <div className="-tracking-two flex flex-col text-sm leading-[1.3] max-sm:text-base">
-          <p className="tracking-one mb-4 text-foreground/70 max-sm:leading-[1.35]">
+          <p className="tracking-one text-foreground/70 mb-4 max-sm:leading-[1.35]">
             Напишите нам, и мы <br /> поможем при выборе ментора.
           </p>
           <Button
@@ -111,7 +111,7 @@ const MentorsSidebar: FC<Props> = () => {
 
         <div className="text-ring mt-auto text-sm max-sm:mb-10 max-sm:text-base">
           <a
-            className="inline-block text-nowrap transition hover:text-foreground"
+            className="hover:text-foreground inline-block text-nowrap transition"
             target="_blank"
             rel="noopener"
             href={siteConfig.mentor_agreement}
