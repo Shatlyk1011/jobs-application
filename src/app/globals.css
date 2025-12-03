@@ -450,10 +450,10 @@ body {
 
 /* Screen Loading Styles */
 .loader {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 1000;
-  background: #0001;
+  background: #0003;
   bottom: 0;
   left: 0;
   right: 0;
