@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     siteName: siteConfig.title,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: siteConfig.socialBanner,
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
   },
   alternates: {
     canonical: "./",
