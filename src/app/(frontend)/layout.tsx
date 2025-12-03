@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: siteConfig.socialBanner,
         width: 1200,
         height: 630,
-        alt: title,
+        alt: siteConfig.title,
       },
     ],
   },
