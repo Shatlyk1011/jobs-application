@@ -130,12 +130,12 @@ const Jobs: CollectionConfig = {
         {
           label: "От",
           name: "from",
-          type: "text",
+          type: "number",
         },
         {
           label: "До",
           name: "to",
-          type: "text",
+          type: "number",
         },
       ],
     },
