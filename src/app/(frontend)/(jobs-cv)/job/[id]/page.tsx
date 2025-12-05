@@ -16,7 +16,7 @@ import CurrencyIcon from "@/components/ui/currency-icon";
 import RichText from "@/components/RichText";
 import ContactDialogButton from "@/components/ContactDialogButton";
 
-export const revalidate = 600;
+export const revalidate = 1800;
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata | undefined> {
   const { getJob } = useJobs();

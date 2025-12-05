@@ -7,7 +7,7 @@ import { DEFAULT_LIMIT } from "@/shared/constant";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/utils";
 
-export const revalidate = 600;
+export const revalidate = 1800;
 
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata | undefined> {
   const { getMentorBySlug } = useMentors();

@@ -15,7 +15,7 @@ import useMentors from "@/services/useMentors";
 import { useTheme } from "next-themes";
 import ImageSample from "./ImageSample";
 
-export const revalidate = 600;
+export const revalidate = 1800;
 
 export const metadata: Metadata = constructMetadata({
   title: "Ganat - Менторы",
