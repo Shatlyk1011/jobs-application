@@ -15,7 +15,7 @@ import CVSection from "@/components/CVSection";
 import { Suspense } from "react";
 import EmptyResult from "@/components/ui/EmptyResult";
 
-export const revalidate = 3600;
+export const revalidate = 7200;
 
 export const metadata: Metadata = constructMetadata({
   title: "Ganat - Резюме",
