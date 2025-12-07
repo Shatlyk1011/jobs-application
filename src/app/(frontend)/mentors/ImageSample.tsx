@@ -14,11 +14,11 @@ const ImageSample: FC<Props> = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <figure className="relative my-6 w-full" title="Пример карточки с ментором">
+    <figure className="relative my-6 w-full" title="Example of a mentor card">
       <img
         loading="lazy"
         src={`/images/mentor-card-${isDark ? "sample" : "sample-light"}.webp`}
-        alt="пример карточки с ментором"
+        alt="example of a mentor card"
       />
       <span className="absolute top-4 right-4 text-[12px] font-semibold opacity-30">Demo</span>
     </figure>

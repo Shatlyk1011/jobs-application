@@ -12,7 +12,7 @@ const Consultation: CollectionConfig = {
   fields: [
     {
       name: "username",
-      label: "Имя",
+      label: "Name",
       type: "text",
       required: true,
     },
@@ -30,42 +30,42 @@ const Consultation: CollectionConfig = {
     },
     {
       name: "phoneNumber",
-      label: "Номер телефона",
+      label: "Phone number",
       type: "text",
       required: false,
     },
     {
       name: "requestBody",
-      label: "Запрос",
+      label: "Request",
       type: "textarea",
       required: false,
     },
     {
       name: "consultationWithSlug",
-      label: "Консультация с (slug)",
+      label: "Consultation with (slug)",
       type: "text",
       required: true,
     },
 
     {
       name: "status",
-      label: "Статус",
+      label: "Status",
       type: "select",
       options: [
         {
-          label: "В ожидании",
+          label: "Pending",
           value: "pending",
         },
         {
-          label: "Выполняется",
+          label: "In Progress",
           value: "processing",
         },
         {
-          label: "Выполнено",
+          label: "Completed",
           value: "done",
         },
         {
-          label: "Отказано",
+          label: "Denied",
           value: "rejected",
         },
       ],

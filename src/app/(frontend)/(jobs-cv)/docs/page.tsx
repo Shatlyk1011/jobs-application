@@ -3,15 +3,15 @@ import { Metadata } from "next";
 import { constructMetadata } from "@/lib/utils";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Менторы - Как это работает?",
-  description: "Узнайте как работает секция с менторами",
+  title: "Mentors - How does it work?",
+  description: "Learn how the mentoring section works",
 });
 
 export default async function Docs() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col gap-10 py-10 max-sm:pt-22">
       <div className="bg-popover w-full rounded-2xl p-8 pr-12 pb-12 text-sm max-sm:p-6 max-sm:pr-10" id="confidential">
-        <h2 className="-tracking-three mb-4 text-2xl font-medium">Конфиденциальность</h2>
+        <h2 className="-tracking-three mb-4 text-2xl font-medium">Privacy Policy</h2>
 
         <p className="mb-6 opacity-80">
           User agreement and consent to the processing of personal data Online service ganat.org (after referred to as
@@ -22,7 +22,7 @@ export default async function Docs() {
           transfers.
         </p>
 
-        <h2 className="-tracking-one mb-1 text-xl font-medium">Резюме</h2>
+        <h2 className="-tracking-one mb-1 text-xl font-medium">Resume</h2>
 
         <p className="mb-6 opacity-80">
           You can post your resume on{" "}
@@ -33,13 +33,13 @@ export default async function Docs() {
           help.ganat@mail.ru. You have the right to stop processing and delete your data - we will do so immediately.
         </p>
 
-        <h2 className="-tracking-one mb-1 text-xl font-medium">Изменения правил</h2>
+        <h2 className="-tracking-one mb-1 text-xl font-medium">Rules Changes</h2>
 
         <p className="mb-6 opacity-80">
           The site may change the rules; updates are posted here. For any questions, please contact help.ganat@mail.ru
         </p>
 
-        <h2 className="-tracking-one mb-1 text-xl font-medium">Отказ от ответственности</h2>
+        <h2 className="-tracking-one mb-1 text-xl font-medium">Disclaimer</h2>
 
         <p className="mb-6 opacity-80">
           The information is provided “as is”, without guarantees of completeness or accuracy. We are not responsible
@@ -47,7 +47,7 @@ export default async function Docs() {
           to us at email help.ganat@mail.ru
         </p>
 
-        <h2 className="-tracking-one mb-1 text-xl font-medium">Авторские права</h2>
+        <h2 className="-tracking-one mb-1 text-xl font-medium">Copyright</h2>
 
         <p>
           All materials are protected. Unauthorized copying is prohibited. For any questions please contact
@@ -56,7 +56,7 @@ export default async function Docs() {
       </div>
 
       <div className="bg-popover w-full rounded-2xl p-8 pr-12 pb-12 text-sm max-sm:p-6 max-sm:pr-10" id="terms">
-        <h2 className="-tracking-three mb-4 text-2xl font-medium">Условия использования</h2>
+        <h2 className="-tracking-three mb-4 text-2xl font-medium">Terms of Use</h2>
 
         <p className="mb-6 opacity-80">
           By using the ganat.org website (hereinafter referred to as the “Service”), you agree to these Terms, including
@@ -64,7 +64,7 @@ export default async function Docs() {
           https://ganat.org
         </p>
 
-        <h2 className="-tracking-three mb-2 text-lg font-medium">Допустимое использование</h2>
+        <h2 className="-tracking-three mb-2 text-lg font-medium">Acceptable Use</h2>
 
         <p className="mb-6 opacity-80">
           You are responsible for your use of the Service and the data provided. Protect the Service from harm,
@@ -72,7 +72,7 @@ export default async function Docs() {
           purposes without violating the rights of third parties. Unauthorized use is prohibited.
         </p>
 
-        <h2 className="-tracking-three mb-2 text-lg font-medium">Отказ от ответственности</h2>
+        <h2 className="-tracking-three mb-2 text-lg font-medium">Disclaimer</h2>
 
         <p className="mb-6 opacity-80">
           The service is provided "as is". The owner of the Service and its partners disclaim warranties of any kind.
@@ -81,7 +81,7 @@ export default async function Docs() {
           Service.
         </p>
 
-        <h2 className="-tracking-three mb-2 text-lg font-medium">Условия</h2>
+        <h2 className="-tracking-three mb-2 text-lg font-medium">Agreements</h2>
 
         <p className="mb-6 opacity-80">
           We reserve the right to change or discontinue the Service at any time, for any reason or without warnings. We
@@ -89,7 +89,7 @@ export default async function Docs() {
           Please review the Terms of Use periodically as they may change in the future..
         </p>
 
-        <h2 className="-tracking-one mb-1 text-xl font-medium">Авторские права</h2>
+        <h2 className="-tracking-one mb-1 text-xl font-medium">Copyright</h2>
 
         <p className="opacity-80">
           All materials are protected. Unauthorized copying is prohibited. For any questions please contact

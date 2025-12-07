@@ -17,7 +17,7 @@ const SearchBar: FC<Props> = ({ value, setSearch, classes }) => {
       <label className="relative h-full w-full">
         <input
           type="text"
-          placeholder="Поиск"
+          placeholder="Search"
           value={value}
           onChange={handleInput}
           className="focus:ring-ring bg-popover h-[inherit] w-[inherit] rounded-md pl-10 caret-current ring ring-transparent placeholder:font-[inherit] placeholder:text-sm placeholder:leading-none focus:outline-none"

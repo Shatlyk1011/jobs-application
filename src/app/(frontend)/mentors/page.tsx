@@ -44,12 +44,12 @@ export default async function MentorsPage() {
       {/* <header className="mb-10 flex justify-center gap-4 max-md:gap-3 max-md:pl-6 max-sm:mb-6 max-sm:ml-auto max-sm:max-w-full max-sm:flex-col max-sm:pl-0"> */}
       {/* <Button asChild className="flex-1 px-7 py-4 text-sm max-md:order-2 max-sm:py-2.5" variant="secondary">
           <a href={siteConfig.telegram_support} target="_blank" rel="noopener">
-            Подобрать ментора
+            Find a mentor
           </a>
         </Button> */}
       {/* <Button asChild className="flex-1 px-7 py-4 text-sm max-sm:py-2.5">
           <Link href="/mentor/new" target="_blank" rel="noopener">
-            Стать ментором
+            Become a mentor
           </Link>
         </Button> */}
       {/* </header> */}
@@ -60,8 +60,7 @@ export default async function MentorsPage() {
         Become a mentor on our platform!
       </h1>
       <p className="mx-4 text-sm opacity-80">
-        We are looking for experienced developers willing to share their knowledge. <br className="max-md:hidden" /> и
-        помогать другим расти.
+        We are looking for experienced developers willing to share their knowledge.
       </p>
 
       <div className="mx-6 mt-3">

@@ -55,7 +55,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       const imageFile = files[0];
 
       if (+getFileSize(imageFile) >= 1) {
-        setFileError("Размер файла не должен превышать 1мб");
+        setFileError("The file size should not exceed 1 MB.");
         return;
       }
 

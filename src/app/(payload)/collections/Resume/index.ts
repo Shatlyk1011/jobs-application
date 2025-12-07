@@ -14,19 +14,19 @@ const Resume: CollectionConfig = {
   fields: [
     {
       name: "username",
-      label: "Ваше имя",
+      label: "Your name",
       type: "text",
       required: true,
     },
     {
       name: "feedback",
-      label: "Обратная связь (telegram, mail)",
+      label: "Contact (Telegram, email)",
       type: "text",
       required: true,
     },
     {
       name: "resumeLink",
-      label: "Ссылка на резюме",
+      label: "Resume link",
       type: "text",
       required: true,
       // @ts-ignore
@@ -36,20 +36,20 @@ const Resume: CollectionConfig = {
           new URL(url);
           return true;
         } catch (e) {
-          return "Пожалуйста укажите валидный url";
+          return "Please provide a valid URL";
         }
       },
     },
     {
       name: "profession",
-      label: "Должность",
+      label: "Position",
       type: "text",
       required: true,
     },
 
     {
       name: "level",
-      label: "Уровень",
+      label: "Level",
       type: "select",
       options: LEVEL,
       required: true,
@@ -57,7 +57,7 @@ const Resume: CollectionConfig = {
 
     {
       name: "location",
-      label: "Местонахождение",
+      label: "Location",
       type: "select",
       options: LOCATION,
       required: true,
@@ -65,7 +65,7 @@ const Resume: CollectionConfig = {
 
     {
       name: "format",
-      label: "Формат",
+      label: "Format",
       type: "select",
       options: FORMAT,
       required: true,
@@ -73,22 +73,22 @@ const Resume: CollectionConfig = {
 
     {
       name: "salary",
-      label: "Зарплата",
+      label: "Salary",
       type: "group",
       fields: [
         {
-          label: "Валюта",
+          label: "Currency",
           name: "currency",
           type: "select",
           options: CURRENCY,
         },
         {
-          label: "От",
+          label: "From",
           name: "from",
           type: "text",
         },
         {
-          label: "До",
+          label: "To",
           name: "to",
           type: "text",
         },
@@ -96,7 +96,7 @@ const Resume: CollectionConfig = {
     },
     {
       name: "isVisible",
-      label: "Статус публикации",
+      label: "Post Status",
       type: "checkbox",
       required: false,
       defaultValue: false,

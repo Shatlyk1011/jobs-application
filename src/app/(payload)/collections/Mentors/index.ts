@@ -15,19 +15,19 @@ const Mentors: CollectionConfig = {
   fields: [
     {
       name: "username",
-      label: "Имя",
+      label: "Name",
       type: "text",
       required: true,
     },
     {
       name: "position",
-      label: "Позиция",
+      label: "Position",
       type: "text",
       required: true,
     },
     {
       name: "profession",
-      label: "Профессия",
+      label: "Profession",
       type: "select",
       options: MENTOR_PROFESSION,
       hasMany: true,
@@ -35,7 +35,7 @@ const Mentors: CollectionConfig = {
     },
     {
       name: "language",
-      label: "Языки общения с учениками",
+      label: "Languages ​​spoken with students",
       type: "select",
       options: LANGUAGES,
       hasMany: true,
@@ -44,28 +44,28 @@ const Mentors: CollectionConfig = {
 
     {
       name: "about",
-      label: "О себе",
+      label: "About me",
       type: "textarea",
       required: true,
     },
 
     {
       name: "howCanYouHelp",
-      label: "С чем можете помочь ученикам?",
+      label: "What can you help students with?",
       type: "textarea",
       required: true,
     },
 
     {
       name: "mdx",
-      label: "Описание вакансии",
+      label: "Job description",
       type: "richText",
       required: false,
     },
 
     {
       name: "resumeLink",
-      label: "Ссылка на резюме или на успешные кейсы",
+      label: "Link to resume or successful case studies",
       type: "text",
       required: true,
     },
@@ -79,14 +79,14 @@ const Mentors: CollectionConfig = {
 
     {
       name: "telegram",
-      label: "Ник в Телеграм",
+      label: "Telegram username",
       type: "text",
       required: false,
     },
 
     {
       name: "isVisible",
-      label: "Статус публикации",
+      label: "Post status",
       type: "checkbox",
       required: false,
       defaultValue: false,
@@ -96,7 +96,7 @@ const Mentors: CollectionConfig = {
     },
     {
       name: "price",
-      label: "Цена за час занятия",
+      label: "Price per hour",
       type: "text",
       required: false,
       defaultValue: 200,
@@ -115,7 +115,7 @@ const Mentors: CollectionConfig = {
     },
     {
       name: "imageBase64",
-      label: "Base64 изображение ",
+      label: "Base64 image ",
       type: "textarea",
       validate: () => true,
       admin: {

@@ -13,19 +13,19 @@ const Jobs: CollectionConfig = {
   fields: [
     {
       name: "companyName",
-      label: "Название компании",
+      label: "Company Name",
       type: "text",
       required: true,
     },
 
     {
       name: "companyDescription",
-      label: "Описание компании",
+      label: "Company Description",
       type: "textarea",
     },
     {
       name: "companyWebsite",
-      label: "Ссылка на компанию (если есть)",
+      label: "Company Link (if any)",
       type: "text",
       // @ts-ignore
       validate: (url: string) => {
@@ -34,19 +34,19 @@ const Jobs: CollectionConfig = {
           new URL(url);
           return true;
         } catch (e) {
-          return "Пожалуйста укажите валидный url";
+          return "Please provide a valid URL";
         }
       },
     },
     {
       name: "title",
-      label: "Загаловок (название вакансии)",
+      label: "Job Title",
       type: "text",
       required: true,
     },
     {
       name: "jobContactUrl",
-      label: "Ссылка на вакансию",
+      label: "Link to job posting",
       type: "text",
       required: true,
       // @ts-ignore
@@ -55,47 +55,47 @@ const Jobs: CollectionConfig = {
           new URL(url);
           return true;
         } catch (e) {
-          return "Пожалуйста укажите валидный url";
+          return "Please provide a valid URL";
         }
       },
     },
     {
       name: "additionalContact",
-      label: "Обратная связь (телегамм, форма, мейл или другое )",
+      label: "Feedback (Telegram, form, email, or other)",
       type: "text",
       required: false,
     },
     {
       name: "additionalNote",
-      label: "Заметка при заявке на вакансию",
+      label: "Note when applying for a job posting",
       type: "text",
       required: false,
     },
 
     {
       name: "profession",
-      label: "Профессия",
+      label: "Profession",
       type: "select",
       options: PROFESSION,
       required: true,
     },
     {
       name: "location",
-      label: "Местонахождение",
+      label: "Location",
       type: "select",
       options: LOCATION,
       required: true,
     },
     {
       name: "format",
-      label: "Формат",
+      label: "Format",
       type: "select",
       options: FORMAT,
       required: true,
     },
     {
       name: "level",
-      label: "Уровень",
+      label: "Level",
       type: "select",
       options: LEVEL,
       required: true,
@@ -103,7 +103,7 @@ const Jobs: CollectionConfig = {
 
     {
       name: "base64Image",
-      label: "Логотип компании",
+      label: "Company Logo",
       type: "relationship",
       relationTo: "base64Images",
       required: false,
@@ -111,29 +111,29 @@ const Jobs: CollectionConfig = {
 
     {
       name: "mdx",
-      label: "Описание вакансии",
+      label: "Job Description",
       type: "richText",
       required: true,
     },
 
     {
       name: "salary",
-      label: "Зарплата",
+      label: "Salary",
       type: "group",
       fields: [
         {
-          label: "Валюта",
+          label: "Currency",
           name: "currency",
           type: "select",
           options: CURRENCY,
         },
         {
-          label: "От",
+          label: "From",
           name: "from",
           type: "number",
         },
         {
-          label: "До",
+          label: "To",
           name: "to",
           type: "number",
         },
@@ -141,7 +141,7 @@ const Jobs: CollectionConfig = {
     },
     {
       name: "isVisible",
-      label: "Статус публикации",
+      label: "Post Status",
       type: "checkbox",
       required: false,
       defaultValue: true,

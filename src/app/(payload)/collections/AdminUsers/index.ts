@@ -37,12 +37,12 @@ const AdminUsers: CollectionConfig = {
   fields: [
     {
       name: "name",
-      label: "Имя",
+      label: "Name",
       type: "text",
     },
     {
       name: "phone",
-      label: "Номер телефона",
+      label: "Phone",
       required: false,
       type: "text",
     },
@@ -54,7 +54,7 @@ const AdminUsers: CollectionConfig = {
         update: ({ req }) => checkRole(["admin"], req.user),
       },
       defaultValue: false,
-      label: "Заблокирован",
+      label: "Is blocked?",
       required: false,
       type: "checkbox",
     },

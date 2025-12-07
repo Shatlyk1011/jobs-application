@@ -11,7 +11,6 @@ import { buildConfig } from "payload";
 import AdminUsers from "./app/(payload)/collections/AdminUsers";
 
 import Jobs from "./app/(payload)/collections/Jobs";
-// import Media from "./app/(payload)/collections/Media";
 import Resume from "./app/(payload)/collections/Resume";
 import Mentors from "./app/(payload)/collections/Mentors";
 import Consultation from "./app/(payload)/collections/Consultation";
@@ -27,7 +26,6 @@ export default buildConfig({
     user: AdminUsers.slug,
     importMap: {
       baseDir: path.resolve(dirname),
-      // importMapFile: path.resolve(dirname, "app", "(payload)", "admin", "importMap.js"),
     },
   },
   defaultDepth: 2,

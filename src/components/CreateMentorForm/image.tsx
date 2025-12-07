@@ -33,7 +33,7 @@ const ImageSelect: FC<Props> = ({ image, handleFile, errorMsg }) => {
                 <span className="opacity-80">Name:</span> {image.name}
               </p>
               <p>
-                <span className="opacity-80">Size:</span> {getFileSize(image)} мб
+                <span className="opacity-80">Size:</span> {getFileSize(image)} mb
               </p>
             </div>
           )}

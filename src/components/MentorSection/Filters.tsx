@@ -14,7 +14,7 @@ interface Props {
   totalDocs: number;
 }
 
-const ALL_PROFESSIONS = "Все направления";
+const ALL_PROFESSIONS = "All directions";
 
 const Filters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
   const [mounted, setMounted] = useState(false);
@@ -60,7 +60,7 @@ const Filters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
         </h1>
         <div className="w-full max-w-[220px]">
           <SelectComponent
-            placeholder="Профессия"
+            placeholder="Profession"
             items={[{ label: "All directions", value: "All directions" }, ...MENTOR_PROFESSION]}
             onChange={(value) => setProfession(value)}
             value={profession}
