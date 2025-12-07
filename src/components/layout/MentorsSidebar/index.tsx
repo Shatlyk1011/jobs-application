@@ -94,29 +94,15 @@ const MentorsSidebar: FC<Props> = () => {
             </Link>
           </li>
         </ul>
-        <div className="-tracking-two flex flex-col text-sm leading-[1.3] max-sm:text-base">
-          <p className="tracking-one text-foreground/70 mb-4 max-sm:leading-[1.35]">
-            Write to us and we will <br /> help you choose a mentor.
-          </p>
-          <Button
-            asChild
-            className="max-w-max px-7 py-4 max-sm:border-neutral-500/30 max-sm:dark:border"
-            variant="secondary"
-          >
-            <a href={siteConfig.telegram_support} className="max-md:min-w-full" target="_blank" rel="noopener">
-              Write to us
-            </a>
-          </Button>
-        </div>
 
-        <div className="text-ring mt-auto text-sm max-sm:mb-10 max-sm:text-base">
+        <div className="text-ring mt-auto flex flex-col text-sm max-sm:mb-10 max-sm:text-base">
           <a
             className="hover:text-foreground inline-block text-nowrap transition"
             target="_blank"
             rel="noopener"
             href={siteConfig.mentor_agreement}
           >
-            Agreement with mentors
+            Agreement
           </a>
           <a
             className="hover:text-foreground inline-block text-nowrap transition"

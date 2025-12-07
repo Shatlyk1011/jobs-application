@@ -60,7 +60,7 @@ export default async function MentorsPage() {
         Become a mentor on our platform!
       </h1>
       <p className="mx-4 text-sm opacity-80">
-        We are looking for experienced developers willing to share their knowledge.
+        We are looking for experienced developers <br className="max-sm:hidden" /> willing to share their knowledge.
       </p>
 
       <div className="mx-6 mt-3">

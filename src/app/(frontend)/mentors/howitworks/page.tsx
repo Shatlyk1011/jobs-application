@@ -45,22 +45,9 @@ export default async function HowItWorks() {
           </li>
         </ol>
 
-        <p className="mb-3">
+        <p>
           Before the meeting, ask any questions you'd like to discuss in the chat to save time during the session.
         </p>
-
-        <div>
-          Not sure which mentor is right for you? <br />
-          Our manager will help you with the selection—{" "}
-          <a
-            className="hover:text-sidebar-primary border-b border-current transition"
-            href={siteConfig.telegram_support}
-            target="_blank"
-            rel="noopener"
-          >
-            Write to us.
-          </a>
-        </div>
       </div>
     </section>
   );
