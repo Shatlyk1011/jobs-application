@@ -43,8 +43,8 @@ export default async function Docs() {
 
         <p className="mb-6 opacity-80">
           The information is provided “as is”, without guarantees of completeness or accuracy. We are not responsible
-          for jobs, hiring, third party confidentiality. Use of the site is at your own risk. To delete data, write
-          to us at email help.ganat@mail.ru
+          for jobs, hiring, third party confidentiality. Use of the site is at your own risk. To delete data, write to
+          us at email help.ganat@mail.ru
         </p>
 
         <h2 className="-tracking-one mb-1 text-xl font-medium">Copyright</h2>

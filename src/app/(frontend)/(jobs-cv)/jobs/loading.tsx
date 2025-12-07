@@ -1,3 +1,5 @@
+import JobsShimmer from "@/components/JobSection/JobsShimmer";
+
 export default function Loading() {
-  return <div>Loading...</div>;
+  return <JobsShimmer />;
 }
