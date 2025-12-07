@@ -19,7 +19,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
 
   return {
     ...constructMetadata({
-      title: `Ментор ${mentor.username}`,
+      title: `Mentor ${mentor.username}`,
       description: mentor.howCanYouHelp,
     }),
   };

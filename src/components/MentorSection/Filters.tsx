@@ -56,12 +56,12 @@ const Filters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
     <section className="">
       <div className="mb-6 flex items-center justify-between max-sm:mb-4 max-sm:flex-wrap max-sm:gap-y-3">
         <h1 className="text-lg font-medium text-nowrap">
-          Менторы <span>{totalDocs}</span>
+          Mentors <span>{totalDocs}</span>
         </h1>
         <div className="w-full max-w-[220px]">
           <SelectComponent
             placeholder="Профессия"
-            items={[{ label: "Все направления", value: "Все направления" }, ...MENTOR_PROFESSION]}
+            items={[{ label: "All directions", value: "All directions" }, ...MENTOR_PROFESSION]}
             onChange={(value) => setProfession(value)}
             value={profession}
           />

@@ -10,7 +10,7 @@ export function useCreateResume(setForm: Dispatch<SetStateAction<IResumeForm>>, 
   const createResume = async (form: IResumeForm) => {
     try {
       setLoading(true);
-      toast.loading("Отправляем запрос...", { id: "loading-toast-id" });
+      toast.loading("Sending request...", { id: "loading-toast-id" });
 
       const req = await axios("/resume", {
         method: "POST",
@@ -19,14 +19,14 @@ export function useCreateResume(setForm: Dispatch<SetStateAction<IResumeForm>>, 
 
       if (req.status === 201) {
         setForm(InitialResumeFormState);
-        toast.success("Успешно. Ваше резюме будет доступно после проверки модератора", {
+        toast.success("Success. Your resume will be available after moderation.", {
           id: "loading-toast-id",
           duration: 6000,
         });
         close();
       }
     } catch (err) {
-      toast.error("Что то пошло не так. Попробуйте еще раз.", {
+      toast.error("Something went wrong. Please try again..", {
         id: "loading-toast-id",
         duration: 6000,
       });

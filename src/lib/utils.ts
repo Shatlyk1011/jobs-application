@@ -2,19 +2,10 @@ import { siteConfig } from "@/config";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-import { OgImageSchema } from "@/types";
 import { Metadata } from "next";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
-}
-
-export function getOgImageUrl({ heading, type }: OgImageSchema) {
-  const ogUrl = new URL(`${siteConfig.siteUrl}/api/og`);
-  ogUrl.searchParams.set("heading", heading);
-  ogUrl.searchParams.set("type", type);
-  const ogImageUrl = ogUrl.toString();
-  return ogImageUrl;
 }
 
 export function constructMetadata({
@@ -32,15 +23,15 @@ export function constructMetadata({
     description,
     keywords: [
       "Ganat",
-      "IT вакансии",
-      "Работа в IT",
-      "Резюме IT",
-      "Поиск ментора IT",
-      "IT специалисту",
-      "IT карьера",
-      "Разместить резюме",
-      "Менторство IT",
-      "IT фриланс",
+      "IT Vacancies",
+      "IT Jobs",
+      "IT Resume",
+      "Find an IT Mentor",
+      "IT Specialist",
+      "IT Career",
+      "Post a Resume",
+      "IT Mentoring",
+      "IT Freelancing",
     ],
     openGraph: {
       title,

@@ -14,7 +14,7 @@ export function useCreateConsultation(setForm: Dispatch<SetStateAction<IConsulta
   const createConsultation = async (form: IConsultation) => {
     try {
       setLoading(true);
-      toast.loading("Отправляем запрос...", { id: "loading-toast-id" });
+      toast.loading("Sending request...", { id: "loading-toast-id" });
 
       const req = await axios("/consultation", {
         method: "POST",
@@ -24,13 +24,13 @@ export function useCreateConsultation(setForm: Dispatch<SetStateAction<IConsulta
       if (req.status === 201) {
         setForm(InitialConsultationFormState);
         setSuccess(true);
-        toast.success("Ваша заявка успешна создана. Мы свяжемся с Вами в ближайшее время.", {
+        toast.success("Your request has been successfully created. We will contact you shortly.", {
           id: "loading-toast-id",
           duration: 6000,
         });
       }
     } catch (err) {
-      toast.error("Что то пошло не так. Попробуйте еще раз.", {
+      toast.error("Something went wrong. Please try again.", {
         id: "loading-toast-id",
         duration: 6000,
       });

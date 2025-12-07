@@ -12,15 +12,14 @@ interface Props {
 const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
   const [isSuccess, setSuccess] = useState(false);
 
-  const isTelegram = additionalContact[0] === "@";
+  const isTelegram = additionalContact.startsWith("@");
   const isLink = additionalContact.includes("http");
 
   const getText = () => {
-    if (isTelegram) return "Отправить заявку в телеграме";
-    else if (isLink && !isTelegram) return "Отправить заявку";
+    if (isTelegram) return "Submit a request via Telegram";
+    else if (isLink && !isTelegram) return "Submit a request";
     return null;
   };
-  console.log("additionalContact", additionalContact);
   const getUrl = () => {
     if (isTelegram) {
       return `https://t.me/${additionalContact}`;
@@ -53,7 +52,7 @@ const AdditionalContactComponent: FC<Props> = ({ additionalContact }) => {
 
       {!isLink && !isTelegram && (
         <div className="text-foreground opacity flex items-center gap-1">
-          <span className="">Отправить заявку тут:</span>
+          <span className="">Submit a request here:</span>
           <div
             className={cn(
               "bg-secondary flex items-center gap-2 rounded-sm px-2.5 py-1 font-semibold transition",

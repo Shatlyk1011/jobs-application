@@ -75,10 +75,10 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
     <>
       <div>
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="username">
-          Ваше имя/фамилия
+          Your first/last name
         </label>
         <CustomInput
-          placeholder="Аман Аманов"
+          placeholder="John Doe"
           id="username"
           name="username"
           errorMsg={errors.username}
@@ -89,10 +89,10 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div>
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="position">
-          Позиция
+          Position
         </label>
         <CustomInput
-          placeholder="Senior Backend Developer at Belet"
+          placeholder="Senior Backend Developer at Antropic"
           id="position"
           name="position"
           errorMsg={errors.position}
@@ -102,13 +102,13 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       </div>
 
       <div>
-        <label className="mb-2 inline-block text-sm font-medium">Сфера (менторства)</label>
+        <label className="mb-2 inline-block text-sm font-medium">Field (mentoring)</label>
         <MultiSelect
           singleLine={true}
           className="bg-input/30 hover:bg-input/30 min-h-[41px]"
           badgeClassname="bg-input/30 hover:bg-secondary"
           maxCount={3}
-          placeholder="Выберите сферы менторства"
+          placeholder="Select areas of mentoring"
           errorMsg={errors.profession}
           animation={0}
           options={MENTOR_PROFESSION}
@@ -119,12 +119,12 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div>
         <div className="mb-2 inline-flex items-center gap-2 text-sm font-medium">
-          <span>Язык(и) общения</span>
+          <span>Language(s) of Communication</span>
           <button className="group relative cursor-pointer" type="button">
             <Info className="h-4 w-4" />
             <p className="border-input bg-popover invisible absolute top-0 left-0 z-10 w-[320px] translate-y-[-20%] rounded-2xl border p-3 text-start text-[14px] leading-[1.3] font-normal opacity-0 transition select-none group-focus:visible group-focus:opacity-100 group-focus:select-auto">
-              Укажите языки, на которых Вам удобно общаться. Это поможет ученикам подобрать ментора по уровню владения
-              языками.
+              Indicate the languages ​​you are comfortable communicating in. This will help students find a mentor based
+              on their language proficiency.
             </p>
           </button>
         </div>
@@ -133,7 +133,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
           className="bg-input/30 hover:bg-input/30 min-h-[41px]"
           badgeClassname="bg-input/30 hover:bg-secondary"
           maxCount={3}
-          placeholder="Выберите языки"
+          placeholder="Select languages"
           errorMsg={errors.language}
           animation={0}
           options={LANGUAGES}
@@ -148,18 +148,18 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div className="mb-6">
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="about">
-          Коротко о Вас
+          About you
         </label>
         <div className="my-2 text-sm opacity-70">
-          <span className="mb-5 inline-block">Например, </span>
+          <span className="mb-5 inline-block">For example, </span>
           <p className="mb-4 select-none">
-            Приветствую, более 8 лет занимаюсь дизайном. Начал свою карьеру графическим дизайнером, а потом нашел себя в
-            UX-дизайне. Сегодня являюсь ведущим Product Designer в компании - Belli Creative
+            Hello, I've been working in design for over 8 years. I started my career as a graphic designer and then
+            found my niche in UX design. Today, I'm the Lead Product Designer at Belli Creative.
           </p>
         </div>
         <CustomInput
           as="textarea"
-          placeholder="Расскажите коротко о себе"
+          placeholder="Tell us briefly about yourself."
           id="about"
           errorMsg={errors.about}
           name="about"
@@ -170,20 +170,20 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div>
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="howCanYouHelp">
-          С чем можете помочь ученикам?
+          What can you help students with?
         </label>
         <div className="my-2 text-sm opacity-70">
-          <span className="mb-5 inline-block">Например, </span>
+          <span className="mb-5 inline-block">For example:, </span>
           <p className="mb-4 select-none">
-            → Расскажу как написать свой первый пет проект. <br />
-            → Научу оптимизировать код для высокой производительности. <br />
-            → Расскажу о выборе фреймворков (React, Vue), CI/CD и интеграции с бэкендом. <br />→ Подготовлю к
-            собеседованиям по фронтенду.
+            → I'll teach you how to write your first pet project. <br />
+            → I'll teach you how to optimize your code for high performance. <br />
+            → I'll talk about choosing frameworks (React, Vue), CI/CD, and backend integration. <br />→ I'll prepare you
+            for frontend interviews.
           </p>
         </div>
         <CustomInput
           as="textarea"
-          placeholder="Расскажите как Вы сможете помочь ученикам"
+          placeholder="Tell us how you can help students."
           id="howCanYouHelp"
           errorMsg={errors.howCanYouHelp}
           name="howCanYouHelp"
@@ -194,7 +194,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div>
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="resumeLink">
-          Ссылка на резюме или Ваши успешные кейсы
+          Link to your resume or your success stories
         </label>
         <CustomInput
           placeholder="google.drive/resume/10"
@@ -208,10 +208,10 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div>
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="email">
-          Ваш email
+          Your email
         </label>
         <CustomInput
-          placeholder="amanov@mail.ru"
+          placeholder="john@mail.ru"
           id="email"
           name="email"
           errorMsg={errors.email}
@@ -222,10 +222,10 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div>
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="telegram">
-          Ник в Telegram{" "}
+          Telegram account{" "}
         </label>
         <CustomInput
-          placeholder="@amanov"
+          placeholder="@jonh"
           id="telegram"
           name="telegram"
           errorMsg={errors.telegram}
@@ -237,16 +237,16 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       <div className="flex items-center gap-2">
         <Checkbox className="" id="salary" required />
         <label className="-tracking-two text-sm font-medium" htmlFor="salary">
-          Я согласен на{" "}
+          I agree to the{" "}
           <Link href="/" className="text-sidebar-primary border-b border-current">
-            обработку персональных данных
+            processing of personal data
           </Link>
         </label>
       </div>
 
       <div className="mt-6">
         <Button type="submit" disabled={isLoading}>
-          Отправить заявку
+          Submit
         </Button>
       </div>
     </>

@@ -3,14 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 //components
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 import { Button } from "../ui/button";
 import ResumeForm from "./ResumeForm";
@@ -32,7 +25,7 @@ const AddResumeDialogButton: FC<Props> = () => {
     <Dialog open={dialog} onOpenChange={setDialog}>
       <DialogTrigger asChild>
         <Button data-slot="dialog-trigger" variant="default" className="py-5">
-          Разместить резюме
+          Post your resume
         </Button>
       </DialogTrigger>
       <DialogContent className="bg-popover rounded-3xl border-none max-sm:min-h-full max-sm:max-w-full max-sm:gap-3 max-sm:overflow-y-auto max-sm:rounded-none max-sm:px-2 max-sm:pt-10 max-sm:pb-6">

@@ -36,16 +36,16 @@ const ResumeForm: FC<Props> = ({ close }) => {
   return (
     <form className="flex flex-col gap-4 max-sm:gap-3" onSubmit={handleSubmit}>
       <DialogHeader className="max-sm:mb-6">
-        <DialogTitle className="mb-2 max-sm:mb-1 max-sm:text-xl">Разместите резюме</DialogTitle>
+        <DialogTitle className="mb-2 max-sm:mb-1 max-sm:text-xl">Submit your resume</DialogTitle>
         <DialogDescription className="mb-4 max-sm:mx-auto max-sm:mb-0 max-sm:max-w-[90%] max-sm:leading-[1.3]">
-          Заполните форму для быстрой публикации Вашего резюме
+          Fill out the form to quickly publish your resume
         </DialogDescription>
       </DialogHeader>
       <Form form={form} setForm={setForm} errors={errors} salaryView={salaryView} setSalaryView={setSalaryView} />
       <div className="mt-4 flex justify-end gap-3 max-sm:mt-2 max-sm:flex-col max-sm:text-xs">
         <p className="text-[13px] font-medium max-sm:mx-auto max-sm:hidden max-sm:text-center">
-          <span className="opacity-70">Ссылка на резюме:</span> <br className="hidden max-sm:block" /> Google Drive,
-          Облако Mail.ru или другое
+          <span className="opacity-70">Resume link:</span> <br className="hidden max-sm:block" /> Google Drive, Cloud
+          Mail.ru or other
         </p>
         <div className="flex gap-3">
           <DialogClose asChild className="flex-1">
@@ -55,12 +55,12 @@ const ResumeForm: FC<Props> = ({ close }) => {
               className="max-sm:bg-black/10! max-sm:dark:bg-white/5!"
               disabled={isLoading}
             >
-              Отмена
+              Cancel
             </Button>
           </DialogClose>
 
           <Button type="submit" disabled={isLoading} className="flex-1">
-            Отправить
+            Submit
           </Button>
         </div>
       </div>

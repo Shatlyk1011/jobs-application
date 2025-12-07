@@ -21,16 +21,16 @@ import { TLanguage } from "../../../data/filters";
 import { RussiaFlag } from "../icons/flags/RussiaFlag";
 import { TurkmenFlag } from "../icons/flags/TurkmenFlag";
 import { USAFlag } from "../icons/flags/USAFlag";
-import { Globe, Info } from "lucide-react";
+import { DollarSign, Globe, Info } from "lucide-react";
 
 interface Props {
   initialData: IMentor[];
 }
 
 const getFlagIcon = (lang: TLanguage) => {
-  if (lang === "Русский") {
+  if (lang === "Russian") {
     return RussiaFlag;
-  } else if (lang === "Туркменский") {
+  } else if (lang === "Turkmen") {
     return TurkmenFlag;
   }
   return USAFlag;
@@ -83,11 +83,11 @@ const MentorSection: FC<Props> = ({ initialData }) => {
 
                 <ul className="mt-1 mb-4 flex w-full flex-wrap gap-x-1">
                   <li className="-tracking-one flex basis-full items-center gap-1 text-start text-[12px] font-semibold">
-                    <span className="opacity-70">Языки</span>
+                    <span className="opacity-70">Languages</span>
                     <button className="group relative">
                       <Info className="h-2.5 w-2.5 max-sm:h-3 max-sm:w-3" />{" "}
                       <p className="bg-secondary invisible absolute top-4 left-[-90px] min-w-[180px] rounded-lg px-2 py-1 text-[12px] opacity-0 transition select-none group-hover:visible group-hover:opacity-100 group-hover:select-auto">
-                        Языки проведения онлайн сессии
+                        Languages ​​of the online session
                       </p>
                     </button>
                   </li>
@@ -121,11 +121,12 @@ const MentorSection: FC<Props> = ({ initialData }) => {
 
                 <div className="flex items-center gap-4 text-sm max-lg:flex-col max-sm:gap-3">
                   <Button variant="outline" className="text-[15px] max-lg:min-w-full" size="sm">
-                    Смотреть профиль
+                    View profile
                   </Button>
 
                   <p className="-tracking-two text-sm text-[15px] font-medium max-sm:text-center">
-                    {m.price}TMT / час онлайн занятия
+                    {m.price}
+                    <DollarSign /> / an hour of online classes
                   </p>
                 </div>
               </div>
@@ -133,7 +134,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
           ))
         ) : (
           <EmptyResult classes="max-w-1/2 mx-auto">
-            По Вашему запросу никого не найдено. Попробуйте изменить фильтры поиска.
+            No results were found matching your search criteria. Try adjusting your search filters.
           </EmptyResult>
         )}
         {isLoading && <ScreenLoading style={{ minHeight: "320px" }} />}

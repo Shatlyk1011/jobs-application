@@ -1,47 +1,47 @@
 export const PROFESSION = [
   {
-    label: "Разработка",
-    value: "Разработка",
+    label: "Development",
+    value: "Development",
   },
   {
-    label: "Тестирование",
-    value: "Тестирование",
+    label: "Testing",
+    value: "Testing",
   },
   {
-    label: "Аналитика",
-    value: "Аналитика",
+    label: "Analytics",
+    value: "Analytics",
   },
   {
     label: "HR",
     value: "HR",
   },
   {
-    label: "Дизайн",
-    value: "Дизайн",
+    label: "Design",
+    value: "Design",
   },
   {
-    label: "Менеджмент",
-    value: "Менеджмент",
+    label: "Management",
+    value: "Management",
   },
   {
-    label: "Маркетинг",
-    value: "Маркетинг",
+    label: "Marketing",
+    value: "Marketing",
   },
   {
     label: "PR",
     value: "PR",
   },
   {
-    label: "Контент",
-    value: "Контент",
+    label: "Content",
+    value: "Content",
   },
   {
-    label: "Продажи",
-    value: "Продажи",
+    label: "Sales",
+    value: "Sales",
   },
   {
-    label: "Другое",
-    value: "Другое",
+    label: "Other",
+    value: "Other",
   },
 ];
 
@@ -70,54 +70,54 @@ export const LEVEL = [
 
 export const LOCATION = [
   {
-    label: "Ашхабад",
-    value: "Ашхабад",
+    label: "Ashgabat",
+    value: "Ashgabat",
   },
   {
-    label: "Туркменабад",
-    value: "Туркменабад",
+    label: "Turkmenabat",
+    value: "Turkmenabat",
   },
   {
-    label: "За рубежом",
-    value: "За рубежом",
+    label: "Abroad",
+    value: "Abroad",
   },
   {
-    label: "Другое",
-    value: "Другое",
+    label: "Other",
+    value: "Other",
   },
 ];
 
 export const FORMAT = [
   {
-    label: "Удаленно",
-    value: "Удаленно",
+    label: "Remote",
+    value: "Remote",
   },
   {
-    label: "Офис",
-    value: "Офис",
+    label: "On site",
+    value: "On site",
   },
   {
-    label: "Гибрид",
-    value: "Гибрид",
+    label: "Hybrid",
+    value: "Hybrid",
   },
   {
-    label: "Релокация",
-    value: "Релокация",
+    label: "Relocation",
+    value: "Relocation",
   },
 ];
 
 export const LANGUAGES: ILanguage[] = [
   {
-    label: "Туркменский",
-    value: "Туркменский",
+    label: "Turkmen",
+    value: "Turkmen",
   },
   {
-    label: "Русский",
-    value: "Русский",
+    label: "Russian",
+    value: "Russian",
   },
   {
-    label: "Английский",
-    value: "Английский",
+    label: "English",
+    value: "English",
   },
 ];
 
@@ -125,7 +125,7 @@ export const CURRENCY: TCurrency[] = ["TMT", "USD", "RUB", "EURO"];
 
 export type TCurrency = "TMT" | "USD" | "RUB" | "EURO";
 
-export type TLanguage = "Туркменский" | "Русский" | "Английский";
+export type TLanguage = "Turkmen" | "Russian" | "English";
 
 export interface ILanguage {
   label: TLanguage;

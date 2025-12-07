@@ -26,11 +26,10 @@ const CreateMentorForm: FC<Props> = () => {
 
   const submit = async () => {
     if (!form.image) return;
+    // convert to base 64 format
     const buffer = Buffer.from(await form.image.arrayBuffer());
 
     const imageBase64 = `data:${form.image.type};base64,${buffer.toString("base64")}`;
-
-    console.log("imageBase64", imageBase64);
 
     const { image, ...rest } = form;
     await createMentor({ ...rest, imageBase64, slug: nameToSlug(form.username) });

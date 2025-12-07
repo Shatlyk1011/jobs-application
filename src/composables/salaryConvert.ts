@@ -2,10 +2,10 @@ import { DollarSign, Euro, RussianRuble } from "lucide-react";
 import { TCurrency } from "../../data/filters";
 
 export function salaryConvert(from?: string, to?: string) {
-  if (from && !to) return `от ${from}`;
-  if (!from && to) return `до ${to}`;
-  if (from && to) return `от ${from} до ${to}`;
-  return "З/П не указано";
+  if (from && !to) return `from ${from}`;
+  if (!from && to) return `to ${to}`;
+  if (from && to) return `from ${from} to ${to}`;
+  return "Not specified";
 }
 
 export function getCurrencyIcon(currency: TCurrency): string | typeof DollarSign {
@@ -23,7 +23,7 @@ export const CURRENCY_ICON = {
 };
 
 export const getLocation = (location: string) => {
-  if (location.toLowerCase() === "за рубежом") {
+  if (location.toLowerCase() === "abroad") {
     return "";
   }
 

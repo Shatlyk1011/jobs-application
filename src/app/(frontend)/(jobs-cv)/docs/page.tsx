@@ -14,44 +14,43 @@ export default async function Docs() {
         <h2 className="-tracking-three mb-4 text-2xl font-medium">Конфиденциальность</h2>
 
         <p className="mb-6 opacity-80">
-          Пользовательское соглашение и согласие на обработку персональных данных Онлайн-сервис ganat.org (далее –
-          «Сайт») следует принципам защиты конфиденциальности пользователей. Мы обеспечиваем безопасность хранения и
-          использование данных только в указанных целях. Под информацией понимаются персональные данные. Принимая
-          соглашение, Вы соглашаетесь на их обработку: сбор, запись, систематизация, хранение, обновление, извлечение,
-          использование, передача, обезличивание, блокировка, удаление, уничтожение. Для удаления данных напишите:
-          help.ganat@mail.ru. Согласие включает трансграничную передачу данных.
+          User agreement and consent to the processing of personal data Online service ganat.org (after referred to as
+          "Site") follows the principles of protecting user privacy. We ensure safe storage and use of data only for the
+          specified purposes. Information means personal data. Taking agreement, you agree to their processing:
+          collection, recording, systematization, storage, updating, retrieval, use, transfer, depersonalization,
+          blocking, deletion, destruction. To delete data write: help.ganat@mail.ru. Consent includes cross-border data
+          transfers.
         </p>
 
         <h2 className="-tracking-one mb-1 text-xl font-medium">Резюме</h2>
 
         <p className="mb-6 opacity-80">
-          Вы можете опубликовать резюме на{" "}
+          You can post your resume on{" "}
           <a className="text-sidebar-primary" href="/cv">
             https://ganat.org/cv
           </a>{" "}
-          или отправить менеджерам. Оно вводится в базу данных, доступную только сотрудникам Сайта. Вы можете запросить
-          копию через help.ganat@mail.ru. Вы имеете право на прекращение обработки и удаление данных – мы Выполним
-          немедленно.
+          or send to managers. It is entered into a database accessible only to Site employees. You can request copy via
+          help.ganat@mail.ru. You have the right to stop processing and delete your data - we will do so immediately.
         </p>
 
         <h2 className="-tracking-one mb-1 text-xl font-medium">Изменения правил</h2>
 
         <p className="mb-6 opacity-80">
-          Сайт может изменить правила; обновления публикуются здесь. По всем вопросам обращайтесь в help.ganat@mail.ru
+          The site may change the rules; updates are posted here. For any questions, please contact help.ganat@mail.ru
         </p>
 
         <h2 className="-tracking-one mb-1 text-xl font-medium">Отказ от ответственности</h2>
 
         <p className="mb-6 opacity-80">
-          Информация предоставляется «как есть», без гарантий полноты, точности. Мы не отвечаем за вакансии, найм,
-          конфиденциальность у третьих сторон. Использование сайта на ваш риск. Для удаления данных напишите нам на
-          почту help.ganat@mail.ru
+          The information is provided “as is”, without guarantees of completeness or accuracy. We are not responsible
+          for vacancies, hiring, third party confidentiality. Use of the site is at your own risk. To delete data, write
+          to us at email help.ganat@mail.ru
         </p>
 
         <h2 className="-tracking-one mb-1 text-xl font-medium">Авторские права</h2>
 
         <p>
-          Все материалы защищены. Несанкционированное копирование запрещено. По всем вопросам обращайтесь в
+          All materials are protected. Unauthorized copying is prohibited. For any questions please contact
           help.ganat@mail.ru
         </p>
       </div>
@@ -60,41 +59,40 @@ export default async function Docs() {
         <h2 className="-tracking-three mb-4 text-2xl font-medium">Условия использования</h2>
 
         <p className="mb-6 opacity-80">
-          Используя сайт ganat.org (далее – «Сервис»), Вы соглашаетесь с этими Условиями, включая любые последующие
-          изменения или модификации. Если Вы не согласны с этими Условиями использования, то пожалуйста, не используйте
-          сайт https://ganat.org
+          By using the ganat.org website (hereinafter referred to as the “Service”), you agree to these Terms, including
+          any subsequent changes or modifications. If you do not agree to these Terms of Use, please do not use website
+          https://ganat.org
         </p>
 
         <h2 className="-tracking-three mb-2 text-lg font-medium">Допустимое использование</h2>
 
         <p className="mb-6 opacity-80">
-          Вы отвечаете за использование Сервиса и предоставленные данные. Защищаете Сервис от вреда, расходов,
-          ответственности из-за вашего использования или нарушения Условий. Используйте только для личных/коммерческих
-          целей, не нарушая права третьих лиц. Незаконное использование запрещено.
+          You are responsible for your use of the Service and the data provided. Protect the Service from harm,
+          expenses, liability due to your use of or violation of the Terms. Use for personal/commercial use only
+          purposes without violating the rights of third parties. Unauthorized use is prohibited.
         </p>
 
         <h2 className="-tracking-three mb-2 text-lg font-medium">Отказ от ответственности</h2>
 
         <p className="mb-6 opacity-80">
-          Сервис предоставляется "как есть". Владелец Сервиса и его партнеры отказываются от гарантий любого рода. Вы
-          обязуетесь использовать сервис на свой страх и риск. Вы принимаете на себя полную ответственность за любой
-          вред, который Вы понесли в результате использования Сервиса. Вы принимаете на себя любой риск, который
-          касается использования, безопасности или быстродействия Сервиса.
+          The service is provided "as is". The owner of the Service and its partners disclaim warranties of any kind.
+          you You agree to use the service at your own risk. You accept full responsibility for any harm you suffered as
+          a result of using the Service. You assume any risk that concerns the use, security or performance of the
+          Service.
         </p>
 
         <h2 className="-tracking-three mb-2 text-lg font-medium">Условия</h2>
 
         <p className="mb-6 opacity-80">
-          Мы оставляем за собой право изменять или останавливать работу Сервиса в любое время, по любой причине и без
-          предупреждения. Мы сохраняем за собой право изменять положение настоящего документа ("Условия использования")
-          в любое время без предупреждения. Пожалуйста, просматривайте Условия использования периодически, т.к. они
-          могут измениться в будущем..
+          We reserve the right to change or discontinue the Service at any time, for any reason or without warnings. We
+          reserve the right to change the provisions of this document ("Terms of Use") at any time without warning.
+          Please review the Terms of Use periodically as they may change in the future..
         </p>
 
         <h2 className="-tracking-one mb-1 text-xl font-medium">Авторские права</h2>
 
         <p className="opacity-80">
-          Все материалы защищены. Несанкционированное копирование запрещено. По всем вопросам обращайтесь в
+          All materials are protected. Unauthorized copying is prohibited. For any questions please contact
           help.ganat@mail.ru
         </p>
       </div>

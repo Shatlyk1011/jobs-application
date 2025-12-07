@@ -20,12 +20,12 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact, addi
     <Dialog>
       <DialogTrigger asChild>
         <Button data-slot="dialog-trigger" variant="default" className="w-full py-5">
-          Посмотреть контакты
+          View contacts
         </Button>
       </DialogTrigger>
       <DialogContent className="bg-popover rounded-3xl border-none max-sm:rounded-2xl max-sm:px-4">
         <DialogHeader>
-          <DialogTitle className="mb-6 max-lg:mb-4">Контакты работодателя</DialogTitle>
+          <DialogTitle className="mb-6 max-lg:mb-4">Contacts</DialogTitle>
           <div className="mb-2 flex flex-col gap-3 text-sm max-sm:mb-0">
             <a
               href={jobContactUrl}
@@ -36,7 +36,7 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact, addi
                 additionalNote ? "text-inherit" : "text-sidebar-primary",
               )}
             >
-              {isTelegram ? "Ссылка на вакансию (телеграм)" : "Ссылка на вакансию"}
+              {isTelegram ? "Job posting link (Telegram)" : "Job posting link"}
             </a>
             {additionalContact && <AdditionalContactComponent additionalContact={additionalContact} />}
             {additionalNote && (
@@ -49,10 +49,9 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact, addi
         </DialogHeader>
         <div className="bg-secondary text-secondary-foreground rounded-2xl px-4 py-4 text-sm">
           <p>
-            Если Вы столкнулись с мошенничеством или <br className="max-ms:hidden" /> ошибкой — пожалуйста, сообщите нам
-            в{" "}
+            If you have encountered fraud or <br className="max-ms:hidden" /> error - please let us know in{" "}
             <a href={siteConfig.telegram_support} target="_blank" rel="noopener" className="border-b border-current">
-              телеграм
+              telegram
             </a>
           </p>
         </div>

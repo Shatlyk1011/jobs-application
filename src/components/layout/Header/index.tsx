@@ -30,35 +30,35 @@ const Header: FC<Props> = ({ sticky }) => {
         <ul className="flex items-center text-base font-medium tracking-tight max-sm:text-sm">
           <li>
             <Link
-              href={"/jobs"}
+              href={jobs}
               className={cn(
                 "hover:bg-input/50 rounded-md px-4 py-2.5 transition max-sm:px-2",
                 pathname === jobs && "text-sidebar-primary font-medium opacity-100",
               )}
             >
-              Вакансии
+              Vacancies
             </Link>
           </li>
           <li>
             <Link
-              href={"/cv"}
+              href={resume}
               className={cn(
                 "hover:bg-input/50 rounded-md px-4 py-2 transition max-sm:px-2",
                 pathname === resume && "text-sidebar-primary font-medium opacity-100",
               )}
             >
-              Резюме
+              CV
             </Link>
           </li>
           <li>
             <Link
-              href={"/mentors"}
+              href={mentors}
               className={cn(
                 "hover:bg-input/50 rounded-md px-4 py-2.5 transition max-sm:px-2",
                 pathname === mentors && "text-sidebar-primary font-medium opacity-100",
               )}
             >
-              Менторы
+              Mentors
             </Link>
           </li>
         </ul>

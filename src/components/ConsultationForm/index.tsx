@@ -34,12 +34,12 @@ const ConsultationForm: FC<Props> = ({ mentorName, price, slug }) => {
       {!isSuccess ? (
         <>
           <div className="-tracking-one mb-5">
-            <h3 className="mb-3 text-xl font-semibold">Записаться на консультацию</h3>
+            <h3 className="mb-3 text-xl font-semibold">Sign up for a consultation</h3>
             <h4 className="mb-1 text-[14px] font-medium opacity-80">
-              Ментор: <span className="opacity-60">{mentorName}</span>
+              Mentor: <span className="opacity-60">{mentorName}</span>
             </h4>
             <p className="text-[14px] font-medium opacity-80">
-              Стоимость: <span className="opacity-60"> {price || 200} / час онлайн занятия </span>
+              Cost: <span className="opacity-60"> {price || 200} / Online lesson per hour </span>
             </p>
           </div>
           <Suspense>

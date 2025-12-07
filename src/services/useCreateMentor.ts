@@ -16,7 +16,7 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
   const createMentor = async (form: IMentorResponse) => {
     try {
       setLoading(true);
-      toast.loading("Отправляем запрос...", { id: "loading-toast-id" });
+      toast.loading("Submitting your request...", { id: "loading-toast-id" });
 
       const req = await axios("/mentors", {
         method: "POST",
@@ -26,7 +26,7 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
       if (req.status === 201) {
         setSuccess(true);
         setForm(InitialMentorFormState);
-        toast.success("Спасибо за Ваш отклик. Мы свяжемся с Вами в самое ближайшее время.", {
+        toast.success("Thank you for your feedback. We will contact you shortly.", {
           id: "loading-toast-id",
           duration: 6000,
         });
@@ -36,7 +36,7 @@ export function useCreateMentor(setForm: Dispatch<SetStateAction<IMentorResponse
         }, 3000);
       }
     } catch (err) {
-      toast.error("Что то пошло не так. Попробуйте еще раз.", {
+      toast.error("Something went wrong. Please try again.", {
         id: "loading-toast-id",
         duration: 6000,
       });

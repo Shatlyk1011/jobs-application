@@ -7,7 +7,7 @@ import { siteConfig } from "@/config";
 
 import { Building2 } from "lucide-react";
 
-import { constructMetadata, getOgImageUrl } from "@/lib/utils";
+import { constructMetadata } from "@/lib/utils";
 
 import { isoToDate } from "@/composables/dateConvert";
 import { salaryConvert } from "@/composables/salaryConvert";
@@ -25,7 +25,7 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
 
   if (!job) return;
 
-  const customDesc = `Компания ${job.companyName} ${job.location === "Другое" ? "" : `, находится в ${job.location.toLocaleLowerCase()}`}`;
+  const customDesc = `Company ${job.companyName} ${job.location === "Other" ? "" : `, located in ${job.location.toLocaleLowerCase()}`}`;
 
   return {
     ...constructMetadata({
@@ -58,9 +58,9 @@ export default async function JobPage({ params }: Props) {
       <article className="bg-popover h-full w-full basis-[70%] rounded-3xl px-[30px] py-12 pt-10 max-lg:order-2 max-sm:px-4 max-sm:py-6">
         <header>
           <dl>
-            <dt className="sr-only">Вакансия опубликована</dt>
+            <dt className="sr-only">Published date</dt>
             <time className="" dateTime={isoToDate(job.createdAt)}>
-              Вакансия опубликована {isoToDate(job.createdAt)}
+              Published date {isoToDate(job.createdAt)}
             </time>
           </dl>
 
@@ -86,8 +86,8 @@ export default async function JobPage({ params }: Props) {
           <RichText content={job.mdx} />
         </div>
         <p className="text-ring mt-4 text-[14px]">
-          Важно: Редакция Ganat не несёт ответственности за информацию в публикации от авторов, источников,
-          пользователей, включая текст и изображения. Если Вы нашли ошибку, пожалуйста, сообщите нам об этом{" "}
+          Important: Ganat are not responsible for the information contained in this publication from authors, sources,
+          or users, including text and images. If you find an error, please let us know.{" "}
           <a
             className="text-sidebar-primary border-b border-current"
             target="_blank"
@@ -96,14 +96,14 @@ export default async function JobPage({ params }: Props) {
           >
             help.ganat@mail.ru
           </a>{" "}
-          или в{" "}
+          or in{" "}
           <a
             target="_blank"
             rel="noopener"
             className="text-sidebar-primary border-b border-current"
             href={siteConfig.telegram_support}
           >
-            телеграм
+            telegram
           </a>
         </p>
       </article>
@@ -129,8 +129,6 @@ export default async function JobPage({ params }: Props) {
 
           {job?.companyDescription && <p className="mt-4 mb-2.5 text-[16px]">{job.companyDescription}</p>}
 
-          {/* <div className="my-4"></div> */}
-
           {job?.companyWebsite && (
             <a
               className="-tracking-three mt-2 inline-block border-b border-current text-sm leading-none font-semibold"
@@ -138,13 +136,13 @@ export default async function JobPage({ params }: Props) {
               target="_blank"
               rel="noopener"
             >
-              Подробнее о компании
+              More about the company
             </a>
           )}
         </div>
 
         <div className="bg-popover mb-4 w-full rounded-3xl p-5 max-lg:mb-0">
-          <span className="-tracking-one mb-6 inline-block text-sm font-medium max-lg:mb-4">Для отклика:</span>
+          <span className="-tracking-one mb-6 inline-block text-sm font-medium max-lg:mb-4">For response:</span>
 
           <ContactDialogButton
             jobContactUrl={job.jobContactUrl}
@@ -154,9 +152,9 @@ export default async function JobPage({ params }: Props) {
         </div>
 
         <div className="bg-popover w-full rounded-3xl p-5 text-sm">
-          Стань заметнее для работадателей →{" "}
+          Become more visible to employers →{" "}
           <Link target="_blank" rel="noopener" href="/cv" className="text-sidebar-primary">
-            здесь
+            here
           </Link>
         </div>
       </aside>

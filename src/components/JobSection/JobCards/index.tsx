@@ -32,8 +32,8 @@ const JobCards: FC<Props> = ({ jobs }) => {
                     {job.base64Image?.data ? (
                       <img
                         src={job.base64Image.data}
-                        alt="text"
-                        className="bg-secondary h-6 w-6 overflow-hidden rounded-full bg-[#222] object-contain"
+                        alt="company image"
+                        className="h-6 w-6 overflow-hidden rounded-full bg-[#222] object-contain"
                       />
                     ) : (
                       <Building2 className="stroke-[1.5] opacity-60" />
@@ -42,7 +42,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
                   </figure>
 
                   <dl>
-                    <dt className="sr-only">Вакансия опубликована</dt>
+                    <dt className="sr-only">Published date</dt>
                     <time className="text-sm font-medium opacity-80 max-sm:text-base">
                       {dateConvert(job.createdAt)}
                     </time>
@@ -80,7 +80,7 @@ const JobCards: FC<Props> = ({ jobs }) => {
         ))
       ) : (
         <EmptyResult classes="col-span-3 max-lg:col-span-2 max-sm:col-span-1 max-w-1/3 max-sm:max-w-[300px] max-lg:max-w-1/2 mx-auto">
-          По Вашему запросу ничего не найдено. Попробуйте изменить фильтры поиска.
+          Nothing matched your search criteria. Try adjusting your search filters.
         </EmptyResult>
       )}
     </section>

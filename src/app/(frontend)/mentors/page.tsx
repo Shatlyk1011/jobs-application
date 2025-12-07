@@ -12,15 +12,14 @@ import { siteConfig } from "@/config";
 import MentorSection from "@/components/MentorSection";
 import { Button } from "@/components/ui/button";
 import useMentors from "@/services/useMentors";
-import { useTheme } from "next-themes";
 import ImageSample from "./ImageSample";
 
 export const revalidate = 7200;
 
 export const metadata: Metadata = constructMetadata({
-  title: "Ganat - Менторы",
+  title: "Ganat - Mentors",
   description:
-    "Развивайтесь с профессионалами: от junior-разработчика до senior-специалиста. Разместите запрос или станьте ментором — помогайте другим расти!",
+    "Grow with professionals: from junior developer to senior specialist. Post a request or become a mentor – help others grow!",
 });
 
 const stringifiedQuery = stringify(
@@ -58,22 +57,17 @@ export default async function MentorsPage() {
       {/* <MentorSection initialData={mentors} /> */}
 
       <h1 className="-tracking-one mx-auto mb-4 w-full max-w-max rounded-xl text-center text-2xl font-semibold max-sm:mb-2 max-sm:text-xl">
-        Станьте ментором на нашей платформе!
+        Become a mentor on our platform!
       </h1>
       <p className="mx-4 text-sm opacity-80">
-        {" "}
-        Мы ищем опытных разработчиков, готовых делиться знаниями <br className="max-md:hidden" /> и помогать другим
-        расти. Мы поможем с организацией, тех-поддержской и с{" "}
-        <b>
-          получением оплаты в размере 100% <br className="max-md:hidden" />
-        </b>{" "}
-        от стоимости сессии.
+        We are looking for experienced developers willing to share their knowledge. <br className="max-md:hidden" /> и
+        помогать другим расти.
       </p>
 
       <div className="mx-6 mt-3">
         <Button asChild className="flex-1 px-7 py-4 text-sm max-sm:py-2.5" size="sm">
           <Link href="/mentor/new" target="_blank" rel="noopener">
-            Стать ментором
+            Become a mentor
           </Link>
         </Button>
       </div>

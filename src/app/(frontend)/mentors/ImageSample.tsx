@@ -20,7 +20,7 @@ const ImageSample: FC<Props> = () => {
         src={`/images/mentor-card-${isDark ? "sample" : "sample-light"}.webp`}
         alt="пример карточки с ментором"
       />
-      <span className="absolute top-4 right-4 text-[12px] font-semibold opacity-30">Демо</span>
+      <span className="absolute top-4 right-4 text-[12px] font-semibold opacity-30">Demo</span>
     </figure>
   );
 };

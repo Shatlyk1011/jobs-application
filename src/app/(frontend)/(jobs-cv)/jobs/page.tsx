@@ -22,8 +22,8 @@ const stringifiedQuery = stringify(
 );
 
 export const metadata: Metadata = constructMetadata({
-  title: "Ganat - Вакансии",
-  description: "Лучшие IT-вакансии в Туркменистане",
+  title: "Ganat - Vacancy",
+  description: "The best IT vacancies",
 });
 
 export default async function JobsPage() {

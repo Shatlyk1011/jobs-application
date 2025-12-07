@@ -25,10 +25,10 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       <div className="flex gap-4 max-sm:flex-col">
         <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="username">
-            Ваше имя*
+            Your name*
           </label>
           <CustomInput
-            placeholder="Sapar"
+            placeholder="John"
             id="username"
             name="username"
             errorMsg={errors.username}
@@ -38,10 +38,10 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </div>
         <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="email">
-            Почта*
+            Email*
           </label>
           <CustomInput
-            placeholder="sapar@mail.ru"
+            placeholder="john@mail.ru"
             id="email"
             name="email"
             errorMsg={errors.email}
@@ -54,10 +54,10 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
       <div className="flex gap-4 max-sm:flex-col">
         <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="telegram">
-            Ник в телеграм (через @)*
+            Telegram nickname (via @)*
           </label>
           <CustomInput
-            placeholder="@sapar"
+            placeholder="@doe"
             id="telegram"
             name="telegram"
             errorMsg={errors.telegram}
@@ -67,7 +67,7 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
         </div>
         <div className="w-full">
           <label className="mb-2 inline-block text-sm font-medium" htmlFor="phoneNumber">
-            Номер телефона
+            Phone number
           </label>
           <CustomInput
             placeholder="61415926"
@@ -81,11 +81,11 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div className="w-full">
         <label className="mb-2 inline-block text-sm font-medium" htmlFor="requestBody">
-          Ваш запрос
+          Your request
         </label>
         <CustomInput
           as="textarea"
-          placeholder="Подготовиться к собеседованию, помочь с проектом"
+          placeholder="Prepare for an interview, help with a project"
           id="requestBody"
           name="requestBody"
           value={form.requestBody}
@@ -95,14 +95,14 @@ const Form: FC<Props> = ({ form, setForm, isLoading, errors }) => {
 
       <div className="mt-1">
         <Button type="submit" className="w-full" disabled={isLoading}>
-          Записаться на консультацию
+          Schedule a consultation
         </Button>
         <div className="text-ring mt-3 text-center text-sm">
           <p>
-            Нажимая на кнопку «Записаться на консультацию», Вы соглашаетесь с <br />
+            By clicking the "Schedule a consultation" button, you agree to the <br />
           </p>
           <a className="text-sidebar-primary" href="#">
-            Условиями использования
+            terms of Use
           </a>
         </div>
       </div>

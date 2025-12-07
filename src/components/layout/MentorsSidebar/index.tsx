@@ -52,7 +52,7 @@ const MentorsSidebar: FC<Props> = () => {
           <Link href="/mentors">
             <Logo className="h-14 w-max" />
           </Link>
-          <h2 className="-tracking-two text-lg font-semibold">Менторы</h2>
+          <h2 className="-tracking-two text-lg font-semibold">Mentors</h2>
         </header>
         <ul className="mb-10 flex flex-col gap-1 text-base font-normal max-sm:gap-2 max-sm:text-lg">
           <li>
@@ -64,7 +64,7 @@ const MentorsSidebar: FC<Props> = () => {
                 pathname === mentors && "text-sidebar-primary font-medium opacity-100",
               )}
             >
-              Менторы
+              Mentors
             </Link>
           </li>
           <li>
@@ -76,7 +76,7 @@ const MentorsSidebar: FC<Props> = () => {
                 pathname === howitworks && "text-sidebar-primary font-medium opacity-100",
               )}
             >
-              Как это работает
+              How it works
             </Link>
           </li>
           <li>
@@ -90,13 +90,13 @@ const MentorsSidebar: FC<Props> = () => {
                 pathname === mentornew && "text-sidebar-primary font-medium opacity-100",
               )}
             >
-              Стать ментором
+              Become a mentor
             </Link>
           </li>
         </ul>
         <div className="-tracking-two flex flex-col text-sm leading-[1.3] max-sm:text-base">
           <p className="tracking-one text-foreground/70 mb-4 max-sm:leading-[1.35]">
-            Напишите нам, и мы <br /> поможем при выборе ментора.
+            Write to us and we will <br /> help you choose a mentor.
           </p>
           <Button
             asChild
@@ -104,7 +104,7 @@ const MentorsSidebar: FC<Props> = () => {
             variant="secondary"
           >
             <a href={siteConfig.telegram_support} className="max-md:min-w-full" target="_blank" rel="noopener">
-              Написать нам
+              Write to us
             </a>
           </Button>
         </div>
@@ -116,14 +116,19 @@ const MentorsSidebar: FC<Props> = () => {
             rel="noopener"
             href={siteConfig.mentor_agreement}
           >
-            Договор с менторами
+            Agreement with mentors
           </a>
-          {/* <a className="inline-block text-nowrap transition hover:text-foreground" target="_blank" rel="noopener" href="#">
-            Конфиденциальность
-          </a> */}
+          <a
+            className="hover:text-foreground inline-block text-nowrap transition"
+            target="_blank"
+            rel="noopener"
+            href="#"
+          >
+            Confidentiality
+          </a>
 
           <p className="mt-10">
-            © 2025 Ganat <br /> Все права защищены
+            © 2025 Ganat <br /> All rights reserved
           </p>
         </div>
       </div>

@@ -7,9 +7,9 @@ import { Logo } from "@/components/ui/Logo";
 import CreateMentorForm from "@/components/CreateMentorForm";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Ganat - Менторы",
+  title: "Ganat - Mentors",
   description:
-    "Мы рады талантливым и опытным менторам, способных поделиться знаниями и помочь начинающим и зрелым профессионалам достичь новых высот.",
+    "We welcome talented and experienced mentors who can share their knowledge and help both aspiring and established professionals reach new heights.",
 });
 
 export default function MentorNewPage() {
@@ -21,15 +21,15 @@ export default function MentorNewPage() {
         </div>
         <div className="flex flex-2 flex-col gap-4 text-start">
           <h1 className="-tracking-three text-2xl leading-[1.2] font-medium text-balance max-sm:text-center">
-            Спасибо за Ваш интерес стать частью команды Ganat.
+            Thank you for your interest in becoming part of the Ganat team.
           </h1>
           <p className="text-sm opacity-90 max-sm:mx-auto max-sm:max-w-[90%] max-sm:text-center">
-            Мы рады талантливым и опытным менторам, способных поделиться знаниями и помочь начинающим и зрелым
-            профессионалам достичь новых высот.
+            We welcome talented and experienced mentors who can share their knowledge and help both emerging and mature
+            professionals reach new heights.
           </p>
           <p className="text-sm font-semibold opacity-90 max-sm:mx-auto max-sm:max-w-[90%] max-sm:text-center max-sm:text-base">
-            Заполните пожалуйста анкету, <br className="hidden max-sm:block" /> чтобы мы могли{" "}
-            <br className="max-md:hidden" /> больше узнать о Вас.
+            Please fill out the form, <br className="hidden max-sm:block" /> so we can <br className="max-md:hidden" />{" "}
+            learn more about you.
           </p>
         </div>
       </header>

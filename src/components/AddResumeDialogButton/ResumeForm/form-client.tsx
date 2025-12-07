@@ -48,7 +48,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
         <CustomInput
           onChange={onInputChange}
           value={form.username}
-          placeholder="Ваше имя"
+          placeholder="Your name"
           name={"username" as keyof IResumeForm}
           errorMsg={errors?.username}
         />
@@ -56,7 +56,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
           onChange={onInputChange}
           value={form.resumeLink}
           name={"resumeLink" as keyof IResumeForm}
-          placeholder="Ссылка на резюме"
+          placeholder="Resume link"
           errorMsg={errors?.resumeLink}
         />
       </div>
@@ -65,12 +65,12 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
           onChange={onInputChange}
           value={form.profession}
           name={"profession" as keyof IResumeForm}
-          placeholder="Должность (Frontend Dev)"
+          placeholder="Job title (Frontend Dev)"
           errorMsg={errors?.profession}
         />
 
         <SelectComponent
-          placeholder="Уровень"
+          placeholder="Level"
           items={LEVEL}
           onChange={(value) => handleInput("level", value)}
           value={form.level}
@@ -79,14 +79,14 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
       </div>
       <div className="flex gap-4 max-sm:gap-2">
         <SelectComponent
-          placeholder="Местонахождения"
+          placeholder="Location"
           items={LOCATION}
           onChange={(value) => handleInput("location", value)}
           value={form.location}
           errorMsg={errors?.location}
         />
         <SelectComponent
-          placeholder="Формат работы"
+          placeholder="Work format"
           items={FORMAT}
           onChange={(value) => handleInput("format", value)}
           value={form.format}
@@ -104,7 +104,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
         <div className="flex items-center gap-2">
           <Checkbox onClick={() => setSalaryView(!salaryView)} checked={salaryView} id="salary" />
           <label className="-tracking-two text-foreground text-sm font-medium" htmlFor="salary">
-            Указать зарплатные ожидения
+            Specify salary expectations
           </label>
         </div>
         {/* salary */}
@@ -118,19 +118,19 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
             autoComplete="off"
             onChange={(e) => handleSalary("from", e.target.value)}
             value={form.salary?.from || ""}
-            placeholder="от"
+            placeholder="from"
             className=""
           />
           <Input
             autoComplete="off"
             onChange={(e) => handleSalary("to", e.target.value)}
-            placeholder="до"
+            placeholder="to"
             value={form.salary?.to || ""}
             className=""
           />
           <SelectComponent
             items={CURRENCY_OBJ()}
-            placeholder="Валюта"
+            placeholder="Currency"
             onChange={(value) => handleSalary("currency", value)}
             value={form.salary?.currency || ""}
           />
@@ -139,7 +139,7 @@ const Form: FC<Props> = ({ form, setForm, salaryView, setSalaryView, errors }) =
       <CustomInput
         onChange={onInputChange}
         value={form.feedback}
-        placeholder="Ваш Telegram или email для обратной связи."
+        placeholder="Your Telegram or email for feedback."
         name={"feedback" as keyof IResumeForm}
         errorMsg={errors?.feedback}
       />

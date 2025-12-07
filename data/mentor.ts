@@ -25,39 +25,39 @@ export const InitialConsultationFormState: IConsultation = {
 
 export const MENTOR_PROFESSION = [
   {
-    label: "Разработка",
-    value: "Разработка",
+    label: "Development",
+    value: "Development",
   },
   {
-    label: "Тестирование",
-    value: "Тестирование",
+    label: "Testing",
+    value: "Testing",
   },
   {
-    label: "Администрирование",
-    value: "Администрирование",
+    label: "Admin",
+    value: "Admin",
   },
   {
-    label: "Аналитика",
-    value: "Аналитика",
+    label: "Analytics",
+    value: "Analytics",
   },
   {
     label: "HR",
     value: "HR",
   },
   {
-    label: "Дизайн",
-    value: "Дизайн",
+    label: "Design",
+    value: "Design",
   },
   {
-    label: "Менеджмент",
-    value: "Менеджмент",
+    label: "Management",
+    value: "Management",
   },
   {
-    label: "Маркетинг",
-    value: "Маркетинг",
+    label: "Marketing",
+    value: "Marketing",
   },
   {
-    label: "Продажи",
-    value: "Продажи",
+    label: "Sales",
+    value: "Sales",
   },
 ];

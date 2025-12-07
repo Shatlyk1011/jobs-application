@@ -95,14 +95,14 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
       <section className="mb-4 w-full">
         <div className="flex max-h-max w-full items-center gap-10">
           <h2 className="-tracking-two self-center text-2xl font-semibold text-nowrap max-lg:self-center">
-            Вакансии: <span className="opacity-75">{totalDocs}</span>
+            Vacancy: <span className="opacity-75">{totalDocs}</span>
           </h2>
           <div className="grid w-full grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-2 max-sm:grid-cols-1">
             <MultiSelect
               singleLine={true}
               className="bg-popover hover:bg-secondary"
               maxCount={0}
-              placeholder="Профессия"
+              placeholder="Profission"
               animation={0}
               options={PROFESSION}
               onValueChange={setSelectedProfessions}
@@ -112,7 +112,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
               singleLine={true}
               className="bg-popover hover:bg-secondary max-sm:hidden"
               maxCount={0}
-              placeholder="Уровень"
+              placeholder="Level"
               animation={0}
               options={LEVEL}
               onValueChange={setSelectedLevels}
@@ -122,7 +122,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
               singleLine={true}
               className="bg-popover hover:bg-secondary max-sm:hidden"
               maxCount={0}
-              placeholder="Локация"
+              placeholder="Location"
               animation={0}
               options={LOCATION}
               onValueChange={setSelectedLocation}
@@ -132,7 +132,7 @@ const JobFilters: FC<Props> = ({ handleFilterRequest, totalDocs }) => {
               singleLine={true}
               className="bg-popover hover:bg-secondary max-sm:hidden"
               maxCount={0}
-              placeholder="Формат"
+              placeholder="Format"
               animation={0}
               options={FORMAT}
               onValueChange={setSelectedFormat}

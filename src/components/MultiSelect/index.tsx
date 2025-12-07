@@ -849,7 +849,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                           animationDelay: `${animationConfig?.delay || 0}s`,
                         }}
                       >
-                        {`+ ${selectedValues.length - responsiveSettings.maxCount} выбрано`}
+                        {`+ ${selectedValues.length - responsiveSettings.maxCount} selected`}
                         {maxCount !== 0 && (
                           <XCircle
                             className={cn(
@@ -943,7 +943,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                   "overscroll-behavior-y-contain",
                 )}
               >
-                <CommandEmpty>{emptyIndicator || "Ничего не найдено."}</CommandEmpty>{" "}
+                <CommandEmpty>{emptyIndicator || "Nothing found"}</CommandEmpty>{" "}
                 {isGroupedOptions(filteredOptions) ? (
                   filteredOptions.map((group) => (
                     <CommandGroup key={group.heading} heading={group.heading}>
@@ -1021,7 +1021,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                     {selectedValues.length > 0 && (
                       <>
                         <CommandItem onSelect={handleClear} className="flex-1 cursor-pointer justify-center">
-                          Очистить
+                          Clear
                         </CommandItem>
                         <Separator orientation="vertical" className="flex h-full min-h-6" />
                       </>
@@ -1030,7 +1030,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                       onSelect={() => setIsPopoverOpen(false)}
                       className="max-w-full flex-1 cursor-pointer justify-center"
                     >
-                      Закрыть
+                      Close
                     </CommandItem>
                   </div>
                 </CommandGroup>
