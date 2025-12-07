@@ -23,7 +23,6 @@ export function constructMetadata({
     description,
     keywords: [
       "Ganat",
-      "IT Vacancies",
       "IT Jobs",
       "IT Resume",
       "Find an IT Mentor",

@@ -36,7 +36,7 @@ const Header: FC<Props> = ({ sticky }) => {
                 pathname === jobs && "text-sidebar-primary font-medium opacity-100",
               )}
             >
-              Vacancies
+              Jobs
             </Link>
           </li>
           <li>

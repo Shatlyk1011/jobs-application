@@ -36,9 +36,9 @@ const Footer: FC<Props> = ({ classes }) => {
         {/* right */}
         <div className="text-ring -tracking-one flex flex-1 justify-end gap-8 text-[16px] font-medium max-lg:justify-center max-sm:flex-col max-sm:items-center max-sm:text-center">
           <ul className="max-lg:flex-1">
-            <li className="text-foreground mb-3 text-[18px] font-semibold">Vacancy</li>
+            <li className="text-foreground mb-3 text-[18px] font-semibold">Jobs</li>
             <li className="hover:text-foreground mb-2 transition max-sm:mb-1">
-              <Link href="/jobs">List of vacancies</Link>
+              <Link href="/jobs">List of jobs</Link>
             </li>
             <li>
               <a className="hover:text-foreground transition" href={siteConfig.telegram_support}>

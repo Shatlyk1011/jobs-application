@@ -43,7 +43,7 @@ export default async function Docs() {
 
         <p className="mb-6 opacity-80">
           The information is provided “as is”, without guarantees of completeness or accuracy. We are not responsible
-          for vacancies, hiring, third party confidentiality. Use of the site is at your own risk. To delete data, write
+          for jobs, hiring, third party confidentiality. Use of the site is at your own risk. To delete data, write
           to us at email help.ganat@mail.ru
         </p>
 
