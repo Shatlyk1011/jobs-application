@@ -2,7 +2,7 @@ import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig = {
   experimental: {
-    turbopack: true,
+    turbopack: false,
     serverActions: {
       bodySizeLimit: "2mb",
     },
