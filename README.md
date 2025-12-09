@@ -4,7 +4,7 @@
   <a href="https://ganat.org/" target="_blank"><img height="360" src="public/images/og-image.png?raw=true" alt="JobBoard & Mentors Platform image"></a>
 </p>
 
-A modern open-source platform for posting jobs, resumes, and finding mentors.  
+A modern platform for posting jobs, resumes, and finding mentors.  
 Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Payload CMS**, optimized for performance, SEO, and easy extension.
 
 ## Story behind the project
@@ -38,6 +38,9 @@ This project started as an attempt to launch a jobs and mentoring platform in my
 <p align="center">
   <a href="https://ganat.org/" target="_blank"><img height="360" src="public/images/page-speed.png?raw=true" alt="Page Speed metrics"></a>
 </p>
+
+>Give it a ⭐️ on GitHub.
+It helps a lot and motivates for further projects!
 
 ## Tech Stack
 
