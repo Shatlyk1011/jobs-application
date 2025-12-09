@@ -1,7 +1,7 @@
 # Ganat - JobBoard & Mentors Platform
 
 <p align="center">
-  <a href="https://ganat.org/" target="_blank"><img height="360" src="public/images/og-image?raw=true" alt="JobBoard & Mentors Platform image"></a>
+  <a href="https://ganat.org/" target="_blank"><img height="360" src="public/images/og-image.png?raw=true" alt="JobBoard & Mentors Platform image"></a>
 </p>
 
 A modern open-source platform for posting jobs, resumes, and finding mentors.  
@@ -33,6 +33,10 @@ This project started as an attempt to launch a jobs and mentoring platform in my
 - 🔎 Search implemented for fast job and mentor discovery  
 - 🦴 Loading skeletons for smoother UX while data loads.
 - 🖼️ Image upload using Base64 conversion before sending to **Payload CMS**  
+
+<p align="center">
+  <a href="https://ganat.org/" target="_blank"><img height="360" src="public/images/page-speed.png?raw=true" alt="Page Speed metrics"></a>
+</p>
 
 ## Tech Stack
 - **Framework:** Next.js (app router)
