@@ -8,37 +8,39 @@ A modern open-source platform for posting jobs, resumes, and finding mentors.
 Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Payload CMS**, optimized for performance, SEO, and easy extension.
 
 ## Story behind the project
+
 This project started as an attempt to launch a jobs and mentoring platform in my country. It did not found the right place in the local market, so the code is now **open source**. Maybe it will work in your country, or inspire your own version of it.
 
-
 ## Features
+
 - 🚀 Highly optimized and super fast user experience.
-- ⏱️ Debounced requests for search and filters to reduce unnecessary network calls  
-- 📝 Rich text editor support for content fields  
-- 🔍 Job listings with dynamic detail pages  
-- 🎯 Advanced filtering with multiple values (e.g. location, role, seniority, etc.)  
-- 🧑‍🏫 Mentor profiles with dynamic detail pages  
-- 📝 Resume posting and management  
-- 🧑‍💼 Mentor posting and management  
-- 📅 Mentor consultation request form  
-- 🌓 Light and dark mode toggle  
-- ✅ Client-side form validation with **Zod**  
-- ⚡ Optimized with **SSR**, **SSG**, and **ISR**  
-- ♻️ Cache revalidation via **Incremental Static Regeneration**  
-- 📱 Fully responsive design (mobile-first)  
-- 🔧 Clean, hand-written codebase ready for extension  
-- 🧩 Strong **TypeScript** support  
-- 🗂 Integrated **Payload CMS** admin panel  
-- 🌐 SEO-friendly routing and metadata  
-- 🔎 Search implemented for fast job and mentor discovery  
+- ⏱️ Debounced requests for search and filters to reduce unnecessary network calls
+- 📝 Rich text editor support for content fields
+- 🔍 Job listings with dynamic detail pages
+- 🎯 Advanced filtering with multiple values (e.g. location, role, seniority, etc.)
+- 🧑‍🏫 Mentor profiles with dynamic detail pages
+- 📝 Resume posting and management
+- 🧑‍💼 Mentor posting and management
+- 📅 Mentor consultation request form
+- 🌓 Light and dark mode toggle
+- ✅ Client-side form validation with **Zod**
+- ⚡ Optimized with **SSR**, **SSG**, and **ISR**
+- ♻️ Cache revalidation via **Incremental Static Regeneration**
+- 📱 Fully responsive design (mobile-first)
+- 🔧 Clean, hand-written codebase ready for extension
+- 🧩 Strong **TypeScript** support
+- 🗂 Integrated **Payload CMS** admin panel
+- 🌐 SEO-friendly routing and metadata
+- 🔎 Search implemented for fast job and mentor discovery
 - 🦴 Loading skeletons for smoother UX while data loads.
-- 🖼️ Image upload using Base64 conversion before sending to **Payload CMS**  
+- 🖼️ Image upload using Base64 conversion before sending to **Payload CMS**
 
 <p align="center">
   <a href="https://ganat.org/" target="_blank"><img height="360" src="public/images/page-speed.png?raw=true" alt="Page Speed metrics"></a>
 </p>
 
 ## Tech Stack
+
 - **Framework:** Next.js (app router)
 - **Rendering:** SSR, SSG, ISR
 - **Language:** TypeScript
@@ -66,7 +68,7 @@ This project started as an attempt to launch a jobs and mentoring platform in my
 │   │   │   └── layout              # Layout components
 │   │   ├── composabled             # Reusable custom hooks
 │   │   ├── lib                     # Axios interceptor & Zod validation schemes
-│   │   ├── services                # Custom API service layer  
+│   │   ├── services                # Custom API service layer
 │   │   ├── shared                  # Shared utilities and helpers
 │   │   └── types                   # Typescript layer
 │   └── payload.config.ts           # Payload CMS configuration file
@@ -77,7 +79,8 @@ This project started as an attempt to launch a jobs and mentoring platform in my
 ## Getting Started
 
 ### Prerequisites
-- **Database** -  MongoDB (local or remote)
+
+- **Database** - MongoDB (local or remote)
 
 - **Node.js** (LTS recommended)
 
@@ -106,13 +109,14 @@ pnpm install
 
 3. Create `.env` file with: MongoDB `DATABASE_URI` and `PAYLOAD_SECRET` variables (see .env.example) <br/>
 
->for more information visit [Payload MongoDB setup section](https://payloadcms.com/docs/database/mongodb)
+> for more information visit [Payload MongoDB setup section](https://payloadcms.com/docs/database/mongodb)
 
 4. Run the Project
 
 ```shell
 npm run dev
 ```
+
 The app will start on `http://localhost:3000`. <br/>
 The admin panel available on `http://localhost:3000/admin`
 
@@ -147,7 +151,6 @@ Each job and mentor profile is served via **dynamic routes**, ensuring clean, SE
 
 ---
 
-
 ## License
 
-This project is open source under the **MIT License**.  
+This project is open source under the **MIT License**.

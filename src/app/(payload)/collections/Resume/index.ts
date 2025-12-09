@@ -6,9 +6,9 @@ import adminsAndModerator from "../../utils/adminsAndModerator";
 const Resume: CollectionConfig = {
   access: {
     read: () => true,
-    create:adminsAndModerator,
-    delete:adminsAndModerator,
-    update:adminsAndModerator
+    create: adminsAndModerator,
+    delete: adminsAndModerator,
+    update: adminsAndModerator,
   },
   admin: {
     defaultColumns: ["username", "feedback", "resumeLink", "isVisible", "createdAt"],

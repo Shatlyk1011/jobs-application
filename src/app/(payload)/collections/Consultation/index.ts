@@ -4,9 +4,9 @@ import adminsAndModerator from "../../utils/adminsAndModerator";
 const Consultation: CollectionConfig = {
   access: {
     read: () => true,
-    create:adminsAndModerator,
-    delete:adminsAndModerator,
-    update:adminsAndModerator
+    create: adminsAndModerator,
+    delete: adminsAndModerator,
+    update: adminsAndModerator,
   },
   admin: {
     defaultColumns: ["username", "telegram", "consultationWithSlug", "status"],

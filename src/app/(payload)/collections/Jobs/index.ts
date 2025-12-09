@@ -5,10 +5,10 @@ import adminsAndModerator from "../../utils/adminsAndModerator";
 
 const Jobs: CollectionConfig = {
   access: {
-   read: () => true,
-  create:adminsAndModerator,
-  delete:adminsAndModerator,
-  update:adminsAndModerator
+    read: () => true,
+    create: adminsAndModerator,
+    delete: adminsAndModerator,
+    update: adminsAndModerator,
   },
   slug: "jobs",
   admin: {
