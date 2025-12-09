@@ -49,7 +49,7 @@ const ContactDialogButton: FC<Props> = ({ jobContactUrl, additionalContact, addi
         </DialogHeader>
         <div className="bg-secondary text-secondary-foreground rounded-2xl px-4 py-4 text-sm">
           <p>
-            If you have encountered fraud or  error - <br className="max-ms:hidden" /> please let us know in{" "}
+            If you have encountered fraud or error - <br className="max-ms:hidden" /> please let us know in{" "}
             <a href={siteConfig.telegram_support} target="_blank" rel="noopener" className="border-b border-current">
               telegram
             </a>

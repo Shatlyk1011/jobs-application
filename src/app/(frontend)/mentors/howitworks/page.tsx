@@ -45,9 +45,7 @@ export default async function HowItWorks() {
           </li>
         </ol>
 
-        <p>
-          Before the meeting, ask any questions you'd like to discuss in the chat to save time during the session.
-        </p>
+        <p>Before the meeting, ask any questions you'd like to discuss in the chat to save time during the session.</p>
       </div>
     </section>
   );

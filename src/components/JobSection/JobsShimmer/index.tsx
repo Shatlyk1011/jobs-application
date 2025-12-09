@@ -6,20 +6,19 @@ interface Props {}
 const JobsShimmer: FC<Props> = () => {
   return (
     <>
-      <div className="">
+      <div className="pt-8 max-sm:pt-6">
         <div className="mb-4 flex gap-10">
-          <Skeleton className="w-30 h-10"></Skeleton>
-          <div className="w-full flex gap-3 ">
+          <Skeleton className="h-10 w-30"></Skeleton>
+          <div className="flex w-full gap-3">
             {Array.from({ length: 4 }).map((_, id) => (
-              <Skeleton className="flex-1 h-10 max-sm:not-last:hidden" key={id} />
+              <Skeleton className="h-10 flex-1 max-sm:not-last:hidden" key={id} />
             ))}
           </div>
         </div>
-        <Skeleton className="w-full h-10"></Skeleton>
+        <Skeleton className="h-12 w-full"></Skeleton>
       </div>
 
       <section className="grid min-h-[478px] grid-cols-3 gap-4 pt-3 pb-20 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1 max-sm:pb-12">
-
         {Array.from({ length: 6 }).map((_, i) => (
           <Skeleton
             key={i}

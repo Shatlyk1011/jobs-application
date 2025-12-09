@@ -6,7 +6,7 @@ export const siteConfig = {
 
   mentor_agreement: "https://www.ganat.org",
 
-  title: "Ganat - IT Jobs, Resumes, Mentors",
+  title: "IT Jobs, Resumes, Mentors",
   description: "Post your resume, apply for jobs, and find mentors. Your journey to a new career starts here!",
 
   siteUrl: "https://www.ganat.org",

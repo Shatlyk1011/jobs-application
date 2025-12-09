@@ -5,7 +5,7 @@ import { WobbleCard } from "../ui/wobble-card";
 
 export default function Hero() {
   return (
-    <div className="mx-auto mb-10 grid h-max w-full grid-cols-2 gap-4.5 max-lg:grid-cols-1 max-lg:gap-3">
+    <div className="mx-auto grid h-max w-full grid-cols-2 gap-4.5 max-lg:grid-cols-1 max-lg:gap-3">
       <Link href={"/jobs"} prefetch>
         <WobbleCard containerClassName="h-full bg-card text-card-foreground min-h-[200px] max-sm:min-h-[180px]">
           <div className="max-w-xs">

@@ -40,8 +40,6 @@ const MentorSection: FC<Props> = ({ initialData }) => {
   const [data, setData] = useState(initialData);
   const [isLoading, setLoading] = useState(false);
 
-  console.log("data", data);
-
   const { getMentors } = useMentors();
 
   if (!initialData) return null;
@@ -60,7 +58,7 @@ const MentorSection: FC<Props> = ({ initialData }) => {
     }
   };
 
-  const handleFilterRequest = debounce(fetchMentors, 1500);
+  const handleFilterRequest = debounce(fetchMentors, 0);
 
   return (
     <section className="">
@@ -73,8 +71,9 @@ const MentorSection: FC<Props> = ({ initialData }) => {
             <Link
               key={m.id}
               href={`/mentors/${m.slug}`}
-              className="bg-popover hover:bg-popover/80 flex w-full items-start gap-5 rounded-xl p-5 pb-6 shadow-xl/2 transition max-sm:flex-col max-sm:gap-3 max-sm:p-4 max-sm:pb-6"
+              className="bg-popover hover:bg-popover/80 relative flex w-full items-start gap-5 rounded-xl p-5 pb-6 shadow-xl/2 transition max-sm:flex-col max-sm:gap-3 max-sm:p-4 max-sm:pb-6"
             >
+              <span className="absolute top-4 right-4 text-[12px] font-semibold opacity-30">Demo</span>
               {/* left */}
               <div className="gap-4 max-sm:flex">
                 <figure className="min-h-14 min-w-14">
@@ -94,21 +93,18 @@ const MentorSection: FC<Props> = ({ initialData }) => {
                   {m.language.map((lang) => {
                     const Icon = getFlagIcon(lang);
                     return (
-                      <li className="flex items-center" key={lang}>
+                      <li className="flex items-center" key={lang} title={lang}>
                         <Icon className="h-4 w-4 leading-0" />
                       </li>
                     );
                   })}
-                  <li className="">
-                    <USAFlag className="flex h-4 w-4 items-center leading-0" />
-                  </li>
                 </ul>
               </div>
 
               {/* right */}
               <div className="text-start">
                 <h3 className="-tracking-two mb-0 text-lg max-sm:mb-2">{m.username}</h3>
-                <ul className="mt-1 mb-4 flex gap-2 text-[13px]">
+                <ul className="mt-1 mb-4 flex flex-wrap gap-2 text-[13px]">
                   {m.profession.map((prof) => (
                     <li className="bg-secondary rounded-full px-2" key={prof}>
                       {prof}
@@ -117,16 +113,16 @@ const MentorSection: FC<Props> = ({ initialData }) => {
                 </ul>
                 <h4 className="-tracking-two mb-2 text-sm max-sm:mb-3">{m.position}</h4>
 
-                <p className="tracking-one mb-6 text-sm opacity-80 max-sm:mb-4">{m.about}</p>
+                <p className="tracking-one mb-6 text-[16px] opacity-80 max-sm:mb-4 max-sm:text-sm">{m.about}</p>
 
                 <div className="flex items-center gap-4 text-sm max-lg:flex-col max-sm:gap-3">
                   <Button variant="outline" className="text-[15px] max-lg:min-w-full" size="sm">
                     View profile
                   </Button>
 
-                  <p className="-tracking-two text-sm text-[15px] font-medium max-sm:text-center">
-                    {m.price}
-                    <DollarSign /> / an hour of online classes
+                  <p className="-tracking-two flex w-full text-sm text-[15px] font-medium max-lg:items-center max-sm:text-center">
+                    <span>{m.price}</span>
+                    <DollarSign className="h-3.5 w-3.5" /> <span>/ an hour of online classes</span>
                   </p>
                 </div>
               </div>

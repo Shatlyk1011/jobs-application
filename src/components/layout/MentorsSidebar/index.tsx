@@ -10,10 +10,11 @@ import { Menu, X } from "lucide-react";
 
 interface Props {}
 
-const { mentors, howitworks, mentornew } = {
+const { mentors, howitworks, mentornew, mainPage } = {
   mentors: "/mentors",
   howitworks: "/mentors/howitworks",
   mentornew: "/mentor/new",
+  mainPage: "/",
 };
 
 const MentorsSidebar: FC<Props> = () => {
@@ -91,6 +92,18 @@ const MentorsSidebar: FC<Props> = () => {
               )}
             >
               Become a mentor
+            </Link>
+          </li>
+          <li className="mt-4">
+            <Link
+              href={mainPage}
+              onClick={close}
+              className={cn(
+                "opacity-80 transition hover:opacity-100",
+                pathname === mentornew && "text-sidebar-primary font-medium opacity-100",
+              )}
+            >
+              Main page
             </Link>
           </li>
         </ul>
