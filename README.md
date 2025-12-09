@@ -7,6 +7,19 @@
 A modern platform for posting jobs, resumes, and finding mentors.  
 Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Payload CMS**, optimized for performance, SEO, and easy extension.
 
+## Demo accounts for admin panel (guest role)
+```
+login: guest-1@mail.ru
+pass: guest123
+```
+
+```
+login: guest-2@mail.ru
+pass: guest123
+```
+
+[Visit Admin Panel](https://www.ganat.org/admin)
+
 ## Story behind the project
 
 This project started as an attempt to launch a jobs and mentoring platform in my country. It did not found the right place in the local market, so the code is now **open source**. Maybe it will work in your country, or inspire your own version of it.
