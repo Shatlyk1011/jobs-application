@@ -2,11 +2,14 @@ import type { CollectionConfig } from "payload";
 
 import { LANGUAGES } from "../../../../../data/filters";
 import { MENTOR_PROFESSION } from "../../../../../data/mentor";
+import adminsAndModerator from "../../utils/adminsAndModerator";
 
 const Mentors: CollectionConfig = {
   access: {
     read: () => true,
-    create: () => true,
+    create:adminsAndModerator,
+    delete:adminsAndModerator,
+    update:adminsAndModerator
   },
   admin: {
     defaultColumns: ["username", "telegram", "resumeLink", "slug", "isVisible"],

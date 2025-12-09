@@ -1,9 +1,12 @@
 import type { CollectionConfig } from "payload";
+import adminsAndModerator from "../../utils/adminsAndModerator";
 
 const Consultation: CollectionConfig = {
   access: {
     read: () => true,
-    create: () => true,
+    create:adminsAndModerator,
+    delete:adminsAndModerator,
+    update:adminsAndModerator
   },
   admin: {
     defaultColumns: ["username", "telegram", "consultationWithSlug", "status"],

@@ -1,10 +1,14 @@
 import type { CollectionConfig } from "payload";
 
 import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../data/filters";
+import adminsAndModerator from "../../utils/adminsAndModerator";
 
 const Jobs: CollectionConfig = {
   access: {
-    read: () => true,
+   read: () => true,
+  create:adminsAndModerator,
+  delete:adminsAndModerator,
+  update:adminsAndModerator
   },
   slug: "jobs",
   admin: {

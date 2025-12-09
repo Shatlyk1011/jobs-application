@@ -9,6 +9,8 @@ const Base64Images: CollectionConfig = {
   access: {
     read: () => true,
     create: adminsAndModerator,
+    delete:adminsAndModerator,
+    update:adminsAndModerator
   },
   fields: [
     { name: "name", label: "Name", type: "text", required: true },

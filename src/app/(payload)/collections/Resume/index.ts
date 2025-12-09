@@ -1,11 +1,14 @@
 import type { CollectionConfig } from "payload";
 
-import { CURRENCY, FORMAT, LEVEL, LOCATION, PROFESSION } from "../../../../../data/filters";
+import { CURRENCY, FORMAT, LEVEL, LOCATION } from "../../../../../data/filters";
+import adminsAndModerator from "../../utils/adminsAndModerator";
 
 const Resume: CollectionConfig = {
   access: {
     read: () => true,
-    create: () => true,
+    create:adminsAndModerator,
+    delete:adminsAndModerator,
+    update:adminsAndModerator
   },
   admin: {
     defaultColumns: ["username", "feedback", "resumeLink", "isVisible", "createdAt"],

@@ -75,10 +75,10 @@ const AdminUsers: CollectionConfig = {
           label: "Moderator",
           value: "moderator",
         },
-        // {
-        //   label: "Guest",
-        //   value: "guest",
-        // },
+        {
+          label: "Guest",
+          value: "guest",
+        },
       ],
       type: "select",
     },
