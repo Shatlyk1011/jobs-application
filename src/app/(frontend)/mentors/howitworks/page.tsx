@@ -16,12 +16,12 @@ export default async function HowItWorks() {
       <div className="bg-popover w-full rounded-2xl p-8 pr-12 pb-12 text-sm max-sm:p-6 max-sm:pr-10">
         <h2 className="mb-4 text-2xl font-semibold">How does it work?</h2>
 
-        <p className="mb-3">
+        <p className="mb-4">
           <span className="font-semibold">Ganat Mentors</span> — career consultation service with experts from leading
           IT companies.
         </p>
 
-        <ol className="mb-5 flex flex-col gap-1">
+        <ol className="mb-5 flex flex-col gap-2">
           <li>
             <span className="opacity-70">1)</span> Choose a mentor on{" "}
             <Link className="hover:text-sidebar-primary border-b border-current transition" href="/mentors">

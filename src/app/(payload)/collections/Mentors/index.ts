@@ -58,7 +58,7 @@ const Mentors: CollectionConfig = {
 
     {
       name: "mdx",
-      label: "Job description",
+      label: "Mentor description (mdx)",
       type: "richText",
       required: false,
     },

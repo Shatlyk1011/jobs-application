@@ -9,10 +9,8 @@ export default function Home() {
         <header className="bg-primary py-2">
           <Logo className="mx-auto h-20 w-max text-gray-100" />
         </header>
-        <section className="mx-auto h-full w-full max-w-5xl justify-center px-12 pt-6 max-lg:px-8 max-sm:px-4 max-sm:pt-2">
-          <div className="min-h-[50vw]">
-            <Hero />
-          </div>
+        <section className="mx-auto h-full w-full max-w-5xl mb-16 justify-center px-12 pt-6 max-lg:px-8 max-sm:px-4 max-sm:pt-2  ">
+          <Hero />
         </section>
         <div className="mx-auto max-w-5xl px-12 pb-5 max-lg:px-8 max-sm:px-4">
           <Footer classes="mb-0 " />

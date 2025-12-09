@@ -70,8 +70,15 @@ export default async function MentorPage({ params }: Props) {
         {/* right */}
 
         <div className="text-start">
-          <h3 className="-tracking-two mb-3 text-lg max-lg:mb-2">{mentor.username}</h3>
-          <h4 className="-tracking-two mb-5 text-sm max-lg:mb-3">{mentor.position}</h4>
+          <h3 className="-tracking-two mb-0 text-lg max-lg:mb-2">{mentor.username}</h3>
+          <h4 className="-tracking-two mb-3 opacity-70 text-sm max-lg:mb-3">{mentor.position}</h4>
+          <ul className="mt-1 mb-3 flex gap-2 text-[13px]">
+            {mentor.profession.map((prof) => (
+              <li className="bg-secondary rounded-full px-2" key={prof}>
+                {prof}
+              </li>
+            ))}
+          </ul>
 
           <RichText content={mentor?.mdx} />
         </div>
