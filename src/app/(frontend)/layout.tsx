@@ -6,6 +6,8 @@ import "../globals.css";
 import { ThemeProviders } from "../theme-providers";
 import { siteConfig } from "@/config";
 
+import Announcement from "@/components/Announcement";
+
 const InterSans = Inter({
   variable: "--font-inter-sans",
   subsets: ["latin"],
@@ -67,6 +69,7 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <body className={`${InterSans.variable} antialiased`}>
         <ThemeProviders>
+          <Announcement />
           {children}
           <Toaster richColors theme="dark" position="bottom-left" />
         </ThemeProviders>
