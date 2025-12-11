@@ -39,7 +39,7 @@ This project started as an attempt to launch a jobs and mentoring platform in my
 - ✅ Client-side form validation with **Zod**
 - ⚡ Optimized with **SSR**, **SSG**, and **ISR**
 - ♻️ Cache revalidation via **Incremental Static Regeneration**
-- 📱 Fully responsive design (mobile-first)
+- 📱 Fully responsive design (desktop-first)
 - 🔧 Clean, hand-written codebase ready for extension
 - 🧩 Strong **TypeScript** support
 - 🗂 Integrated **Payload CMS** admin panel
