@@ -14,8 +14,6 @@ import { Button } from "@/components/ui/button";
 import useMentors from "@/services/useMentors";
 import ImageSample from "./ImageSample";
 
-export const revalidate = 7200;
-
 export const metadata: Metadata = constructMetadata({
   title: "Ganat - Mentors",
   description:

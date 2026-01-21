@@ -7,8 +7,6 @@ import { DEFAULT_LIMIT } from "@/shared/constant";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/utils";
 
-export const revalidate = 7200;
-
 const stringifiedQuery = stringify(
   {
     where: {

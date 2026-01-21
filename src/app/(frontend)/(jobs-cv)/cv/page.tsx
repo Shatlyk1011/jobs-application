@@ -15,8 +15,6 @@ import CVSection from "@/components/CVSection";
 import { Suspense } from "react";
 import EmptyResult from "@/components/ui/EmptyResult";
 
-export const revalidate = 7200;
-
 export const metadata: Metadata = constructMetadata({
   title: "Ganat - CV",
   description: "Upload your resume. Receive responses from employers, find jobs.",
